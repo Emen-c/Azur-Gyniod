@@ -1,7 +1,0 @@
-#维护费判定
-has_food_upkeep = {
-	species = {
-		is_archetype = BIOLOGICAL
-	}
-	NOT = { has_trait = trait_voidling }
-}
