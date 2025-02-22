@@ -1,20 +1,20 @@
 #限定种族
 is_azur_lane_leader = {
 	species = {
-		is_class = Azur_Lane_R
+		is_species_class = Azur_Lane_R
 	}
 }
 
 #维护费修正
 is_azur_lane_species_R = {
 	species = {
-		is_archetype = KANSEN
+		is_species_class = Azur_Lane_R
 	}
 }
 
 #维护费修正
 is_Azur_Lane_organic_species = {
 	species = {
-		is_archetype = KANSEN
+		is_species_class = Azur_Lane_R
 	}
 }

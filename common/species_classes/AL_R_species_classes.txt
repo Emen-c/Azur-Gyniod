@@ -1,5 +1,5 @@
 Azur_Lane_R = {
-	archetype = KANSEN
+	archetype = MACHINE
 	randomized = no
 	possible = {
 		OR = {

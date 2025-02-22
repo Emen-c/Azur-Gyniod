@@ -37,16 +37,17 @@ azur_R_colonizable_planet = {
 	}
 }
 
+#   兼容MACHINE弃置
 #维护费判定
-has_food_upkeep = {
-	species = {
-		OR = {
-			is_archetype = KANSEN
-			is_archetype = BIOLOGICAL
-		}
-	}
-	NOT = { has_trait = trait_voidling }
-}
+# has_food_upkeep = {
+# 	species = {
+# 		OR = {
+# 			is_archetype = KANSEN
+# 			is_archetype = BIOLOGICAL
+# 		}
+# 	}
+# 	NOT = { has_trait = trait_voidling }
+# }
 
 #首府建筑判定
 has_upgraded_capital = {

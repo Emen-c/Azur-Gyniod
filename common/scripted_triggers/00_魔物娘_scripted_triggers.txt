@@ -67,7 +67,7 @@ can_do_super_robot_modding = {
 	OR = {
 		is_archetype = MACHINE
 		is_archetype = ROBOT
-		is_archetype = KANSEN
+		# is_archetype = KANSEN
 		has_trait = trait_cybernetic
 	}
 }

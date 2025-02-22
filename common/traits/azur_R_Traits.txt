@@ -2,20 +2,22 @@
 #种族
 trait_azur_a1 = {
 	cost = 0
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = no
 	#initial = no
 	randomized = no
 	icon = "interface/icons/traits/azur_traits_1.dds"
 	immortal_leaders = yes
-	
+
 	species_potential_add = {
 		always = no
 	}
 	species_possible_remove = {
 		always = no
 	}
-	
+
 	modifier = {
 		pop_environment_tolerance=1.00				#宜居度
 	}
@@ -25,12 +27,14 @@ trait_azur_a1 = {
 #认知觉醒
 trait_azur_feisheng_1 = {
 	cost = 0
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = no
 	randomized = no
 	initial = no
 	icon = "interface/icons/traits/trait_azur_feisheng_1.dds"
-	
+
 	species_potential_add = {
 		always = no
 	}
@@ -40,7 +44,7 @@ trait_azur_feisheng_1 = {
 	species_possible_merge_add = {
 		always = no
 	}
-	
+
 	modifier = {
 		pop_political_power = 1.00
 		pop_happiness = 0.2
@@ -52,11 +56,13 @@ trait_azur_feisheng_1 = {
 #💊				总之就是药丸
 trait_AL_R_01 = {
 	cost = 99
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = no
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_01.dds"
-	
+
 	species_potential_add = {
 		always = no
 	}
@@ -66,7 +72,7 @@ trait_AL_R_01 = {
 	species_possible_merge_add = {
 		always = no
 	}
-	
+
 	modifier = {
 		pop_growth_speed = -10.00
 		planet_jobs_produces_mult = -10.00
@@ -75,12 +81,14 @@ trait_AL_R_01 = {
 
 trait_AL_R_LOVE = {
 	cost = 0
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = no
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_LOVE.dds"
 	custom_tooltip = "trait_AL_R_LOVE_tooltip"
-	
+
 	species_potential_add = {
 		always = no
 	}
@@ -90,19 +98,21 @@ trait_AL_R_LOVE = {
 	species_possible_merge_add = {
 		always = no
 	}
-	
+
 	modifier = {
-		
+
 	}
 }
 
 trait_AL_R_rarity_R = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_rarity_R.dds"
-	
+
 	modifier = {
 		planet_jobs_produces_mult = 0.20				#人口产出
 		planet_pop_assembly_organic_add = 0.40			#人口组装
@@ -121,11 +131,13 @@ trait_AL_R_rarity_R = {
 
 trait_AL_R_rarity_SR = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_rarity_SR.dds"
-	
+
 	modifier = {
 		planet_jobs_produces_mult = 0.30				#人口产出
 		planet_pop_assembly_organic_add = 0.60			#人口组装
@@ -145,11 +157,13 @@ trait_AL_R_rarity_SR = {
 
 trait_AL_R_rarity_SSR = {
 	cost = 3
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_rarity_SSR.dds"
-	
+
 	modifier = {
 		planet_jobs_produces_mult = 0.50				#人口产出
 		planet_pop_assembly_organic_add = 1.00			#人口组装
@@ -169,11 +183,13 @@ trait_AL_R_rarity_SSR = {
 
 trait_AL_R_rarity_PRY = {
 	cost = 3
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_rarity_PRY.dds"
-	
+
 	modifier = {
 		planet_researchers_engineering_research_produces_add = 1.5		#科研产出
 		planet_researchers_physics_research_produces_add = 1.5
@@ -196,11 +212,13 @@ trait_AL_R_rarity_PRY = {
 
 trait_AL_R_rarity_UR = {
 	cost = 5
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_rarity_UR.dds"
-	
+
 	modifier = {
 		planet_jobs_produces_mult = 1					#人口产出
 		planet_pop_assembly_organic_add = 2				#人口组装
@@ -208,7 +226,7 @@ trait_AL_R_rarity_UR = {
 		planet_pops_upkeep_mult = 0.4					#人口维护费
 		pop_housing_usage_add = 0.4						#住房使用
 	}
-	
+
 	opposites = {
 		trait_AL_R_rarity_R
 		trait_AL_R_rarity_SR
@@ -221,11 +239,13 @@ trait_AL_R_rarity_UR = {
 
 trait_AL_R_rarity_DR = {
 	cost = 5
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_rarity_DR.dds"
-	
+
 	modifier = {
 		planet_researchers_engineering_research_produces_add = 3		#科研产出
 		planet_researchers_physics_research_produces_add = 3
@@ -236,7 +256,7 @@ trait_AL_R_rarity_DR = {
 		planet_pops_upkeep_mult = 0.4					#人口维护费
 		pop_housing_usage_add = 0.4						#住房使用
 	}
-	
+
 	opposites = {
 		trait_AL_R_rarity_R
 		trait_AL_R_rarity_SR
@@ -250,7 +270,9 @@ trait_AL_R_rarity_DR = {
 #奔袭的逐星者
 trait_AL_R_02 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_02.dds"
@@ -265,7 +287,9 @@ trait_AL_R_02 = {
 #自适应作战模块
 trait_AL_R_03 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_03.dds"
@@ -279,7 +303,9 @@ trait_AL_R_03 = {
 #情报调查
 trait_AL_R_04 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_04.dds"
@@ -294,7 +320,9 @@ trait_AL_R_04 = {
 #绽盛之威光
 trait_AL_R_05 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_05.dds"
@@ -309,7 +337,9 @@ trait_AL_R_05 = {
 #广域舰船维护
 trait_AL_R_06 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_06.dds"
@@ -324,7 +354,9 @@ trait_AL_R_06 = {
 #海神之佑
 trait_AL_R_07 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_07.dds"
@@ -338,7 +370,9 @@ trait_AL_R_07 = {
 #幽蝶之梦
 trait_AL_R_08 = {
 	cost = -2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_08.dds"
@@ -352,7 +386,9 @@ trait_AL_R_08 = {
 #守护之樱
 trait_AL_R_09 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_09.dds"
@@ -367,7 +403,9 @@ trait_AL_R_09 = {
 #定期维护
 trait_AL_R_10 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_10.dds"
@@ -381,7 +419,9 @@ trait_AL_R_10 = {
 #不沉的幸运舰
 trait_AL_R_11 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_11.dds"
@@ -395,7 +435,9 @@ trait_AL_R_11 = {
 #桂冠诗人的韵律论
 trait_AL_R_12 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_12.dds"
@@ -409,7 +451,9 @@ trait_AL_R_12 = {
 #求知之贤眼
 trait_AL_R_13 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_13.dds"
@@ -424,7 +468,9 @@ trait_AL_R_13 = {
 #洞察技术-思想掌握
 trait_AL_R_14 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_14.dds"
@@ -437,7 +483,9 @@ trait_AL_R_14 = {
 #星辰之光
 trait_AL_R_15 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_15.dds"
@@ -451,7 +499,9 @@ trait_AL_R_15 = {
 #安闲与愉悦
 trait_AL_R_16 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_16.dds"
@@ -465,7 +515,9 @@ trait_AL_R_16 = {
 #共济不弃
 trait_AL_R_17 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_17.dds"
@@ -479,7 +531,9 @@ trait_AL_R_17 = {
 #诫训法典
 trait_AL_R_18 = {
 	cost = -2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_18.dds"
@@ -493,7 +547,9 @@ trait_AL_R_18 = {
 #圣女的祷告
 trait_AL_R_19 = {
 	cost = 1
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_19.dds"
@@ -507,7 +563,9 @@ trait_AL_R_19 = {
 #感知抑制模块
 trait_AL_R_20 = {
 	cost = -2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_20.dds"
@@ -523,7 +581,9 @@ trait_AL_R_20 = {
 #梦幻秘仪
 trait_AL_R_21 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_21.dds"
@@ -537,12 +597,14 @@ trait_AL_R_21 = {
 #快速完成工具
 trait_AL_R_28 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = no
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_28.dds"
-	
-	
+
+
 	modifier = {
 		starbase_shipyard_build_speed_mult = 0.25		#造舰速度
 	}
@@ -551,7 +613,9 @@ trait_AL_R_28 = {
 #自律战斗
 trait_AL_R_29 = {
 	cost = -2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_29.dds"
@@ -560,12 +624,14 @@ trait_AL_R_29 = {
 		army_collateral_damage_mult = -0.20				#陆军连带伤害
 		army_morale_damage_mult = -0.20					#陆军士气伤害
 	}
-}	
+}
 
 #后宅
 trait_AL_R_30 = {
 	cost = -2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	#modification = yes
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_30.dds"
@@ -579,7 +645,9 @@ trait_AL_R_30 = {
 #沉睡公主的赠礼
 trait_AL_R_31 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	initial = no
 	#modification = yes
 	advanced_trait = yes						#高级特质
@@ -595,7 +663,9 @@ trait_AL_R_31 = {
 #精密操作协议
 trait_AL_R_32 = {
 	cost = 3
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	initial = no
 	#modification = yes
 	advanced_trait = yes						#高级特质
@@ -613,7 +683,9 @@ trait_AL_R_32 = {
 #从容指顾
 trait_AL_R_33 = {
 	cost = 3
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	initial = no
 	#modification = yes
 	advanced_trait = yes						#高级特质
@@ -627,7 +699,9 @@ trait_AL_R_33 = {
 #彩虹计划
 trait_AL_R_34 = {
 	cost = 3
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	initial = no
 	#modification = yes
 	advanced_trait = yes						#高级特质
@@ -642,7 +716,9 @@ trait_AL_R_34 = {
 #迅光雷袭
 trait_AL_R_35 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	initial = no
 	#modification = yes
 	#advanced_trait = no						#高级特质
@@ -659,7 +735,9 @@ trait_AL_R_35 = {
 #风斩雷逸
 trait_AL_R_36 = {
 	cost = 2
-	allowed_archetypes = { KANSEN }
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
 	initial = no
 	#modification = yes
 	#advanced_trait = no						#高级特质
@@ -681,9 +759,9 @@ trait_AL_R_22 = {
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_22.dds"
 	modifier = {
-		
+
 	}
-	opposites = { 
+	opposites = {
 		trait_AL_R_23
 		trait_AL_R_24
 		trait_AL_R_25
@@ -701,9 +779,9 @@ trait_AL_R_23 = {
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_23.dds"
 	modifier = {
-		
+
 	}
-	opposites = { 
+	opposites = {
 		trait_AL_R_22
 		trait_AL_R_24
 		trait_AL_R_25
@@ -721,9 +799,9 @@ trait_AL_R_24 = {
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_24.dds"
 	modifier = {
-		
+
 	}
-	opposites = { 
+	opposites = {
 		trait_AL_R_22
 		trait_AL_R_23
 		trait_AL_R_25
@@ -741,9 +819,9 @@ trait_AL_R_25 = {
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_25.dds"
 	modifier = {
-		
+
 	}
-	opposites = { 
+	opposites = {
 		trait_AL_R_22
 		trait_AL_R_23
 		trait_AL_R_24
@@ -761,9 +839,9 @@ trait_AL_R_26 = {
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_26.dds"
 	modifier = {
-		
+
 	}
-	opposites = { 
+	opposites = {
 		trait_AL_R_22
 		trait_AL_R_23
 		trait_AL_R_24
@@ -781,9 +859,9 @@ trait_AL_R_27 = {
 	randomized = no
 	icon = "interface/icons/traits/trait_AL_R_27.dds"
 	modifier = {
-		
+
 	}
-	opposites = { 
+	opposites = {
 		trait_AL_R_22
 		trait_AL_R_23
 		trait_AL_R_24

@@ -1,0 +1,6795 @@
+@self_trait_weight = 15
+#############
+####通用
+#############
+####普通特质
+#妓院经营者
+leader_trait_brothel_owner = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_brothel_owner"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		trait_is_crisis_faction_check = no
+		has_global_flag = game_started
+		has_skill > 1
+		NOT = {
+			has_leader_flag = block_homeworld_traits
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_regular_empire = yes
+				}
+			}
+		}
+		job_whore_add = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_hive_empire  = yes
+				}
+			}
+		}
+		job_hive_whore_add = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_machine_empire = yes
+				}
+			}
+		}
+		job_Gynoid_whore_add = 2
+	}
+	planet_modifier = {
+		planet_whores_lust_crystal_produces_mult = 0.05
+	}
+	sector_modifier = {
+		planet_whores_lust_crystal_produces_mult = 0.025
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = {
+		weight = @job_provider_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_brothel_owner
+		}
+	}
+}
+
+leader_trait_brothel_owner_2 = {
+	replace_traits = {
+		leader_trait_brothel_owner
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_brothel_owner"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_regular_empire = yes
+				}
+			}
+		}
+		job_whore_add = 4
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_hive_empire  = yes
+				}
+			}
+		}
+		job_hive_whore_add = 4
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_machine_empire = yes
+				}
+			}
+		}
+		job_Gynoid_whore_add = 4
+	}
+	planet_modifier = {
+		planet_whores_lust_crystal_produces_mult = 0.1
+	}
+	sector_modifier = {
+		planet_whores_lust_crystal_produces_mult = 0.05
+	}
+	leader_class = { commander scientist official }
+}
+
+#性奴调教师
+leader_trait_sex_slave_trainer = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_slave_trainer"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		trait_is_crisis_faction_check = no
+		has_global_flag = game_started
+		has_skill > 1
+		NOT = {
+			has_leader_flag = block_homeworld_traits
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			OR = {
+				has_technology = tech_sexual_slavery_industry_legalization
+				has_technology = tech_sexual_slave_worker_drone
+				has_technology = tech_simulated_sexual_slave
+			}
+		}
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_regular_empire = yes
+					has_policy_flag = slavery_not_allowed
+				}
+			}
+		}
+		job_professional_sexual_slave_add = 1
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_regular_empire = yes
+					has_policy_flag = slavery_allowed
+				}
+			}
+		}
+		job_sexual_slave_add = 1
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_hive_empire  = yes
+				}
+			}
+		}
+		job_hive_sexual_slave_add = 1
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_machine_empire = yes
+				}
+			}
+		}
+		job_Gynoid_sexual_slave_add = 1
+	}
+	planet_modifier = {
+		planet_sex_slaves_best_slaves_produces_mult = 0.05
+	}
+	sector_modifier = {
+		planet_sex_slaves_best_slaves_produces_mult = 0.025
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = {
+		weight = @job_provider_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_sex_slave_trainer
+		}
+	}
+}
+
+leader_trait_sex_slave_trainer_2 = {
+	replace_traits = {
+		leader_trait_sex_slave_trainer
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_slave_trainer"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_regular_empire = yes
+					has_policy_flag = slavery_not_allowed
+				}
+			}
+		}
+		job_professional_sexual_slave_add = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_regular_empire = yes
+					has_policy_flag = slavery_allowed
+				}
+			}
+		}
+		job_sexual_slave_add = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_hive_empire  = yes
+				}
+			}
+		}
+		job_hive_sexual_slave_add = 2
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			exists = FROM
+			FROM = {
+				exists = owner
+				owner = {
+					is_same_value = root.owner
+					is_machine_empire = yes
+				}
+			}
+		}
+		job_Gynoid_sexual_slave_add = 2
+	}
+	planet_modifier = {
+		planet_sex_slaves_best_slaves_produces_mult = 0.1
+	}
+	sector_modifier = {
+		planet_sex_slaves_best_slaves_produces_mult = 0.05
+	}
+	leader_class = { commander scientist official }
+}
+
+
+#万人斩
+leader_trait_ten_thousand_exp = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_ten_thousand_exp"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_pure_love
+	}
+	self_modifier = {
+		leader_trait_selection_options_add = 1
+		species_leader_exp_gain = 0.1
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_ten_thousand_exp
+		}
+	}
+}
+
+leader_trait_ten_thousand_exp_2 = {
+	replace_traits = {
+		leader_trait_ten_thousand_exp
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_ten_thousand_exp"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leader_trait_selection_options_add = 1
+		species_leader_exp_gain = 0.25
+	}
+}
+
+leader_trait_ten_thousand_exp_3 = {
+	replace_traits = {
+		leader_trait_ten_thousand_exp_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_ten_thousand_exp"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leader_trait_selection_options_add = 1
+		species_leader_exp_gain = 0.4
+	}
+}
+
+#受虐狂
+leader_trait_masochism = {
+	starting_ruler_trait = yes
+	cost = 1
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_masochism"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		OR = {
+			owner = {
+				is_gestalt = no
+			}
+			AND = {
+				is_gestalt = yes
+				is_councilor = no
+			}
+		}
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		councilor_exp_gain = 0.12
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_masochism
+		}
+	}
+}
+
+leader_trait_masochism_2 = {
+	replace_traits = {
+		leader_trait_masochism
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_masochism"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		councilor_exp_gain = 0.25
+	}
+}
+
+leader_trait_masochism_3 = {
+	replace_traits = {
+		leader_trait_masochism_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_masochism"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		councilor_exp_gain = 0.35
+	}
+}
+
+#姐妹花
+leader_trait_beautiful_sisters = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_beautiful_sisters"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		negative_traits_leader = -1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.05
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = 10
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_beautiful_sisters
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_leader_flag = renowned_leader
+				has_leader_flag = legendary_leader
+			}
+		}
+	}
+}
+
+leader_trait_beautiful_sisters_2 = {
+	replace_traits = {
+		leader_trait_beautiful_sisters
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_beautiful_sisters"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.05
+		negative_traits_leader = -1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = 20
+	}
+}
+
+leader_trait_beautiful_sisters_3 = {
+	replace_traits = {
+		leader_trait_beautiful_sisters_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_beautiful_sisters"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+		negative_traits_leader = -2
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = 20
+	}
+}
+
+#母女丼
+leader_trait_mother_daughter_well = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mother_daughter_well"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.05
+		negative_traits_leader = -1
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_mother_daughter_well
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_leader_flag = renowned_leader
+				has_leader_flag = legendary_leader
+			}
+		}
+	}
+}
+
+leader_trait_mother_daughter_well_2 = {
+	replace_traits = {
+		leader_trait_mother_daughter_well
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mother_daughter_well"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.15
+		negative_traits_leader = -1
+	}
+}
+
+leader_trait_mother_daughter_well_3 = {
+	replace_traits = {
+		leader_trait_mother_daughter_well_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mother_daughter_well"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.25
+		negative_traits_leader = -1
+	}
+}
+
+#饲养魔人
+leader_trait_raising_big_dick = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_raising_big_dick"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_pure_love
+	}
+	self_modifier = {
+		species_leader_exp_gain = 0.15
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = -10
+		leaders_upkeep_mult = -0.1
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_raising_big_dick
+		}
+	}
+}
+
+leader_trait_raising_big_dick_2 = {
+	replace_traits = {
+		leader_trait_raising_big_dick
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_raising_big_dick"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 1
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.4
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = -15
+		leaders_upkeep_mult = -0.2
+	}
+}
+
+leader_trait_raising_big_dick_3 = {
+	replace_traits = {
+		leader_trait_raising_big_dick_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_raising_big_dick"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		species_leader_exp_gain = 0.6
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = -20
+		leaders_upkeep_mult = -0.3
+	}
+}
+
+#妊娠爱好者
+leader_trait_pregnancy_enthusiasts = {
+	starting_ruler_trait = yes
+	cost = 1
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pregnancy_enthusiasts"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		pop_growth_speed = 0.05
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_pregnancy_enthusiasts
+		}
+	}
+}
+
+leader_trait_pregnancy_enthusiasts_2 = {
+	replace_traits = {
+		leader_trait_pregnancy_enthusiasts
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pregnancy_enthusiasts"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		pop_growth_speed = 0.1
+	}
+}
+
+leader_trait_pregnancy_enthusiasts_3 = {
+	replace_traits = {
+		leader_trait_pregnancy_enthusiasts_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pregnancy_enthusiasts"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		pop_growth_speed = 0.15
+	}
+}
+
+#忠贞
+leader_trait_pure_love = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pure_love"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_skill < 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leaders_cost_mult = -0.5
+		negative_traits_leader = -1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.05
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_add = 10
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_pure_love
+		}
+	}
+}
+
+leader_trait_pure_love_2 = {
+	replace_traits = {
+		leader_trait_pure_love
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pure_love"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leaders_cost_mult = -0.5
+		negative_traits_leader = -1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.25
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leaders_upkeep_mult = -0.2
+		leader_lifespan_add = 10
+	}
+}
+
+leader_trait_pure_love_3 = {
+	replace_traits = {
+		leader_trait_pure_love_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pure_love"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leaders_cost_mult = -0.5
+		species_leader_exp_gain = 0.15
+		negative_traits_leader = -1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.3
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leaders_upkeep_mult = -0.25
+		leader_lifespan_add = 10
+	}
+}
+
+#爱好精液
+leader_trait_emphasize_semen = {
+	starting_ruler_trait = yes
+	cost = 1
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_emphasize_semen"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			country_uses_food = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		planet_erotic_farmers_food_produces_mult = 0.1
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_emphasize_semen
+		}
+	}
+}
+
+leader_trait_emphasize_semen_2 = {
+	replace_traits = {
+		leader_trait_emphasize_semen
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_emphasize_semen"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		planet_erotic_farmers_food_produces_mult = 0.15
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_individual_machine = no
+			}
+		}
+		pop_growth_speed = 0.02
+		pop_happiness = 0.01
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		pop_happiness = 0.03
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		pop_growth_speed = 0.03
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		planet_stability_add = 2
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		pop_cat_bio_trophy_happiness = 0.01
+	}
+}
+
+leader_trait_emphasize_semen_3 = {
+	replace_traits = {
+		leader_trait_emphasize_semen_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_emphasize_semen"
+		RARITY = common
+		COUNCIL = yes
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		planet_erotic_farmers_food_produces_mult = 0.2
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_individual_machine = no
+			}
+		}
+		pop_growth_speed = 0.03
+		pop_happiness = 0.02
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		pop_happiness = 0.05
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		pop_growth_speed = 0.05
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		planet_stability_add = 4
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		pop_cat_bio_trophy_happiness = 0.02
+	}
+}
+
+#超级淫能力者
+leader_trait_super_lust_powerer = {
+	leader_trait_type = common
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_super_lust_powerer"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = lust_crystal
+		AMOUNT = 6
+	}
+	leader_potential_add = {
+		if = {
+			limit = {
+				owner = {
+					is_gestalt = yes
+				}
+			}
+			is_councilor = no
+		}
+		NOT = {
+			has_trait = leader_trait_lewd_princess
+		}
+		species = {
+			is_common_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			OR = {
+				has_technology = tech_lust_powerer_gene_analysis
+				has_tradition = tr_psionics_adopt
+			}
+			NOT = {
+				has_policy_flag = only_allow_lewd_princess_leader
+			}
+		}
+	}
+	councilor_modifier = {
+		council_agenda_progress_speed = 0.1
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = {
+		weight = 5
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_super_lust_powerer
+		}
+		modifier = {
+			factor = 1.5
+			species = {
+				has_trait = trait_latent_psionic
+			}
+		}
+		modifier = {
+			factor = 2
+			species = {
+				has_trait = trait_psionic
+			}
+		}
+		modifier = {
+			factor = 2
+			has_chosen_one_leader_trait = yes
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				has_technology = tech_lust_powerer_gene_analysis
+			}
+		}
+		modifier = {
+			factor = trigger:has_skill
+		}
+	}
+}
+
+leader_trait_super_lust_powerer_2 = {
+	leader_trait_type = veteran
+	replace_traits = {
+		leader_trait_super_lust_powerer
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_super_lust_powerer"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+	}
+	immortal_leaders = yes
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = lust_crystal
+		AMOUNT = 48
+	}
+	councilor_modifier = {
+		council_agenda_progress_speed = 0.2
+	}
+	triggered_self_modifier = {
+		potential = {
+			species = {
+				is_immortal_monster_gril_species = yes
+			}
+		}
+		species_leader_exp_gain = 0.2
+		leader_trait_selection_options_add = 1
+		leaders_upkeep_mult = -0.1
+	}
+	leader_class = { commander scientist official }
+}
+
+#兼职军妓
+leader_trait_military_prostitute = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_military_prostitute"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander }
+	army_modifier = {
+		army_morale = 0.1
+		army_collateral_damage_mult = -0.2
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_military_prostitute
+		}
+	}
+}
+
+leader_trait_military_prostitute_2 = {
+	replace_traits = {
+		leader_trait_military_prostitute
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_military_prostitute"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander }
+	army_modifier = {
+		army_morale = 0.2
+		army_collateral_damage_mult = -0.4
+	}
+}
+
+leader_trait_military_prostitute_3 = {
+	replace_traits = {
+		leader_trait_military_prostitute_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_military_prostitute"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander }
+	army_modifier = {
+		army_morale = 0.3
+		army_collateral_damage_mult = -0.6
+	}
+}
+
+#舰上妓女
+leader_trait_accompanying_prostitutesr = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_accompanying_prostitutesr"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander }
+	fleet_modifier = {
+		ship_fire_rate_mult = 0.03
+		ship_orbit_upkeep_mult = -0.05
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_accompanying_prostitutesr
+		}
+	}
+}
+
+leader_trait_accompanying_prostitutesr_2 = {
+	replace_traits = {
+		leader_trait_accompanying_prostitutesr
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_accompanying_prostitutesr"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander }
+	fleet_modifier = {
+		ship_fire_rate_mult = 0.06
+		ship_orbit_upkeep_mult = -0.1
+	}
+}
+
+leader_trait_accompanying_prostitutesr_3 = {
+	replace_traits = {
+		leader_trait_accompanying_prostitutesr_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_accompanying_prostitutesr"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander }
+	fleet_modifier = {
+		ship_fire_rate_mult = 0.09
+		ship_orbit_upkeep_mult = -0.15
+	}
+}
+
+#AV女优
+leader_trait_av_actress = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_av_actress"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			is_gestalt = no
+		}
+	}
+	leader_class = { official }
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { has_trait = leader_trait_concubine }
+		}
+		trade_value_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = leader_trait_concubine
+		}
+		trade_value_add = 14
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_concubine
+		}
+		leaders_upkeep_mult = 0.1
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_av_actress
+		}
+		modifier = {
+			factor = 0.5
+			mid_game_years_passed <= 0
+		}
+	}
+}
+
+leader_trait_av_actress_2 = {
+	replace_traits = {
+		leader_trait_av_actress
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_av_actress"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { official }
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { has_trait = leader_trait_concubine }
+		}
+		trade_value_add = 35
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = leader_trait_concubine
+		}
+		trade_value_add = 49
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_concubine
+		}
+		leaders_upkeep_mult = 0.2
+	}
+}
+
+leader_trait_av_actress_3 = {
+	replace_traits = {
+		leader_trait_av_actress_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_av_actress"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { official }
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { has_trait = leader_trait_concubine }
+		}
+		trade_value_add = 70
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = leader_trait_concubine
+		}
+		trade_value_add = 98
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_concubine
+		}
+		leaders_upkeep_mult = 0.3
+	}
+}
+
+#高潮芯片
+leader_trait_climax_chip = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_climax_chip"
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { scientist }
+	councilor_modifier = {
+		all_technology_research_speed = 0.05
+		planet_researchers_upkeep_mult = 0.05
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+	}
+}
+
+#秘密性奴
+leader_trait_parttime_sex_slaves = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_parttime_sex_slaves"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_technology = tech_sexual_slavery_industry_legalization
+			OR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		is_ruler = no
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leaders_cost_mult = -0.5
+		species_leader_exp_gain = 0.15
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.1
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leaders_upkeep_mult = -0.2
+		leader_lifespan_add = -10
+	}
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_parttime_sex_slaves
+		}
+	}
+}
+
+leader_trait_parttime_sex_slaves_2 = {
+	replace_traits = {
+		leader_trait_parttime_sex_slaves
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_parttime_sex_slaves"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leaders_cost_mult = -0.75
+		species_leader_exp_gain = 0.3
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.2
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leaders_upkeep_mult = -0.5
+		leader_lifespan_add = -20
+	}
+}
+
+leader_trait_parttime_sex_slaves_3 = {
+	replace_traits = {
+		leader_trait_parttime_sex_slaves_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_parttime_sex_slaves"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { commander scientist official }
+	self_modifier = {
+		leaders_cost_mult = -1
+		species_leader_exp_gain = 0.45
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.3
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leaders_upkeep_mult = -1
+		leader_lifespan_add = -30
+	}
+}
+
+#母女性奴
+leader_trait_mother_daughter_slave = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mother_daughter_slave"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = unity
+		AMOUNT = 4
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_technology = tech_sexual_slavery_industry_legalization
+		}
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = {
+		weight = @self_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_mother_daughter_slave
+		}
+		modifier = {
+			factor = 0
+			is_monster_girl_renown_leader = yes
+		}
+	}
+}
+
+leader_trait_mother_daughter_slave_2 = {
+	replace_traits = {
+		leader_trait_mother_daughter_slave
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mother_daughter_slave"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = unity
+		AMOUNT = 16
+	}
+	leader_class = { commander scientist official }
+}
+
+leader_trait_mother_daughter_slave_3 = {
+	replace_traits = {
+		leader_trait_mother_daughter_slave_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mother_daughter_slave"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = unity
+		AMOUNT = 32
+	}
+	leader_class = { commander scientist official }
+}
+
+#极乐处刑者
+leader_trait_sex_sentence = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_sex_sentence"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_terminator
+		}
+	}
+	leader_class = { official }
+	custom_tooltip_with_modifiers = leader_trait_sex_sentence_effect
+	planet_modifier = {
+		pop_decline_speed = 0.5
+	}
+	sector_modifier = {
+		pop_decline_speed = 0.25
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_sex_sentence
+		}
+	}
+}
+
+leader_trait_sex_sentence_2 = {
+	replace_traits = {
+		leader_trait_sex_sentence
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_sex_sentence"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { official }
+	custom_tooltip_with_modifiers = leader_trait_sex_sentence_effect_2
+	planet_modifier = {
+		pop_decline_speed = 1
+	}
+	sector_modifier = {
+		pop_decline_speed = 0.5
+	}
+}
+
+leader_trait_sex_sentence_3 = {
+	replace_traits = {
+		leader_trait_sex_sentence_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_sex_sentence"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { official }
+	custom_tooltip_with_modifiers = leader_trait_sex_sentence_effect_3
+	planet_modifier = {
+		pop_decline_speed = 2
+	}
+	sector_modifier = {
+		pop_decline_speed = 1
+	}
+}
+
+#有机淫乐机
+leader_trait_promiscuous_cyber = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_cyber"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_valid_civic = civic_machine_assimilator
+		}
+	}
+	leader_class = { official }
+	planet_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.05
+		pop_growth_speed = 0.05
+		planet_whores_produces_mult = 0.1
+	}
+	sector_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.025
+		pop_growth_speed = 0.025
+		planet_whores_produces_mult = 0.05
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_promiscuous_cyber
+		}
+	}
+}
+
+leader_trait_promiscuous_cyber_2 = {
+	replace_traits = {
+		leader_trait_promiscuous_cyber
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_cyber"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { official }
+	planet_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.1
+		pop_growth_speed = 0.1
+		planet_whores_produces_mult = 0.2
+	}
+	sector_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.05
+		pop_growth_speed = 0.05
+		planet_whores_produces_mult = 0.1
+	}
+}
+
+leader_trait_promiscuous_cyber_3 = {
+	replace_traits = {
+		leader_trait_promiscuous_cyber_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_cyber"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { official }
+	planet_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.15
+		pop_growth_speed = 0.15
+		planet_whores_produces_mult = 0.3
+	}
+	sector_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.075
+		pop_growth_speed = 0.075
+		planet_whores_produces_mult = 0.15
+	}
+}
+
+#淫乱爱侣
+leader_trait_promiscuous_couple = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_couple"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	leader_class = { official }
+	planet_modifier = {
+		pop_happiness = 0.03
+		planet_sex_bio_trophies_produces_mult = 0.2
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.1
+	}
+	sector_modifier = {
+		pop_happiness = 0.015
+		planet_sex_bio_trophies_produces_mult = 0.1
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.05
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_promiscuous_couple
+		}
+	}
+}
+
+leader_trait_promiscuous_couple_2 = {
+	replace_traits = {
+		leader_trait_promiscuous_couple
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_couple"
+		RARITY = common
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_class = { official }
+	planet_modifier = {
+		pop_happiness = 0.04
+		pop_growth_speed_reduction = -0.02
+		planet_sex_bio_trophies_produces_mult = 0.3
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.1
+	}
+	sector_modifier = {
+		pop_happiness = 0.02
+		pop_growth_speed_reduction = -0.01
+		planet_sex_bio_trophies_produces_mult = 0.15
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.05
+	}
+}
+
+leader_trait_promiscuous_couple_3 = {
+	replace_traits = {
+		leader_trait_promiscuous_couple_2
+	}
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_couple"
+		RARITY = common
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_class = { official }
+	planet_modifier = {
+		pop_happiness = 0.05
+		pop_growth_speed_reduction = -0.05
+		planet_sex_bio_trophies_produces_mult = 0.4
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.1
+	}
+	sector_modifier = {
+		pop_happiness = 0.025
+		pop_growth_speed_reduction = -0.025
+		planet_sex_bio_trophies_produces_mult = 0.2
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.05
+	}
+}
+
+####负面特质
+#沉迷快感
+leader_trait_sex_addict = {
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_sex_addict"
+		COUNCIL = no
+		TIER = 1
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 10
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_pure_love
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	selectable_weight = {
+		weight = @shared_negative_trait_weight
+		modifier = {
+			species = {
+				OR = {
+					is_monster_girl_species = {
+						SPECIES = SUCCUBUS
+					}
+					has_trait = trait_decadent
+					has_trait = trait_easy_to_climax
+				}
+			}
+			factor = @species_trait_weight_mult
+		}
+	}
+}
+
+leader_trait_sex_addict_2 = {
+	leader_trait_type = negative
+	replace_traits = { "leader_trait_sex_addict" }
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_sex_addict"
+		COUNCIL = no
+		TIER = 2
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 30
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+#荡妇
+leader_trait_slut = {
+	cost = -1
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_slut"
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_class = { commander scientist official }
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	opposites = {
+		leader_trait_pure_love
+	}
+	councilor_modifier = {
+		country_unity_produces_mult = -0.05
+	}
+	selectable_weight = {
+		weight = @shared_negative_trait_weight
+	}
+}
+
+leader_trait_slut_2 = {
+	leader_trait_type = negative
+	replace_traits = { "leader_trait_slut" }
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_slut"
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		country_unity_produces_mult = -0.1
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+#狐狸精
+leader_trait_vixen = {
+	cost = -1
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_vixen"
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		councilor_exp_gain = -0.1
+	}
+	selectable_weight = {
+		weight = @shared_negative_trait_weight
+	}
+}
+
+leader_trait_vixen_2 = {
+	leader_trait_type = negative
+	replace_traits = { "leader_trait_vixen" }
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_vixen"
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		councilor_exp_gain = -0.2
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+#性病携带者
+leader_trait_STD = {
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_STD"
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			is_machine_empire = no
+		}
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = 3
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = {
+		weight = @shared_negative_trait_weight
+	}
+}
+
+leader_trait_STD_2 = {
+	leader_trait_type = negative
+	replace_traits = { "leader_trait_STD" }
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_STD"
+		COUNCIL = no
+		TIER = 2
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = 7
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+#括约肌松弛
+leader_trait_anal_laxity = {
+	cost = -1
+	leader_trait_type = negative
+	allowed_ethics = {
+		ethic_authoritarian
+		ethic_egalitarian
+		ethic_spiritualist
+		ethic_materialist
+		ethic_xenophile
+		ethic_xenophobe
+		ethic_militarist
+		ethic_pacifist
+	}
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_anal_laxity"
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_archetype = BIOLOGICAL
+		}
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		diplo_weight_mult = -0.05
+		pop_happiness = -0.02
+	}
+	selectable_weight = {
+		weight = @shared_negative_trait_weight
+	}
+}
+
+leader_trait_anal_laxity_2 = {
+	leader_trait_type = negative
+	replace_traits = { "leader_trait_anal_laxity" }
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_anal_laxity"
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		diplo_weight_mult = -0.1
+		pop_happiness = -0.05
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+#恋童癖
+leader_trait_paedophilia = {
+	cost = -1
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_paedophilia"
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		exists = owner
+		owner = {
+			OR = {
+				is_machine_empire = no
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
+			}
+		}
+	}
+	leader_class = { commander scientist official }
+	councilor_modifier = {
+		pop_growth_speed = -0.04
+	}
+	selectable_weight = {
+		weight = @shared_negative_trait_weight
+	}
+}
+
+leader_trait_paedophilia_2 = {
+	leader_trait_type = negative
+	replace_traits = { "leader_trait_paedophilia" }
+	inline_script = {
+		script = trait/icon_MGHG_negative
+		ICON = "GFX_leader_trait_paedophilia"
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		pop_growth_speed = -0.08
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @tier2_negative_trait_weight
+}
+
+####老练特质
+#色情明星
+leader_trait_pornographic_superstar = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pornographic_superstar"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			is_gestalt = no
+		}
+	}
+	councilor_modifier = {
+		pop_happiness = 0.05
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @shared_trait_weight
+}
+
+leader_trait_pornographic_superstar_2 = {
+	leader_trait_type = veteran
+	replace_traits = { "leader_trait_pornographic_superstar" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pornographic_superstar"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		country_unity_produces_mult = 0.1
+		pop_happiness = 0.05
+	}
+	leader_class = { commander scientist official }
+}
+
+leader_trait_pornographic_superstar_3 = {
+	leader_trait_type = veteran
+	replace_traits = { "leader_trait_pornographic_superstar_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_pornographic_superstar"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 3
+	}
+	councilor_modifier = {
+		country_unity_produces_mult = 0.2
+		pop_happiness = 0.05
+	}
+	leader_class = { commander scientist official }
+}
+
+#肉蒲菩萨
+leader_trait_mudghah_buddha = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mudghah_buddha"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			is_gestalt = no
+		}
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = -2
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = unity
+		AMOUNT = 1
+	}
+	opposites = {
+		leader_trait_pure_love
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @shared_trait_weight
+}
+
+leader_trait_mudghah_buddha_2 = {
+	leader_trait_type = veteran
+	replace_traits = { "leader_trait_mudghah_buddha" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mudghah_buddha"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = -4
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = unity
+		AMOUNT = 8
+	}
+	leader_class = { commander scientist official }
+}
+
+leader_trait_mudghah_buddha_3 = {
+	leader_trait_type = veteran
+	replace_traits = { "leader_trait_mudghah_buddha_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_mudghah_buddha"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = -6
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = unity
+		AMOUNT = 24
+	}
+	leader_class = { commander scientist official }
+}
+
+#谄媚异形
+leader_trait_flattering_xenophile = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_flattering_xenophile"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		has_ethic = ethic_xenophile
+		has_trait = subclass_official_diplomacy_councilor
+	}
+	councilor_modifier = {
+		trade_value_mult = 0.15
+		planet_immigration_pull_mult = 0.25
+	}
+	leader_class = { commander scientist official }
+	selectable_weight = @shared_trait_weight
+}
+
+leader_trait_flattering_xenophile_2 = {
+	leader_trait_type = veteran
+	replace_traits = { "leader_trait_flattering_xenophile" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_flattering_xenophile"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		trade_value_mult = 0.3
+		planet_immigration_pull_mult = 0.5
+	}
+	leader_class = { commander scientist official }
+}
+
+leader_trait_flattering_xenophile_3 = {
+	leader_trait_type = veteran
+	replace_traits = { "leader_trait_flattering_xenophile_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_flattering_xenophile"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 3
+	}
+	councilor_modifier = {
+		trade_value_mult = 0.45
+		planet_immigration_pull_mult = 0.75
+	}
+	leader_class = { commander scientist official }
+}
+
+#性爱高手
+leader_trait_sex_master = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_master"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		gender = female
+	}
+	planet_modifier = {
+		planet_harlots_produces_mult = 0.1
+	}
+	sector_modifier = {
+		planet_harlots_produces_mult = 0.05
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+	selectable_weight = @class_trait_weight
+}
+
+leader_trait_sex_master_2 = {
+	replace_traits = { "leader_trait_sex_master" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_master"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	planet_modifier = {
+		planet_harlots_produces_mult = 0.2
+	}
+	sector_modifier = {
+		planet_harlots_produces_mult = 0.1
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+}
+
+leader_trait_sex_master_3 = {
+	replace_traits = { "leader_trait_sex_master_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_master"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	planet_modifier = {
+		planet_harlots_produces_mult = 0.3
+	}
+	sector_modifier = {
+		planet_harlots_produces_mult = 0.15
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+}
+
+#大主教忏悔穴
+leader_trait_archbishop_confession_pussy = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_archbishop_confession_pussy"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = none
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			has_lewd_princess_tech = yes
+		}
+		has_ethic = ethic_spiritualist
+		has_trait = leader_trait_abstinence_convent_sisters
+	}
+	opposites = {
+		leader_trait_pure_love
+	}
+	planet_modifier = {
+		planet_jobs_sr_lewd_princess_produces_mult = 0.35
+		planet_erotic_jobs_produces_mult = -0.05
+		planet_crime_add = 10
+		pop_amenities_usage_mult = 0.1
+		trade_value_mult = -0.1
+	}
+	sector_modifier = {
+		planet_jobs_sr_lewd_princess_produces_mult = 0.175
+		planet_erotic_jobs_produces_mult = -0.025
+		planet_crime_add = 5
+		pop_amenities_usage_mult = 0.05
+		trade_value_mult = -0.05
+	}
+	leader_class = { official }
+	selectable_weight = @shared_trait_weight
+}
+
+#赎身性奴
+leader_trait_free_sex_slaves = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_free_sex_slaves"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_monster_girl = yes
+			has_technology = tech_sexual_slavery_industry_legalization
+		}
+		has_governor_subclass = yes
+	}
+	planet_modifier = {
+		planet_sex_slaves_upkeep_mult = -0.05
+		planet_jobs_slave_produces_mult = 0.05
+		pop_cat_slave_happiness = 0.05
+	}
+	sector_modifier = {
+		planet_sex_slaves_upkeep_mult = -0.025
+		planet_jobs_slave_produces_mult = 0.025
+		pop_cat_slave_happiness = 0.025
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+	selectable_weight = @class_trait_weight
+}
+
+leader_trait_free_sex_slaves_2 = {
+	replace_traits = { "leader_trait_free_sex_slaves" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_free_sex_slaves"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	planet_modifier = {
+		planet_sex_slaves_upkeep_mult = -0.1
+		planet_jobs_slave_produces_mult = 0.1
+		pop_cat_slave_happiness = 0.1
+	}
+	sector_modifier = {
+		planet_sex_slaves_upkeep_mult = -0.05
+		planet_jobs_slave_produces_mult = 0.05
+		pop_cat_slave_happiness = 0.05
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+}
+
+leader_trait_free_sex_slaves_3 = {
+	replace_traits = { "leader_trait_free_sex_slaves_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_free_sex_slaves"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	planet_modifier = {
+		planet_sex_slaves_upkeep_mult = -0.15
+		planet_jobs_slave_produces_mult = 0.15
+		pop_cat_slave_happiness = 0.15
+	}
+	sector_modifier = {
+		planet_sex_slaves_upkeep_mult = -0.075
+		planet_jobs_slave_produces_mult = 0.075
+		pop_cat_slave_happiness = 0.075
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+}
+
+#船震
+leader_trait_ship_shock = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_ship_shock"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_commander_admiral
+	}
+	fleet_modifier = {
+		ship_weapon_damage = 0.1
+		ship_disengage_chance_mult = -0.33
+	}
+	leader_class = { commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_ship_shock_2 = {
+	replace_traits = { "leader_trait_ship_shock" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_ship_shock"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	fleet_modifier = {
+		ship_weapon_damage = 0.15
+		ship_hull_mult = 0.05
+		ship_disengage_chance_mult = -0.67
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+leader_trait_ship_shock_3 = {
+	replace_traits = { "leader_trait_ship_shock_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_ship_shock"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	fleet_modifier = {
+		ship_weapon_damage = 0.2
+		ship_hull_mult = 0.1
+		ship_disengage_chance_mult = -1
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+#催情炸弹
+leader_trait_aphrodisiac_bomb = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_aphrodisiac_bomb"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_commander_general
+	}
+	fleet_modifier = {
+		ship_orbital_bombardment_army_damage_mult = 0.5
+		ship_orbital_bombardment_pop_damage_mult = -0.25
+	}
+	leader_class = { commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_aphrodisiac_bomb_2 = {
+	replace_traits = { "leader_trait_aphrodisiac_bomb" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_aphrodisiac_bomb"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	fleet_modifier = {
+		ship_orbital_bombardment_army_damage_mult = 1
+		ship_orbital_bombardment_pop_damage_mult = -0.25
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+leader_trait_aphrodisiac_bomb_3 = {
+	replace_traits = { "leader_trait_aphrodisiac_bomb_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_aphrodisiac_bomb"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	fleet_modifier = {
+		ship_orbital_bombardment_army_damage_mult = 1.5
+		ship_orbital_bombardment_pop_damage_mult = -0.25
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+#扩编军妓
+leader_trait_military_prostitutes_expansion = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_military_prostitutes_expansion"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			is_gestalt = no
+		}
+		has_trait = subclass_commander_councilor
+	}
+	councilor_modifier = {
+		country_naval_cap_mult = 0.02
+		trade_value_mult = 0.025
+	}
+	leader_class = { commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_military_prostitutes_expansion_2 = {
+	replace_traits = { "leader_trait_military_prostitutes_expansion" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_military_prostitutes_expansion"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		country_naval_cap_mult = 0.05
+		trade_value_mult = 0.05
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+leader_trait_military_prostitutes_expansion_3 = {
+	replace_traits = { "leader_trait_military_prostitutes_expansion_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_military_prostitutes_expansion"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 3
+	}
+	councilor_modifier = {
+		country_naval_cap_mult = 0.1
+		trade_value_mult = 0.1
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+#性奴掠夺者
+leader_trait_sex_slave_predator = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_sex_slave_predator"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_commander_general
+	}
+	army_modifier = {
+		army_damage_mult = 0.2
+		army_collateral_damage_mult = 0.3
+	}
+	leader_class = { commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_slave_predator_2 = {
+	replace_traits = { "leader_trait_sex_slave_predator" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_sex_slave_predator"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	army_modifier = {
+		army_damage_mult = 0.4
+		army_morale = 0.1
+		army_collateral_damage_mult = 0.4
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+leader_trait_sex_slave_predator_3 = {
+	replace_traits = { "leader_trait_sex_slave_predator_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_sex_slave_predator"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	army_modifier = {
+		army_damage_mult = 0.6
+		army_morale = 0.3
+		army_collateral_damage_mult = 0.5
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+#公厕指挥官
+leader_trait_toilet_commander = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_toilet_commander"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_commander_governor
+	}
+	planet_modifier = {
+		planet_amenities_add = 10
+		planet_stability_add = 2
+	}
+	sector_modifier = {
+		planet_amenities_add = 5
+		planet_stability_add = 1
+	}
+	leader_class = { commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_toilet_commander_2 = {
+	replace_traits = { "leader_trait_toilet_commander" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_toilet_commander"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	planet_modifier = {
+		planet_amenities_add = 20
+		planet_stability_add = 4
+	}
+	sector_modifier = {
+		planet_amenities_add = 10
+		planet_stability_add = 2
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+leader_trait_toilet_commander_3 = {
+	replace_traits = { "leader_trait_toilet_commander_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_toilet_commander"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	planet_modifier = {
+		planet_amenities_add = 30
+		planet_stability_add = 6
+	}
+	sector_modifier = {
+		planet_amenities_add = 15
+		planet_stability_add = 3
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+#性爱擂台冠军
+leader_trait_sex_champion = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_sex_champion"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			is_gestalt = no
+		}
+		has_trait = subclass_commander_general
+	}
+	army_modifier = {
+		army_damage_mult = 0.1
+		army_morale_damage_mult = 0.2
+		army_health = 0.1
+		army_collateral_damage_mult = -0.1
+	}
+	leader_class = { commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_champion_2 = {
+	replace_traits = { "leader_trait_sex_champion" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_sex_champion"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	army_modifier = {
+		army_damage_mult = 0.2
+		army_morale_damage_mult = 0.4
+		army_health = 0.2
+		army_collateral_damage_mult = -0.2
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+leader_trait_sex_champion_3 = {
+	replace_traits = { "leader_trait_sex_champion_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = "GFX_leader_trait_sex_champion"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	army_modifier = {
+		army_damage_mult = 0.3
+		army_morale_damage_mult = 0.6
+		army_health = 0.3
+		army_collateral_damage_mult = -0.3
+	}
+	leader_trait_type = veteran
+	leader_class = { commander }
+}
+
+#应召女郎教官
+leader_trait_call_girl_instructor = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_call_girl_instructor"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_official_governor
+	}
+	planet_modifier = {
+		planet_courtesan_produces_mult = 0.1
+		planet_courtesan_unity_produces_add = 0.2
+	}
+	sector_modifier = {
+		planet_courtesan_produces_mult = 0.05
+		planet_courtesan_unity_produces_add = 0.1
+	}
+	leader_class = { official }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_call_girl_instructor_2 = {
+	replace_traits = { "leader_trait_call_girl_instructor" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_call_girl_instructor"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	planet_modifier = {
+		planet_courtesan_produces_mult = 0.2
+		planet_courtesan_unity_produces_add = 0.4
+	}
+	sector_modifier = {
+		planet_courtesan_produces_mult = 0.1
+		planet_courtesan_unity_produces_add = 0.2
+	}
+	leader_trait_type = veteran
+	leader_class = { official }
+}
+
+leader_trait_call_girl_instructor_3 = {
+	replace_traits = { "leader_trait_call_girl_instructor_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_call_girl_instructor"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	planet_modifier = {
+		planet_courtesan_produces_mult = 0.3
+		planet_courtesan_unity_produces_add = 0.6
+	}
+	sector_modifier = {
+		planet_courtesan_produces_mult = 0.2
+		planet_courtesan_unity_produces_add = 0.3
+	}
+	leader_trait_type = veteran
+	leader_class = { official }
+}
+
+#淫趴靓女
+leader_trait_sex_party = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_party"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			OR = {
+				is_machine_empire = no
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
+			}
+		}
+		has_governor_subclass = yes
+	}
+	planet_modifier = {
+		pop_growth_speed = 0.1
+		pop_amenities_usage_mult = -0.1
+		planet_stability_add = -2
+	}
+	sector_modifier = {
+		pop_growth_speed = 0.05
+		pop_amenities_usage_mult = -0.05
+		planet_stability_add = -1
+	}
+	leader_class = { scientist official commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_party_2 = {
+	replace_traits = { "leader_trait_sex_party" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_party"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	planet_modifier = {
+		pop_growth_speed = 0.2
+		pop_amenities_usage_mult = -0.15
+		planet_stability_add = -3
+	}
+	sector_modifier = {
+		pop_growth_speed = 0.1
+		pop_amenities_usage_mult = -0.075
+		planet_stability_add = -1.5
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+}
+
+leader_trait_sex_party_3 = {
+	replace_traits = { "leader_trait_sex_party_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_party"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	planet_modifier = {
+		pop_growth_speed = 0.35
+		pop_amenities_usage_mult = -0.2
+		planet_stability_add = -5
+	}
+	sector_modifier = {
+		pop_growth_speed = 0.175
+		pop_amenities_usage_mult = -0.1
+		planet_stability_add = -2.5
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist official commander }
+}
+
+#娼妓为本
+leader_trait_harlots_is_base = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_harlots_is_base"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_official_economy_councilor
+	}
+	councilor_modifier = {
+		planet_harlots_produces_mult = 0.05
+	}
+	leader_class = { official }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_harlots_is_base_2 = {
+	replace_traits = { "leader_trait_harlots_is_base" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_harlots_is_base"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		planet_harlots_produces_mult = 0.1
+		planet_district_red_lights_build_speed_mult = 0.25
+		planet_district_hab_red_lights_build_speed_mult = 0.25
+	}
+	leader_trait_type = veteran
+	leader_class = { official }
+}
+
+leader_trait_harlots_is_base_3 = {
+	replace_traits = { "leader_trait_harlots_is_base_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_harlots_is_base"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 3
+	}
+	councilor_modifier = {
+		planet_harlots_produces_mult = 0.15
+		planet_district_red_lights_build_speed_mult = 0.5
+		planet_district_hab_red_lights_build_speed_mult = 0.5
+		planet_district_rw_red_lights_build_speed_mult = 0.5
+		planet_district_arcology_red_lights_build_speed_mult = 0.5
+	}
+	leader_trait_type = veteran
+	leader_class = { official }
+}
+
+#性癖百科全书
+leader_trait_sex_encyclopedia = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_encyclopedia"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_scientist_governor
+	}
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_erotic_jobs_produces_mult = 0.02
+	}
+	sector_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.025
+		planet_jobs_society_research_produces_mult = 0.025
+		planet_jobs_engineering_research_produces_mult = 0.025
+		planet_erotic_jobs_produces_mult = 0.01
+	}
+	leader_class = { scientist }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_encyclopedia_2 = {
+	replace_traits = { "leader_trait_sex_encyclopedia" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_encyclopedia"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_erotic_jobs_produces_mult = 0.04
+	}
+	sector_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_erotic_jobs_produces_mult = 0.02
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist }
+}
+
+leader_trait_sex_encyclopedia_3 = {
+	replace_traits = { "leader_trait_sex_encyclopedia_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_encyclopedia"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
+		planet_erotic_jobs_produces_mult = 0.06
+	}
+	sector_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.075
+		planet_jobs_society_research_produces_mult = 0.075
+		planet_jobs_engineering_research_produces_mult = 0.075
+		planet_erotic_jobs_produces_mult = 0.03
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist }
+}
+
+#淫能猎犬
+leader_trait_sex_dog_nose = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_dog_nose"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+		}
+		has_trait = subclass_scientist_explorer
+	}
+	custom_tooltip_with_modifiers = leader_trait_sex_dog_nose_effect
+	modifier = {
+		science_ship_survey_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.2
+	}
+	leader_class = { scientist }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_dog_nose_2 = {
+	replace_traits = { "leader_trait_sex_dog_nose" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_dog_nose"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+	}
+	custom_tooltip_with_modifiers = leader_trait_sex_dog_nose_2_effect
+	modifier = {
+		science_ship_survey_speed = 0.2
+		ship_anomaly_generation_chance_mult = 0.4
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist }
+}
+
+leader_trait_sex_dog_nose_3 = {
+	replace_traits = { "leader_trait_sex_dog_nose_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_dog_nose"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+	}
+	custom_tooltip_with_modifiers = leader_trait_sex_dog_nose_3_effect
+	modifier = {
+		science_ship_survey_speed = 0.3
+		ship_anomaly_generation_chance_mult = 0.6
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist }
+}
+
+#色情院士
+leader_trait_sex_doctor = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_doctor"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_technology = tech_lust_electronic_brain
+		}
+		has_trait = subclass_scientist_councilor
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.02
+		planet_erotic_jobs_produces_mult = 0.01
+	}
+	leader_class = { scientist }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_doctor_2 = {
+	replace_traits = { "leader_trait_sex_doctor" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_doctor"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.04
+		planet_erotic_jobs_produces_mult = 0.02
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist }
+}
+
+leader_trait_sex_doctor_3 = {
+	replace_traits = { "leader_trait_sex_doctor_2" }
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = "GFX_leader_trait_sex_doctor"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 3
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.06
+		planet_erotic_jobs_produces_mult = 0.03
+		num_tech_alternatives_add = 1
+	}
+	leader_trait_type = veteran
+	leader_class = { scientist }
+}
+
+#############
+####命定特质
+#############
+#异种激励师
+leader_trait_sex_motivator = {
+	leader_trait_type = destiny
+	ethic_destiny_trait = yes
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_motivator"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		has_ethic = ethic_xenophile
+		OR = {
+			has_trait = subclass_official_governor
+			has_trait = subclass_scientist_governor
+			has_trait = subclass_commander_governor
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet
+		}
+		pop_job_amenities_mult = 0.02
+		mult = planet.value:species_on_planet
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet
+		}
+		pop_growth_speed = 0.02
+		mult = planet.value:species_on_planet
+	}
+	custom_tooltip = leader_trait_sex_motivator_effect
+	leader_class = { official scientist commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+#性神先知
+leader_trait_sex_prophet = {
+	leader_trait_type = destiny
+	ethic_destiny_trait = yes
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_prophet"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	leader_potential_add = {
+		species = {
+			is_monster_girl = yes
+		}
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		has_ethic = ethic_spiritualist
+		OR = {
+			has_trait = subclass_official_economy_councilor
+			has_trait = subclass_commander_councilor
+			has_trait = subclass_scientist_councilor
+		}
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	councilor_modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+	}
+	leader_class = { official scientist commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+#色情模拟计算机
+leader_trait_sex_simulate_computer = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_simulate_computer"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		owner = {
+			is_machine_empire = yes
+		}
+		species = {
+			is_monster_girl = yes
+		}
+	}
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.2
+		planet_jobs_produces_mult = -0.1
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_jobs_produces_mult = -0.05
+	}
+	leader_class = { official scientist commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_simulate_computer_2 = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_simulate_computer"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = 2
+	}
+	leader_potential_add = {
+		owner = {
+			is_machine_empire = yes
+		}
+		species = {
+			is_monster_girl = yes
+		}
+	}
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.4
+		planet_jobs_produces_mult = -0.2
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.2
+		planet_jobs_produces_mult = -0.1
+	}
+	leader_class = { official scientist commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+leader_trait_sex_simulate_computer_3 = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_sex_simulate_computer"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = 3
+	}
+	leader_potential_add = {
+		owner = {
+			is_machine_empire = yes
+		}
+		species = {
+			is_monster_girl = yes
+		}
+	}
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.6
+		planet_jobs_produces_mult = -0.3
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.3
+		planet_jobs_produces_mult = -0.15
+	}
+	leader_class = { official scientist commander }
+	selectable_weight = @subclass_trait_weight
+}
+
+####传奇领袖
+#尼德霍格
+leader_trait_Nidehogg = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = GFX_leader_trait_Nidehogg
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		BIOLOGICAL_species_trait_points_add = 2
+		BIOLOGICAL_species_trait_picks_add = 4
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+leader_trait_Nidehogg_gestalt = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = GFX_leader_trait_Nidehogg
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.4
+	}
+	sector_modifier = {
+		planet_jobs_society_research_produces_mult = 0.2
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+
+#向月葵
+leader_trait_Kozuki_Aoi = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = GFX_leader_trait_Kozuki_Aoi
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		MACHINE_species_trait_points_add = 1
+		MACHINE_species_trait_picks_add = 2
+		planet_pop_assembly_mult = 0.1
+		planet_jobs_robotic_produces_mult = 0.1
+		pop_amenities_usage_robotic_mult = -0.1
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = {
+				is_individual_machine = no
+			}
+		}
+		ROBOT_species_trait_points_add = 1
+		ROBOT_species_trait_picks_add = 2
+		planet_pop_assembly_mult = 0.1
+		planet_jobs_robotic_produces_mult = 0.1
+		pop_amenities_usage_robotic_mult = -0.1
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Kozuki_Aoi_gestalt = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = GFX_leader_trait_Kozuki_Aoi
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	planet_modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.4
+	}
+	sector_modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.2
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+
+#尼德霍格的基因改造
+leader_trait_Nidehogg_help = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = GFX_leader_trait_Nidehogg
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_leader = {
+					has_leader_flag = Nidehogg
+				}
+			}
+		}
+		BIOLOGICAL_species_trait_points_add = 2
+		BIOLOGICAL_species_trait_picks_add = 4
+	}
+	councilor_modifier = {
+		modify_species_cost_mult = -0.05
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+#向月葵的机械设计
+leader_trait_Kozuki_Aoi_help = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = scientist
+		ICON = GFX_leader_trait_Kozuki_Aoi
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_leader = {
+					has_leader_flag = Kozuki_Aoi
+				}
+			}
+		}
+		MACHINE_species_trait_points_add = 2
+		MACHINE_species_trait_picks_add = 4
+	}
+	councilor_modifier = {
+		planet_pop_assemblers_upkeep_mult = -0.05
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+#文雀1
+leader_trait_Wenque = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = GFX_leader_trait_Wenque_1
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = 1
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		country_edict_fund_add = 77
+		empire_size_add = -7
+		pop_growth_speed = 0.07
+		planet_stability_add = 7
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+#文雀2
+leader_trait_Wenque2 = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = GFX_leader_trait_Wenque_2
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = 2
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		councilor_exp_gain = 0.2
+		country_base_influence_produces_add = 3
+		intel_decryption_add = 1
+	}
+	custom_tooltip_with_modifiers = leader_trait_Wenque2_effect
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+#文雀3
+leader_trait_Wenque3 = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = GFX_leader_trait_Wenque_3
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = 3
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_happiness = 0.07
+		pop_growth_speed = 0.21
+		planet_sex_slaves_best_slaves_produces_mult = 0.21
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+#斯内尔爱斯托克女士
+leader_trait_WJZ = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = GFX_leader_trait_WJZ
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		leader_trait_selection_options_add = 1
+		species_leader_exp_gain = 0.2
+		planet_erotic_priests_produces_mult = 0.2
+		planet_erotic_priests_society_research_produces_add = 1
+		faction_approval = 0.05
+		pop_ethics_shift_speed_mult = 0.2
+		pop_government_ethic_attraction = -0.5
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+#白给
+leader_trait_Baigei = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = GFX_leader_trait_Baigei
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_damage = 0.05
+		planet_jobs_best_slaves_produces_mult = 0.15
+		ship_emergency_ftl_min_days_mult = 0.25
+	}
+	fleet_modifier = {
+		command_limit_add = 50
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.1
+		ships_upkeep_mult = -0.45
+		ship_emergency_ftl_min_days_mult = 0.25
+		ship_disengage_chance_mult = -0.33
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+####著名领袖
+#拉米亚
+leader_trait_renown_lamia = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = GFX_leader_trait_renown_lamia
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		leader_trait_selection_options_add = 1
+		empire_size_penalty_mult = -0.05
+		leaders_upkeep_mult = -0.1
+		envoys_add = 2
+		envoy_improve_relations_mult = 0.25
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_renown_angel = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = GFX_leader_trait_renown_angel
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		planet_combat_width_add = 7
+	}
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -0.5
+		defense_armies_add = 14
+		army_defense_morale_mult = 0.5
+		army_defense_health_mult = 0.5
+		planet_stability_add = 10
+		planet_crime_add = -100
+		pop_amenities_usage_mult = -0.2
+		planet_army_build_speed_mult = 1
+	}
+	sector_modifier = {
+		planet_orbital_bombardment_damage = -0.25
+		defense_armies_add = 7
+		army_defense_morale_mult = 0.25
+		army_defense_health_mult = 0.25
+		planet_stability_add = 5
+		planet_crime_add = -50
+		pop_amenities_usage_mult = -0.1
+		planet_army_build_speed_mult = 0.5
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_renown_gynoid = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = commander
+		ICON = GFX_leader_trait_renown_gynoid
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	fleet_modifier = {
+		ship_weapon_range_mult = 0.08
+		weapon_type_energy_weapon_fire_rate_mult = 0.31
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+#############
+####特殊特质
+#############
+#可蒽
+leader_trait_Kherne = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Kherne_small
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.08
+		ship_fire_rate_mult = 0.08
+		ship_weapon_range_mult = 0.08
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.88
+		army_collateral_damage_mult = 0.88
+		army_morale = 0.88
+		army_disengage_chance_mult = -0.88
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		science_ship_survey_speed = 0.08
+	}
+	triggered_federation_modifier = {
+		potential = {
+			leader_class = official
+		}
+		federation_fleet_cap_add = 8
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_jobs_slave_produces_mult = 0.08
+		planet_crime_mult = -0.08
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_jobs_slave_produces_mult = 0.04
+		planet_crime_mult = -0.04
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_army_build_speed_mult = 0.88
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_army_build_speed_mult = 0.44
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_stability_add = 8
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_stability_add = 4
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Kherne_council = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Kherne
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_fire_rate_mult = 0.08
+		ship_weapon_damage = 0.08
+		ship_weapon_range_mult = 0.08
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		category_military_theory_research_speed_mult = 0.08
+		category_voidcraft_research_speed_mult = 0.08
+		category_propulsion_research_speed_mult = 0.08
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = official
+		}
+		country_naval_cap_mult = 0.08
+		starbase_shipyard_build_speed_mult = 0.08
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		starbase_shipyard_build_cost_mult = -0.08
+		country_claim_influence_cost_mult = -0.08
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Kherne_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_K_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = best_slaves
+		AMOUNT = 1
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.88
+		army_health = 0.88
+		army_collateral_damage_mult = 0.88
+		army_morale_damage_mult = 0.8
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_kinetic_weapon_damage_mult = 0.5
+		weapon_type_kinetic_weapon_fire_rate_mult = 0.5
+		ship_weapon_damage = 0.88
+		ship_fire_rate_mult = 0.88
+		ship_tracking_mult = 0.88
+		ship_armor_mult = -0.88
+		ship_shield_mult = -0.88
+		ships_upkeep_mult = 0.88
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_unity_produces_add = 888
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_starting_experience_add = 8888
+		planet_army_build_speed_mult = 0.88
+		defense_armies_add = 8
+		army_defense_damage_mult = 0.88
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_starting_experience_add = 444
+		planet_army_build_speed_mult = 0.44
+		defense_armies_add = 4
+		army_defense_damage_mult = 0.44
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_society_research_produces_add = 888
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_alloys_produces_add = 8
+		leader_officials_volatile_motes_produces_add = 8
+		leader_officials_rare_crystals_produces_add = 8
+		leader_officials_exotic_gases_produces_add = 8
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		planet_jobs_worker_produces_mult = 0.88
+		planet_crime_add = -88
+		pop_cat_worker_happiness = -0.88
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		planet_jobs_worker_produces_mult = 0.44
+		planet_crime_add = -44
+		pop_cat_worker_happiness = -0.44
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		planet_jobs_produces_mult = 0.08
+		planet_stability_add = 0.08
+		planet_crime_no_happiness_mult = -0.88
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		planet_jobs_produces_mult = 0.04
+		planet_stability_add = 0.04
+		planet_crime_no_happiness_mult = -0.44
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+#茜妮奇
+leader_trait_Tseentch = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Tseentch_small
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_accuracy_mult = 0.09
+		ship_experience_gain_mult = 0.99
+		army_morale_damage_mult = 0.45
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.09
+		army_health = 0.09
+		army_experience_gain_mult = 0.99
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		ship_anomaly_generation_chance_mult = 0.09
+		ship_anomaly_research_speed_mult = 0.09
+		ship_archaeological_site_excavation_speed_mult = 0.09
+		science_ship_survey_speed = 0.09
+	}
+	triggered_federation_modifier = {
+		potential = {
+			leader_class = official
+		}
+		cohesion_ethics_penalty_mult = -0.09
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_building_build_speed_mult = 0.09
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_building_build_speed_mult = 0.045
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.09
+		planet_jobs_society_research_produces_mult = 0.09
+		planet_jobs_engineering_research_produces_mult = 0.09
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.045
+		planet_jobs_society_research_produces_mult = 0.045
+		planet_jobs_engineering_research_produces_mult = 0.045
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		species_empire_size_mult = -0.09
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		species_empire_size_mult = -0.09
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Tseentch_council = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Tseentch
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_accuracy_mult = 0.09
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		all_technology_research_speed = 0.09
+		planet_researchers_upkeep_mult = 0.09
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = official
+		}
+		category_computing_research_speed_mult = 0.09
+		category_particles_research_speed_mult = 0.09
+		category_new_worlds_research_speed_mult = 0.09
+		category_industry_research_speed_mult = 0.09
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		councilor_exp_gain = 0.09
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Tseentch_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_T_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = energy
+		AMOUNT = 10
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_engineering_research_produces_add = 999
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.99
+		army_health = 0.09
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_energy_weapon_damage_mult = 0.5
+		weapon_type_energy_weapon_fire_rate_mult = 0.5
+		ship_shield_hardening_add = 0.45
+		ship_weapon_range_mult = 0.09
+		ship_shield_add = 999
+		ship_shield_mult = 0.99
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_society_research_produces_add = 999
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_physics_research_produces_add = 999
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_jobs_physics_research_produces_mult = 0.3
+		planet_jobs_society_research_produces_mult = 0.3
+		planet_jobs_engineering_research_produces_mult = 0.3
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.9
+		planet_jobs_society_research_produces_mult = 0.9
+		planet_jobs_engineering_research_produces_mult = 0.9
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.45
+		planet_jobs_society_research_produces_mult = 0.45
+		planet_jobs_engineering_research_produces_mult = 0.45
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_jobs_physics_research_produces_mult = 0.6
+		planet_jobs_society_research_produces_mult = 0.6
+		planet_jobs_engineering_research_produces_mult = 0.6
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_jobs_physics_research_produces_mult = 0.3
+		planet_jobs_society_research_produces_mult = 0.3
+		planet_jobs_engineering_research_produces_mult = 0.3
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+#纽戈儿
+leader_trait_Nurgler = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Nurgler_small
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_shield_mult = 0.07
+		ship_shield_regen_add_perc = 0.07
+		ship_armor_mult = 0.07
+		ship_armor_regen_add_perc = 0.07
+		ship_hull_mult = 0.07
+		ship_hull_regen_add_perc = 0.07
+		ship_shield_hardening_add = 0.07
+		ship_armor_hardening_add = 0.07
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_health = 0.14
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = -0.77
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			is_immortal = no
+		}
+		leader_lifespan_add = 77
+	}
+	triggered_federation_modifier = {
+		potential = {
+			leader_class = official
+		}
+		federation_join_malus_mult = -0.07
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_orbital_bombardment_damage = -0.07
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_orbital_bombardment_damage = -0.035
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_organic_mult = 0.07
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_organic_mult = 0.035
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		pop_growth_speed = 0.07
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		pop_growth_speed = 0.035
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Nurgler_council = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Nurgler
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_shield_mult = 0.07
+		ship_shield_regen_add_perc = 0.07
+		ship_armor_mult = 0.07
+		ship_armor_regen_add_perc = 0.07
+		ship_hull_mult = 0.07
+		ship_hull_regen_add_perc = 0.07
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		category_field_manipulation_research_speed_mult = 0.07
+		category_biology_research_speed_mult = 0.07
+		category_materials_research_speed_mult = 0.07
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = official
+		}
+		pop_growth_speed = 0.07
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		planet_jobs_unity_produces_mult = 0.07
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Nurgler_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_N_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = food
+		AMOUNT = 3
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_unity_produces_add = 777
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.21
+		army_health = 0.77
+		army_morale_damage_mult = 0.7
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_strike_craft_weapon_damage_mult = 0.5
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.5
+		shipsize_lust_grinder_hull_add = 77000
+		ship_armor_hardening_add = 0.21
+		ship_hull_add = 777
+		ship_armor_add = 777
+		ship_hull_mult = 0.77
+		ship_armor_mult = 0.77
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		founder_species_growth_mult = 0.4
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		founder_species_growth_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.5
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_mult = 0.5
+		planet_pop_assembly_organic_mult = 0.5
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_mult = 0.25
+		planet_pop_assembly_organic_mult = 0.25
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+leader_trait_Nurgler_princess_lithoid = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_N_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = minerals
+		AMOUNT = 2
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_unity_produces_add = 777
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.21
+		army_health = 0.77
+		army_morale_damage_mult = 0.7
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_strike_craft_weapon_damage_mult = 0.5
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.5
+		shipsize_lust_grinder_hull_add = 77000
+		ship_armor_hardening_add = 0.21
+		ship_hull_add = 777
+		ship_armor_add = 777
+		ship_hull_mult = 0.77
+		ship_armor_mult = 0.77
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		founder_species_growth_mult = 0.4
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		founder_species_growth_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.5
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_mult = 0.5
+		planet_pop_assembly_organic_mult = 0.5
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_mult = 0.25
+		planet_pop_assembly_organic_mult = 0.25
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+leader_trait_Nurgler_princess_machine = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_N_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = energy
+		AMOUNT = 3
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_unity_produces_add = 777
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.21
+		army_health = 0.77
+		army_morale_damage_mult = 0.7
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_strike_craft_weapon_damage_mult = 0.5
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.5
+		shipsize_lust_grinder_hull_add = 77000
+		ship_armor_hardening_add = 0.21
+		ship_hull_add = 777
+		ship_armor_add = 777
+		ship_hull_mult = 0.77
+		ship_armor_mult = 0.77
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		founder_species_growth_mult = 0.4
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		founder_species_growth_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.5
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_mult = 0.5
+		planet_pop_assembly_organic_mult = 0.5
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_pop_assembly_mult = 0.25
+		planet_pop_assembly_organic_mult = 0.25
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+#莎莉茜
+leader_trait_Slaaanesh = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Slaaanesh_small
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_speed_mult = 0.66
+		ship_evasion_add = 6
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_morale_damage_mult = 0.66
+		army_disengage_chance_mult = 0.66
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		ship_anomaly_generation_chance_mult = 0.66
+	}
+	triggered_federation_modifier = {
+		potential = {
+			leader_class = official
+		}
+		federation_experience_add = 0.6
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		pop_amenities_usage_mult = -0.06
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		pop_amenities_usage_mult = -0.03
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_harlots_produces_mult = 0.04
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_harlots_produces_mult = 0.02
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_pops_produces_mult = 0.06
+		planet_pops_upkeep_mult = -0.06
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_pops_produces_mult = 0.03
+		planet_pops_upkeep_mult = -0.03
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Slaaanesh_council = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Slaaanesh
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_evasion_mult = 0.06
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		category_statecraft_research_speed_mult = 0.06
+		category_biology_research_speed_mult = 0.06
+		category_archaeostudies_research_speed_mult = 0.06
+		category_psionics_research_speed_mult = 0.66
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = official
+		}
+		species_leader_exp_gain = 0.06
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		planet_erotic_jobs_produces_mult = 0.06
+	}
+	leader_class = { commander scientist official }
+	opposites = {
+		leader_trait_cyborg
+		leader_trait_synthetic
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_Slaaanesh_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_S_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = consumer_goods
+		AMOUNT = 3
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 4
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.66
+		army_health = 0.36
+		army_morale_damage_mult = 1.2
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_best_slaves_produces_add = 6
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_lust_crystal_produces_add = 666
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_sr_lewd_princess_produces_add = 0.06
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_explosive_weapon_damage_mult = 2
+		weapon_type_explosive_weapon_fire_rate_mult = 2
+		ship_weapon_damage = -1
+		ship_fire_rate_mult = -1
+		ship_evasion_add = 6
+		ship_evasion_mult = 0.36
+		ship_speed_mult = 2.16
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_whores_produces_mult = 0.66
+		planet_sex_slaves_produces_mult = 0.66
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_whores_produces_mult = 0.33
+		planet_sex_slaves_produces_mult = 0.33
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_erotic_jobs_produces_mult = 0.3
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_erotic_jobs_produces_mult = 0.15
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		founder_species_growth_mult = 0.2
+		planet_harlots_produces_mult = 0.2
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		founder_species_growth_mult = 0.1
+		planet_harlots_produces_mult = 0.1
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+leader_trait_Slaaanesh_princess_nc = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_S_god
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 10
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_best_slaves_produces_add = 6
+	}
+	custom_tooltip_with_modifiers = lust_psionic_level_add_1
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.66
+		army_health = 0.36
+		army_morale_damage_mult = 1.2
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_lust_crystal_produces_add = 666
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_sr_lewd_princess_produces_add = 0.06
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		weapon_type_explosive_weapon_damage_mult = 0.5
+		weapon_type_explosive_weapon_fire_rate_mult = 0.5
+		ship_evasion_add = 6
+		ship_evasion_mult = 0.06
+		ship_speed_mult = 0.66
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_whores_produces_mult = 0.66
+		planet_sex_slaves_produces_mult = 0.66
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_whores_produces_mult = 0.33
+		planet_sex_slaves_produces_mult = 0.33
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_erotic_jobs_produces_mult = 0.3
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_erotic_jobs_produces_mult = 0.15
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		founder_species_growth_mult = 0.2
+		planet_harlots_produces_mult = 0.2
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		founder_species_growth_mult = 0.1
+		planet_harlots_produces_mult = 0.1
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+leader_trait_S_god = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_S_god
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		planet_erotic_jobs_produces_mult = 0.66
+		planet_harlots_produces_mult = 0.66
+		planet_harlots_upkeep_mult = -0.66
+		pop_growth_speed = 0.66
+		councilor_exp_gain = 6.66
+		species_leader_exp_gain = 0.66
+		leader_initial_skill = 1
+		planet_sex_slaves_best_slaves_produces_add = 0.6
+		planet_whores_lust_crystal_produces_add = 6
+		planet_stability_add = 6
+		pop_amenities_usage_mult = 0.66
+	}
+	self_modifier = {
+		leader_officials_lust_crystal_produces_add = 6666
+	}
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.66
+		planet_harlots_produces_mult = 0.66
+		planet_harlots_upkeep_mult = -0.66
+		pop_growth_speed = 0.66
+		planet_sex_slaves_best_slaves_produces_add = 0.6
+		planet_whores_lust_crystal_produces_add = 6
+		planet_stability_add = 6
+		pop_amenities_usage_mult = 0.66
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.33
+		planet_harlots_produces_mult = 0.33
+		planet_harlots_upkeep_mult = -0.33
+		pop_growth_speed = 0.33
+		planet_sex_slaves_best_slaves_produces_add = 0.3
+		planet_whores_lust_crystal_produces_add = 3
+		planet_stability_add = 3
+		pop_amenities_usage_mult = 0.33
+	}
+
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}
+
+#淫姬领袖
+leader_trait_lewd_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_lewd_princess
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_self_modifier = {
+		potential = { leader_class = commander }
+		leader_commanders_lust_crystal_produces_add = 12
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = { leader_class = official }
+		leader_officials_lust_crystal_produces_add = 12
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = { leader_class = scientist }
+		leader_scientists_lust_crystal_produces_add = 12
+		mult = trigger:has_skill
+	}
+	self_modifier = {
+		species_leader_exp_gain = 2
+		leaders_cost_mult = 10
+		leaders_upkeep_mult = 10
+		negative_leader_traits_species = -2
+	}
+	immortal_leaders = yes
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.06
+		ship_fire_rate_mult = 0.06
+		ship_weapon_range_mult = 0.03
+		ship_shield_mult = 0.06
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_combat_width_add = 1
+		mult = trigger:has_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		command_limit_add = 5
+		mult = trigger:has_skill
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_damage_mult = 0.25
+		army_health = 0.25
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		science_ship_survey_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.1
+		ship_anomaly_research_speed_mult = 0.1
+		ship_archaeological_site_excavation_speed_mult = 0.1
+		ship_disengage_chance_mult = 0.1
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_skill < 4
+		}
+		ship_archaeological_site_clues_add = 1
+		ship_cloaking_detection_add = 1
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_skill >= 4
+			has_skill < 8
+		}
+		ship_archaeological_site_clues_add = 2
+		ship_cloaking_detection_add = 2
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_skill >= 8
+		}
+		ship_archaeological_site_clues_add = 3
+		ship_cloaking_detection_add = 2
+	}
+	triggered_modifier = {
+		potential = {
+			has_astral_planes_dlc = yes
+			leader_class = scientist
+			has_skill < 4
+		}
+		ship_astral_rift_clues_add = 1
+	}
+	triggered_modifier = {
+		potential = {
+			has_astral_planes_dlc = yes
+			leader_class = scientist
+			has_skill >= 4
+			has_skill < 8
+		}
+		ship_astral_rift_clues_add = 2
+	}
+	triggered_modifier = {
+		potential = {
+			has_astral_planes_dlc = yes
+			leader_class = scientist
+			has_skill > 8
+		}
+		ship_astral_rift_clues_add = 3
+	}
+	triggered_federation_modifier = {
+		potential = {
+			leader_class = official
+		}
+		federation_experience_add = 0.05
+		federation_join_malus_mult = -0.01
+		cohesion_ethics_penalty_mult = -0.01
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_federation_modifier = {
+		potential = {
+			leader_class = official
+		}
+		federation_fleet_cap_add = 2
+		mult = trigger:has_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_stability_add = 3
+		planet_crime_mult = -0.05
+		planet_clear_blocker_speed_mult = 0.1
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_stability_add = 1.5
+		planet_crime_mult = -0.025
+		planet_clear_blocker_speed_mult = 0.05
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.06
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.03
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.06
+		planet_jobs_society_research_produces_mult = 0.06
+		planet_jobs_engineering_research_produces_mult = 0.06
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.03
+		planet_jobs_society_research_produces_mult = 0.03
+		planet_jobs_engineering_research_produces_mult = 0.03
+		mult = value:lewd_princess_level_gain
+	}
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+leader_trait_lewd_princess_council = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_lewd_princess_council
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		council_agenda_progress_speed = 0.02
+		councilor_exp_gain = 0.02
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		country_naval_cap_mult = 0.025
+		starbase_shipyard_build_speed_mult = 0.05
+		empire_size_penalty_mult = -0.01
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_erotic_jobs_produces_mult = 0.02
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		all_technology_research_speed = 0.02
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.02
+		ship_fire_rate_mult = 0.02
+		ship_weapon_range_mult = 0.01
+		army_damage_mult = 0.08
+		army_health = 0.08
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		all_technology_research_speed = 0.02
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			leader_class = official
+		}
+		founder_species_growth_mult = 0.04
+		planet_erotic_jobs_produces_mult = 0.01
+		mult = value:lewd_princess_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		council_agenda_progress_speed = 0.05
+		councilor_exp_gain = 0.05
+		mult = value:lewd_princess_level_gain
+	}
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+#淫能感知
+leader_trait_erotic_perception = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_erotic_perception
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		intel_decryption_add = 1
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		intel_decryption_mult = 0.05
+	}
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+#便器总督
+leader_trait_public_sex_slaves = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_public_sex_slaves.dds"
+	planet_modifier = {
+		planet_jobs_worker_produces_mult = 0.15
+		pop_cat_worker_happiness = 0.2
+		pop_cat_slave_happiness = 0.2
+	}
+	sector_modifier = {
+		planet_jobs_worker_produces_mult = 0.075
+		pop_cat_worker_happiness = 0.1
+		pop_cat_slave_happiness = 0.1
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+#便器总督
+leader_trait_public_sex_slaves_gestalt = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_public_sex_slaves.dds"
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_stability_add = 10
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		planet_stability_add = 5
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+#母狗总督
+leader_trait_private_sex_slaves = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_private_sex_slaves.dds"
+	planet_modifier = {
+		planet_jobs_specialist_produces_mult = 0.15
+		pop_cat_worker_happiness = 0.2
+		pop_cat_slave_happiness = 0.2
+	}
+	sector_modifier = {
+		planet_jobs_specialist_produces_mult = 0.075
+		pop_cat_worker_happiness = 0.1
+		pop_cat_slave_happiness = 0.1
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+#艳妓总督
+leader_trait_temptress_normal = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_temptress_normal.dds"
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_harlots_upkeep_mult = -0.05
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		planet_harlots_upkeep_mult = -0.025
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+#头牌总督
+leader_trait_temptress_best = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_temptress_best.dds"
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.2
+		planet_harlots_upkeep_mult = -0.1
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_harlots_upkeep_mult = -0.05
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+#禁欲修女
+leader_trait_abstinence_convent_sisters = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_abstinence_convent_sisters.dds"
+
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		species_leader_exp_gain = 0.1
+		leader_trait_selection_options_add = 1
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 5
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.05
+		ship_shield_hardening_add = 0.05
+	}
+	triggered_army_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		army_morale = 0.1
+		army_morale_damage_mult = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_stability_add = 2
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		planet_stability_add = 1
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_physics_research_produces_add = 1
+		leader_scientists_society_research_produces_add = 2
+		mult = trigger:has_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_jobs_unity_produces_mult = 0.05
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		planet_jobs_unity_produces_mult = 0.025
+	}
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+#大主教便器穴
+leader_trait_archbishop_cumdump_pussy = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_archbishop_cumdump_pussy"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = none
+	}
+	planet_modifier = {
+		planet_jobs_sr_lewd_princess_produces_mult = 0.1
+		planet_erotic_jobs_produces_mult = 0.05
+		pop_amenities_usage_mult = -0.1
+		trade_value_mult = 0.1
+		planet_immigration_pull_mult = 0.2
+	}
+	sector_modifier = {
+		planet_jobs_sr_lewd_princess_produces_mult = 0.05
+		planet_erotic_jobs_produces_mult = 0.025
+		pop_amenities_usage_mult = -0.05
+		trade_value_mult = 0.05
+		planet_immigration_pull_mult = 0.1
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_mind = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pure_mind.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_foot = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pure_foot.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_mouth = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pure_mouth.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_breast = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pure_breast.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_anus = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pure_anus.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_vagina = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pure_vagina.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_defiled_mind = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_defiled_mind.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.06
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_defiled_foot = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_defiled_foot.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.06
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_defiled_mouth = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_defiled_mouth.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.06
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_defiled_breast = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_defiled_breast.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.06
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_defiled_anus = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_defiled_anus.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.06
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_defiled_vagina = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_defiled_vagina.dds"
+	self_modifier = {
+		species_leader_exp_gain = -0.06
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_naughty_mind = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_naughty_mind.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_naughty_foot = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_naughty_foot.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_naughty_mouth = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_naughty_mouth.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_naughty_breast = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_naughty_breast.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_naughty_anus = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_naughty_anus.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_naughty_vagina = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_naughty_vagina.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+	}
+
+	leader_class = { commander scientist official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_super_cum_dump_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_cum_dump_governor
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.66
+		planet_crime_mult = -0.66
+		pop_amenities_usage_mult = 0.66
+		pop_growth_speed_reduction = 0.66
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.66
+		planet_crime_mult = -0.66
+		pop_amenities_usage_mult = 0.66
+		pop_growth_speed_reduction = 0.66
+	}
+
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+leader_trait_Reyep_commander = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_private_sex_slaves.dds"
+	self_modifier = {
+		negative_leader_traits_species = -2
+		leaders_upkeep_mult = -10
+	}
+	planet_modifier = {
+		planet_stability_add = 20
+		planet_jobs_slave_produces_mult = 0.2
+		planet_erotic_jobs_produces_mult = 0.2
+	}
+	sector_modifier = {
+		planet_stability_add = 10
+		planet_jobs_slave_produces_mult = 0.1
+		planet_erotic_jobs_produces_mult = 0.1
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+}
+
+leader_trait_Reyep_scientist = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_private_sex_slaves.dds"
+	self_modifier = {
+		negative_leader_traits_species = -2
+		leaders_upkeep_mult = -10
+	}
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
+		planet_jobs_slave_produces_mult = 0.2
+		planet_erotic_jobs_produces_mult = 0.2
+	}
+	sector_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_slave_produces_mult = 0.1
+		planet_erotic_jobs_produces_mult = 0.1
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_Reyep_official = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_private_sex_slaves.dds"
+	self_modifier = {
+		negative_leader_traits_species = -2
+		leaders_upkeep_mult = -10
+	}
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.4
+		planet_jobs_slave_produces_mult = 0.2
+		planet_erotic_jobs_produces_mult = 0.2
+	}
+	sector_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+		planet_jobs_slave_produces_mult = 0.1
+		planet_erotic_jobs_produces_mult = 0.1
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+#淫能力
+leader_trait_lust_psionic = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_lust_psionic.dds"
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		lust_psionic_level = 1
+		mult = value:lust_psionic_level
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.01
+		ship_shield_hardening_add = 0.005
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_army_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		army_health = 0.02
+		army_damage_mult = 0.02
+		army_morale = 0.02
+		army_morale_damage_mult = 0.02
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_clear_blocker_speed_mult = 0.05
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_clear_blocker_speed_mult = 0.025
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		science_ship_survey_speed = 0.05
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			has_skill >= 4
+		}
+		ship_archaeological_site_clues_add = 1
+	}
+	triggered_modifier = {
+		potential = {
+			has_astral_planes_dlc = yes
+			is_ruler = no
+			leader_class = scientist
+			has_skill >= 4
+		}
+		ship_astral_rift_clues_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+			exists = owner
+			owner = {
+				is_robot_empire = no
+			}
+		}
+		pop_growth_speed = 0.02
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+			exists = owner
+			owner = {
+				is_robot_empire = no
+			}
+		}
+		pop_growth_speed = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+			exists = owner
+			owner = {
+				is_robot_empire = yes
+			}
+		}
+		planet_erotic_jobs_produces_mult = 0.00667
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+			exists = owner
+			owner = {
+				is_robot_empire = yes
+			}
+		}
+		planet_erotic_jobs_produces_mult = 0.00333
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = S_god
+		}
+		planet_erotic_jobs_produces_mult = 0.00667
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = S_god
+		}
+		planet_erotic_jobs_produces_mult = 0.00333
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			has_leader_flag = N_god
+		}
+		founder_species_growth_mult = 0.02
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			has_leader_flag = N_god
+		}
+		founder_species_growth_mult = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			NOT = {
+				has_leader_flag = T_god
+			}
+		}
+		planet_jobs_physics_research_produces_mult = 0.02
+		planet_jobs_society_research_produces_mult = 0.02
+		planet_jobs_engineering_research_produces_mult = 0.02
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			NOT = {
+				has_leader_flag = T_god
+			}
+		}
+		planet_jobs_physics_research_produces_mult = 0.01
+		planet_jobs_society_research_produces_mult = 0.01
+		planet_jobs_engineering_research_produces_mult = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			has_leader_flag = T_god
+		}
+		planet_jobs_physics_research_produces_mult = 0.04
+		planet_jobs_society_research_produces_mult = 0.04
+		planet_jobs_engineering_research_produces_mult = 0.04
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			has_leader_flag = T_god
+		}
+		planet_jobs_physics_research_produces_mult = 0.02
+		planet_jobs_society_research_produces_mult = 0.02
+		planet_jobs_engineering_research_produces_mult = 0.02
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		planet_harlots_produces_mult = 0.02
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		planet_harlots_produces_mult = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		empire_size_add = -1
+		council_agenda_progress_speed = 0.01
+		category_psionics_research_speed_mult = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		planet_erotic_jobs_produces_mult = 0.01
+		pop_government_ethic_attraction = 0.01
+		council_agenda_progress_speed = 0.02
+		category_psionics_research_speed_mult = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				is_planet_class = pc_lust_shrouded
+			}
+		}
+		planet_erotic_jobs_produces_mult = 0.01
+		pop_growth_speed = 0.01
+		planet_building_build_speed_mult = 0.01
+		mult = value:lust_psionic_level_gain
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				is_planet_class = pc_lust_shrouded
+			}
+		}
+		planet_max_buildings_add = 1
+		mult = value:lust_psionic_level
+	}
+	leader_class = { commander official scientist }
+	initial = no
+	randomized = no
+}
+
+#王妃
+leader_trait_concubine = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_concubine"
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		leaders_upkeep_mult = 0.2
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_lewd_princess
+			leader_class = scientist
+			exists = owner
+			owner = {
+				NOT = {
+					has_technology =  tech_lewd_princess_gene
+				}
+			}
+		}
+		leader_scientists_unity_upkeep_add = 2
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_lewd_princess
+			leader_class = official
+			exists = owner
+			owner = {
+				NOT = {
+					has_technology =  tech_lewd_princess_gene
+				}
+			}
+		}
+		leader_officials_unity_upkeep_add = 2
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_lewd_princess
+			leader_class = commander
+			exists = owner
+			owner = {
+				NOT = {
+					has_technology =  tech_lewd_princess_gene
+				}
+			}
+		}
+		leader_commanders_unity_upkeep_add = 2
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_lewd_princess
+			leader_class = scientist
+			exists = owner
+			owner = {
+				NOT = {
+					has_technology =  tech_lewd_princess_gene_extension
+				}
+			}
+		}
+		leader_scientists_unity_upkeep_add = 4
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_lewd_princess
+			leader_class = official
+			exists = owner
+			owner = {
+				NOT = {
+					has_technology =  tech_lewd_princess_gene_extension
+				}
+			}
+		}
+		leader_officials_unity_upkeep_add = 4
+		mult = trigger:has_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = leader_trait_lewd_princess
+			leader_class = commander
+			exists = owner
+			owner = {
+				NOT = {
+					has_technology =  tech_lewd_princess_gene_extension
+				}
+			}
+		}
+		leader_commanders_unity_upkeep_add = 4
+		mult = trigger:has_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_councilor =  { COUNCILOR = councilor_concubine_choose_minister }
+			}
+		}
+		empire_size_add = -0.25
+		mult = value:concubine
+	}
+	leader_class = { commander official scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_stinky_foot_enthusiasts = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_stinky_foot_enthusiasts.dds"
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	fleet_modifier = {
+		ship_fire_rate_mult = 0.05
+	}
+}
+
+leader_trait_training_lust_demon = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = "GFX_leader_trait_training_lust_demon"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+
+	self_modifier = {
+		leader_scientists_lust_crystal_upkeep_add = 6
+	}
+	modifier = {
+		science_ship_survey_speed = 0.2
+		ship_anomaly_generation_chance_mult = 0.2
+		ship_anomaly_research_speed_mult = 0.2
+		ship_archaeological_site_excavation_speed_mult = 0.2
+		ship_disengage_chance_mult = 0.1
+		ship_archaeological_site_clues_add = 1
+	}
+	planet_modifier = {
+		planet_erotic_jobs_produces_mult = 0.2
+	}
+	sector_modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+	}
+	councilor_modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		all_technology_research_speed = 0.05
+	}
+}
+
+leader_trait_Kherne_god = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Kherne
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	fleet_modifier = {
+		ship_accuracy_mult = 1
+		ship_tracking_mult = 1
+		ship_weapon_damage = 1
+		ship_fire_rate_mult = 1
+		ship_weapon_range_mult = 0.5
+		ship_disengage_chance_mult = -1
+	}
+	army_modifier = {
+		army_damage_mult = 5
+		army_collateral_damage_mult = 5
+		army_disengage_chance_mult = -1
+	}
+
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+leader_trait_Nurgler_god = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Nurgler
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	planet_modifier = {
+		founder_species_growth_mult = 0.77
+		planet_pop_assembly_mult = 0.77
+		planet_pop_assembly_organic_mult = 0.77
+		planet_jobs_unity_produces_mult = 0.77
+		planet_stability_add = 77
+		planet_max_districts_mult = 0.77
+	}
+	sector_modifier = {
+		founder_species_growth_mult = 0.385
+		planet_pop_assembly_mult = 0.385
+		planet_pop_assembly_organic_mult = 0.385
+		planet_jobs_unity_produces_mult = 0.385
+		planet_stability_add = 77
+		planet_max_districts_mult = 0.77
+	}
+
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+leader_trait_Baigei_princess = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = leader
+		ICON = GFX_leader_trait_Baigei_princess
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = lust_crystal
+		AMOUNT = 20
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = unity
+		AMOUNT = 20
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = minerals
+		AMOUNT = 20
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = energy
+		AMOUNT = 20
+	}
+
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = lust_crystal
+		AMOUNT = 480
+	}
+	inline_script = {
+		script = paragon/leader_resource_produces
+		RESOURCE = best_slaves
+		AMOUNT = 100
+	}
+
+	custom_tooltip_with_modifiers = lust_psionic_level_add_2
+
+	councilor_modifier = {
+		ship_weapon_damage = 0.1
+		ship_fire_rate_mult = 0.1
+		ship_weapon_range_mult = 0.05
+	}
+
+	fleet_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.66
+		weapon_type_explosive_weapon_fire_rate_mult = 0.66
+		ship_hull_mult = 0.77
+		ship_armor_mult = 0.77
+		ship_weapon_range_mult = 0.08
+		ship_accuracy_mult = 0.08
+		ship_tracking_add = 8
+		ship_shield_mult = 0.99
+	}
+
+	leader_class = { commander }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+
+}
+
+leader_trait_cut_eggs = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_cut_eggs.dds"
+	leader_class = { commander official scientist }
+	initial = no
+	randomized = no
+	self_modifier = {
+		species_leader_exp_gain = 0.1
+		negative_traits_leader = 2
+	}
+}
