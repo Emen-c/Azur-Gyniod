@@ -1,0 +1,1913 @@
+#########################
+############起始特质
+#########################
+#高潮迭起
+trait_easy_to_climax = {
+	cost = 3
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_difficult_to_climax" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE DRAGON Azur_Lane_R }
+	modifier = {
+		planet_jobs_lust_crystal_produces_mult = 0.3
+	}
+	slave_cost = {
+		energy = 600
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#难以高潮
+trait_difficult_to_climax = {
+	cost = -3
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_easy_to_climax" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R}
+	modifier = {
+		planet_jobs_lust_crystal_produces_mult = -0.2
+		pop_amenities_usage_mult = 0.1
+	}
+	slave_cost = {
+		energy = -600
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#受虐体质
+trait_masochistic_constitution = {
+	cost = 1
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_sadism_constitution" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_sex_slaves_produces_mult = 0.25
+	}
+	custom_tooltip_with_modifiers = masochistic_constitution_tooltip
+	triggered_pop_modifier = {
+		potential = {
+			owner= {
+				is_gestalt = no
+			}
+		}
+		pop_citizen_happiness = -0.1
+		pop_cat_slave_happiness = 0.35
+	}
+	slave_cost = {
+		energy = 200
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#性虐狂
+trait_sadism_constitution = {
+	cost = 1
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_masochistic_constitution" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_jobs_specialist_produces_mult = 0.02
+	}
+	custom_tooltip_with_modifiers = sadism_constitution_tooltip
+	triggered_pop_modifier = {
+		potential = {
+			owner= {
+				is_gestalt = no
+			}
+		}
+		planet_jobs_specialist_only_produces_mult = 0.03
+		pop_cat_worker_happiness = -0.1
+		pop_cat_slave_happiness = -0.2
+	}
+	slave_cost = {
+		energy = 200
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#小家碧玉
+trait_meek_harlots = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_haughty_harlots" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_whores_produces_mult = 0.25
+		pop_job_amenities_mult = 0.05
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#金枝玉叶
+trait_haughty_harlots = {
+	cost = -2
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_meek_harlots" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_whores_produces_mult = -0.25
+	}
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#雌小鬼
+trait_female_imps = {
+	cost = -3
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_meek_harlots" "trait_haughty_harlots" "trait_psycho_girl" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	forbidden_ethics = {
+		ethic_gestalt_consciousness
+	}
+	modifier = {
+		pop_government_ethic_attraction = -0.15
+		pop_job_amenities_mult = -0.1
+		species_empire_size_mult = 0.05
+	}
+	slave_cost = {
+		energy = -600
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#淫乱
+trait_promiscuous = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_hesitant" "trait_emotionless" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_harlots_produces_mult = 0.1
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#闷骚
+trait_hesitant = {
+	cost = -1
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_promiscuous" "trait_emotionless" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	forbidden_ethics = {
+		ethic_gestalt_consciousness
+	}
+	modifier = {
+		planet_harlots_produces_mult = -0.05
+	}
+	slave_cost = {
+		energy = -200
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#性爱冷漠
+trait_emotionless = {
+	cost = -3
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_promiscuous" "trait_hesitant" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_harlots_produces_mult = -0.1
+		pop_job_amenities_mult = -0.1
+	}
+	slave_cost = {
+		energy = -600
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#色情天才
+trait_erotic_genius = {
+	cost = 3
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_dull_dog" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+	}
+	slave_cost = {
+		energy = 600
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#不解风情
+trait_dull_dog = {
+	cost = -2
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_erotic_genius" }
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_erotic_jobs_produces_mult = -0.02
+		planet_harlots_produces_mult = -0.04
+	}
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#贴身玩具
+trait_close_toy = {
+	cost = 1
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	forbidden_ethics = {
+		ethic_gestalt_consciousness
+	}
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		pop_happiness = 0.1
+	}
+	slave_cost = {
+		energy = 200
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#嗜精癖
+trait_spermophilia = {
+	cost = -1
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON }
+	modifier = {
+		planet_pops_food_upkeep_mult = 0.2
+		pop_amenities_usage_mult = -0.1
+	}
+	slave_cost = {
+		energy = -200
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#嫖客
+trait_whorer = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		always = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	forbidden_ethics = {
+		ethic_gestalt_consciousness
+	}
+	randomized = no
+	opposites = {"trait_hesitant"}
+	custom_tooltip_with_modifiers = whorer_tooltip
+
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_pops_unity_produces_add = 1
+		mult = planet.value:whorer_unity_produces
+	}
+
+	slave_cost = {
+		energy = 400
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#病娇
+trait_psycho_girl = {
+	cost = -2
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		species_empire_size_mult = 0.15
+		planet_jobs_unity_produces_mult = 0.1
+	}
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#淫能感知
+trait_erotic_perception = {
+	cost = 1
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	randomized = no
+	custom_tooltip_with_modifiers = erotic_perception_tooltip
+
+	slave_cost = {
+		energy = 200
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#淫能合成
+trait_sex_energy_synthesis = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		can_remove_beneficial_genetic_traits = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	custom_tooltip_with_modifiers = sex_energy_synthesis_tooltip
+	modifier = {
+		planet_pops_food_upkeep_add = -0.5
+		pc_nuked_habitability = 0.1
+	}
+	triggered_pop_modifier = {
+		potential = {
+			planet = {
+				NOT = { is_planet_class = pc_nuked }
+			}
+		}
+		planet_pops_lust_crystal_upkeep_add = 0.5
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		pop_growth_speed = 0.1
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#扶她
+trait_futanari = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON }
+	randomized = no
+
+	modifier = {
+		planet_erotic_farmers_food_produces_mult = 0.2
+		pop_job_amenities_mult = 0.1
+		pop_amenities_usage_mult = 0.05
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			species = {
+				is_archetype = BIOLOGICAL
+			}
+		}
+		planet_livestock_food_produces_add = 0.1
+		planet_semen_livestock_food_produces_add = 0.2
+	}
+
+	slave_cost = {
+		energy = 400
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#排卵困难
+trait_ovulation_difficulty = {
+	cost = -3
+	category = normal
+	species_potential_add = {
+		can_do_advanced_gene_modding = yes
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	modifier = {
+		pop_growth_speed = -0.15
+		planet_harlots_upkeep_mult = -0.1
+	}
+	slave_cost = {
+		energy = -600
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#精神脆弱
+trait_mental_fragility = {
+	cost = -2
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	modifier = {
+		planet_sex_slaves_produces_mult = -0.25
+		species_leader_exp_gain = -0.1
+	}
+
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#性瘾
+trait_sex_addicts = {
+	cost = -2
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	forbidden_ethics = {
+		ethic_gestalt_consciousness
+	}
+	modifier = {
+		pop_amenities_usage_mult = 0.2
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		species_leader_exp_gain = -0.1
+		planet_harlots_produces_mult = 0.1
+	}
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#柔韧身躯
+trait_flexible_sex_body = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		planet_harlots_produces_mult = 0.05
+		pop_housing_usage_mult = -0.15
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#娇嫩肌肤
+trait_delicate_sex_skin = {
+	cost = -2
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	modifier = {
+		pop_job_amenities_mult = 0.1
+		planet_technician_energy_produces_mult = -0.05
+		planet_farmers_produces_mult = -0.05
+		planet_miners_produces_mult = -0.05
+		army_health = -0.4
+	}
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#淫液泗流
+trait_much_love_liquid = {
+	cost = -1
+	category = normal
+	species_potential_add = {
+		can_do_advanced_gene_modding = yes
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON }
+	modifier = {
+		planet_jobs_lust_crystal_produces_mult = 0.1
+		planet_pops_lust_crystal_produces_mult = 0.1
+		planet_pops_food_upkeep_mult = 0.1
+		pc_desert_habitability = -0.15
+		pc_arid_habitability = -0.15
+		pc_savannah_habitability = -0.15
+	}
+	slave_cost = {
+		energy = -200
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#丰沛母乳
+trait_abundant_milk = {
+	cost = 1
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		can_remove_beneficial_genetic_traits = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	modifier = {
+		planet_pops_food_upkeep_mult = 0.1
+		pop_growth_speed = 0.05
+		planet_jobs_lust_crystal_produces_mult = 0.1
+		planet_livestock_food_produces_add = 0.2
+	}
+	slave_cost = {
+		energy = 200
+	}
+	ai_weight = {
+		weight = 2
+	}
+
+}
+
+#延迟满足
+trait_gratification_delay = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		can_remove_beneficial_genetic_traits = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON }
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.1
+		pop_amenities_usage_mult = -0.15
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#淫能体液
+trait_lust_humor = {
+	cost = 2
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		can_remove_beneficial_genetic_traits = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS ANGEL_F DRAGON }
+	modifier = {
+		planet_pops_lust_crystal_produces_add = 0.2
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#侍奉者
+trait_sex_servant = {
+	cost = 3
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	opposites = { trait_whorer trait_hesitant trait_female_imps trait_haughty_harlots }
+	triggered_pop_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		species_empire_size_mult = -0.1
+		pop_job_trade_mult = -0.25
+	}
+	custom_tooltip_with_modifiers = sex_servant_tooltip
+	modifier = {
+		pop_amenities_usage_mult = -0.1
+		planet_jobs_unity_produces_mult = 0.2
+		pop_job_amenities_mult = 0.1
+	}
+	slave_cost = {
+		energy = 400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#性器饰品
+trait_sexual_accessories = {
+	cost = 1
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_remove_beneficial_genetic_traits = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL SLIME GYNOID GYNOID_ROBOT SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+	forbidden_ethics = {
+		ethic_gestalt_consciousness
+	}
+	opposites = { trait_hive_mind }
+	modifier = {
+		pop_cat_ruler_happiness = 0.1
+		pop_cat_specialist_happiness = 0.05
+		planet_sex_slaves_produces_mult = 0.1
+		pop_job_trade_mult = 0.2
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		pop_amenities_usage_mult = 0.1
+	}
+	slave_cost = {
+		energy = 200
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#崇尚巨根
+trait_big_dick_worship = {
+	cost = -1
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	custom_tooltip_with_modifiers = trait_big_dick_worship_tooltip
+	modifier = {
+		planet_jobs_lust_crystal_produces_mult = 0.1
+		species_leader_exp_gain = 0.05
+		leader_lifespan_add = -10
+		pop_amenities_usage_mult = 0.15
+	}
+	slave_cost = {
+		energy = -200
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#性爱角斗士
+trait_sex_gladiator = {
+	cost = -1
+	category = normal
+	species_potential_add = {
+		if = {
+			limit = {
+				is_robotic = no
+			}
+			can_do_advanced_gene_modding = yes
+		}
+		is_monster_girl = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+	species_class = { LAMIA ANGEL GYNOID GYNOID_ROBOT SLIME SUCCUBUS VAMPIRE ZOMBIE ANGEL_F DRAGON Azur_Lane_R }
+	opposites = {
+		trait_meek_harlots trait_haughty_harlots trait_hesitant trait_masochistic_constitution trait_sex_servant
+	}
+	modifier = {
+		species_leader_exp_gain = 0.2
+		planet_jobs_unity_produces_mult = -0.1
+		planet_harlots_produces_mult = -0.05
+		pop_job_amenities_mult = -0.1
+	}
+	slave_cost = {
+		energy = -400
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#催情腺体
+trait_aphrodisiac_gland = {
+	cost = 3
+	category = normal
+	species_potential_add = {
+		is_monster_girl = yes
+	}
+	species_possible_remove = {
+		can_remove_beneficial_genetic_traits = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL }
+	species_class = { LAMIA ANGEL SLIME SUCCUBUS VAMPIRE ANGEL_F DRAGON }
+
+	modifier = {
+		pop_growth_speed = 0.1
+		planet_harlots_produces_mult = 0.05
+	}
+	slave_cost = {
+		energy = 200
+	}
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#########################
+############机娘特质
+#########################
+#女仆机器人
+trait_history_Gynoid_maid = {
+	cost = 0
+	category = robotic
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+
+	species_class = { GYNOID Azur_Lane_R }
+
+	species_potential_add = {
+		always = no
+	}
+
+	species_possible_remove = {
+		always = no
+	}
+
+	opposites = {
+		"trait_robot_history_warbot"
+		"trait_robot_history_artbot"
+		"trait_robot_history_explorebot"
+		"trait_robot_history_researchbot"
+		"trait_robot_history_resourcebot"
+		"trait_robot_history_chatbot"
+		"trait_history_Gynoid_harlot"
+		"trait_histroy_Gynoid_energy"
+		"trait_history_Gynoid_sex"
+		"trait_history_Gynoid_birth"
+	}
+
+	modifier = {
+		pop_job_amenities_mult = 0.05
+		pop_amenities_usage_mult = -0.02
+		planet_jobs_unity_produces_mult = 0.05
+		planet_harlots_produces_mult = 0.02
+		planet_pop_assemblers_upkeep_mult = 0.05
+	}
+	slave_cost = {
+		energy = 750
+	}
+}
+
+#性爱机器人
+trait_history_Gynoid_harlot = {
+	cost = 0
+	category = robotic
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+
+	species_class = { GYNOID Azur_Lane_R }
+
+	species_potential_add = {
+		always = no
+	}
+
+	species_possible_remove = {
+		always = no
+	}
+
+	opposites = {
+		"trait_robot_history_warbot"
+		"trait_robot_history_artbot"
+		"trait_robot_history_explorebot"
+		"trait_robot_history_researchbot"
+		"trait_robot_history_resourcebot"
+		"trait_robot_history_chatbot"
+		"trait_history_Gynoid_maid"
+		"trait_histroy_Gynoid_energy"
+		"trait_history_Gynoid_sex"
+		"trait_history_Gynoid_birth"
+	}
+
+	modifier = {
+		planet_harlots_produces_mult = 0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		pop_job_trade_mult = 0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		pop_job_amenities_mult = 0.05
+	}
+	slave_cost = {
+		energy = 750
+	}
+}
+
+#淫能制造机
+trait_histroy_Gynoid_energy = {
+	cost = 0
+	category = robotic
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+
+	species_class = { GYNOID Azur_Lane_R }
+
+	species_potential_add = {
+		always = no
+	}
+
+	species_possible_remove = {
+		always = no
+	}
+
+	opposites = {
+		"trait_robot_history_warbot"
+		"trait_robot_history_artbot"
+		"trait_robot_history_explorebot"
+		"trait_robot_history_researchbot"
+		"trait_robot_history_resourcebot"
+		"trait_robot_history_chatbot"
+		"trait_history_Gynoid_maid"
+		"trait_history_Gynoid_harlot"
+		"trait_history_Gynoid_sex"
+		"trait_history_Gynoid_birth"
+	}
+
+	modifier = {
+		planet_jobs_lust_crystal_produces_mult = 0.1
+		planet_pops_lust_crystal_upkeep_mult = -0.1
+		planet_pops_energy_upkeep_mult = 0.1
+	}
+	slave_cost = {
+		energy = 750
+	}
+}
+
+#性癖数据库
+trait_history_Gynoid_sex = {
+	cost = 0
+	category = robotic
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+
+	species_class = { GYNOID Azur_Lane_R }
+
+	species_potential_add = {
+		always = no
+	}
+
+	species_possible_remove = {
+		always = no
+	}
+
+	opposites = {
+		"trait_robot_history_warbot"
+		"trait_robot_history_artbot"
+		"trait_robot_history_explorebot"
+		"trait_robot_history_researchbot"
+		"trait_robot_history_resourcebot"
+		"trait_robot_history_chatbot"
+		"trait_history_Gynoid_maid"
+		"trait_history_Gynoid_harlot"
+		"trait_histroy_Gynoid_energy"
+		"trait_history_Gynoid_birth"
+	}
+
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.01
+		planet_jobs_upkeep_mult = -0.01
+	}
+	slave_cost = {
+		energy = 750
+	}
+}
+
+#代孕机器人
+trait_history_Gynoid_birth = {
+	cost = 0
+	category = robotic
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+
+	species_class = { GYNOID Azur_Lane_R }
+
+	species_potential_add = {
+		always = no
+	}
+
+	species_possible_remove = {
+		always = no
+	}
+
+	opposites = {
+		"trait_robot_history_warbot"
+		"trait_robot_history_artbot"
+		"trait_robot_history_explorebot"
+		"trait_robot_history_researchbot"
+		"trait_robot_history_resourcebot"
+		"trait_robot_history_chatbot"
+		"trait_history_Gynoid_maid"
+		"trait_history_Gynoid_harlot"
+		"trait_histroy_Gynoid_energy"
+		"trait_history_Gynoid_sex"
+	}
+
+	modifier = {
+		planet_pop_assembly_mult = 0.05
+	}
+	slave_cost = {
+		energy = 750
+	}
+}
+
+#快速修复模板
+trait_MGHG_fast_template = {
+	cost = 1
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	species_class = { GYNOID GYNOID_ROBOT Azur_Lane_R }
+	modifier = {
+		army_health = 0.4
+		armies_cost_mult = -0.25
+		armies_upkeep_mult = 0.25
+	}
+	slave_cost = {
+		energy = 200
+	}
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+}
+
+#赛博储精罐
+trait_MGHG_semen_jar = {
+	cost = 1
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	species_class = { GYNOID GYNOID_ROBOT Azur_Lane_R }
+	modifier = {
+		planet_harlots_produces_mult = 0.05
+		pop_amenities_usage_mult = -0.1
+		planet_pops_lust_crystal_upkeep_add = 0.1
+	}
+	slave_cost = {
+		energy = 200
+	}
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+}
+
+#白模
+trait_MGHG_white_mold = {
+	cost = 1
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	species_class = { GYNOID GYNOID_ROBOT Azur_Lane_R }
+	opposites = {
+		"trait_robot_luxurious"
+	}
+	modifier = {
+		planet_pop_assembly_mult = 0.15
+		planet_pop_assemblers_upkeep_mult = -0.15
+		planet_pops_energy_upkeep_mult = 0.15
+	}
+	slave_cost = {
+		energy = 200
+	}
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+}
+
+#淫能超频
+trait_sexual_enery_verclocking = {
+	cost = 2
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	species_class = { GYNOID GYNOID_ROBOT Azur_Lane_R }
+	custom_tooltip = trait_sexual_enery_verclocking_tooltip
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_erotic_jobs_produces_mult = 0.01
+		planet_pops_lust_crystal_upkeep_add = 0.01
+		mult = owner.value:sexual_enery_verclocking
+	}
+	slave_cost = {
+		energy = 400
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+###########################
+############光荣进化超级特质
+###########################
+#先进性器模组
+trait_advanced_sex_organ_module = {
+	cost = 4
+	category = cyborg
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL LITHOID ROBOT MACHINE KANSEN }
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_harlots_produces_mult = 0.2
+		pop_job_amenities_mult = 0.2
+	}
+	assembly_score = {
+		modifier = {
+			add = 12
+		}
+	}
+	slave_cost = {
+		energy = 2400
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#先进情欲电脑
+trait_advanced_erotic_computer = {
+	cost = 4
+	category = robotic
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.3
+		planet_jobs_society_research_produces_mult = 0.3
+		planet_jobs_engineering_research_produces_mult = 0.3
+	}
+	assembly_score = {
+		modifier = {
+			add = 12
+		}
+	}
+	slave_cost = {
+		energy = 2400
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#机械生殖
+trait_MGHG_self_replication = {
+	cost = 2
+	category = robotic
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	modifier = {
+		planet_pop_assembly_mult = 0.45
+		planet_pop_assemblers_upkeep_mult = 0.2
+	}
+	assembly_score = {
+		modifier = {
+			add = 6
+		}
+	}
+	slave_cost = {
+		energy = 1200
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#超固体稳态皮肤
+trait_MGHG_super_solid_skin = {
+	cost = -1
+	category = cyborg
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL LITHOID ROBOT MACHINE }
+	modifier = {
+		planet_harlots_produces_mult = 0.1
+		pop_job_amenities_mult = 0.2
+		planet_pop_assemblers_upkeep_mult = 0.4
+	}
+	assembly_score = {
+		modifier = {
+			add = 3
+		}
+	}
+	slave_cost = {
+		energy = 600
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#永久高潮电路
+trait_MGHG_estrous_circuit = {
+	cost = 3
+	category = robotic
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_jobs_upkeep_mult = -0.05
+	}
+	triggered_pop_modifier = {
+		potential = {
+			owner= {
+				is_gestalt = no
+			}
+		}
+		pop_happiness = 0.1
+		planet_pops_consumer_goods_upkeep_mult = 0.2
+	}
+	assembly_score = {
+		modifier = {
+			add = 9
+		}
+	}
+	slave_cost = {
+		energy = 1800
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#外接性爱电路
+trait_external_sexual_route = {
+	cost = 2
+	category = robotic
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		planet_pop_assembly_mult = 0.05
+		planet_pops_energy_upkeep_mult = -0.2
+	}
+	assembly_score = {
+		modifier = {
+			add = 6
+		}
+	}
+	slave_cost = {
+		energy = 1200
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#性爱记录材料
+trait_sexual_recording_materials = {
+	cost = 2
+	category = robotic
+	species_potential_add = {
+		can_do_super_robot_modding = yes
+	}
+	initial = no
+	randomized = no
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		planet_harlots_produces_mult = 0.2
+		planet_pops_sr_living_metal_upkeep_add = 0.01
+	}
+	assembly_score = {
+		modifier = {
+			add = 6
+		}
+	}
+	slave_cost = {
+		energy = 1200
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#########################
+############事件特质
+#########################
+
+##全生体化机娘
+trait_biochemical_Gynoid = {
+	cost = -3
+	sorting_priority = 18
+
+	initial = no
+	randomized = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 0
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	species_class = { GYNOID GYNOID_ROBOT Azur_Lane_R }
+
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		species_leader_exp_gain = 0.3
+	}
+
+	assembly_score = {
+		modifier = {
+			add = 3
+		}
+	}
+
+	slave_cost = {
+		energy = 1500
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+}
+
+trait_son_of_Nurgler = {
+	cost = 0
+
+	initial = no
+	randomized = no
+
+	species_potential_add = {
+		is_monster_girl = yes
+		if = {
+			limit = {
+				is_robotic_species = yes
+			}
+			has_trait = trait_biochemical_Gynoid
+		}
+		from = {
+			has_technology = tech_lewd_princess_gene_extension
+			any_owned_pop_species = {
+				is_same_species = owner_main_species
+				has_trait = trait_son_of_Nurgler
+			}
+		}
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		is_monster_girl = yes
+		if = {
+			limit = {
+				is_robotic_species = yes
+			}
+			has_trait = trait_biochemical_Gynoid
+		}
+		from = {
+			has_technology = tech_lewd_princess_gene_extension
+			any_owned_pop_species = {
+				is_same_species = owner_main_species
+				has_trait = trait_son_of_Nurgler
+			}
+		}
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT KANSEN }
+
+	modifier = {
+		leader_lifespan_add = 7
+		pop_growth_speed = 0.07
+		planet_pop_assembly_organic_mult = 0.07
+		pop_amenities_usage_mult = -0.07
+		planet_pops_food_upkeep_mult = 0.07
+	}
+
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+
+	slave_cost = {
+		energy = 500
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_gift_from_aoi = {
+	cost = 3
+
+	initial = no
+	randomized = no
+
+	species_potential_add = {
+		is_monster_girl = yes
+		from = {
+			OR = {
+				has_technology = tech_cell_synthetic_worker
+				is_robot_empire = yes
+			}
+			has_country_flag = gift_from_aoi
+		}
+	}
+	species_possible_remove = {
+		from = {
+			OR = {
+				has_technology = tech_cell_synthetic_worker
+				is_robot_empire = yes
+			}
+		}
+	}
+	species_possible_merge_add = {
+		is_monster_girl = yes
+		from = {
+			OR = {
+				has_technology = tech_cell_synthetic_worker
+				is_robot_empire = yes
+			}
+			has_country_flag = gift_from_aoi
+		}
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { ROBOT MACHINE KANSEN }
+	species_class = { GYNOID GYNOID_ROBOT Azur_Lane_R }
+
+	modifier = {
+		planet_jobs_produces_mult = 0.2
+		planet_pops_upkeep_mult = -0.3
+		planet_pop_assemblers_upkeep_mult = -0.2
+	}
+
+	assembly_score = {
+		modifier = {
+			add = 24
+		}
+	}
+
+	slave_cost = {
+		energy = 4800
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+trait_Ayapana_interest = {
+	cost = 0
+
+	initial = no
+	randomized = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL LITHOID ROBOT KANSEN }
+
+	modifier = {
+		pc_nuked_habitability = 1
+	}
+
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		founder_species_growth_mult = 1
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				is_planet_class = pc_nuked
+			}
+		}
+		planet_erotic_jobs_produces_mult = 1
+		species_empire_size_mult = -1
+		pop_amenities_usage_mult = 1
+		planet_pops_lust_crystal_upkeep_add = 1
+	}
+
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+
+	slave_cost = {
+		energy = 500
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

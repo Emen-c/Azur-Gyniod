@@ -1,9 +1,0 @@
-defined_text = {
-	name = Get_MGHG_PrecursorCiv
-	text = {
-		trigger = {
-			has_country_flag = lamia_precursor_artifact_recoverer
-		}
-		localization_key = lamia_precursor_civ
-	}
-}

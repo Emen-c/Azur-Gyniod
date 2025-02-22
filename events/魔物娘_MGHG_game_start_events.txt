@@ -1,0 +1,24 @@
+namespace = MGHG_game_start
+
+country_event = {
+	id = MGHG_game_start.25
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+		is_country_type = default
+		is_machine_empire = no
+	}
+
+	immediate = {
+		owner_main_species = {
+			change_species_characteristics = {
+				add_trait = trait_machine_unit
+			}
+		}
+	}
+}

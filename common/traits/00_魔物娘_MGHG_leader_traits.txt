@@ -1,0 +1,130 @@
+@self_trait_weight = 15
+#############
+####通用
+#############
+####普通特质
+
+#极乐处刑者
+leader_trait_sex_sentence = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_sex_sentence"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+		exists = owner
+		owner = {
+			has_valid_civic = civic_machine_terminator
+		}
+	}
+	leader_class = { official }
+	custom_tooltip_with_modifiers = leader_trait_sex_sentence_effect
+	planet_modifier = {
+		pop_decline_speed = 0.5
+	}
+	sector_modifier = {
+		pop_decline_speed = 0.25
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_sex_sentence
+		}
+	}
+}
+
+#有机淫乐机
+leader_trait_promiscuous_cyber = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_cyber"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_valid_civic = civic_machine_assimilator
+		}
+	}
+	leader_class = { official }
+	planet_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.05
+		pop_growth_speed = 0.05
+		planet_whores_produces_mult = 0.1
+	}
+	sector_modifier = {
+		planet_cyborg_jobs_produces_mult = 0.025
+		pop_growth_speed = 0.025
+		planet_whores_produces_mult = 0.05
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_promiscuous_cyber
+		}
+	}
+}
+
+#淫乱爱侣
+leader_trait_promiscuous_couple = {
+	inline_script = {
+		script = trait/icon_MGHG
+		CLASS = official
+		ICON = "GFX_leader_trait_promiscuous_couple"
+		RARITY = common
+		COUNCIL = no
+		TIER = 1
+	}
+	leader_potential_add = {
+		species = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+		exists = owner
+		owner = {
+			is_monster_girl = yes
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	leader_class = { official }
+	planet_modifier = {
+		pop_happiness = 0.03
+		planet_sex_bio_trophies_produces_mult = 0.2
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.1
+	}
+	sector_modifier = {
+		pop_happiness = 0.015
+		planet_sex_bio_trophies_produces_mult = 0.1
+		pop_category_bio_trophy_consumer_goods_upkeep_add = 0.05
+	}
+	selectable_weight = {
+		weight = @class_trait_weight
+		inline_script = {
+			script = "paragon/existing_trait_weight_mult"
+			TRAIT = leader_trait_promiscuous_couple
+		}
+	}
+}

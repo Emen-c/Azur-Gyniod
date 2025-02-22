@@ -1,0 +1,16 @@
+agenda_gynoid = {
+	agenda_cost = @base_tradition_agenda_cost
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+	allow = {
+		has_tradition = tr_gynoid_adopt
+	}
+	modifier = {
+		planet_harlots_produces_mult = 0.1
+	}
+	finish_modifier = agenda_gynoid_finish
+}

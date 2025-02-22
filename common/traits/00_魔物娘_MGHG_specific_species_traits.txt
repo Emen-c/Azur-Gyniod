@@ -1,0 +1,86 @@
+##################
+####机娘
+##################
+####科技特质
+trait_semen_sensor = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/gynoid_traits/trait_semen_sensor.dds"
+	species_potential_add = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+		from = {
+			has_technology = tech_chemical_signal_sex
+		}
+	}
+	species_possible_remove = {
+		always = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	allowed_archetypes = { MACHINE KANSEN }
+	initial = no
+	randomized = no
+
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		planet_pops_food_upkeep_add = 0.1
+	}
+
+	slave_cost = {
+		energy = 400
+	}
+	assembly_score = {
+		add = 2
+	}
+	ai_weight = {
+		weight = 0
+	}
+
+}
+
+trait_advanced_mechanical_cell_organ = {
+	cost = 2
+	category = normal
+	icon = "gfx/interface/icons/traits/gynoid_traits/trait_advanced_mechanical_cell_organ.dds"
+	species_potential_add = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+		from = {
+			has_technology = tech_mechanical_cell_pussy
+		}
+	}
+	species_possible_remove = {
+		always = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	allowed_archetypes = { MACHINE KANSEN }
+	initial = no
+	randomized = no
+	custom_tooltip = advanced_mechanical_cell_organ_tooltip
+
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_jobs_produces_mult = 0.025
+		mult = owner.value:mechanical_cell_organ
+	}
+
+	slave_cost = {
+		energy = 800
+	}
+	assembly_score = {
+		add = 4
+	}
+	ai_weight = {
+		weight = 0
+	}
+
+}

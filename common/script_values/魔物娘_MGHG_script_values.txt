@@ -1,0 +1,14 @@
+
+num_gynoid_abuse_database = {
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				is_organic_species = yes
+			}
+		}
+		mode = add
+		mult = 0.2
+	}
+	max = value:num_species_pops|SPECIES|GYNOID|SPECIES1|GYNOID_ROBOT|Azur_Lane_R|
+}

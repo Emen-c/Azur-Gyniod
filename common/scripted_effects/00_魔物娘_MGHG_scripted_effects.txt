@@ -1,0 +1,65 @@
+monster_girl_robot_module = {
+	if = {
+		limit = {
+			owner_main_species = {
+				OR = {
+					species_portrait = $SPECIES$01
+					species_portrait = $SPECIES$02
+					species_portrait = $SPECIES$03
+					species_portrait = $SPECIES$04
+					species_portrait = $SPECIES$05
+					species_portrait = $SPECIES$06
+					species_portrait = $SPECIES$07
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				OR = {
+					is_species_class = GYNOID_ROBOT
+					is_species_class = GYNOID
+					is_species_class = Azur_Lane_R
+				}
+				NOT = {
+					has_trait = trait_$SPECIES$_robot
+				}
+			}
+			modify_species = {
+				add_trait = trait_$SPECIES$_robot
+				portrait = owner_main_species
+			}
+		}
+	}
+	else = {
+		every_owned_pop = {
+			limit = {
+				OR = {
+					is_species_class = GYNOID_ROBOT
+					is_species_class = GYNOID
+					is_species_class = Azur_Lane_R
+				}
+				NOT = {
+					has_trait = trait_$SPECIES$_robot
+				}
+			}
+			modify_species = {
+				add_trait = trait_$SPECIES$_robot
+			}
+		}
+		owner = {
+			owner_main_species = {
+				modify_species = {
+					portrait = $SPECIES$01
+				}
+			}
+			every_owned_pop = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				modify_species = {
+					portrait = owner_main_species
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,349 @@
+
+#############################
+############机娘
+#############################
+####社会学
+#化学信号交配
+tech_chemical_signal_sex = {
+	cost = @tier1cost3
+	area = society
+	tier = 1
+	is_rare = yes
+	category = { biology }
+	weight = @tier1weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_chemical_signal_sex_tool"
+			desc = "trait_semen_sensor_desc"
+		}
+	}
+
+	modifier = {
+		pop_growth_speed = 0.15
+		planet_harlots_produces_mult = 0.05
+		pop_amenities_usage_mult = -0.05
+	}
+
+	technology_swap = {
+		name = tech_chemical_signal_sex
+		inherit_icon = yes
+		inherit_effects = no
+
+		trigger = {
+			has_valid_civic = civic_machine_terminator
+		}
+
+		modifier = {
+			planet_cyborg_jobs_produces_mult = 0.05
+			planet_harlots_produces_mult = 0.05
+			pop_amenities_usage_mult = -0.05
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_sexual_mania
+				has_technology = tech_sexual_behavior_imitation
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @ap_love_and_lewd_erotic
+			has_ascension_perk = ap_live_long_and_prosper
+		}
+		modifier = {
+			factor = 0
+			country_uses_food = no
+		}
+	}
+
+	ai_weight = {
+		factor = 2.5
+	}
+
+}
+
+# 性欲压缩
+tech_sexual_desire_compression = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	is_rare = yes
+	category = { biology }
+	weight = @tier2weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	prerequisites = {
+		tech_sex_data_analysis
+	}
+
+	modifier = {
+		planet_jobs_upkeep_mult = -0.05
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @ap_love_and_lewd_erotic
+			has_ascension_perk = ap_live_long_and_prosper
+		}
+	}
+
+	ai_weight = {
+		factor = 2.5
+	}
+
+}
+
+# 飞机杯机娘
+tech_gynoid_masturbator_cup = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	is_rare = yes
+	category = { statecraft }
+	weight = @tier3weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	prerequisites = {
+		tech_sexual_slavery_industry_legalization
+	}
+
+	modifier = {
+		planet_jobs_best_slaves_produces_mult = 0.2
+		planet_erotic_researchers_society_research_produces_mult = 0.3
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @ap_love_and_lewd_erotic
+			has_ascension_perk = ap_live_long_and_prosper
+		}
+	}
+
+	ai_weight = {
+		factor = 2.5
+	}
+
+}
+
+####工程学
+#先进淫能回路
+tech_advanced_sexual_energy_circuit = {
+	cost = @tier1cost3
+	area = engineering
+	tier = 1
+	is_rare = yes
+	category = { industry }
+	prerequisites = { tech_sexual_industrial_facility }
+	weight = @tier1weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	modifier = {
+		planet_pops_lust_crystal_upkeep_mult = -0.25
+		empire_size_districts_mult = -0.1
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+
+	ai_weight = {
+		factor = 1.5
+	}
+
+}
+
+#先进淫能部件
+tech_advanced_sexual_energy_component = {
+	cost = @tier2cost3
+	area = engineering
+	tier = 2
+	is_rare = yes
+	category = { industry }
+	prerequisites = { tech_sexual_energy_material }
+	weight = @tier2weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+
+	ai_weight = {
+		factor = 1.5
+	}
+
+}
+
+#自慰信号
+tech_masturbation_signals = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	is_rare = yes
+	category = { industry }
+	prerequisites = { tech_micro_cum_amplifier }
+	weight = @tier3weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	modifier = {
+		planet_stability_add = 5
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+
+	ai_weight = {
+		factor = 1.5
+	}
+
+}
+
+#高级机械细胞性器
+tech_mechanical_cell_pussy = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { industry }
+	prerequisites = { tech_mechanical_cell_body }
+	weight = @tier4weight3
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_mechanical_cell_pussy_tool"
+			desc = "trait_advanced_mechanical_cell_organ_desc"
+		}
+	}
+
+	modifier = {
+		planet_jobs_robotic_produces_mult = 0.05
+		planet_pop_assembly_add = 0.5
+		planet_pop_assemblers_lust_crystal_upkeep_add = 0.5
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+
+	ai_weight = {
+		factor = 1.5
+	}
+
+}
+
+#淫姬级淫能辐射干扰
+tech_sexual_radiation_interference = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { industry }
+	weight = @tier5weight3
+
+	prerequisites = { tech_lewd_princess_industrial_revolution }
+
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_GYNOID_COMPONENT_TITLE"
+			desc = "TECH_UNLOCK_GYNOID_COMPONENT_DESC"
+		}
+	}
+
+	potential = {
+		OR = {
+			is_species_class = GYNOID
+			is_species_class = Azur_Lane_R
+		}
+	}
+
+	modifier = {
+		ship_shield_hardening_add = 0.05
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+	}
+
+	ai_weight = {
+		factor = 1.5
+	}
+
+}

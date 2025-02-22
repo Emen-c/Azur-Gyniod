@@ -1,0 +1,118 @@
+namespace = MGHG_anomaly
+
+ship_event = {
+	id = MGHG_anomaly.09
+	title = "MGHG_anomaly.09.name"
+	desc = "MGHG_anomaly.09.desc"
+	picture = GFX_evt_games_console_2
+	show_sound = MGHG_blowjob_short_1
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = MGHG_anomaly.09.a
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_pop = {
+						OR = {
+							is_species_class = GYNOID
+							is_species_class = GYNOID_ROBOT
+							is_species_class = Azur_Lane_R
+						}
+					}
+				}
+				any_owned_pop = {
+					is_species_class = ROBOT
+				}
+				resource_stockpile_compare = {
+					resource = energy
+					value >= 100
+					mult = value:num_species_pops|SPECIES|ROBOT|
+				}
+				resource_stockpile_compare = {
+					resource = alloys
+					value >= 50
+					mult = value:num_species_pops|SPECIES|ROBOT|
+				}
+			}
+		}
+		owner = {
+			hidden_effect = {
+				create_species = {
+					name = "SPEC_Gynoid0"
+					class = "GYNOID_ROBOT"
+					portrait = "GYNOID01"
+					traits = {
+						trait = "trait_history_Gynoid_maid"
+						trait = "trait_mechanical"
+						trait = "trait_Gynoid"
+					}
+				}
+			}
+			add_resource = {
+				energy = 100
+				alloys = 50
+				mult = value:num_species_pops|SPECIES|ROBOT|
+			}
+			every_owned_pop = {
+				limit = {
+					is_species_class = ROBOT
+				}
+				change_species = last_created_species
+			}
+		}
+	}
+
+	option = {
+		name = MGHG_anomaly.09.b
+		trigger = {
+			owner = {
+				any_owned_pop = {
+					OR = {
+						is_species_class = GYNOID
+						is_species_class = GYNOID_ROBOT
+						is_species_class = Azur_Lane_R
+					}
+				}
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					is_regular_empire = yes
+					is_individual_machine = no
+				}
+				add_modifier = {
+					modifier = Space_machine_girl_robot
+				}
+			}
+			else = {
+				add_modifier = {
+					modifier = Space_machine_girl_machine
+				}
+			}
+		}
+	}
+
+	option = {
+		name = MGHG_anomaly.09.c
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier1unityreward
+				max = @tier1unitymax
+				min = @tier1unitymin
+			}
+		}
+	}
+
+	option = {
+		name = MGHG_anomaly.09.d
+		root.leader = {
+			add_experience = 1000
+		}
+	}
+
+}
