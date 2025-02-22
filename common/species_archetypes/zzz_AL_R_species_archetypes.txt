@@ -1,0 +1,6 @@
+KANSEN = {
+	species_trait_points = 4
+	species_max_traits = 12
+	robotic = yes
+	inherit_traits_from = { MACHINE }
+}

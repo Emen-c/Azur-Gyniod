@@ -1,0 +1,3465 @@
+namespace = MGHG_precursor
+
+############################
+# THE LAMIA STAR
+############################
+
+# LAMIA Introduction
+# via on_survey = {} | this = surveying vessel
+ship_event = {
+	id = MGHG_precursor.001
+	title = "MGHG_precursor.001.name"
+	desc = "MGHG_precursor.001.desc"
+	picture = GFX_evt_MGHG_lamia_00
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+			is_monster_girl = yes
+			has_MGHG_precursor_intro = no
+		}
+		solar_system = { has_star_flag = precursor_lamia }
+		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
+		FROM = {
+			has_anomaly = no
+			is_star = no
+		}
+	}
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = @origin_shoulders_multiplier
+			owner = {
+				has_origin = origin_shoulders_of_giants
+				has_country_flag = origin_shoulders_closure
+			}
+		}
+	}
+
+	immediate = {
+		owner = { set_country_flag = lamia_intro }
+	}
+
+	option = {
+		name = INTERESTING
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						has_precursor_intro = no
+					}
+					country_event = {
+						id = story.5
+						days = 30
+					}
+				}
+			}
+		}
+		owner = {
+			begin_event_chain = {
+				event_chain = "lamia_precursor_chain"
+				target = THIS
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.002
+	title = "MGHG_precursor.002.name"
+	desc = "MGHG_precursor.002.desc"
+	picture = GFX_evt_MGHG_lamia_01
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_1"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.003
+	title = "MGHG_precursor.003.name"
+	desc = "MGHG_precursor.003.desc"
+	picture = GFX_evt_MGHG_lamia_01
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = {
+			set_country_flag = lamia_precursor_1_finish
+		}
+	}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "lamia_precursor_chain"
+				counter = "lamia_precursor_artifacts"
+				amount = 1
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.090
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owner = {
+							has_country_flag = lamia_precursor_2_finish
+						}
+					}
+					country_event = { id = MGHG_precursor.006 }
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.004
+	title = "MGHG_precursor.004.name"
+	desc = "MGHG_precursor.004.desc"
+	picture = GFX_evt_MGHG_lamia_02
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_2"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.005
+	title = "MGHG_precursor.005.name"
+	desc = "MGHG_precursor.005.desc"
+	picture = GFX_evt_MGHG_lamia_02
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = {
+			set_country_flag = lamia_precursor_2_finish
+		}
+	}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "lamia_precursor_chain"
+				counter = "lamia_precursor_artifacts"
+				amount = 1
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.090
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owner = {
+							has_country_flag = lamia_precursor_1_finish
+						}
+					}
+					country_event = { id = MGHG_precursor.006 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.006
+	title = "MGHG_precursor.006.name"
+	desc = "MGHG_precursor.006.desc"
+	picture = GFX_evt_MGHG_lamia_00
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lamia_precursor_3
+	}
+
+	option = {
+		name = "MGHG_precursor.006.a"
+	}
+
+	option = {
+		trigger = {
+			owner = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+		}
+		name = "MGHG_precursor.006.b"
+	}
+
+	option = {
+		trigger = {
+			owner = {
+				NOT = {
+					is_monster_girl_species = {
+						SPECIES = LAMIA
+					}
+				}
+			}
+		}
+		name = "MGHG_precursor.006.c"
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.007
+	title = "MGHG_precursor.007.name"
+	desc = "MGHG_precursor.007.desc"
+	picture = GFX_evt_MGHG_lamia_03
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_3"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.008
+	title = "MGHG_precursor.008.name"
+	desc = "MGHG_precursor.008.desc"
+	picture = GFX_evt_MGHG_lamia_03
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = "MGHG_precursor.008.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "lamia_precursor_chain"
+				counter = "lamia_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			hidden_effect = {
+				fromfrom = {
+					closest_system = {
+						limit = {
+							has_star_flag = precursor_lamia
+							any_system_planet = {
+								is_colonizable = yes
+								is_artificial = no
+							}
+							OR = {
+								NOT = { exists = owner }
+								owner = {
+									has_country_flag = lamia_precursor_4
+								}
+							}
+						}
+						min_steps = 1
+						random_system_planet = {
+							limit = {
+								is_colonizable = yes
+								is_artificial = no
+							}
+							enable_special_project = {
+								name = "MGHG_precursor_project_4"
+								location = this
+								owner = root.owner
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = MGHG_precursor.009
+	title = "MGHG_precursor.009.name"
+	desc = "MGHG_precursor.009.desc"
+	picture = GFX_evt_MGHG_lamia_05
+	show_sound = event_dig_site
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "MGHG_precursor.009.a"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+
+	option = {
+		name = "MGHG_precursor.009.b"
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+
+	option = {
+		name = "MGHG_precursor.009.c"
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = MGHG_precursor.010
+	title = "MGHG_precursor.010.name"
+	desc = "MGHG_precursor.010.desc"
+	picture = GFX_evt_MGHG_lamia_06
+	show_sound = event_dig_site
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "MGHG_precursor.010.a"
+		owner = {
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+
+	option = {
+		name = "MGHG_precursor.010.b"
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		owner = {
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+
+	option = {
+		name = "MGHG_precursor.010.c"
+		owner = {
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+}
+
+fleet_event = {
+	id = MGHG_precursor.011
+	title = "MGHG_precursor.011.name"
+	desc = "MGHG_precursor.011.desc"
+	picture = GFX_evt_MGHG_lamia_07
+	show_sound = event_dig_site
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "MGHG_precursor.011.a"
+		owner = {
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+
+	option = {
+		name = "MGHG_precursor.011.b"
+		owner = {
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+
+	option = {
+		name = "MGHG_precursor.011.c"
+		owner = {
+			add_resource = { minor_artifacts = 50 }
+		}
+	}
+}
+
+fleet_event = {
+	id = MGHG_precursor.012
+	title = "MGHG_precursor.012.name"
+	desc = "MGHG_precursor.012.desc"
+	picture = GFX_evt_MGHG_lamia_08
+	show_sound = event_finding_loot
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "MGHG_precursor.012.a"
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "lamia_precursor_chain"
+				counter = "lamia_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.090
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.013
+	is_triggered_only = yes
+	fire_only_once = yes
+	hide_window = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = lamia_precursor_3
+			NOT = {
+				has_country_flag = lamia_precursor_4
+			}
+		}
+		from = {
+			uninhabitable_regular_planet = yes
+			NOT = { has_planet_flag = precursor_world }
+			has_anomaly = no
+			solar_system = {
+				has_star_flag = precursor_lamia
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			random_list = {
+				1 = {
+					root.owner = {
+						set_country_flag = lamia_precursor_4
+					}
+					add_anomaly = {
+						category = lamia_precursor_3_cat
+					}
+				}
+				3 = {}
+			}
+		}
+	}
+
+}
+country_event = {
+	id = MGHG_precursor.090
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = lamia_precursor_system_discovered
+					has_country_flag = lamia_precursor_system
+				}
+				has_completed_event_chain_counter = {
+					event_chain = "lamia_precursor_chain"
+					counter = "lamia_precursor_artifacts"
+				}
+			}
+			country_event = { id = MGHG_precursor.091 }
+		}
+		else_if = {
+			limit = {
+				has_global_flag = lamia_precursor_system_discovered
+				NOT = { has_country_flag = lamia_precursor_system }
+				has_completed_event_chain_counter = {
+					event_chain = "lamia_precursor_chain"
+					counter = "lamia_precursor_artifacts"
+				}
+			}
+			country_event = { id = MGHG_precursor.092 }
+		}
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.091
+	hide_window = yes
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = lamia_precursor_system_discovered
+		set_country_flag = lamia_precursor_system
+
+		if = {
+			limit = {
+				any_system_within_border = { has_star_flag = precursor_lamia }
+			}
+			random_system_within_border = {
+				limit = { has_star_flag = precursor_lamia }
+				save_event_target_as = precursor_spawn_system
+			}
+		}
+		else = {
+			random_system_within_border = {
+				save_event_target_as = precursor_spawn_system
+			}
+		}
+		event_target:precursor_spawn_system = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "lamia_precursor_system"
+			}
+			if = {
+				limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+				add_hyperlane = {
+					from = this
+					to = last_created_system
+				}
+			}
+			else = {
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+		}
+		country_event = { id = MGHG_precursor.093 days = 2 }
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.092
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lamia_precursor_system
+		country_event = { id = MGHG_precursor.093 days = 2 }
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.093
+	title = "MGHG_precursor.093.name"
+	desc = "MGHG_precursor.093.desc"
+	picture = GFX_evt_federation_fleet
+	location = event_target:lamia_precursor_star
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = lamia_precursor_star }
+			save_event_target_as = lamia_precursor_star
+			root = { set_visited = prev }
+			random_system_planet = {
+				limit = { has_planet_flag = lamia_precursor_homeworld }
+				save_event_target_as = lamia_precursor_homeworld
+			}
+		}
+		observer_event = { id = observer.56 }
+	}
+
+	option = {
+		name = "MGHG_precursor.093.a"
+		end_event_chain = "lamia_precursor_chain"
+		begin_event_chain = {
+			event_chain = "lamia_precursor_homeworld_chain"
+			target = ROOT
+		}
+		event_target:lamia_precursor_homeworld = {
+			enable_special_project = {
+				name = "lamia_precursor_homeworld_project"
+				location = event_target:lamia_precursor_homeworld
+				owner = ROOT
+			}
+		}
+	}
+}
+
+# Lamia Homeworld
+ship_event = {
+	id = MGHG_precursor.094
+	title = "MGHG_precursor.094.name"
+	desc = "MGHG_precursor.094.desc"
+	picture = GFX_evt_MGHG_lamia_09
+	location = from
+
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { has_planet_flag = lamia_precursor_homeworld }
+		owner = {
+			is_ai = no
+			has_country_flag = lamia_precursor_system
+		}
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = lamia_precursor_world_found
+			set_global_flag = lamia_precursor_homeworld_found
+			if = {
+				limit = { has_event_chain = lamia_precursor_chain }
+				end_event_chain = "lamia_precursor_chain"
+			}
+			if = {
+				limit = { has_event_chain = "lamia_precursor_homeworld_chain" }
+				end_event_chain = "lamia_precursor_homeworld_chain"
+			}
+		}
+	}
+
+	option = {
+		name = "FASCINATING"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				add_relic = r_lamia_queen_crown
+				large_artifact_reward = yes
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				custom_tooltip = lamia_precursor_artifact_research_unlocked
+			}
+		}
+	}
+}
+
+# Someone else got there first
+ship_event = {
+	id = MGHG_precursor.095
+	title = "MGHG_precursor.095.name"
+
+	desc = {
+		text = MGHG_precursor.095.desc.a
+		trigger = {
+			owner = {
+				OR = {
+					has_event_chain = lamia_precursor_chain
+					has_event_chain = lamia_precursor_homeworld_chain
+				}
+			}
+		}
+	}
+	desc = {
+		text = MGHG_precursor.095.desc.b
+		trigger = {
+			owner = {
+				NOR = {
+					has_event_chain = lamia_precursor_chain
+					has_event_chain = lamia_precursor_homeworld_chain
+				}
+			}
+		}
+	}
+
+	location = from
+	picture = GFX_evt_MGHG_lamia_09
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = {
+			set_country_flag = lamia_precursor_world_found
+			if = {
+				limit = { has_event_chain = lamia_precursor_chain }
+				end_event_chain = "lamia_precursor_chain"
+			}
+			if = {
+				limit = { has_event_chain = lamia_precursor_homeworld_chain }
+				end_event_chain = "lamia_precursor_homeworld_chain"
+			}
+		}
+	}
+
+	option = {
+		name = "UNFORTUNATE"
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.096
+	title = MGHG_precursor.096.name
+
+	# Phobe
+	desc = {
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		text = MGHG_precursor.096.desc.phobe
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		text = MGHG_precursor.096.desc
+	}
+
+	picture = GFX_evt_MGHG_lamia_10
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+
+		every_owned_leader = {
+			limit = {
+				species = {
+					is_monster_girl = yes
+				}
+			}
+			add_experience = 200
+		}
+
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_tech_progress = {
+				tech = tech_secrets_lamia
+				progress = 0.1
+			}
+		}
+		add_modifier = {
+			modifier = artifact_lamia_precursor_research_completed
+			days = -1
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.099
+	title = "MGHG_precursor.099.name"
+	desc = {
+		trigger = {
+			NOR = {
+				owner = { is_machine_empire = yes }
+				owner = { is_hive_empire = yes }
+			}
+		}
+		text = MGHG_precursor.099.a.desc
+	}
+	desc = {
+		trigger = {
+			owner = { is_machine_empire = yes }
+		}
+		text = MGHG_precursor.099.b.desc
+	}
+	desc = {
+		trigger = {
+			owner = { is_hive_empire = yes }
+		}
+		text = MGHG_precursor.099.c.desc
+	}
+	picture = GFX_evt_archaeological_dig
+	location = event_target:precursor_planet
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = lamia_precursor_artifact_recoverer }
+	}
+
+	after = {
+		hidden_effect = {
+			owner = { remove_country_flag = lamia_precursor_artifact_recoverer }
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "lamia_precursor_chain"
+				counter = "lamia_precursor_artifacts"
+				amount = 1
+			}	
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			hidden_effect = {
+				country_event = { id = MGHG_precursor.090 }
+				remove_country_flag = ongoing_precursor_artifact
+			}
+		}
+	}
+}
+
+
+############################
+# THE ANGEL STAR
+############################
+
+# ANGEL Introduction
+# via on_survey = {} | this = surveying vessel
+ship_event = {
+	id = MGHG_precursor.101
+	title = "MGHG_precursor.101.name"
+	desc = "MGHG_precursor.101.desc"
+	picture = GFX_evt_MGHG_angel_00
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+			is_monster_girl = yes
+			has_MGHG_precursor_intro = no
+		}
+		solar_system = {
+			has_star_flag = precursor_angel
+			NOT = { is_same_value = root.owner.capital_scope.solar_system }
+		}
+		FROM = {
+			has_anomaly = no
+			is_star = no
+		}
+	}
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = @origin_shoulders_multiplier
+			owner = {
+				has_origin = origin_shoulders_of_giants
+				has_country_flag = origin_shoulders_closure
+			}
+		}
+	}
+
+	immediate = {
+		owner = { set_country_flag = angel_intro }
+	}
+
+	option = {
+		name = INTERESTING
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						has_precursor_intro = no
+					}
+					country_event = {
+						id = story.5
+						days = 30
+					}
+				}
+			}
+		}
+		owner = {
+			begin_event_chain = {
+				event_chain = "angel_precursor_chain"
+				target = THIS
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.102
+	title = "MGHG_precursor.102.name"
+	desc = "MGHG_precursor.102.desc"
+	picture = GFX_evt_MGHG_angel_01
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_5"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.103
+	title = "MGHG_precursor.103.name"
+	desc = "MGHG_precursor.103.desc"
+	picture = GFX_evt_MGHG_angel_01
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "angel_precursor_chain"
+				counter = "angel_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = lust_crystal
+				value = @tier3materialreward
+				min = @tier3materialmin
+				max = @tier3materialmax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.190
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.104
+	title = "MGHG_precursor.104.name"
+	desc = "MGHG_precursor.104.desc"
+	picture = GFX_evt_MGHG_angel_02
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_6"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.105
+	title = "MGHG_precursor.105.name"
+	desc = "MGHG_precursor.105.desc"
+	picture = GFX_evt_MGHG_angel_02
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "angel_precursor_chain"
+				counter = "angel_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier3materialreward
+				min = @tier3materialmin
+				max = @tier3materialmax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.190
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.106
+	title = "MGHG_precursor.106.name"
+	desc = "MGHG_precursor.106.desc"
+	picture = GFX_evt_MGHG_angel_03
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_7"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.107
+	title = "MGHG_precursor.107.name"
+	desc = "MGHG_precursor.107.desc"
+	picture = GFX_evt_MGHG_angel_03
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "angel_precursor_chain"
+				counter = "angel_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.190
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.108
+	title = "MGHG_precursor.108.name"
+	desc = "MGHG_precursor.108.desc"
+	picture = GFX_evt_MGHG_angel_04
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_8"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.109
+	title = "MGHG_precursor.109.name"
+	desc = "MGHG_precursor.109.desc"
+	picture = GFX_evt_MGHG_angel_04
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "angel_precursor_chain"
+				counter = "angel_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier4unityreward
+				min = @tier4unitymin
+				max = @tier4unitymax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.190
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.110
+	title = "MGHG_precursor.110.name"
+	desc = "MGHG_precursor.110.desc"
+	picture = GFX_evt_MGHG_angel_05
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_9"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.111
+	title = "MGHG_precursor.111.name"
+	desc = "MGHG_precursor.111.desc"
+	picture = GFX_evt_MGHG_angel_05
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "angel_precursor_chain"
+				counter = "angel_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier5materialreward
+				min = @tier5materialmax
+				max = @tier5materialmin
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.190
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.190
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = angel_precursor_system_discovered
+					has_country_flag = angel_precursor_system
+				}
+				has_completed_event_chain_counter = {
+					event_chain = "angel_precursor_chain"
+					counter = "angel_precursor_artifacts"
+				}
+			}
+			country_event = { id = MGHG_precursor.191 }
+		}
+		else_if = {
+			limit = {
+				has_global_flag = angel_precursor_system_discovered
+				NOT = { has_country_flag = angel_precursor_system }
+				has_completed_event_chain_counter = {
+					event_chain = "angel_precursor_chain"
+					counter = "angel_precursor_artifacts"
+				}
+			}
+			country_event = { id = MGHG_precursor.192 }
+		}
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.191
+	hide_window = yes
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = angel_precursor_system_discovered
+		set_country_flag = angel_precursor_system
+
+		if = {
+			limit = {
+				any_system_within_border = { has_star_flag = precursor_angel }
+			}
+			random_system_within_border = {
+				limit = { has_star_flag = precursor_angel }
+				save_event_target_as = precursor_spawn_system
+			}
+		}
+		else = {
+			random_system_within_border = {
+				save_event_target_as = precursor_spawn_system
+			}
+		}
+		event_target:precursor_spawn_system = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "angel_precursor_system"
+			}
+			if = {
+				limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+				add_hyperlane = {
+					from = this
+					to = last_created_system
+				}
+			}
+			else = {
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+		}
+		country_event = { id = MGHG_precursor.193 days = 2 }
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.192
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = angel_precursor_system
+		country_event = { id = MGHG_precursor.193 days = 2 }
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.193
+	title = "MGHG_precursor.193.name"
+	desc = "MGHG_precursor.193.desc"
+	picture = GFX_evt_federation_fleet
+	location = event_target:angel_precursor_star
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = angel_precursor_star }
+			save_event_target_as = angel_precursor_star
+			root = { set_visited = prev }
+			random_system_planet = {
+				limit = { has_planet_flag = angel_precursor_homeworld }
+				save_event_target_as = angel_precursor_homeworld
+			}
+		}
+		observer_event = { id = observer.56 }
+	}
+
+	option = {
+		name = "MGHG_precursor.193.a"
+		end_event_chain = "angel_precursor_chain"
+		begin_event_chain = {
+			event_chain = "angel_precursor_homeworld_chain"
+			target = ROOT
+		}
+		event_target:angel_precursor_homeworld = {
+			enable_special_project = {
+				name = "angel_precursor_homeworld_project"
+				location = event_target:angel_precursor_homeworld
+				owner = ROOT
+			}
+		}
+	}
+}
+
+# Angel Homeworld
+ship_event = {
+	id = MGHG_precursor.194
+	title = "MGHG_precursor.194.name"
+	desc = "MGHG_precursor.194.desc"
+	picture = GFX_evt_MGHG_angel_06
+	location = from
+
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { has_planet_flag = angel_precursor_homeworld }
+		owner = {
+			is_ai = no
+			has_country_flag = angel_precursor_system
+		}
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = angel_precursor_world_found
+			set_global_flag = angel_precursor_homeworld_found
+			if = {
+				limit = { has_event_chain = angel_precursor_chain }
+				end_event_chain = "angel_precursor_chain"
+			}
+			if = {
+				limit = { has_event_chain = "angel_precursor_homeworld_chain" }
+				end_event_chain = "angel_precursor_homeworld_chain"
+			}
+		}
+	}
+
+	option = {
+		name = "FASCINATING"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				add_relic = r_angel_lament_feather
+				large_artifact_reward = yes
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				custom_tooltip = angel_precursor_artifact_research_unlocked
+			}
+		}
+	}
+}
+
+# Someone else got there first
+ship_event = {
+	id = MGHG_precursor.195
+	title = "MGHG_precursor.195.name"
+
+	desc = {
+		text = MGHG_precursor.195.desc.a
+		trigger = {
+			owner = {
+				OR = {
+					has_event_chain = angel_precursor_chain
+					has_event_chain = angel_precursor_homeworld_chain
+				}
+			}
+		}
+	}
+	desc = {
+		text = MGHG_precursor.195.desc.b
+		trigger = {
+			owner = {
+				NOR = {
+					has_event_chain = angel_precursor_chain
+					has_event_chain = angel_precursor_homeworld_chain
+				}
+			}
+		}
+	}
+
+	location = from
+	picture = GFX_evt_MGHG_angel_06
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = {
+			set_country_flag = angel_precursor_world_found
+			if = {
+				limit = { has_event_chain = angel_precursor_chain }
+				end_event_chain = "angel_precursor_chain"
+			}
+			if = {
+				limit = { has_event_chain = angel_precursor_homeworld_chain }
+				end_event_chain = "angel_precursor_homeworld_chain"
+			}
+		}
+	}
+
+	option = {
+		name = "UNFORTUNATE"
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.196
+	title = MGHG_precursor.196.name
+
+	# Phobe
+	desc = {
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		text = MGHG_precursor.196.desc.phobe
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		text = MGHG_precursor.196.desc
+	}
+
+	picture = GFX_evt_MGHG_angel_08
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+
+		every_owned_leader = {
+			limit = {
+				species = {
+					is_monster_girl = yes
+				}
+			}
+			add_experience = 200
+		}
+
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_tech_progress = {
+				tech = tech_secrets_angel
+				progress = 0.1
+			}
+		}
+		add_modifier = {
+			modifier = artifact_angel_precursor_research_completed
+			days = -1
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.199
+	title = "MGHG_precursor.199.name"
+	desc = {
+		trigger = {
+			NOR = {
+				owner = { is_machine_empire = yes }
+				owner = { is_hive_empire = yes }
+			}
+		}
+		text = MGHG_precursor.199.a.desc
+	}
+	desc = {
+		trigger = {
+			owner = { is_machine_empire = yes }
+		}
+		text = MGHG_precursor.199.b.desc
+	}
+	desc = {
+		trigger = {
+			owner = { is_hive_empire = yes }
+		}
+		text = MGHG_precursor.199.c.desc
+	}
+	picture = GFX_evt_archaeological_dig
+	location = event_target:precursor_planet
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = angel_precursor_artifact_recoverer }
+	}
+
+	after = {
+		hidden_effect = {
+			owner = { remove_country_flag = angel_precursor_artifact_recoverer }
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "angel_precursor_chain"
+				counter = "angel_precursor_artifacts"
+				amount = 1
+			}	
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			hidden_effect = {
+				country_event = { id = MGHG_precursor.190 }
+				remove_country_flag = ongoing_precursor_artifact
+			}
+		}
+	}
+}
+############################
+# THE GYNOID STAR
+############################
+
+# GYNOID Introduction
+# via on_survey = {} | this = surveying vessel
+ship_event = {
+	id = MGHG_precursor.201
+	title = "MGHG_precursor.201.name"
+	desc = "MGHG_precursor.201.desc"
+	picture = GFX_evt_MGHG_gynoid_00
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+			is_monster_girl = yes
+			has_MGHG_precursor_intro = no
+		}
+		solar_system = {
+			has_star_flag = precursor_gynoid
+			NOT = { is_same_value = root.owner.capital_scope.solar_system }
+		}
+		FROM = {
+			has_anomaly = no
+			is_star = no
+		}
+	}
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = @origin_shoulders_multiplier
+			owner = {
+				has_origin = origin_shoulders_of_giants
+				has_country_flag = origin_shoulders_closure
+			}
+		}
+	}
+
+	immediate = {
+		owner = { set_country_flag = gynoid_intro }
+	}
+
+	option = {
+		name = INTERESTING
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						has_precursor_intro = no
+					}
+					country_event = {
+						id = story.5
+						days = 30
+					}
+				}
+			}
+		}
+		owner = {
+			begin_event_chain = {
+				event_chain = "gynoid_precursor_chain"
+				target = THIS
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.202
+	title = "MGHG_precursor.202.name"
+	desc = "MGHG_precursor.202.desc"
+	picture = GFX_evt_MGHG_gynoid_01
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_10"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.203
+	title = "MGHG_precursor.203.name"
+	desc = "MGHG_precursor.203.desc"
+	picture = GFX_evt_MGHG_gynoid_01
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_event_chain_counter = {
+				event_chain = "gynoid_precursor_chain"
+				counter = "gynoid_precursor_artifacts"
+				amount = 1
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.290
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.204
+	title = "MGHG_precursor.204.name"
+	desc = "MGHG_precursor.204.desc"
+	picture = GFX_evt_MGHG_gynoid_02
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_11"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.205
+	title = "MGHG_precursor.205.name"
+	desc = "MGHG_precursor.205.desc"
+	picture = GFX_evt_MGHG_gynoid_02
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "gynoid_precursor_chain"
+				counter = "gynoid_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.290
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.206
+	title = "MGHG_precursor.206.name"
+	desc = "MGHG_precursor.206.desc"
+	picture = GFX_evt_MGHG_gynoid_03
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_12"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.207
+	title = "MGHG_precursor.207.name"
+	desc = "MGHG_precursor.207.desc"
+	picture = GFX_evt_MGHG_gynoid_03
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_event_chain_counter = {
+				event_chain = "gynoid_precursor_chain"
+				counter = "gynoid_precursor_artifacts"
+				amount = 1
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.290
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.208
+	title = "MGHG_precursor.208.name"
+	desc = "MGHG_precursor.208.desc"
+	picture = GFX_evt_MGHG_gynoid_04
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_13"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.209
+	title = "MGHG_precursor.209.name"
+	desc = "MGHG_precursor.209.desc"
+	picture = GFX_evt_MGHG_gynoid_04
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = @tier3materialreward
+				min = @tier3materialmin
+				max = @tier3materialmax
+			}
+			add_event_chain_counter = {
+				event_chain = "gynoid_precursor_chain"
+				counter = "gynoid_precursor_artifacts"
+				amount = 1
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.290
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.210
+	title = "MGHG_precursor.210.name"
+	desc = "MGHG_precursor.210.desc"
+	picture = GFX_evt_MGHG_gynoid_05
+	location = FROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = INTERESTING
+		from = {
+			enable_special_project = {
+				name = "MGHG_precursor_project_14"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.211
+	title = "MGHG_precursor.211.name"
+	desc = "MGHG_precursor.211.desc"
+	picture = GFX_evt_MGHG_gynoid_05
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	immediate = {}
+
+	option = {
+		name = "precursor.completed.a"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				small_artifact_reward = yes
+			}
+			add_event_chain_counter = {
+				event_chain = "gynoid_precursor_chain"
+				counter = "gynoid_precursor_artifacts"
+				amount = 1
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			hidden_effect = {
+				country_event = {
+					id = MGHG_precursor.290
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.290
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = gynoid_precursor_system_discovered
+					has_country_flag = gynoid_precursor_system
+				}
+				has_completed_event_chain_counter = {
+					event_chain = "gynoid_precursor_chain"
+					counter = "gynoid_precursor_artifacts"
+				}
+			}
+			country_event = { id = MGHG_precursor.291 }
+		}
+		else_if = {
+			limit = {
+				has_global_flag = gynoid_precursor_system_discovered
+				NOT = { has_country_flag = gynoid_precursor_system }
+				has_completed_event_chain_counter = {
+					event_chain = "gynoid_precursor_chain"
+					counter = "gynoid_precursor_artifacts"
+				}
+			}
+			country_event = { id = MGHG_precursor.292 }
+		}
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.291
+	hide_window = yes
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = gynoid_precursor_system_discovered
+		set_country_flag = gynoid_precursor_system
+
+		if = {
+			limit = {
+				any_system_within_border = { has_star_flag = precursor_gynoid }
+			}
+			random_system_within_border = {
+				limit = { has_star_flag = precursor_gynoid }
+				save_event_target_as = precursor_spawn_system
+			}
+		}
+		else = {
+			random_system_within_border = {
+				save_event_target_as = precursor_spawn_system
+			}
+		}
+		event_target:precursor_spawn_system = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "gynoid_precursor_system"
+			}
+			if = {
+				limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+				add_hyperlane = {
+					from = this
+					to = last_created_system
+				}
+			}
+			else = {
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+		}
+		country_event = { id = MGHG_precursor.293 days = 2 }
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.292
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gynoid_precursor_system
+		country_event = { id = MGHG_precursor.293 days = 2 }
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.293
+	title = "MGHG_precursor.293.name"
+	desc = "MGHG_precursor.293.desc"
+	picture = GFX_evt_federation_fleet
+	location = event_target:gynoid_precursor_star
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = gynoid_precursor_star }
+			save_event_target_as = gynoid_precursor_star
+			root = { set_visited = prev }
+			random_system_planet = {
+				limit = { has_planet_flag = gynoid_precursor_homeworld }
+				save_event_target_as = gynoid_precursor_homeworld
+			}
+		}
+		observer_event = { id = observer.56 }
+	}
+
+	option = {
+		name = "MGHG_precursor.293.a"
+		end_event_chain = "gynoid_precursor_chain"
+		begin_event_chain = {
+			event_chain = "gynoid_precursor_homeworld_chain"
+			target = ROOT
+		}
+		event_target:gynoid_precursor_homeworld = {
+			enable_special_project = {
+				name = "gynoid_precursor_homeworld_project"
+				owner = ROOT
+			}
+		}
+	}
+}
+
+# Gynoid Homeworld
+ship_event = {
+	id = MGHG_precursor.294
+	title = "MGHG_precursor.294.name"
+	desc = "MGHG_precursor.294.desc"
+	picture = GFX_evt_MGHG_gynoid_06
+	location = from
+
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { has_planet_flag = gynoid_precursor_homeworld }
+		owner = {
+			is_ai = no
+			has_country_flag = gynoid_precursor_system
+		}
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = gynoid_precursor_world_found
+			set_global_flag = gynoid_precursor_homeworld_found
+			if = {
+				limit = { has_event_chain = gynoid_precursor_chain }
+				end_event_chain = "gynoid_precursor_chain"
+			}
+			if = {
+				limit = { has_event_chain = gynoid_precursor_homeworld_chain }
+				end_event_chain = "gynoid_precursor_homeworld_chain"
+			}
+		}
+	}
+
+	option = {
+		name = "FASCINATING"
+		owner = {
+			if = {
+				limit = { has_ancrel = yes }
+				add_relic = r_gynoid_abuse_database
+				if = {
+					limit = {
+						is_regular_empire = yes
+						NOT = { has_technology = tech_sexual_slavery_industry_legalization }
+					}
+					give_technology = {
+						tech = tech_sexual_slavery_industry_legalization
+						message = yes
+					}
+				}
+				else_if = {
+					limit = {
+						is_hive_empire = yes
+						NOT = { has_technology = tech_sexual_slave_worker_drone }
+					}
+					give_technology = {
+						tech = tech_sexual_slave_worker_drone
+						message = yes
+					}
+				}
+				else_if = {
+					limit = {
+						is_machine_empire = yes
+						NOT = { has_technology = tech_simulated_sexual_slave }
+					}
+					give_technology = {
+						tech = tech_simulated_sexual_slave
+						message = yes
+					}
+				}
+				large_artifact_reward = yes
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 120
+				min = 240
+				max = 9999
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			if = {
+				limit = { has_ancrel = yes }
+				custom_tooltip = gynoid_precursor_artifact_research_unlocked
+			}
+		}
+	}
+}
+
+# Someone else got there first
+ship_event = {
+	id = MGHG_precursor.295
+	title = "MGHG_precursor.295.name"
+
+	desc = {
+		text = MGHG_precursor.295.desc.a
+		trigger = {
+			owner = {
+				OR = {
+					has_event_chain = gynoid_precursor_chain
+					has_event_chain = gynoid_precursor_homeworld_chain
+				}
+			}
+		}
+	}
+	desc = {
+		text = MGHG_precursor.295.desc.b
+		trigger = {
+			owner = {
+				NOR = {
+					has_event_chain = gynoid_precursor_chain
+					has_event_chain = gynoid_precursor_homeworld_chain
+				}
+			}
+		}
+	}
+
+	location = from
+	picture = GFX_evt_MGHG_gynoid_06
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = {
+			set_country_flag = gynoid_precursor_world_found
+			if = {
+				limit = { has_event_chain = gynoid_precursor_chain }
+				end_event_chain = "gynoid_precursor_chain"
+			}
+			if = {
+				limit = { has_event_chain = gynoid_precursor_homeworld_chain }
+				end_event_chain = "gynoid_precursor_homeworld_chain"
+			}
+		}
+	}
+
+	option = {
+		name = "UNFORTUNATE"
+	}
+}
+
+country_event = {
+	id = MGHG_precursor.296
+	title = MGHG_precursor.296.name
+	desc = MGHG_precursor.296.desc
+
+	picture = GFX_evt_MGHG_gynoid_08
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+
+		every_owned_leader = {
+			limit = {
+				species = {
+					is_monster_girl = yes
+				}
+			}
+			add_experience = 200
+		}
+
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_tech_progress = {
+				tech = tech_secrets_gynoid
+				progress = 0.1
+			}
+		}
+		if = {
+			limit = {
+				is_machine_empire = yes
+			}
+			add_modifier = {
+				modifier = artifact_gynoid_precursor_research_completed_machine
+				days = -1
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = artifact_gynoid_precursor_research_completed
+				days = -1
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = MGHG_precursor.299
+	title = "MGHG_precursor.299.name"
+	desc = {
+		trigger = {
+			NOR = {
+				owner = { is_machine_empire = yes }
+				owner = { is_hive_empire = yes }
+			}
+		}
+		text = MGHG_precursor.299.a.desc
+	}
+	desc = {
+		trigger = {
+			owner = { is_machine_empire = yes }
+		}
+		text = MGHG_precursor.299.b.desc
+	}
+	desc = {
+		trigger = {
+			owner = { is_hive_empire = yes }
+		}
+		text = MGHG_precursor.299.c.desc
+	}
+	picture = GFX_evt_archaeological_dig
+	location = event_target:precursor_planet
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = gynoid_precursor_artifact_recoverer }
+	}
+
+	after = {
+		hidden_effect = {
+			owner = { remove_country_flag = gynoid_precursor_artifact_recoverer }
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		owner = {
+			add_event_chain_counter = {
+				event_chain = "gynoid_precursor_chain"
+				counter = "gynoid_precursor_artifacts"
+				amount = 1
+			}	
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			hidden_effect = {
+				country_event = { id = MGHG_precursor.290 }
+				remove_country_flag = ongoing_precursor_artifact
+			}
+		}
+	}
+}
+
+##### 通用
+
+country_event = {
+	id = MGHG_precursor.3001
+	title = "precursor.301.name"
+	desc = {
+		trigger = {
+			NOR = {
+				is_machine_empire = yes
+				is_hive_empire = yes
+			}
+		}
+		text = precursor.301.a.desc
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				is_machine_empire = yes
+				is_hive_empire = yes
+			}
+		}
+		text = precursor.301.b.desc
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				is_machine_empire = yes
+				is_hive_empire = yes
+			}
+		}
+		text = precursor.301.c.desc
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				is_machine_empire = yes
+				is_hive_empire = yes
+			}
+		}
+		text = precursor.301.d.desc
+	}
+	desc = {
+		trigger = {
+			is_machine_empire = yes
+		}
+		text = precursor.301.e.desc
+	}
+	desc = {
+		trigger = {
+			is_hive_empire = yes
+		}
+		text = precursor.301.f.desc
+	}
+	picture = GFX_evt_archaeological_dig
+	location = event_target:precursor_planet
+	trackable = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		years_passed > 50
+		NOT = { has_country_flag = ongoing_precursor_artifact }
+		OR = {
+			AND = {
+				has_event_chain = "lamia_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = lamia_precursor_chain
+						counter = lamia_precursor_artifacts
+					}
+				}
+				any_system_within_border = {
+					has_star_flag = precursor_lamia
+					any_system_planet = {
+						NOT = { has_planet_flag = precursor_world }
+						uninhabitable_regular_planet = yes
+						has_owner = no
+						has_anomaly = no
+						is_surveyed = {
+							who = ROOT
+							status = yes
+						}
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "angel_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = angel_precursor_chain
+						counter = angel_precursor_artifacts
+					}
+				}
+				any_system_within_border = {
+					has_star_flag = precursor_angel
+					any_system_planet = {
+						NOT = { has_planet_flag = precursor_world }
+						uninhabitable_regular_planet = yes
+						has_owner = no
+						has_anomaly = no
+						is_surveyed = {
+							who = ROOT
+							status = yes
+						}
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "gynoid_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = gynoid_precursor_chain
+						counter = gynoid_precursor_artifacts
+					}
+				}
+				any_system_within_border = {
+					has_star_flag = precursor_gynoid
+					any_system_planet = {
+						NOT = { has_planet_flag = precursor_world }
+						uninhabitable_regular_planet = yes
+						has_owner = no
+						has_anomaly = no
+						is_surveyed = {
+							who = ROOT
+							status = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	weight_multiplier = {
+		factor = 1
+		# NOTE: although gestalts are ineligible for the other events in this series, that actually increases their odds of receiving this one (as opposed to nothing at all). This is because 'on_actions' do not count weightings for random_events whose triggers will fail. The same therefore applies to regular empires who have already triggered the one-off events in this series.
+		modifier = {
+			factor = 0.9
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 1.25
+			years_passed > 100
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = recent_new_precursor
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_shoulders_of_giants
+			has_country_flag = origin_shoulders_closure
+		}
+	}
+
+	immediate = {
+		# Reduce odds of firing in (relatively) quick succession
+		set_timed_country_flag = {
+			flag = recent_new_precursor
+			years = 9
+		}
+		# Spawn a Special Project
+		if = {
+			limit = {
+				has_event_chain = "lamia_precursor_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_lamia
+				}
+			}
+			spawn_lamia_precursor_anomaly = yes
+			break = yes
+		}
+		if = {
+			limit = {
+				has_event_chain = "angel_precursor_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_angel
+				}
+			}
+			spawn_angel_precursor_anomaly = yes
+			break = yes
+		}
+		if = {
+			limit = {
+				has_event_chain = "gynoid_precursor_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_gynoid
+				}
+			}
+			spawn_gynoid_precursor_anomaly = yes
+			break = yes
+		}
+	}
+
+	option = {
+		name = precursor.301.a
+		custom_tooltip = new_precursor_project
+	}
+}
+
+# Private Collector has Artifact
+country_event = {
+	id = MGHG_precursor.3002
+	title = "precursor.310.name"
+	desc = "precursor.310.desc"
+	picture = GFX_evt_archaeological_dig
+	location = event_target:collector_home
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		years_passed > 50
+		NOR = {
+			has_country_flag = ongoing_precursor_artifact
+			has_country_flag = precursor_collector_fired
+			has_ethic = ethic_gestalt_consciousness
+		}
+		OR = {
+			AND = {
+				has_event_chain = "lamia_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = lamia_precursor_chain
+						counter = lamia_precursor_artifacts
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "angel_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = angel_precursor_chain
+						counter = angel_precursor_artifacts
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "gynoid_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = gynoid_precursor_chain
+						counter = gynoid_precursor_artifacts
+					}
+				}
+			}
+		}
+	}
+
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			years_passed > 100
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = recent_new_precursor
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_shoulders_of_giants
+			has_country_flag = origin_shoulders_closure
+		}
+	}
+
+	immediate = {
+		# Reduce odds of firing in (relatively) quick succession
+		set_timed_country_flag = {
+			flag = recent_new_precursor
+			years = 9
+		}
+		# Choose a relevant artifact
+		set_country_flag = precursor_collector_fired
+		random_owned_planet = { save_event_target_as = collector_home }
+		if = {
+			limit = { has_event_chain = "lamia_precursor_chain" }
+			set_country_flag = lamia_precursor_artifact_recoverer
+			break = yes
+		}
+		if = {
+			limit = { has_event_chain = "angel_precursor_chain" }
+			set_country_flag = angel_precursor_artifact_recoverer
+			break = yes
+		}
+		if = {
+			limit = { has_event_chain = "gynoid_precursor_chain" }
+			set_country_flag = gynoid_precursor_artifact_recoverer
+			break = yes
+		}
+	}
+
+	option = {
+		name = precursor.310.a
+		allow = { resource_stockpile_compare = { resource = energy value >= 500 } }
+		custom_tooltip = buy_precursor_artifact
+		add_resource = { energy = -500 }
+		MGHG_collector_surrenders_artifact = yes
+	}
+	option = {
+		name = precursor.310.b
+		allow = { resource_stockpile_compare = { resource = influence value >= 100 } }
+		custom_tooltip = seize_precursor_artifact
+		add_resource = { influence = -100 }
+		MGHG_collector_surrenders_artifact = yes
+	}
+	option = {
+		name = precursor.310.c
+		custom_tooltip = leave_precursor_artifact
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_event_chain = "lamia_precursor_chain" }
+				remove_country_flag = lamia_precursor_artifact_recoverer
+			}
+			if = {
+				limit = { has_event_chain = "angel_precursor_chain" }
+				remove_country_flag = angel_precursor_artifact_recoverer
+			}
+			if = {
+				limit = { has_event_chain = "gynoid_precursor_chain" }
+				remove_country_flag = gynoid_precursor_artifact_recoverer
+			}
+		}
+	}
+}
+
+# Neighbor Offers to Sell Artifact
+country_event = {
+	id = MGHG_precursor.3003
+	title = TRANSMISSION
+	desc = "MGHG_precursor.3003.desc"
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:artifact_seller
+		room = event_target:artifact_seller.ruler
+	}
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		years_passed > 50
+		NOR = {
+			has_country_flag = ongoing_precursor_artifact
+			has_country_flag = precursor_seller_fired
+			has_ethic = ethic_gestalt_consciousness
+			AND = {
+				exists = event_target:artifact_seller
+				has_relation_flag = {
+					who = event_target:artifact_seller
+					flag = precursor_artifact_deal
+				}
+			}
+		}
+		OR = {
+			AND = {
+				has_event_chain = "lamia_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = lamia_precursor_chain
+						counter = lamia_precursor_artifacts
+					}
+				}
+				any_neighbor_country = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+						is_hostile_to = root
+						is_domineering_to = root
+						is_unfriendly_to = root
+					}
+					any_system_within_border = { has_star_flag = precursor_lamia }
+				}
+			}
+			AND = {
+				has_event_chain = "angel_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = angel_precursor_chain
+						counter = angel_precursor_artifacts
+					}
+				}
+				any_neighbor_country = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+						is_hostile_to = root
+						is_domineering_to = root
+						is_unfriendly_to = root
+					}
+					any_system_within_border = { has_star_flag = precursor_angel }
+				}
+			}
+			AND = {
+				has_event_chain = "gynoid_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = gynoid_precursor_chain
+						counter = gynoid_precursor_artifacts
+					}
+				}
+				any_neighbor_country = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+						is_hostile_to = root
+						is_domineering_to = root
+						is_unfriendly_to = root
+					}
+					any_system_within_border = { has_star_flag = precursor_gynoid }
+				}
+			}
+		}
+	}
+
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			years_passed > 100
+		}
+		modifier = {
+			factor = 0.75
+			has_country_flag = recent_new_precursor
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_shoulders_of_giants
+			has_country_flag = origin_shoulders_closure
+		}
+	}
+
+	immediate = {
+		set_country_flag = precursor_seller_fired
+		# Reduce odds of firing in (relatively) quick succession
+		set_timed_country_flag = {
+			flag = recent_new_precursor
+			years = 9
+		}
+		# Choose a relevant artifact
+		if = {
+			limit = { has_event_chain = "lamia_precursor_chain" }
+			set_country_flag = lamia_precursor_artifact_recoverer
+			random_neighbor_country = {
+				limit = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+						is_hostile_to = root
+						is_domineering_to = root
+						is_unfriendly_to = root
+					}
+					any_system_within_border = { has_star_flag = precursor_lamia }
+				}
+				save_event_target_as = artifact_seller
+			}
+			break = yes
+		}
+		if = {
+			limit = { has_event_chain = "angel_precursor_chain" }
+			set_country_flag = angel_precursor_artifact_recoverer
+			random_neighbor_country = {
+				limit = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+						is_hostile_to = root
+						is_domineering_to = root
+						is_unfriendly_to = root
+					}
+					any_system_within_border = { has_star_flag = precursor_angel }
+				}
+				save_event_target_as = artifact_seller
+			}
+			break = yes
+		}
+		if = {
+			limit = { has_event_chain = "gynoid_precursor_chain" }
+			set_country_flag = gynoid_precursor_artifact_recoverer
+			random_neighbor_country = {
+				limit = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+						is_hostile_to = root
+						is_domineering_to = root
+						is_unfriendly_to = root
+					}
+					any_system_within_border = { has_star_flag = precursor_gynoid }
+				}
+				save_event_target_as = artifact_seller
+			}
+			break = yes
+		}
+		set_relation_flag = {
+			who = event_target:artifact_seller
+			flag = precursor_artifact_deal
+		}
+	}
+
+	option = {
+		name = "precursor.311.a"
+		response_text = precursor.311.a.reply
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 1000 }
+		}
+		custom_tooltip = purchase_artifact
+		add_resource = { energy = -1000 }
+		hidden_effect = {
+			event_target:artifact_seller = {
+				add_resource = { energy = 1000 }
+			}
+		}
+		MGHG_collector_surrenders_artifact = yes
+	}
+	option = {
+		name = "precursor.311.b"
+		response_text = precursor.311.b.reply
+		trigger = {
+			has_valid_civic = civic_corporate_dominion
+		}
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 500 }
+		}
+		custom_tooltip = purchase_artifact
+		add_resource = { energy = -500 }
+		hidden_effect = {
+			event_target:artifact_seller = {
+				add_resource = { energy = 500 }
+			}
+		}
+		MGHG_collector_surrenders_artifact = yes
+	}
+	option = {
+		name = "precursor.311.c"
+		trigger = {
+			has_valid_civic = civic_warrior_culture
+		}
+		hidden_effect = {
+			random_list = {
+				10 = { # Refuses
+					modifier = {
+						factor = 50
+						relative_power = {
+							who = event_target:artifact_seller
+							category = fleet
+							value = inferior
+						}
+					}
+					modifier = {
+						factor = 50
+						relative_power = {
+							who = event_target:artifact_seller
+							category = fleet
+							value = pathetic
+						}
+					}
+					modifier = {
+						factor = 50
+						event_target:artifact_seller = { has_valid_civic = civic_warrior_culture }
+					}
+					country_event = { id = MGHG_precursor.3004 }
+				}
+				10 = { # Folds
+					modifier = {
+						factor = 50
+						relative_power = {
+							who = event_target:artifact_seller
+							category = fleet
+							value = superior
+						}
+					}
+					modifier = {
+						factor = 50
+						relative_power = {
+							who = event_target:artifact_seller
+							category = fleet
+							value = overwhelming
+						}
+					}
+					country_event = { id = MGHG_precursor.3005 }
+				}
+			}
+		}
+		custom_tooltip = coerce_artifact
+	}
+	option = {
+		name = "precursor.311.d"
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_event_chain = "lamia_precursor_chain" }
+				remove_country_flag = lamia_precursor_artifact_recoverer
+			}
+			if = {
+				limit = { has_event_chain = "angel_precursor_chain" }
+				remove_country_flag = angel_precursor_artifact_recoverer
+			}
+			if = {
+				limit = { has_event_chain = "gynoid_precursor_chain" }
+				remove_country_flag = gynoid_precursor_artifact_recoverer
+			}
+		}
+	}
+}
+# Rejects Threat (Warrior Culture)
+country_event = {
+	id = MGHG_precursor.3004
+	title = TRANSMISSION
+	desc = "precursor.312.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:artifact_seller
+		room = event_target:artifact_seller
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = "precursor.312.d"
+		event_target:artifact_seller = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_threatened_artifact
+			}
+		}
+	}
+}
+# Folds to threat (Warrior Culture)
+country_event = {
+	id = MGHG_precursor.3005
+	title = TRANSMISSION
+	desc = "precursor.313.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:artifact_seller
+		room = event_target:artifact_seller
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = "precursor.313.d"
+		MGHG_collector_surrenders_artifact = yes
+	}
+}
+
+# Neighbor Gifts Artifact
+country_event = {
+	id = MGHG_precursor.3006
+	title = TRANSMISSION
+	desc = "MGHG_precursor.3006.desc"
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:artifact_giver
+		room = event_target:artifact_giver.ruler
+	}
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		years_passed > 50
+		NOR = {
+			has_country_flag = ongoing_precursor_artifact
+			has_country_flag = precursor_giver_fired
+			has_ethic = ethic_gestalt_consciousness
+			AND = {
+				exists = event_target:artifact_giver
+				has_relation_flag = {
+					who = event_target:artifact_giver
+					flag = precursor_artifact_deal
+				}
+			}
+		}
+		OR = {
+			AND = {
+				has_event_chain = "lamia_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = lamia_precursor_chain
+						counter = lamia_precursor_artifacts
+					}
+				}
+				any_neighbor_country = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					OR = {
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+					}
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+					}
+					any_system_within_border = { has_star_flag = precursor_lamia }
+				}
+			}
+			AND = {
+				has_event_chain = "angel_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = angel_precursor_chain
+						counter = angel_precursor_artifacts
+					}
+				}
+				any_neighbor_country = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					OR = {
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+					}
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+					}
+					any_system_within_border = { has_star_flag = precursor_angel }
+				}
+			}
+			AND = {
+				has_event_chain = "gynoid_precursor_chain"
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = gynoid_precursor_chain
+						counter = gynoid_precursor_artifacts
+					}
+				}
+				any_neighbor_country = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					OR = {
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+					}
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+					}
+					any_system_within_border = { has_star_flag = precursor_gynoid }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = precursor_giver_fired
+		# Reduce odds of firing in (relatively) quick succession
+		set_timed_country_flag = {
+			flag = recent_new_precursor
+			years = 9
+		}
+		# Choose a relevant artifact
+		if = {
+			limit = { has_event_chain = "lamia_precursor_chain" }
+			set_country_flag = lamia_precursor_artifact_recoverer
+			random_neighbor_country = {
+				limit = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					OR = {
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+					}
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+					}
+					any_system_within_border = { has_star_flag = precursor_lamia }
+				}
+				save_event_target_as = artifact_giver
+			}
+			break = yes
+		}
+		if = {
+			limit = { has_event_chain = "angel_precursor_chain" }
+			set_country_flag = angel_precursor_artifact_recoverer
+			random_neighbor_country = {
+				limit = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					OR = {
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+					}
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+					}
+					any_system_within_border = { has_star_flag = precursor_angel }
+				}
+				save_event_target_as = artifact_giver
+			}
+			break = yes
+		}
+		if = {
+			limit = { has_event_chain = "gynoid_precursor_chain" }
+			set_country_flag = gynoid_precursor_artifact_recoverer
+			random_neighbor_country = {
+				limit = {
+					has_communications = root
+					is_country_type = default
+					is_subject = no
+					OR = {
+						is_protective_to = root
+						is_friendly_to = root
+						is_loyal_to = root
+					}
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						is_at_war_with = root
+						is_same_value = root
+					}
+					any_system_within_border = { has_star_flag = precursor_gynoid }
+				}
+				save_event_target_as = artifact_giver
+			}
+			break = yes
+		}
+		set_relation_flag = {
+			who = event_target:artifact_giver
+			flag = precursor_artifact_deal
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_event_chain = "lamia_precursor_chain" }
+				remove_country_flag = lamia_precursor_artifact_recoverer
+			}
+			if = {
+				limit = { has_event_chain = "angel_precursor_chain" }
+				remove_country_flag = angel_precursor_artifact_recoverer
+			}
+			if = {
+				limit = { has_event_chain = "gynoid_precursor_chain" }
+				remove_country_flag = gynoid_precursor_artifact_recoverer
+			}
+		}
+	}
+
+	option = {
+		name = "precursor.314.a"
+		MGHG_collector_surrenders_artifact = yes
+	}
+}
+
+# Precursor Anomaly Spawned via Minor Artifact Action
+country_event = {
+	id = MGHG_precursor.3007
+	title = "precursor.301.name"
+	desc = "precursor.320.desc"
+
+	picture = GFX_evt_archaeological_dig
+	location = event_target:precursor_planet
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = "lamia_precursor_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_lamia
+				}
+			}
+			spawn_lamia_precursor_anomaly = yes
+			break = yes
+		}
+		if = {
+			limit = {
+				has_event_chain = "angel_precursor_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_angel
+				}
+			}
+			spawn_angel_precursor_anomaly = yes
+			break = yes
+		}
+		if = {
+			limit = {
+				has_event_chain = "gynoid_precursor_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_gynoid
+				}
+			}
+			spawn_gynoid_precursor_anomaly = yes
+			break = yes
+		}
+	}
+
+	option = {
+		name = precursor.301.a
+		custom_tooltip = new_precursor_project
+	}
+}

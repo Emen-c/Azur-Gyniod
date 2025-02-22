@@ -1,0 +1,1359 @@
+# species_potential_add = {}
+# show the trait to add to species when genemodding or randomizing traits.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+# species_possible_remove = {}
+# allow to remove the trait when genemodding.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+#尼德霍格的馈赠
+trait_you_are_monster_girl = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = yes
+	randomized = no
+
+	species_potential_add = {
+		is_same_species = owner_main_species
+		from = {
+			is_ai = no
+			NOT = {
+				any_owned_species = {
+					is_monster_girl = yes
+				}
+			}
+		}
+	}
+	species_possible_remove = {
+		from = {
+			is_ai = no
+			NOT = {
+				any_owned_species = {
+					is_monster_girl = yes
+				}
+			}
+		}
+	}
+	species_possible_merge_add = {
+		is_same_species = owner_main_species
+		from = {
+			is_ai = no
+			NOT = {
+				any_owned_species = {
+					is_monster_girl = yes
+				}
+			}
+		}
+	}
+
+	potential_crossbreeding_chance = 0
+
+	opposites = {
+		"trait_dickman"
+		"trait_lamia"
+		"trait_angel"
+		"trait_Gynoid"
+		"trait_slime"
+		"trait_succubus"
+		"trait_vampire"
+		"trait_zombie_girl"
+		"trait_angel_fallen"
+		"trait_dragon"
+	}
+
+	allowed_archetypes = {
+		BIOLOGICAL
+		LITHOID
+		MACHINE
+		ELF
+		Magical_Bitch
+		Magical_Girl
+		Lust_Girl
+		TENTACLE
+		LOVEMACHINE
+		NYTO
+		EILD
+		WARSHIPGIRL
+		SHENHAI
+		UNITED_FLEET
+		KANSEN
+	}
+
+	modifier = {
+		pop_amenities_usage_mult = -0.1
+		planet_pops_lust_crystal_upkeep_add = 0.1
+	}
+
+	custom_tooltip_with_modifiers = succubus_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.25
+	}
+
+	randomized = no
+
+	ai_weight = {
+		weight = 0
+	}
+
+}
+
+#魔人
+trait_dickman = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1
+
+	allowed_archetypes = { PRESAPIENT BIOLOGICAL }
+
+	opposites = { "trait_charismatic" "trait_weak" "trait_delicious"}
+
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_country_type = lust_shroud
+			}
+		}
+		pop_growth_speed_reduction = -10
+	}
+
+	custom_tooltip_with_modifiers = dickman_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.5
+	}
+
+	modifier = {
+		army_damage_mult = 2
+		army_health = 2
+		army_morale = 2
+		army_collateral_damage_mult = 4
+		army_disengage_chance_mult = -0.5
+		pop_growth_speed = 1
+		pop_housing_usage_mult = -1
+		pop_amenities_usage_mult = 4
+		planet_pops_consumer_goods_upkeep_mult = -1
+		planet_pops_food_upkeep_mult = -1
+		habitability_floor_add = 0.8
+		planet_miners_minerals_produces_mult = 1
+		planet_farmers_food_produces_mult = 1
+		planet_jobs_physics_research_produces_mult = -1
+		planet_jobs_society_research_produces_mult = -1
+		planet_jobs_engineering_research_produces_mult = -1
+		species_empire_size_mult = 1
+		pop_government_ethic_attraction = -1
+		pop_job_amenities_mult = -1
+		pop_job_trade_mult = -1
+		species_leader_exp_gain = -1
+		planet_livestock_food_produces_add = -3.5
+		planet_semen_livestock_food_produces_add = 4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_dickman.dds"
+
+}
+
+#欲魔
+trait_lust_demon_S = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+	immortal_leaders = yes
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1
+
+	allowed_archetypes = { LUST_DEMON }
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				NOT = {
+					is_planet_class = pc_lust_shrouded
+				}
+			}
+			is_being_purged = no
+		}
+		planet_pops_lust_crystal_upkeep_add = 20
+		species_empire_size_mult = 5
+	}
+
+	modifier = {
+		species_empire_size_mult = 0.5
+		pop_growth_speed_reduction = 10
+		planet_pops_energy_upkeep_add = -1
+		planet_pops_lust_crystal_upkeep_add = 1
+		planet_jobs_produces_mult = -1
+		planet_erotic_jobs_produces_mult = 2
+		planet_harlots_produces_mult = 1
+		army_damage_mult = 6
+		army_health = 6
+		armies_cost_mult = 10
+		armies_upkeep_mult = 10
+		army_disengage_chance_mult = -1
+		planet_livestock_food_produces_add = -4
+		planet_livestock_lust_crystal_produces_add = 4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_lust_demon_S.dds"
+
+}
+
+trait_lust_demon_N = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+	immortal_leaders = yes
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1
+
+	allowed_archetypes = { LUST_DEMON }
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				NOT = {
+					is_planet_class = pc_lust_shrouded
+				}
+			}
+			is_being_purged = no
+		}
+		planet_pops_lust_crystal_upkeep_add = 20
+		species_empire_size_mult = 5
+	}
+
+	modifier = {
+		species_empire_size_mult = 0.5
+		pop_growth_speed_reduction = 10
+		planet_pops_energy_upkeep_add = -1
+		planet_pops_lust_crystal_upkeep_add = 1
+		planet_jobs_produces_mult = -1
+		planet_erotic_jobs_produces_mult = 2
+		planet_jobs_energy_produces_mult = 1
+		planet_jobs_minerals_produces_mult = 1
+		planet_jobs_food_produces_mult = 1
+		army_damage_mult = 2
+		army_health = 14
+		armies_cost_mult = 10
+		armies_upkeep_mult = 10
+		army_disengage_chance_mult = -1
+		planet_livestock_food_produces_add = -4
+		planet_livestock_lust_crystal_produces_add = 4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_lust_demon_N.dds"
+
+}
+
+trait_lust_demon_K = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+	immortal_leaders = yes
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1
+
+	allowed_archetypes = { LUST_DEMON }
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				NOT = {
+					is_planet_class = pc_lust_shrouded
+				}
+			}
+			is_being_purged = no
+		}
+		planet_pops_lust_crystal_upkeep_add = 20
+		species_empire_size_mult = 5
+	}
+
+	modifier = {
+		species_empire_size_mult = 0.5
+		pop_growth_speed_reduction = 10
+		planet_pops_energy_upkeep_add = -1
+		planet_pops_lust_crystal_upkeep_add = 1
+		planet_jobs_produces_mult = -1
+		planet_erotic_jobs_produces_mult = 2
+		planet_jobs_alloys_produces_mult = 1
+		army_collateral_damage_mult = 8
+		army_damage_mult = 8
+		army_health = 8
+		armies_cost_mult = 10
+		armies_upkeep_mult = 10
+		army_disengage_chance_mult = -1
+		planet_livestock_food_produces_add = -4
+		planet_livestock_lust_crystal_produces_add = 4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_lust_demon_K.dds"
+
+}
+
+trait_lust_demon_T = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+	immortal_leaders = yes
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1
+
+	allowed_archetypes = { LUST_DEMON }
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				NOT = {
+					is_planet_class = pc_lust_shrouded
+				}
+			}
+			is_being_purged = no
+		}
+		planet_pops_lust_crystal_upkeep_add = 20
+		species_empire_size_mult = 5
+	}
+
+	modifier = {
+		species_empire_size_mult = 0.5
+		pop_growth_speed_reduction = 10
+		planet_pops_energy_upkeep_add = -1
+		planet_pops_lust_crystal_upkeep_add = 1
+		planet_jobs_produces_mult = -1
+		planet_erotic_jobs_produces_mult = 2
+		planet_jobs_physics_research_produces_mult = 1
+		planet_jobs_society_research_produces_mult = 1
+		planet_jobs_engineering_research_produces_mult = 1
+		army_damage_mult = 9
+		army_health = 4
+		armies_cost_mult = 10
+		armies_upkeep_mult = 10
+		army_disengage_chance_mult = -1
+		planet_livestock_food_produces_add = -4
+		planet_livestock_lust_crystal_produces_add = 4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_lust_demon_T.dds"
+
+}
+
+#拉米亚
+trait_lamia = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_repugnant" }
+
+	modifier = {
+		pop_ethic_xenophile_attraction_mult = 0.5
+		leader_lifespan_add = -15
+		pop_growth_speed = 0.1
+		planet_courtesan_produces_mult = 0.25
+		planet_pops_food_upkeep_mult = -0.2
+		pop_environment_tolerance = -0.05
+		pc_nuked_habitability = 0.1
+		pop_housing_usage_add = 0.1
+		planet_pops_lust_crystal_upkeep_add = 0.2
+	}
+
+	custom_tooltip_with_modifiers = lamia_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.2
+	}
+	triggered_leader_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+		}
+		leader_lifespan_add = 20
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_lamia.dds"
+
+}
+
+#机械拉米亚
+trait_LAMIA_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT }
+
+	modifier = {
+		pop_ethic_xenophile_attraction_mult = 0.5
+		planet_harlots_produces_mult = 0.3
+		planet_courtesan_produces_mult = 0.2
+		planet_erotic_jobs_produces_mult = 0.1
+		pop_housing_usage_add = 0.1
+		planet_pops_lust_crystal_upkeep_add = 0.1
+	}
+
+	assembly_score = {
+		add = 5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_lamia.dds"
+
+}
+
+#天使
+trait_angel = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_rapid_breeders" "trait_repugnant" "trait_enduring" "trait_venerable" "trait_fleeting" }
+
+	immortal_leaders = yes
+
+	custom_tooltip_with_modifiers = angel_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.15
+	}
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+		}
+		planet_pops_upkeep_mult = -0.1
+	}
+
+	modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.5
+		pop_growth_speed = -0.25
+		negative_leader_traits_species = -2
+		planet_jobs_produces_mult = 0.1
+		planet_jobs_unity_produces_mult = 0.1
+		army_damage_mult = 0.2
+		army_health = 0.2
+		army_morale = 0.2
+		planet_harlots_produces_mult = -0.1
+		planet_jobs_physics_research_produces_mult = -0.15
+		planet_jobs_society_research_produces_mult = -0.15
+		planet_jobs_engineering_research_produces_mult = -0.15
+		planet_pops_food_upkeep_add = -0.3
+		planet_pops_energy_upkeep_add = 0.7
+		planet_pops_lust_crystal_upkeep_add = 0.2
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_angel.dds"
+
+}
+
+#机械天使
+trait_ANGEL_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT }
+
+	modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.5
+		planet_jobs_produces_mult = 0.2
+		planet_jobs_unity_produces_mult = 0.1
+		army_damage_mult = 0.2
+		army_health = 0.2
+		army_morale = 0.2
+		planet_pops_lust_crystal_upkeep_add = 0.2
+	}
+
+	assembly_score = {
+		add = 5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_angel.dds"
+
+}
+
+#机娘
+trait_Gynoid = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { MACHINE ROBOT KANSEN}
+
+	opposites = { "trait_robot_uncanny" }
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_machine_empire = yes
+					NOT = {
+						has_technology = tech_synthetic_leaders
+					}
+				}
+			}
+		}
+		planet_whores_produces_mult = 0.05
+		planet_sex_slaves_produces_mult = -0.2
+		planet_courtesan_produces_mult = 0.05
+	}
+
+	modifier = {
+		planet_erotic_jobs_produces_mult = 0.05
+		pop_job_amenities_mult = 0.2
+		negative_leader_traits_species = -1
+		planet_pop_assemblers_upkeep_mult = 0.1
+		planet_pops_lust_crystal_upkeep_add = 0.4
+	}
+
+	assembly_score = {
+		add = 10
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	custom_tooltip_with_modifiers = trait_Gynoid_tool
+	icon = "gfx/interface/icons/traits/basic_traits/trait_Gynoid.dds"
+
+}
+
+#史莱姆娘
+trait_slime = {
+	cost = -4
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	custom_tooltip_with_modifiers = slime_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.2
+	}
+	triggered_leader_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+		}
+		leader_lifespan_add = 20
+	}
+
+	modifier = {
+		planet_pop_assembly_organic_mult = 0.1
+		pop_environment_tolerance = -0.05
+		pop_growth_speed = -0.05
+		planet_pops_lust_crystal_upkeep_add = 0.2
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_slime.dds"
+
+}
+
+#机械史莱姆娘
+trait_SLIME_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = {}
+
+	modifier = {
+		planet_pop_assembly_mult = 0.5
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_pop_assemblers_upkeep_mult = 0.2
+		planet_pops_lust_crystal_upkeep_add = 0.2
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_slime.dds"
+
+}
+
+#魅魔
+trait_succubus = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_repugnant" "trait_enduring" "trait_venerable" "trait_fleeting" }
+
+	immortal_leaders = yes
+
+	custom_tooltip_with_modifiers = succubus_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.25
+	}
+
+	modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.5
+		pop_growth_speed = 0.25
+		species_leader_exp_gain = 0.1
+		planet_erotic_jobs_produces_mult = 0.1
+		pop_amenities_usage_mult = 0.2
+		species_empire_size_mult = 0.1
+		planet_pops_lust_crystal_upkeep_add = 1
+		planet_pops_consumer_goods_upkeep_mult = 0.2
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_succubus.dds"
+
+}
+
+#机械魅魔
+trait_SUCCUBUS_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT }
+
+	modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.5
+		planet_erotic_jobs_produces_mult = 0.45
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+		pop_amenities_usage_mult = 0.2
+		species_empire_size_mult = 0.1
+		planet_pops_lust_crystal_upkeep_add = 1
+	}
+
+	assembly_score = {
+		add = 5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_succubus.dds"
+}
+
+#吸血鬼
+trait_vampire = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_repugnant" "trait_enduring" "trait_venerable" "trait_fleeting" }
+
+	immortal_leaders = yes
+
+	custom_tooltip_with_modifiers = vampire_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.25
+	}
+
+	modifier = {
+		species_leader_exp_gain = 0.1
+		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_specialist_produces_mult = 0.2
+		planet_jobs_worker_produces_mult = -0.1
+		species_empire_size_mult = 0.1
+		planet_pops_lust_crystal_upkeep_add = 0.4
+	}
+
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = growing_species
+			growing_species = {
+				NOT = { has_trait = trait_necrophage }
+			}
+		}
+		pop_growth_speed = -0.75
+	}
+
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = assembling_species
+			assembling_species = {
+				NOT = { has_trait = trait_necrophage }
+			}
+		}
+		planet_pop_assembly_organic_mult = -0.5
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			NOT = { has_trait = trait_necrophage }
+		}
+		planet_pops_organics_food_upkeep_mult = -0.5
+		planet_pops_organics_minerals_upkeep_mult = -0.5
+		planet_pops_organics_energy_upkeep_mult = -0.5
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			NOT = { has_trait = trait_necrophage }
+			owner = {
+				is_gestalt = no
+			}
+		}
+		planet_jobs_ruler_produces_mult = 0.05
+		planet_jobs_specialist_only_produces_mult = 0.05
+		planet_jobs_worker_only_produces_mult = -0.1
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_vampire.dds"
+
+	custom_tooltip_with_modifiers = trait_vampire_tooltip
+
+}
+
+#机械吸血鬼
+trait_VAMPIRE_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT }
+
+	modifier = {
+		planet_jobs_physics_research_produces_mult = 0.35
+		planet_jobs_society_research_produces_mult = 0.35
+		planet_jobs_engineering_research_produces_mult = 0.35
+		planet_jobs_specialist_produces_mult = 0.25
+		species_empire_size_mult = 0.2
+		planet_pops_food_upkeep_add = 0.1
+		planet_pops_lust_crystal_upkeep_add = 0.2
+	}
+
+	assembly_score = {
+		add = 5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_vampire.dds"
+
+}
+
+#僵尸娘
+trait_zombie_girl = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = yes
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_enduring" "trait_venerable" "trait_fleeting" }
+
+	immortal_leaders = yes
+
+	custom_tooltip_with_modifiers = trait_zombie_girl_tooltip
+
+	triggered_pop_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					is_species_class = VAMPIRE
+					has_ascension_perk = ap_mechromancy
+				}
+			}
+		}
+		species_empire_size_mult = -0.5
+	}
+
+	modifier = {
+		habitability_floor_add = 0.5
+		planet_whores_produces_mult = 0.25
+		planet_erotic_jobs_produces_mult = 0.05
+		planet_pops_upkeep_mult = 0.1
+		planet_pops_lust_crystal_upkeep_add = 0.4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_zombie_girl.dds"
+
+}
+
+#堕天使
+trait_angel_fallen = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_rapid_breeders" "trait_repugnant" "trait_enduring" "trait_venerable" "trait_fleeting" }
+
+	immortal_leaders = yes
+
+	custom_tooltip_with_modifiers = angel_fallen_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed = 0.25
+	}
+
+	modifier = {
+		pop_ethic_materialist_attraction_mult = 0.5
+		pop_growth_speed = -0.2
+		species_leader_exp_gain = 0.1
+		leader_trait_selection_options_add = 1
+		planet_erotic_researchers_physics_research_produces_add = 1
+		planet_erotic_researchers_society_research_produces_add = 1
+		planet_erotic_researchers_engineering_research_produces_add = 1
+		planet_harlots_produces_mult = -0.1
+		leaders_upkeep_mult = 0.2
+		negative_leader_traits_species = 1
+		planet_pops_food_upkeep_add = -0.3
+		planet_pops_energy_upkeep_add = 0.2
+		planet_pops_lust_crystal_upkeep_add = 0.7
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_angel_fallen.dds"
+
+}
+
+#机械堕天使
+trait_ANGEL_F_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT }
+
+	modifier = {
+		pop_ethic_materialist_attraction_mult = 0.5
+		species_leader_exp_gain = 0.1
+		leader_trait_selection_options_add = 1
+		planet_erotic_jobs_produces_mult = 0.1
+		planet_erotic_researchers_physics_research_produces_add = 1.5
+		planet_erotic_researchers_society_research_produces_add = 1.5
+		planet_erotic_researchers_engineering_research_produces_add = 1.5
+		leaders_upkeep_mult = 0.3
+		negative_leader_traits_species = 1
+		planet_pops_lust_crystal_upkeep_add = 0.7
+	}
+
+	assembly_score = {
+		add = 5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_angel_fallen.dds"
+
+}
+
+#龙娘
+trait_dragon = {
+	cost = 0
+	sorting_priority = 19
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	opposites = { "trait_rapid_breeders" }
+
+	custom_tooltip_with_modifiers = dragon_ap_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_live_long_and_prosper
+			}
+			exists = growing_species
+		}
+		pop_growth_speed_reduction = -0.15
+	}
+
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = growing_species
+		}
+		pop_growth_speed_reduction = 0.5
+	}
+
+	modifier = {
+		leader_lifespan_add = 100
+		planet_pops_produces_mult = 0.5
+		planet_jobs_produces_mult = 0.1
+		planet_jobs_worker_produces_mult = 0.2
+		species_leader_exp_gain = 0.6
+		leader_trait_selection_options_add = 2
+		army_damage_mult = 0.4
+		army_health = 0.4
+		planet_harlots_produces_mult = -0.1
+		planet_jobs_unity_produces_mult = -0.2
+		species_empire_size_mult = 0.2
+		pop_housing_usage_mult = 0.4
+		planet_pops_food_upkeep_add = 0.5
+		planet_pops_lust_crystal_upkeep_add = 0.2
+		pop_cat_slave_happiness = -0.15
+		pop_cat_specialist_happiness = 0.05
+		pop_cat_ruler_happiness = 0.1
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_dragon.dds"
+
+}
+
+#机械龙娘
+trait_DRAGON_robot = {
+	cost = 3
+	sorting_priority = 17
+
+	initial = no
+	randomized = no
+	forced_happiness = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT }
+
+	modifier = {
+		species_leader_exp_gain = 0.6
+		leader_trait_selection_options_add = 2
+		planet_pops_produces_mult = 0.5
+		planet_jobs_produces_mult = 0.35
+		army_damage_mult = 0.8
+		army_health = 0.8
+		planet_harlots_produces_mult = -0.1
+		planet_jobs_unity_produces_mult = -0.2
+		species_empire_size_mult = 0.2
+		pop_housing_usage_mult = 0.4
+		planet_pop_assemblers_upkeep_mult = 0.2
+		planet_pops_energy_upkeep_add = 0.5
+		planet_pops_lust_crystal_upkeep_add = 0.2
+		pop_cat_slave_happiness = -0.15
+		pop_cat_specialist_happiness = 0.05
+		pop_cat_ruler_happiness = 0.1
+	}
+
+	assembly_score = {
+		add = 15
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/basic_traits/trait_dragon.dds"
+
+}

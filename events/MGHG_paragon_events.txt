@@ -1,0 +1,1208 @@
+namespace = MGHG_paragon
+
+country_event = {
+	id = MGHG_paragon.001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		is_monster_girl = yes
+		is_homicidal = no
+		has_technology = tech_xeno_linguistics
+	}
+
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					add = 2
+					any_owned_starbase = { has_starbase_building = recruitment_office }
+				}
+				modifier = {
+					check_variable = {
+						which = num_kill_army_mult
+						value > 1
+					}
+					NOT = {
+						has_global_flag = Kherne_leader
+					}
+					has_country_flag = two_MGHG_renowned_leader
+					factor = num_kill_army_mult
+				}
+				modifier = {
+					NOT = {
+						has_global_flag = Nurgler_leader
+					}
+					has_country_flag = two_MGHG_renowned_leader
+					factor = value:N_carbot_species
+				}
+				country_event = {
+					id = MGHG_paragon.002 days = 1 random = 360
+				}
+			}
+			0 = {
+				modifier = {
+					add = 1
+					has_country_flag = one_MGHG_renowned_leader
+				}
+				modifier = {
+					add = 1
+					has_country_flag = two_MGHG_renowned_leader
+				}
+				modifier = {
+					factor = 0
+					end_game_years_passed >= 10
+					NOT = {
+						any_country = {
+							is_country_type = default
+							has_technology = tech_lust_grinder
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # MGHG leader lottery machine
+	id = MGHG_paragon.002
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {}
+
+	immediate = { # Chosing leaders to put them into the lottery machine, based on ethics
+		random_list = { # Putting leaders inside the lottery machine, and taking out those who are already hired
+			1 = { # 纽戈儿
+				modifier = {
+					factor = value:MGHG_leader_randomizer|ETHIC|xenophile|LEADER_ID|Nurgler_leader|
+				}
+				ethic_leader_hire_event = { LEADER_ID = Nurgler_leader EVENT_ID = MGHG_paragon.77 }
+				modifier = {
+					factor = 0
+					OR = {
+						has_policy_flag = purge_allowed
+						AND = {
+							is_robot_empire = yes
+							NOT = {
+								has_trait = trait_biochemical_Gynoid
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = value:N_carbot_species
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						has_global_flag = two_renown
+					}
+				}
+				modifier = {
+					factor = 0
+					has_global_flag = S_big_bang
+				}
+			}
+			1 = { # 可蒽
+				modifier = {
+					factor = value:MGHG_leader_randomizer|ETHIC|militarist|LEADER_ID|Kherne_leader|
+				}
+				ethic_leader_hire_event = { LEADER_ID = Kherne_leader EVENT_ID = MGHG_paragon.88 }
+				modifier = {
+					factor = 0
+					country_use_best_slaves = no
+				}
+				modifier = {
+					factor = num_kill_army_mult
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						has_global_flag = two_renown
+					}
+				}
+				modifier = {
+					factor = 0
+					has_global_flag = S_big_bang
+				}
+			}
+			1 = { # 茜妮奇
+				modifier = {
+					factor = value:MGHG_leader_randomizer|ETHIC|materialist|LEADER_ID|Tseentch_leader|
+				}
+				ethic_leader_hire_event = { LEADER_ID = Tseentch_leader EVENT_ID = MGHG_paragon.99 }
+				modifier = {
+					factor = 0
+					has_lewd_princess_tech = no
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						has_global_flag = two_renown
+					}
+				}
+				modifier = {
+					factor = 9
+					end_game_years_passed > 0
+					NOT = {
+						any_country = {
+							is_country_type = default
+							has_technology = tech_lust_grinder
+						}
+					}
+				}
+				modifier = {
+					factor = 99
+					end_game_years_passed > 10
+					NOT = {
+						any_country = {
+							is_country_type = default
+							has_technology = tech_lust_grinder
+						}
+					}
+				}
+				modifier = {
+					factor = 999
+					end_game_years_passed > 25
+					NOT = {
+						any_country = {
+							is_country_type = default
+							has_technology = tech_lust_grinder
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					has_global_flag = S_big_bang
+				}
+			}
+			2 = { # LAMIA
+				modifier = {
+					factor = value:MGHG_leader_randomizer|ETHIC|xenophile|LEADER_ID|lamia_leader|
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = two_MGHG_renowned_leader
+				}
+				ethic_leader_hire_event = { LEADER_ID = lamia_leader EVENT_ID = MGHG_paragon.100 }
+			}
+			2 = { # ANGEL
+				modifier = {
+					factor = value:MGHG_leader_randomizer|ETHIC|spiritualist|LEADER_ID|angel_leader|
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = two_MGHG_renowned_leader
+				}
+				ethic_leader_hire_event = { LEADER_ID = angel_leader EVENT_ID = MGHG_paragon.110 }
+			}
+			2 = { # GYNOID
+				modifier = {
+					factor = value:MGHG_leader_randomizer|LEADER_ID|gynoid_leader|
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = two_MGHG_renowned_leader
+				}
+				ethic_leader_hire_event = { LEADER_ID = gynoid_leader EVENT_ID = MGHG_paragon.120 }
+			}
+
+		}
+	}
+}
+
+country_event = { # Slaaanesh
+	id = MGHG_paragon.66
+	title = "MGHG_paragon.66.name"
+	desc = "MGHG_paragon.66.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_leader_recruitment_bg_legendary_skrand
+	auto_opens = no
+	show_sound = MGHG_short_6
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_Slaaanesh"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Succubus0
+			SPECIES_CLASS = SUCCUBUS
+			SPECIES_TRAIT1 = trait_succubus
+			SPECIES_TRAIT2 = trait_promiscuous
+			LEADER_PORTRAIT = Slaaanesh_loli
+			CLASS = official
+			NAME = leader_Slaaanesh_NAME
+			LEVEL = 1
+			GENDER = female
+			IMMORTAL = no
+			HIDE_AGE = no
+			ETHIC = fanatic_pacifist
+			DESC = leader_Slaaanesh_DESC
+			CATCH_PHRASE = Slaaanesh_catch_phrase
+			LEADER_FLAG = legendary_leader
+		}
+		last_created_leader = {
+			set_age = 6
+			add_trait = leader_trait_eager_2
+			add_trait = leader_trait_pure_mind
+			add_trait = leader_trait_pure_foot
+			add_trait = leader_trait_pure_mouth
+			add_trait = leader_trait_pure_breast
+			add_trait = leader_trait_pure_anus
+			add_trait = leader_trait_pure_vagina
+			species = {
+				save_global_event_target_as = Slaaanesh_species
+			}
+		}
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			ethic_leader_kill_effect = yes
+		}
+	}
+	option = {
+		name = MGHG_paragon.66.a
+		response_text = MGHG_paragon.66.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.66.b
+		response_text = MGHG_paragon.66.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.66.c
+		response_text = MGHG_paragon.66.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		trigger = {
+			is_homicidal = no
+		}
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.66.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = legendary_Slaaanesh
+				LEADER_FLAG = legendary_leader
+				LEVEL = 1
+			}
+			event_target:legendary_Slaaanesh = {
+				change_background_job = high_priest
+				set_leader_flag = legendary_Slaaanesh_loli
+				leader_event = {
+					id = MGHG_leader.602
+					days = 66
+				}
+				leader_event = {
+					id = MGHG_leader.622
+					days = 2880
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Nurgler
+	id = MGHG_paragon.77
+	title = "MGHG_paragon.77.name"
+	desc = "MGHG_paragon.77.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_leader_recruitment_bg_legendary_azaryn
+	auto_opens = no
+	show_sound = MGHG_blowjob_short_1
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_Nurgler"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Slime0
+			SPECIES_CLASS = SLIME
+			SPECIES_TRAIT1 = trait_slime
+			SPECIES_TRAIT2 = trait_promiscuous
+			LEADER_PORTRAIT = Nurgler
+			CLASS = commander
+			NAME = leader_Nurgler_NAME
+			LEVEL = 10
+			GENDER = female
+			IMMORTAL = yes
+			HIDE_AGE = no
+			ETHIC = fanatic_xenophile
+			DESC = leader_Nurgler_DESC
+			CATCH_PHRASE = Nurgler_catch_phrase
+			LEADER_FLAG = legendary_leader
+		}
+		last_created_leader = {
+			set_age = 27
+			freeze_leader_age = yes
+			add_trait = leader_trait_lewd_princess
+			add_trait = leader_trait_lewd_princess_council
+			add_trait = leader_trait_Nurgler_princess
+			add_trait = subclass_commander_admiral
+			add_trait = leader_trait_destiny_engineer
+			add_trait = leader_trait_mudghah_buddha_3
+			add_trait = leader_trait_accompanying_prostitutesr_3
+			add_trait = leader_trait_ship_shock_3
+			add_trait = leader_trait_unyielding_2
+			add_trait = leader_trait_STD_2
+			species = {
+				save_global_event_target_as = Nurgler_species
+			}
+		}
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			remove_global_flag = Nurgler_leader
+			ethic_leader_kill_effect = yes
+			set_country_flag = dismissed_Nurgler_leader
+		}
+	}
+	option = {
+		name = MGHG_paragon.77.a
+		response_text = MGHG_paragon.77.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.77.b
+		response_text = MGHG_paragon.77.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.77.c
+		response_text = MGHG_paragon.77.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.77.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = legendary_Nurgler
+				LEADER_FLAG = legendary_leader
+				LEVEL = 10
+			}
+			event_target:legendary_Nurgler = {
+				change_background_job = whore
+				leader_event = {
+					id = MGHG_leader.701
+					days = 777
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Kherne
+	id = MGHG_paragon.88
+	title = "MGHG_paragon.88.name"
+	desc = "MGHG_paragon.88.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_leader_recruitment_bg_legendary_keides
+	auto_opens = no
+	show_sound = MGHG_blowjob_short_2
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_Kherne"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Vampire0
+			SPECIES_CLASS = VAMPIRE
+			SPECIES_TRAIT1 = trait_vampire
+			SPECIES_TRAIT2 = trait_very_strong
+			LEADER_PORTRAIT = Kherne
+			CLASS = commander
+			NAME = leader_Kherne_NAME
+			LEVEL = 4
+			GENDER = female
+			IMMORTAL = yes
+			HIDE_AGE = no
+			ETHIC = fanatic_militarist
+			DESC = leader_Kherne_DESC
+			CATCH_PHRASE = Kherne_catch_phrase
+			LEADER_FLAG = legendary_leader
+		}
+		last_created_leader = {
+			set_age = 18
+			freeze_leader_age = yes
+			add_trait = subclass_commander_general
+			add_trait = leader_trait_fortress_cracker
+			add_trait = leader_trait_sex_slave_predator_3
+			add_trait = leader_trait_dreaded_3
+			add_trait = leader_trait_butcher_2
+			add_trait = leader_trait_super_lust_powerer_2
+			add_trait = leader_trait_tyrannical_2
+			add_trait = leader_trait_volatile_2
+			add_trait = leader_trait_victory_or_death_2
+			species = {
+				save_global_event_target_as = Kherne_species
+			}
+		}
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			remove_global_flag = Kherne_leader
+			ethic_leader_kill_effect = yes
+			set_country_flag = dismissed_Kherne_leader
+		}
+	}
+	option = {
+		name = MGHG_paragon.88.a
+		response_text = MGHG_paragon.88.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.88.b
+		response_text = MGHG_paragon.88.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.88.c
+		response_text = MGHG_paragon.88.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.88.d
+		response_text = MGHG_paragon.88.d.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.88.e
+		response_text = MGHG_paragon.88.e.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.88.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = legendary_Kherne
+				LEADER_FLAG = legendary_leader
+				LEVEL = 4
+			}
+			event_target:legendary_Kherne = {
+				change_background_job = public_cum_dump
+				leader_event = {
+					id = MGHG_leader.817
+					days = 888
+				}
+			}
+			start_situation = {
+				type = situation_Kherne_opinion
+			}
+		}
+	}
+}
+
+country_event = { # Tseentch
+	id = MGHG_paragon.99
+	title = "MGHG_paragon.99.name"
+	desc = "MGHG_paragon.99.desc"
+
+	is_triggered_only = yes
+	
+	picture = GFX_leader_recruitment_bg_legendary_beholder
+	auto_opens = no
+	show_sound = MGHG_blowjob_short_3
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_Tseentch"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Angel0
+			SPECIES_CLASS = ANGEL_F
+			SPECIES_TRAIT1 = trait_angel_fallen
+			SPECIES_TRAIT2 = trait_promiscuous
+			LEADER_PORTRAIT = Tseentch
+			CLASS = scientist
+			NAME = leader_Tseentch_NAME
+			LEVEL = 10
+			GENDER = female
+			IMMORTAL = yes
+			HIDE_AGE = no
+			ETHIC = fanatic_xenophobe
+			DESC = leader_Tseentch_DESC
+			CATCH_PHRASE = Tseentch_catch_phrase
+			LEADER_FLAG = legendary_leader
+		}
+		last_created_leader = {
+			add_trait = leader_trait_Tseentch_princess
+			add_trait = leader_trait_lewd_princess
+			add_trait = leader_trait_lewd_princess_council
+			add_trait = subclass_scientist_councilor
+			add_trait = leader_trait_great_researcher
+			add_trait = leader_trait_maniacal_3
+			add_trait = leader_trait_inquisitive_3
+			add_trait = leader_trait_sex_doctor_3
+			add_trait = leader_trait_fotd_scientist
+			add_trait = leader_trait_gifted_2
+			add_trait = leader_trait_politician
+			add_trait = leader_trait_embezzler_2
+			add_trait = leader_trait_lavish_lifestyle_2
+			set_age = 19
+			freeze_leader_age = yes
+			species = {
+				save_global_event_target_as = Tseentch_species
+			}
+		}
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+	
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			remove_global_flag = Tseentch_leader
+			ethic_leader_kill_effect = yes
+			set_country_flag = dismissed_Tseentch_leader
+		}
+	}
+	option = {
+		name = MGHG_paragon.99.a
+		response_text = MGHG_paragon.99.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.99.b
+		response_text = MGHG_paragon.99.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.99.c
+		response_text = MGHG_paragon.99.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.99.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = legendary_Tseentch
+				LEADER_FLAG = legendary_leader
+				LEVEL = 10
+			}
+			event_target:legendary_Tseentch = {
+				change_background_job = erotic_researcher
+			}
+			country_event = {
+				id = MGHG_leader.900
+				days = 360
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						is_same_empire = root
+					}
+					is_monster_girl = yes
+					is_ai = no
+				}
+				country_event = {
+					id = MGHG_leader.915
+				}
+			}
+		}
+	}
+}
+
+country_event = { # lamia
+	id = MGHG_paragon.100
+	title = "MGHG_paragon.100.name"
+	desc = "MGHG_paragon.100.desc"
+
+	is_triggered_only = yes
+	
+	picture = GFX_leader_recruitment_bg_legendary_beholder
+	auto_opens = no
+	show_sound = MGHG_blowjob_short_1
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_lamia"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Lamia0
+			SPECIES_CLASS = LAMIA
+			SPECIES_TRAIT1 = trait_lamia
+			LEADER_PORTRAIT = par_renown_lamia
+			CLASS = official
+			NAME = leader_lamia_NAME
+			LEVEL = 4
+			GENDER = female
+			IMMORTAL = no
+			HIDE_AGE = no
+			ETHIC = xenophile
+			DESC = leader_lamia_DESC
+			CATCH_PHRASE = lamia_catch_phrase
+			LEADER_FLAG = renowned_leader
+		}
+		last_created_leader = {
+			add_trait = leader_trait_renown_lamia
+			add_trait = subclass_official_diplomacy_councilor
+			add_trait = trait_ruler_deep_connections_2
+			add_trait = leader_trait_politician_2
+			add_trait = leader_trait_lavish_lifestyle
+			set_age = 19
+		}
+		MGHG_leader_hire_flag = yes
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+	
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			remove_global_flag = lamia_leader
+			ethic_leader_kill_effect = yes
+			set_country_flag = dismissed_lamia_leader
+		}
+	}
+	option = {
+		name = MGHG_paragon.100.a
+		response_text = MGHG_paragon.100.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.100.b
+		response_text = MGHG_paragon.100.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.100.c
+		response_text = MGHG_paragon.100.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.100.d
+		response_text = MGHG_paragon.100.d.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.100.e
+		response_text = MGHG_paragon.100.e.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.100.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_own_flag = yes
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_lamia
+				LEADER_FLAG = renowned_leader
+				LEVEL = 4
+			}
+			event_target:renowned_lamia = {
+				change_background_job = noble
+			}
+		}
+	}
+}
+
+leader_event = {
+	id = MGHG_paragon.101
+	title = MGHG_paragon.101.name
+	desc = MGHG_paragon.101.desc
+	picture = GFX_renowned_lamia_1
+	show_sound = MGHG_blowjob_short_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = owner
+	}
+
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+
+	picture_event_data = {
+		portrait = root
+	}
+
+	option = {
+		name = MGHG_paragon.101.a
+		owner = {
+			add_modifier = {
+				modifier = buy_pseudo_girl
+			}
+		}
+	}
+
+	option = {
+		name = MGHG_paragon.101.b
+		owner = {
+			add_modifier = {
+				modifier = buy_pseudo_girl
+			}
+		}
+	}
+}
+
+leader_event = {
+	id = MGHG_paragon.102
+	title = MGHG_paragon.102.name
+	desc = MGHG_paragon.102.desc
+	picture = GFX_renowned_lamia_2
+	show_sound = MGHG_blowjob_short_5
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = owner
+	}
+
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+
+	picture_event_data = {
+		portrait = root
+	}
+
+	option = {
+		name = MGHG_paragon.102.a
+		add_trait = leader_trait_paedophilia
+	}
+
+	option = {
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value >= 1000
+				}
+			}
+		}
+		name = MGHG_paragon.102.b
+		add_experience = 1000
+		owner = {
+			add_resource = {
+				energy = -1000
+			}
+		}
+	}
+}
+
+country_event = { # angel
+	id = MGHG_paragon.110
+	title = "MGHG_paragon.110.name"
+	desc = "MGHG_paragon.110.desc"
+
+	is_triggered_only = yes
+	
+	picture = GFX_leader_recruitment_bg_legendary_beholder
+	auto_opens = no
+	show_sound = MGHG_blowjob_short_2
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_angel"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Angel0
+			SPECIES_CLASS = ANGEL
+			SPECIES_TRAIT1 = trait_angel
+			LEADER_PORTRAIT = par_renown_angel
+			CLASS = commander
+			NAME = leader_angel_NAME
+			LEVEL = 4
+			GENDER = female
+			IMMORTAL = yes
+			HIDE_AGE = no
+			ETHIC = spiritualist
+			DESC = leader_angel_DESC
+			CATCH_PHRASE = angel_catch_phrase
+			LEADER_FLAG = renowned_leader
+		}
+		last_created_leader = {
+			add_trait = leader_trait_renown_angel
+			add_trait = subclass_commander_governor
+			add_trait = leader_trait_pure_love_2
+			add_trait = leader_trait_generator_focus_2
+			add_trait = leader_trait_martinet_2
+			add_trait = leader_trait_melancholic
+			set_age = 699
+		}
+		MGHG_leader_hire_flag = yes
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+	
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			remove_global_flag = angel_leader
+			ethic_leader_kill_effect = yes
+			set_country_flag = dismissed_angel_leader
+		}
+	}
+	option = {
+		name = MGHG_paragon.110.a
+		response_text = MGHG_paragon.110.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.110.b
+		response_text = MGHG_paragon.110.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.110.c
+		response_text = MGHG_paragon.110.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.110.d
+		response_text = MGHG_paragon.110.d.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.110.e
+		response_text = MGHG_paragon.110.e.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.110.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_own_flag = yes
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_angel
+				LEADER_FLAG = renowned_leader
+				LEVEL = 4
+			}
+			event_target:renowned_angel = {
+				change_background_job = priest
+			}
+		}
+	}
+}
+
+leader_event = {
+	id = MGHG_paragon.111
+	title = MGHG_paragon.111.name
+	desc = MGHG_paragon.111.desc
+	picture = GFX_renowned_angel_1
+	show_sound = MGHG_blowjob_short_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = owner
+	}
+
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+
+	picture_event_data = {
+		portrait = root
+	}
+
+	option = {
+		name = MGHG_paragon.111.a
+		add_experience = 1500
+	}
+}
+
+leader_event = {
+	id = MGHG_paragon.112
+	title = MGHG_paragon.112.name
+	desc = MGHG_paragon.112.desc
+	picture = GFX_renowned_angel_2
+	show_sound = MGHG_blowjob_short_5
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = owner
+	}
+
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+
+	picture_event_data = {
+		portrait = root
+	}
+
+	option = {
+		name = MGHG_paragon.112.a
+		if = {
+			limit = {
+				has_trait = leader_trait_stubborn
+			}
+			add_trait = leader_trait_stubborn_2
+		}
+		else_if = {
+			limit = {
+				has_trait = leader_trait_stubborn_2
+			}
+			owner = {
+				add_resource = {
+					unity = -1000
+				}
+			}
+		}
+		else = {
+			add_trait = leader_trait_stubborn
+		}
+	}
+}
+
+country_event = { # gynoid
+	id = MGHG_paragon.120
+	title = "MGHG_paragon.120.name"
+	desc = "MGHG_paragon.120.desc"
+
+	is_triggered_only = yes
+	
+	picture = GFX_leader_recruitment_bg_legendary_beholder
+	auto_opens = no
+	show_sound = MGHG_blowjob_short_2
+	event_window_type = leader_recruit
+	notification_event_icon = "GFX_message_leader_recruitment_gynoid"
+
+	immediate = {
+		MGHG_leader_creator = {
+			SPECIES_NAME = SPEC_Gynoid0
+			SPECIES_CLASS = GYNOID
+			SPECIES_TRAIT1 = trait_Gynoid
+			SPECIES_TRAIT2 = trait_robot_repurposed_hardware
+			LEADER_PORTRAIT = par_renown_gynoid
+			CLASS = commander
+			NAME = leader_gynoid_NAME
+			LEVEL = 4
+			GENDER = female
+			IMMORTAL = yes
+			HIDE_AGE = no
+			ETHIC = materialist
+			DESC = leader_gynoid_DESC
+			CATCH_PHRASE = gynoid_catch_phrase
+			LEADER_FLAG = renowned_leader
+		}
+		last_created_leader = {
+			add_trait = leader_trait_renown_gynoid
+			add_trait = subclass_commander_admiral
+			add_trait = leader_trait_artillerist_2
+			add_trait = leader_trait_wrecker_2
+			add_trait = leader_trait_reclusive
+			set_age = 16
+		}
+		MGHG_leader_hire_flag = yes
+	}
+
+	picture_event_data = {
+		portrait = event_target:ethic_leader
+		room = ethic_spaceship_room
+	}
+	
+	option = {
+		name = DISMISS
+		tag = dismiss_leader
+		hidden_effect = {
+			remove_global_flag = gynoid_leader
+			ethic_leader_kill_effect = yes
+			set_country_flag = dismissed_gynoid_leader
+		}
+	}
+	option = {
+		name = MGHG_paragon.120.a
+		response_text = MGHG_paragon.120.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.120.b
+		response_text = MGHG_paragon.120.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.120.c
+		response_text = MGHG_paragon.120.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.120.d
+		response_text = MGHG_paragon.120.d.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = MGHG_paragon.120.e
+		response_text = MGHG_paragon.120.e.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = HIRE
+		tag = hire_leader
+		custom_tooltip = MGHG_paragon.120.hire_custom_tooltip
+		hidden_effect = {
+			MGHG_leader_own_flag = yes
+			MGHG_leader_hire_effect = {
+				GLOBAL_EVENT_TARGET = renowned_gynoid
+				LEADER_FLAG = renowned_leader
+				LEVEL = 4
+			}
+			event_target:renowned_gynoid = {
+				freeze_leader_age = yes
+				change_background_job = singing_girl
+			}
+		}
+	}
+}
+
+leader_event = {
+	id = MGHG_paragon.121
+	title = MGHG_paragon.121.name
+	desc = MGHG_paragon.121.desc
+	picture = GFX_renowned_gynoid_1
+	show_sound = MGHG_blowjob_short_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = owner
+	}
+
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+
+	picture_event_data = {
+		portrait = root
+	}
+
+	option = {
+		name = MGHG_paragon.121.a
+		add_experience = 500
+		owner = {
+			add_resource = {
+				energy = 1000
+				influence = 100
+			}
+		}
+	}
+}
+
+leader_event = {
+	id = MGHG_paragon.122
+	title = MGHG_paragon.122.name
+	desc = MGHG_paragon.122.desc
+	picture = GFX_renowned_gynoid_2
+	show_sound = MGHG_blowjob_short_5
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		exists = owner
+	}
+
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+
+	picture_event_data = {
+		portrait = root
+	}
+
+	option = {
+		name = MGHG_paragon.122.a
+		if = {
+			limit = {
+				has_trait = leader_trait_reclusive
+			}
+			remove_trait = leader_trait_reclusive
+		}
+		else_if = {
+			limit = { 
+				has_trait = leader_trait_reclusive_2
+			}
+			remove_trait = leader_trait_reclusive_2
+		}
+		trait_add_or_level_up = {
+			TRAIT = leader_trait_pornographic_superstar
+		}
+		owner = {
+			add_modifier = {
+				modifier = modifier_miku
+				days = -1
+			}
+		}
+	}
+}
+
+#leader story
+country_event = {
+	id = MGHG_paragon.1000
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {}
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = renowned_leader }
+			switch = {
+				trigger = has_leader_flag
+				renowned_lamia = {
+					random_list = {
+						10 = { leader_event = { id = MGHG_paragon.101 days = 1 random = 1800 } }
+						10 = { leader_event = { id = MGHG_paragon.102 days = 1 random = 1800 } }
+						80 = {}
+					}
+				}
+				renowned_angel = {
+					random_list = {
+						10 = { leader_event = { id = MGHG_paragon.111 days = 1 random = 1800 } }
+						10 = { leader_event = { id = MGHG_paragon.112 days = 1 random = 1800 } }
+						80 = {}
+					}
+				}
+				renowned_gynoid = {
+					random_list = {
+						10 = { leader_event = { id = MGHG_paragon.121 days = 1 random = 1800 } }
+						10 = { leader_event = { id = MGHG_paragon.122 days = 1080 random = 720 } }
+						80 = {}
+					}
+				}
+			}
+		}
+	}
+}

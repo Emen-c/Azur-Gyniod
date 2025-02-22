@@ -1,0 +1,497 @@
+# Number of entries controlls amount to choose from in designer I.E.	"mol1" "mol2" "mol3" "mol4"
+# graphical_culture is connected to the looks used for ships and cities, see "common/graphical_culture/"
+# Portraits here are one you can choose from in the character creater. For prescripted races they are grabbed straight from the .gfx file.
+# playable=(yes/no)/trigger, default is yes, if this species class can is playable
+# randomized=(yes/no)/trigger, default is yes, if this species class is randomized
+# custom_portraits
+#	randomized = trigger, default is no, to specify if portraits are randomized
+#	playable = trigger, default is yes, to specify if portraits are playable
+#	portraits, list portrait keys
+# possible: ethics/government requirements; see common/governments/readme_requirements.txt
+# gender: yes|no (default: yes). whether the species have a gender
+# portrait_modding: yes|no (default: no). whether the portrait can be modified with genemodding/robomodding
+
+LAMIA = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		upkeep = {
+		}
+	}
+	
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_xenophile
+	}
+	preferred_ethics_weight = {
+		base = 2.5
+	}
+
+	gender = yes
+
+	graphical_culture = reptilian_01
+	move_pop_sound_effect = "reptilian_pops_move"
+
+	trait = trait_lamia
+}
+
+ANGEL = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					OR = {
+						has_valid_civic = civic_divine_ethnic_group
+						has_valid_civic = civic_divine_ethnic_group_corporate
+					}
+				}
+				pop_has_ethic = ethic_spiritualist
+			}
+			unity = 0.3
+			mult = modifier:planet_erotic_jobs_produces_mult
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_divine_ethnic_group_hive
+				}
+				has_trait = trait_hive_mind
+			}
+			unity = 0.15
+			mult = modifier:planet_erotic_jobs_produces_mult
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					OR = {
+						has_valid_civic = civic_divine_ethnic_group
+						has_valid_civic = civic_divine_ethnic_group_corporate
+					}
+				}
+				pop_has_ethic = ethic_spiritualist
+			}
+			unity = 0.3
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_divine_ethnic_group_hive
+				}
+				has_trait = trait_hive_mind
+			}
+			unity = 0.15
+		}
+		upkeep = {
+		}
+	}
+
+	leader_age_min = 250
+	leader_age_max = 450
+
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_spiritualist
+	}
+	preferred_ethics_weight = {
+		base = 2.5
+	}
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	trait = trait_angel
+}
+
+GYNOID = {
+	archetype = MACHINE
+
+	possible = {
+		OR = {
+			AND = {
+				host_has_dlc = "The Machine Age"
+				authority = {
+					NOT = {
+						value = auth_hive_mind
+					}
+				}
+			}
+			authority = {
+				OR = { 
+					value = auth_machine_intelligence 
+					text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE 
+				}
+			}
+		}
+	}
+	possible_secondary = {
+		OR = {
+			AND = {
+				host_has_dlc = "The Machine Age"
+				civics = {
+					NOT = {
+						value = civic_machine_servitor
+					}
+				}
+			}
+			OR = {
+				always = no
+				text = SECONDARY_SPECIES_CLASS_INVALID
+			}
+		}
+	}
+
+	playable = {
+		OR = {
+			host_has_dlc = "Synthetic Dawn Story Pack"
+			has_machine_age_dlc = yes
+		}
+	}
+	randomized = {
+		OR = {
+			host_has_dlc = "Synthetic Dawn Story Pack"
+			has_machine_age_dlc = yes
+		}
+		# The create_species effect can't properly take the possible trigger below into account.
+		# Work around this by disabling this class for species randomization after game start.
+		NOT = {
+			has_global_flag = game_started
+		}
+	}
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_gestalt_consciousness
+	}
+	preferred_ethics_weight = {
+		base = 2.5
+	}
+
+	use_climate_preference = no
+	portrait_modding = yes
+
+	leader_age_min = 5
+	leader_age_max = 10
+
+	resources = {
+		category = planet_pops
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	graphical_culture = synthetics_01
+	move_pop_sound_effect = "robot_pops_move"
+
+	trait = trait_Gynoid
+
+}
+
+GYNOID_ROBOT = {
+	archetype = ROBOT
+
+	playable = {
+		has_global_flag = game_started
+	}
+	randomized = no
+	gender = yes
+	use_climate_preference = no
+	portrait_modding = yes
+	leader_age_min = 1
+	leader_age_max = 10
+
+	resources = {
+		category = planet_pops
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	graphical_culture = ai_01
+	move_pop_sound_effect = "robot_pops_move"
+
+	trait = trait_Gynoid
+
+}
+
+SLIME = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_gestalt_consciousness
+	}
+	preferred_ethics_weight = {
+		base = 2.5
+	}
+
+	graphical_culture = fungoid_01
+	move_pop_sound_effect = "fungoid_pops_move"
+
+	trait = trait_slime
+}
+
+SUCCUBUS = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	leader_age_min = 100
+	leader_age_max = 180
+
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_authoritarian
+	}
+	preferred_ethics_weight = {
+		base = 2.5
+	}
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	trait = trait_succubus
+}
+
+#吸血鬼
+VAMPIRE = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	leader_age_min = 50
+	leader_age_max = 90
+
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_xenophobe
+	}
+	preferred_ethics_weight = {
+		base = 1.5
+	}
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	trait = trait_vampire
+
+}
+
+#僵尸娘
+ZOMBIE = {
+	archetype = BIOLOGICAL
+	randomized = no
+
+	playable = {
+		always = no
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	gender = yes
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	trait = trait_zombie_girl
+
+}
+
+#堕天使
+ANGEL_F = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	leader_age_min = 250
+	leader_age_max = 450
+
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_materialist
+	}
+	preferred_ethics_weight = {
+		base = 2.5
+	}
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	trait = trait_angel_fallen
+}
+
+#龙娘
+DRAGON = {
+	archetype = BIOLOGICAL
+	randomized = yes
+
+	possible = {
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+				text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+			}
+		}
+	}
+
+	resources = {
+		category = planet_pops
+		inline_script = civics/eat_self
+		produces = {
+		}
+		upkeep = {
+		}
+	}
+
+	gender = yes
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_authoritarian
+	}
+	preferred_ethics_weight = {
+		base = 1.5
+	}
+
+	graphical_culture = reptilian_01
+	move_pop_sound_effect = "reptilian_pops_move"
+
+	trait = trait_dragon
+}
+

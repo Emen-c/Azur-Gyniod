@@ -1,0 +1,110 @@
+# defined_text = {
+# 	name = GetFleshTypeCyberCreed
+# 	text = {
+# 		trigger = {
+# 			is_species_class = LITHOID
+# 		}
+# 		localization_key = cyber_creed_flesh_rock
+# 	}
+# 	text = {
+# 		trigger = {
+# 			is_species_class = PLANT
+# 		}
+# 		localization_key = cyber_creed_flesh_plant
+# 	}
+# 	text = {
+# 		trigger = {
+# 			is_species_class = ART
+# 		}
+# 		localization_key = cyber_creed_flesh_arthropod
+# 	}
+# 	default = cyber_creed_flesh_default
+# }
+
+defined_text = {
+	name = GetEyeName
+   text = {
+	   trigger = {
+		   OR = {
+			   is_species_class = MACHINE
+			   is_species_class = ROBOT
+			   is_species_class = AI
+			   is_species_class = GYNOID
+			   is_species_class = GYNOID_ROBOT
+			   is_species_class = Azur_Lane_R
+		   }
+	   }
+	   localization_key = get_eye_name_robot
+   }
+   default = get_eye_name_default_eye
+}
+
+defined_text = {
+ 	name = GetEyeNamePlural
+	text = {
+		trigger = {
+			OR = {
+				is_species_class = MACHINE
+				is_species_class = ROBOT
+				is_species_class = AI
+				is_species_class = GYNOID
+				is_species_class = GYNOID_ROBOT
+				is_species_class = Azur_Lane_R
+			}
+		}
+		localization_key = get_eye_name_plural_robot
+	}
+	default = get_eye_name_plural_default_eye
+}
+
+defined_text = {
+	name = GetBloodType
+	text = {
+		trigger = {
+			OR = {
+				is_species_class = LITHOID
+				is_species_class = FUN
+			}
+		}
+		localization_key = blood_type_vital_fluid
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_species_class = PLANT
+				is_species_class = SLIME
+			}
+		}
+		localization_key = blood_type_sap
+	}
+	text = {
+		trigger = {
+			is_species_class = ART
+		}
+		localization_key = blood_type_hemolymph
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_species_class = NECROID
+				is_species_class = VAMPIRE
+				is_species_class = ZOMBIE
+			}
+		}
+		localization_key = blood_type_ichor
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_species_class = MACHINE
+				is_species_class = ROBOT
+				is_species_class = AI
+				is_species_class = GYNOID
+				is_species_class = GYNOID_ROBOT
+				is_species_class = Azur_Lane_R
+			}
+		}
+		localization_key = blood_type_coolant
+	}
+	default = blood_type_blood
+}

@@ -1,0 +1,37 @@
+tradition_gynoid = {
+	tree_template = "tree_11_111"
+	adoption_bonus = "tr_gynoid_adopt"
+	finish_bonus = "tr_gynoid_finish"
+
+	potential = {
+		if = {
+			limit = {
+				has_origin = origin_synthetic_fertility
+			}
+			is_species_class = GYNOID_ROBOT
+			NOR = {
+				has_tradition = tr_lamia_adopt
+				has_tradition = tr_angel_adopt
+				has_tradition = tr_slime_adopt
+			}
+		}
+		else = {
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = Azur_Lane_R
+			}
+		}
+	}
+
+	traditions = {
+		"tr_gynoid_data_hybridization"
+		"tr_gynoid_cloud_social_networking"
+		"tr_gynoid_sexuality_database"
+		"tr_gynoid_autogenous_sexual"
+		"tr_gynoid_clear_hacker"
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

@@ -1,0 +1,16 @@
+#species scope, prev has to be either country or something with an owner
+species_can_be_necrophaged = {
+	NOR = {
+		is_archetype = MACHINE
+		is_archetype = ROBOT
+		is_archetype = PRESAPIENT
+		is_archetype = KANSEN
+		is_same_species = prev.owner_species
+		AND = {
+			has_slavery_type = { type = slavery_livestock country = prev.owner }
+			prev.owner = { is_hive_empire = no }
+		}
+		has_citizenship_type = { type = citizenship_purge country = prev.owner }
+	}
+	species_has_happiness_with_owner = prev.owner
+}

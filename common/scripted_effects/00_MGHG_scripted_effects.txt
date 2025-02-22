@@ -1,0 +1,3535 @@
+add_sex_slave_leader_trait = {
+	optimize_memory
+	random_list = {
+		1 = {
+			add_trait_no_notify = leader_trait_public_sex_slaves
+			modifier = {
+				from = {
+					is_gestalt = yes
+				}
+				factor = 0
+			}
+		}
+		1 = {
+			add_trait_no_notify = leader_trait_public_sex_slaves_gestalt
+			modifier = {
+				from = {
+					is_gestalt = no
+				}
+				factor = 0
+			}
+		}
+		1 = {
+			add_trait_no_notify = leader_trait_private_sex_slaves
+			modifier = {
+				from = {
+					is_gestalt = yes
+				}
+				factor = 0
+			}
+		}
+	}
+}
+
+remove_sex_slave_leader_trait = {
+	optimize_memory
+	if = {
+		limit = { has_trait = leader_trait_public_sex_slaves }
+		remove_trait = leader_trait_public_sex_slaves
+	}
+	if = {
+		limit = { has_trait = leader_trait_public_sex_slaves_gestalt }
+		remove_trait = leader_trait_public_sex_slaves_gestalt
+	}
+	else = {
+		remove_trait = leader_trait_private_sex_slaves
+	}
+}
+
+add_temptress_leader_trait = {
+	optimize_memory
+	random_list = {
+		9 = {
+			add_trait_no_notify = leader_trait_temptress_normal
+		}
+		1 = {
+			add_trait_no_notify = leader_trait_temptress_best
+		}
+	}
+}
+
+remove_temptress_leader_trait = {
+	optimize_memory
+	if = {
+		limit = { has_trait = leader_trait_temptress_normal }
+		remove_trait = leader_trait_temptress_normal
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_temptress_best }
+		remove_trait = leader_trait_temptress_best
+	}
+}
+
+origin_imperial_fiefdom_sex_slave_specialization_effect = {
+	custom_tooltip = origin.5705.sex_slave.a.tt
+
+	hidden_effect = {
+		optimize_memory
+		random_agreement = {
+			limit = {
+				owner = { is_same_value = root.overlord }
+				target = { is_same_value = root }
+			}
+			set_agreement_preset = { preset = preset_sex_slave }
+			set_agreement_terms = { subject_expand = subject_can_expand_with_tithe }
+		}
+		add_resource = {
+			energy = 500
+			food = 500
+			minerals = 500
+		}
+	}
+}
+
+origin_imperial_fiefdom_temptress_specialization_effect = {
+	custom_tooltip = origin.5705.temptress.a.tt
+
+	hidden_effect = {
+		optimize_memory
+		random_agreement = {
+			limit = {
+				owner = { is_same_value = root.overlord }
+				target = { is_same_value = root }
+			}
+			set_agreement_preset = { preset = preset_temptress }
+			set_agreement_terms = { subject_expand = subject_can_expand_with_tithe }
+		}
+		add_resource = {
+			energy = 500
+			food = 500
+			minerals = 500
+			consumer_goods = 200
+			alloys = 200
+		}
+	}
+}
+
+add_resource_deposit = {
+	optimize_memory
+	solar_system = {
+		random_system = {
+			limit = {
+				NOT = { exists = owner }
+				distance = {
+					source = prev
+					use_bypasses = no
+					min_jumps = $MIN$
+					max_jumps = $MAX$
+				}
+				any_system_planet = {
+					is_colonizable = no
+					is_colony = no
+					NOR = {
+						has_deposit_for = shipclass_research_station
+						is_star = yes
+						is_planet_class = pc_gas_giant
+					}
+				}
+			}
+			random_system_planet = {
+				limit = {
+					is_colonizable = no
+					is_colony = no
+					NOR = {
+						has_deposit_for = shipclass_research_station
+						is_star = yes
+						is_planet_class = pc_gas_giant
+					}
+				}
+				weights = {
+					base = 1
+					modifier = {
+						factor = 100
+						OR = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_ice_asteroid
+						}
+					}
+				}
+				add_deposit = $DEPOSIT$
+			}
+		}
+	}
+}
+
+set_synthetic_evolution_species_flag = {
+	optimize_memory
+	set_country_flag = $SPECIES$
+	switch = {
+		trigger = species_portrait
+		$SPECIES$01 = {
+			set_country_flag = $SPECIES$01
+		}
+		$SPECIES$02 = {
+			set_country_flag = $SPECIES$02
+		}
+		$SPECIES$03 = {
+			set_country_flag = $SPECIES$03
+		}
+		$SPECIES$04 = {
+			set_country_flag = $SPECIES$04
+		}
+		$SPECIES$05 = {
+			set_country_flag = $SPECIES$05
+		}
+		$SPECIES$06 = {
+			set_country_flag = $SPECIES$06
+		}
+		$SPECIES$07 = {
+			set_country_flag = $SPECIES$07
+		}
+		default = {
+			set_country_flag = ZOMBIE01
+		}
+	}
+}
+
+modify_synthetic_evolution_species = {
+	optimize_memory
+	remove_country_flag = $SPECIES$
+	modify_species = {
+		species = last_created_species
+		add_trait = trait_$SPECIES$_robot
+	}
+	switch = {
+		trigger = has_country_flag
+		$SPECIES$01 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$01
+			}
+		}
+		$SPECIES$02 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$02
+			}
+		}
+		$SPECIES$03 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$03
+			}
+		}
+		$SPECIES$04 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$04
+			}
+		}
+		$SPECIES$05 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$05
+			}
+		}
+		$SPECIES$06 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$06
+			}
+		}
+		$SPECIES$07 = {
+			modify_species = {
+				species = last_created_species
+				portrait = $SPECIES$07
+			}
+		}
+		ZOMBIE01 = {
+			modify_species = {
+				species = last_created_species
+				portrait = ZOMBIE01
+			}
+		}
+	}
+}
+
+restore_complex_gynoid = {
+	switch = {
+		trigger = has_country_flag
+		$SPECIES$01 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$01
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+		$SPECIES$02 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$02
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+		$SPECIES$03 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$03
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+		$SPECIES$04 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$04
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+		$SPECIES$05 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$05
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+		$SPECIES$06 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$06
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+		$SPECIES$07 = {
+			every_owned_species = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				change_species_portrait = $SPECIES$07
+			}
+			every_owned_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+			every_pool_leader = {
+				limit = {
+					species = {
+						has_trait = trait_$SPECIES$_robot
+					}
+				}
+				change_leader_portrait = species
+			}
+		}
+	}
+}
+
+synth_species_complex_gynoid_create = {
+	optimize_memory
+	create_species = {
+		name = this
+		namelist = this
+		portrait = this
+		plural = this
+		class = "GYNOID_ROBOT"
+		traits = {
+			trait = trait_mechanical
+			trait = trait_Gynoid
+			trait = trait_cyber_Gynoid
+			trait = trait_$SPECIES$_robot
+		}
+		can_be_modified = this
+		homeworld = this
+		gender = this
+
+		effect = {
+			set_synth_origin_traits_effect = yes
+		}
+	}
+}
+
+origin_knight_oath_effect = {
+	optimize_memory
+	event_target:knight_oath_country = {
+		set_subject_of = {
+			who = root
+		}
+	}
+	hidden_effect = {
+		event_target:knight_oath_country = {
+			random_agreement = {
+				set_agreement_terms = {
+					subject_integration = subject_can_not_be_integrated
+					subject_diplomacy = subject_can_do_diplomacy_but_not_vote
+					subject_expand = subject_can_expand
+					joins_overlord_wars = joins_overlord_wars_all
+					resource_subsidies_basic = 0.1
+					resource_subsidies_advanced = 0.2
+					resource_subsidies_research = 0.1
+					resource_subsidies_basic_mg = 0.1
+					joins_subject_wars = joins_subject_wars_defensive
+					subject_holdings_limit = subject_holdings_limit_2
+					subject_sensors = subject_gets_sensors
+				}
+				add_loyalty = 1000
+			}
+		}
+	}
+}
+
+MGHG_leader_hire_flag = {
+	switch = {
+		trigger = has_global_flag
+		two_renown = {}
+		first_renown = {
+			set_global_flag = two_renown
+		}
+		default = {
+			set_global_flag = first_renown
+		}
+	}
+}
+
+MGHG_leader_own_flag = {
+	switch = {
+		trigger = has_country_flag
+		two_MGHG_renowned_leader = {}
+		one_MGHG_renowned_leader = {
+			set_country_flag = two_MGHG_renowned_leader
+		}
+		default = {
+			set_country_flag = one_MGHG_renowned_leader
+		}
+	}
+}
+
+MGHG_leader_hire_effect = {
+	optimize_memory
+	random_owned_planet = {
+		limit = {
+			is_variable_set = paragon_memory_vault
+		}
+		change_variable = {
+			which = paragon_memory_vault
+			value = 1
+		}
+	}
+
+	set_country_flag = spawning_renowned_leader
+
+	event_target:ethic_leader = {
+		set_skill = 1
+	}
+
+	clone_leader = {
+		target = event_target:ethic_leader
+		skip_background_generation = yes
+	}
+	last_created_leader = {
+		set_skill = $LEVEL$
+		save_global_event_target_as = $GLOBAL_EVENT_TARGET$
+		set_leader_flag = $GLOBAL_EVENT_TARGET$
+		set_leader_flag = $LEADER_FLAG$
+	}
+
+	remove_country_flag = spawning_renowned_leader
+
+	create_message = {
+		type = MESSAGE_RECRUITED_LEADER
+		localization =  MESSAGE_RECRUITED_LEADER_DESC
+		days = @toast_message_days
+		target = event_target:ethic_leader
+		variable = {
+			type = name
+			localization = LEADER
+			scope = event_target:ethic_leader
+		}
+		variable = {
+				key = "border"
+				value = "GFX_border_veteran" #TODO Add real rarity frame gfx
+		}
+	}
+}
+
+add_specialist_MGHG_leaders = {
+	optimize_memory
+	every_pool_leader = {
+		add_specialist_trait_to_MGHG_leader_in_pool = {
+			TYPE = $TYPE$
+			CLASS = $CLASS$
+		}
+	}
+	every_owned_leader = {
+		limit = {
+			OR = {
+				owner = {
+					is_gestalt = no
+				}
+				AND = {
+					owner  ={
+						is_gestalt = yes
+					}
+					is_councilor = no
+				}
+			}
+		}
+		add_specialist_trait_to_MGHG_leader = {
+			TYPE = $TYPE$
+			CLASS = $CLASS$
+		}
+	}
+}
+
+add_specialist_trait_to_MGHG_leader_in_pool = {
+	optimize_memory
+	if = {
+		limit = {
+			leader_class = $CLASS$
+			species = {
+				is_monster_girl = yes
+			}
+			gender = female
+			NOT = { has_leader_flag = $TYPE$_$CLASS$ }
+		}
+		add_skill = 1
+		add_$TYPE$_leader_trait = yes
+		set_leader_flag = $TYPE$_$CLASS$
+	}
+}
+
+add_specialist_trait_to_MGHG_leader = {
+	optimize_memory
+	if = {
+		limit = {
+			leader_class = $CLASS$
+			species = {
+				is_monster_girl = yes
+			}
+			gender = female
+			NOT = { has_leader_flag = $TYPE$_$CLASS$ }
+		}
+		add_$TYPE$_leader_trait = yes
+		set_leader_flag = $TYPE$_$CLASS$
+	}
+}
+
+MGHG_leader_creator = {
+	optimize_memory
+	create_country = {
+		name = "NAME_leader_country"
+		type = faction
+		auto_delete = yes
+		flag = {
+			icon = {
+				category = "special"
+				file = "unknown.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors = {
+				"red"
+				"red"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			save_event_target_as = leader_country
+		}
+	}
+	event_target:leader_country = {
+		create_species = {
+			name = $SPECIES_NAME$
+			namelist = SUCCUBUS
+			class = $SPECIES_CLASS$
+			portrait = $LEADER_PORTRAIT$
+			traits = {
+				[[SPECIES_TRAIT1]
+					trait = $SPECIES_TRAIT1$
+				]
+				[[SPECIES_TRAIT2]
+					trait = $SPECIES_TRAIT2$
+				]
+				[[SPECIES_TRAIT3]
+					trait = $SPECIES_TRAIT3$
+				]
+				trait = "trait_enduring"
+				trait = "trait_talented"
+			}
+			allow_negative_traits = no
+			effect = {
+				save_event_target_as = leader_species
+			}
+		}
+		create_leader = {
+			class = $CLASS$
+			species = event_target:leader_species
+			name = $NAME$
+			skill = $LEVEL$
+			gender = $GENDER$
+			event_leader = no # Leader is allowed to lead factions and win elections
+			background_ethic = ethic_$ETHIC$
+			skip_background_generation = yes
+			custom_description = $DESC$
+			custom_catch_phrase = $CATCH_PHRASE$
+			immortal = $IMMORTAL$
+			hide_age = $HIDE_AGE$ # Right now it will always match immortal
+
+			randomize_traits = no
+			effect = {
+				save_event_target_as = ethic_leader
+				set_leader_flag = $LEADER_FLAG$
+				set_leader_flag = is_in_recruit_window
+				set_variable = { which = leader_pending_negative_traits_unmodified value = 1 }
+			}
+		}
+	}
+	event_target:ethic_leader = {
+		set_owner = root
+		# This is a hack to make the leader not be added to player country.
+		# We must call ethic_leader_hire on the hire event
+		# We must call ethic_leader_kill on the dismiss event
+		exile_leader_as = ethic_leader_exile
+	}
+}
+
+create_MGHG_event_leader = {
+	optimize_memory
+	create_species = {
+		name = $NAME$_species
+		namelist = $SPECIES_CLASS$
+		class = $SPECIES_CLASS$
+		homeworld = $HOMEWORLD$
+		portrait = $NAME$
+		traits = {
+			trait = $SPECIES_TRAIT_1$
+			trait = $SPECIES_TRAIT_2$
+			trait = $SPECIES_TRAIT_3$
+		}
+	}
+	last_created_species = {
+		save_event_target_as = $NAME$_species
+	}
+	create_leader = {
+		class = $LEADER_CLASS$
+		species = event_target:$NAME$_species
+		name = NAME_$NAME$
+		event_leader = yes
+		skill = 1
+		set_age = 0
+		skip_background_generation = yes
+		custom_catch_phrase = $NAME$_catch_phrase
+		custom_description = $NAME$_backstory
+		background_ethic = ethic_$ETHIC$
+		gender = $GENDER$
+		hide_age = $HIED_AGE$
+		immortal = $IMMORTAL$
+		randomize_traits = no
+		traits = {
+			0 = leader_trait_$NAME$
+		}
+		effect = {
+			set_skill = $LEVEL$
+			add_trait_no_notify = leader_trait_$NAME$
+			set_leader_flag = legendary_leader
+			set_leader_flag = immune_to_negative_traits
+			set_leader_flag = $NAME$
+			save_global_event_target_as = $NAME$
+		}
+	}
+	create_message = {
+		type = MESSAGE_RECRUITED_LEADER
+		localization =  MESSAGE_RECRUITED_LEADER_DESC
+		days = @toast_message_days
+		target = event_target:$NAME$
+		variable = {
+			type = name
+			localization = LEADER
+			scope = event_target:$NAME$
+		}
+		variable = {
+			key = "border"
+			value = "GFX_border_veteran" #TODO Add real rarity frame gfx
+		}
+	}
+
+}
+
+create_Nidehogg = {
+	optimize_memory
+	create_MGHG_event_leader = {
+		NAME = Nidehogg
+		SPECIES_CLASS = SUCCUBUS
+		HOMEWORLD = root.species
+		SPECIES_TRAIT_1 = trait_succubus
+		SPECIES_TRAIT_2 = trait_talented
+		SPECIES_TRAIT_3 = trait_promiscuous
+		LEADER_CLASS = scientist
+		LEVEL = 10
+		ETHIC = materialist
+		GENDER = female
+		HIED_AGE = yes
+		IMMORTAL = yes
+	}
+	hidden_effect = {
+		last_created_leader = {
+			add_trait_no_notify = leader_trait_erudite
+			if = {
+				limit = {
+					exists = owner
+					owner = {
+						is_gestalt = no
+					}
+				}
+				add_trait_no_notify = subclass_scientist_councilor
+				add_trait_no_notify = leader_trait_great_researcher
+				add_trait_no_notify = leader_trait_sex_doctor_3
+				add_trait_no_notify = leader_trait_legendary_genetic_purist_3
+				add_trait_no_notify = leader_trait_expertise_biology_3
+			}
+			else = {
+				add_trait_no_notify = leader_trait_Nidehogg_gestalt
+				add_trait_no_notify = subclass_scientist_governor
+				add_trait_no_notify = leader_trait_surveyor
+				add_trait_no_notify = leader_trait_society_focus_3
+				add_trait_no_notify = leader_trait_sex_encyclopedia_3
+				if = {
+					limit = {
+						exists = owner
+						owner = {
+							is_hive_empire = yes
+						}
+					}
+					add_trait_no_notify = leader_trait_assembler_3
+				}
+				else = {
+					add_trait_no_notify = leader_trait_collaborator_3
+				}
+			}
+
+		}
+	}
+}
+
+create_Aoi = {
+	optimize_memory
+	create_MGHG_event_leader = {
+		NAME = Kozuki_Aoi
+		SPECIES_CLASS = GYNOID_ROBOT
+		HOMEWORLD = root.species
+		SPECIES_TRAIT_1 = trait_Gynoid
+		SPECIES_TRAIT_2 = trait_robot_enhanced_memory
+		SPECIES_TRAIT_3 = trait_robot_learning_algorithms
+		LEADER_CLASS = scientist
+		LEVEL = 10
+		ETHIC = spiritualist
+		GENDER = female
+		HIED_AGE = yes
+		IMMORTAL = yes
+	}
+	hidden_effect = {
+		last_created_leader = {
+			add_trait_no_notify = leader_trait_synthetic
+			add_trait_no_notify = subclass_scientist_governor
+			add_trait_no_notify = leader_trait_engineering_focus_3
+			if = {
+				limit = {
+					exists = owner
+					owner = {
+						is_gestalt = no
+					}
+				}
+				add_trait_no_notify = leader_trait_legendary_great_inventor_3
+			}
+			else = {
+				add_trait_no_notify = leader_trait_Kozuki_Aoi_gestalt
+				add_trait_no_notify = leader_trait_collaborator_3
+			}
+
+			if = {
+				limit = {
+					exists = owner
+					owner = {
+						is_hive_empire = no
+					}
+				}
+				add_trait_no_notify = leader_trait_robotist
+				add_trait_no_notify = leader_trait_assembler_3
+			}
+			else = {
+				add_trait_no_notify = leader_trait_surveyor
+				add_trait_no_notify = leader_trait_manufacturer_3
+			}
+		}
+	}
+}
+
+Nidehogg_and_Aoi_help = {
+	optimize_memory
+	if = {
+		limit = {
+			is_hive_empire = yes
+		}
+		random_owned_leader = {
+			limit = {
+				is_ruler = no
+				is_councilor = yes
+				leader_class = scientist
+			}
+			add_trait = leader_trait_Nidehogg_help
+		}
+	}
+	else_if = {
+		limit = {
+			is_machine_empire = yes
+		}
+		random_owned_leader = {
+			limit = {
+				is_ruler = no
+				is_councilor = yes
+				leader_class = scientist
+			}
+			add_trait = leader_trait_Kozuki_Aoi_help
+		}
+	}
+}
+
+spawn_lamia_precursor_anomaly = {
+	optimize_memory
+	random_system_within_border = {
+		limit = {
+			has_star_flag = precursor_lamia
+			any_system_planet = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_planet_flag = precursor_world }
+				has_owner = no
+				has_anomaly = no
+				is_surveyed = {
+					who = root
+					status = yes
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_planet_flag = precursor_world }
+				has_owner = no
+				has_anomaly = no
+				is_surveyed = {
+					who = root
+					status = yes
+				}
+			}
+			save_event_target_as = precursor_planet
+			set_planet_flag = precursor_world
+			enable_special_project = {
+				name = "LAMIA_ARTIFACT_FOUND"
+				location = this
+				owner = root
+			}
+		}
+	}
+	set_country_flag = ongoing_precursor_artifact
+}
+
+spawn_angel_precursor_anomaly = {
+	optimize_memory
+	random_system_within_border = {
+		limit = {
+			has_star_flag = precursor_angel
+			any_system_planet = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_planet_flag = precursor_world }
+				has_owner = no
+				has_anomaly = no
+				is_surveyed = {
+					who = root
+					status = yes
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_planet_flag = precursor_world }
+				has_owner = no
+				has_anomaly = no
+				is_surveyed = {
+					who = root
+					status = yes
+				}
+			}
+			save_event_target_as = precursor_planet
+			set_planet_flag = precursor_world
+			enable_special_project = {
+				name = "ANGEL_ARTIFACT_FOUND"
+				location = this
+				owner = root
+			}
+		}
+	}
+	set_country_flag = ongoing_precursor_artifact
+}
+
+spawn_gynoid_precursor_anomaly = {
+	optimize_memory
+	random_system_within_border = {
+		limit = {
+			has_star_flag = precursor_gynoid
+			any_system_planet = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_planet_flag = precursor_world }
+				has_owner = no
+				has_anomaly = no
+				is_surveyed = {
+					who = root
+					status = yes
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				uninhabitable_regular_planet = yes
+				NOT = { has_planet_flag = precursor_world }
+				has_owner = no
+				has_anomaly = no
+				is_surveyed = {
+					who = root
+					status = yes
+				}
+			}
+			save_event_target_as = precursor_planet
+			set_planet_flag = precursor_world
+			enable_special_project = {
+				name = "GYNOID_ARTIFACT_FOUND"
+				location = this
+				owner = root
+			}
+		}
+	}
+	set_country_flag = ongoing_precursor_artifact
+}
+
+MGHG_collector_surrenders_artifact = {
+	optimize_memory
+	if = {
+		limit = { has_event_chain = "lamia_precursor_chain" }
+		add_event_chain_counter = {
+			event_chain = "lamia_precursor_chain"
+			counter = "lamia_precursor_artifacts"
+			amount = 1
+		}
+		hidden_effect = {
+			country_event = { id = MGHG_precursor.090 }
+		}
+		break = yes
+	}
+	if = {
+		limit = { has_event_chain = "angel_precursor_chain" }
+		add_event_chain_counter = {
+			event_chain = "angel_precursor_chain"
+			counter = "angel_precursor_artifacts"
+			amount = 1
+		}
+		hidden_effect = {
+			country_event = { id = MGHG_precursor.190 }
+		}
+		break = yes
+	}
+}
+
+set_zombie_girl_citivizen = {
+	optimize_memory
+	if = {
+		limit = {
+			is_species_class = VAMPIRE
+		}
+		if = {
+			limit = {
+				has_policy_flag = slavery_allowed
+				is_hive_empire = no
+			}
+			event_target:ZOMBIE_girl_species = {
+				set_citizenship_type = {
+					type = citizenship_slavery
+					country = root
+					cooldown = no
+				}
+				set_slavery_type = {
+					type = slavery_normal
+					country = root
+					cooldown = no
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_hive_empire = no
+				}
+				event_target:ZOMBIE_girl_species = {
+					set_citizenship_type = {
+						type = citizenship_full
+						country = root
+						cooldown = no
+					}
+				}
+			}
+			else = {
+				event_target:ZOMBIE_girl_hive_species = {
+					set_citizenship_type = {
+						type = citizenship_full
+						country = root
+						cooldown = no
+					}
+				}
+			}
+		}
+	}
+}
+
+fabricated_book_effect = {
+	optimize_memory
+	random_list = {
+		49 = {
+			random_list = {
+				1 = {
+					country_event = {
+						id = MGHG_origin.01
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Aeranzfi
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.02
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Reyep
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.03
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Boranty
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.04
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Anthena
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.05
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Belphegor
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.06
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Nephthy
+					}
+					modifier = {
+						factor = 0
+						is_robot_empire = yes
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.07
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Ishetar
+					}
+				}
+			}
+		}
+		28 = {
+			random_list = {
+				1 = {
+					country_event = {
+						id = MGHG_origin.08
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Aeranzfi
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.09
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Reyep
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.10
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Boranty
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.11
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Anthena
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.12
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Belphegor
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.13
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Nephthy
+					}
+					modifier = {
+						factor = 0
+						has_modifier = fabricated_book_13
+					}
+					modifier = {
+						factor = 0
+						is_robot_empire = yes
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.14
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Ishetar
+					}
+				}
+			}
+		}
+		14 = {
+			random_list = {
+				1 = {
+					country_event = {
+						id = MGHG_origin.15
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Aeranzfi
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.16
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Reyep
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.17
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Boranty
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.18
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Anthena
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.19
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Belphegor
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.20
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Nephthy
+					}
+					modifier = {
+						factor = 0
+						is_robot_empire = yes
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.21
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Ishetar
+					}
+				}
+			}
+		}
+		7 = {
+			random_list = {
+				1 = {
+					country_event = {
+						id = MGHG_origin.22
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = fabricated_book_22
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Aeranzfi
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.23
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Reyep
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.24
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = fabricated_book_24
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Boranty
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.25
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = fabricated_book_25
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Anthena
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.26
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = fabricated_book_26
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Belphegor
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.27
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = fabricated_book_27
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Nephthy
+					}
+				}
+				1 = {
+					country_event = {
+						id = MGHG_origin.28
+					}
+					modifier = {
+						factor = 0
+						has_country_flag = fabricated_book_28
+					}
+					modifier = {
+						factor = 1.2
+						has_policy_flag = For_Ishetar
+					}
+				}
+			}
+		}
+		2 = {
+			random_list = {
+				14 = {
+					random_list = {
+						1 = {
+							country_event = {
+								id = MGHG_origin.29
+							}
+							modifier = {
+								factor = 0
+								has_modifier = fabricated_book_29
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Aeranzfi
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.30
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Reyep
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.31
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Boranty
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.32
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Anthena
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.33
+							}
+							modifier = {
+								factor = 0
+								OR = {
+									has_modifier = fabricated_book_33
+									has_modifier = fabricated_book_33_hive
+									has_modifier = fabricated_book_33_machine
+									has_modifier = fabricated_book_33_vt
+									has_modifier = fabricated_book_33_machine_vt
+								}
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Belphegor
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.34
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = fabricated_book_34
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Nephthy
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.35
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = fabricated_book_35
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Ishetar
+							}
+						}
+					}
+				}
+				6 = {
+					random_list = {
+						1 = {
+							country_event = {
+								id = MGHG_origin.36
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = fabricated_book_36
+							}
+							modifier = {
+								factor = 0
+								has_global_flag = S_big_bang
+							}
+							modifier = {
+								factor = 1.1
+								has_policy_flag = For_Reyep
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Belphegor
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.37
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = fabricated_book_37
+							}
+							modifier = {
+								factor = 0
+								has_global_flag = S_big_bang
+							}
+							modifier = {
+								factor = 1.1
+								has_policy_flag = For_Boranty
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Nephthy
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.38
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = fabricated_book_38
+							}
+							modifier = {
+								factor = 0
+								has_global_flag = S_big_bang
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Reyep
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Anthena
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.39
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = fabricated_book_39
+							}
+							modifier = {
+								factor = 0
+								has_global_flag = S_big_bang
+							}
+							modifier = {
+								factor = 1.1
+								has_policy_flag = For_Boranty
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Ishetar
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.40
+							}
+							modifier = {
+								factor = 1.2
+								has_policy_flag = For_Aeranzfi
+							}
+						}
+						1 = {
+							country_event = {
+								id = MGHG_origin.41
+							}
+							modifier = {
+								factor = 0
+								has_country_flag = get_origin_41
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+trait_add_or_level_up = {
+	if = {
+		limit = {
+			has_trait = $TRAIT$_3
+		}
+		add_experience = 500
+	}
+	else_if = {
+		limit = {
+			has_trait = $TRAIT$_2
+		}
+		remove_trait = $TRAIT$_2
+		add_trait = $TRAIT$_3
+	}
+	else_if = {
+		limit = {
+			has_trait = $TRAIT$
+		}
+		remove_trait = $TRAIT$
+		add_trait = $TRAIT$_2
+	}
+	else = {
+		add_trait = $TRAIT$
+	}
+}
+
+trait_add_or_level_up_2 = {
+	if = {
+		limit = {
+			has_trait = $TRAIT$_2
+		}
+		add_experience = 500
+	}
+	else_if = {
+		limit = {
+			has_trait = $TRAIT$
+		}
+		remove_trait = $TRAIT$
+		add_trait = $TRAIT$_2
+	}
+	else = {
+		add_trait = $TRAIT$
+	}
+}
+
+trait_add_or_level_up_2_no_notify = {
+	if = {
+		limit = {
+			has_trait = $TRAIT$_2
+		}
+		add_experience = 500
+	}
+	else_if = {
+		limit = {
+			has_trait = $TRAIT$
+		}
+		remove_trait = $TRAIT$
+		add_trait_no_notify = $TRAIT$_2
+	}
+	else = {
+		add_trait_no_notify = $TRAIT$
+	}
+}
+
+monster_girl_robot_module = {
+	if = {
+		limit = {
+			owner_main_species = {
+				OR = {
+					species_portrait = $SPECIES$01
+					species_portrait = $SPECIES$02
+					species_portrait = $SPECIES$03
+					species_portrait = $SPECIES$04
+					species_portrait = $SPECIES$05
+					species_portrait = $SPECIES$06
+					species_portrait = $SPECIES$07
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				OR = {
+					is_species_class = GYNOID_ROBOT
+					is_species_class = GYNOID
+					is_species_class = Azur_Lane_R
+				}
+				NOT = {
+					has_trait = trait_$SPECIES$_robot
+				}
+			}
+			modify_species = {
+				add_trait = trait_$SPECIES$_robot
+				portrait = owner_main_species
+			}
+		}
+	}
+	else = {
+		every_owned_pop = {
+			limit = {
+				OR = {
+					is_species_class = GYNOID_ROBOT
+					is_species_class = GYNOID
+					is_species_class = Azur_Lane_R
+				}
+				NOT = {
+					has_trait = trait_$SPECIES$_robot
+				}
+			}
+			modify_species = {
+				add_trait = trait_$SPECIES$_robot
+			}
+		}
+		owner = {
+			owner_main_species = {
+				modify_species = {
+					portrait = $SPECIES$01
+				}
+			}
+			every_owned_pop = {
+				limit = {
+					has_trait = trait_$SPECIES$_robot
+				}
+				modify_species = {
+					portrait = owner_main_species
+				}
+			}
+		}
+	}
+}
+
+add_dog_nose_deposit = {
+	random_list = {
+		60 = {
+			add_deposit = d_$RESOURCE$_1
+		}
+		30 = {
+			add_deposit = d_$RESOURCE$_2
+		}
+		20 = {
+			add_deposit = d_$RESOURCE$_3
+		}
+		15 = {
+			add_deposit = d_$RESOURCE$_4
+		}
+		12 = {
+			add_deposit = d_$RESOURCE$_5
+		}
+	}
+}
+
+bigbang_effect = {
+	if = {
+		limit = { exists = event_target:crisis_country }
+		fire_on_action = {
+			on_action = on_destroy_star_system
+			scopes = { from = event_target:crisis_country }
+		}
+	}
+	else = {
+		fire_on_action = { on_action = on_destroy_star_system }
+	}
+	set_star_flag = star_cracked
+	set_star_class = sc_black_hole
+	every_system_ambient_object = {
+		limit = {
+			# Preserve Unbidden crisis effects
+			NOR = {
+				has_ambient_object_flag = extradimensional_system_effect
+				has_ambient_object_flag = extradimensional_system_effect_2
+			}
+		}
+		destroy_ambient_object = this
+	}
+	every_system_planet = {
+		limit = { is_star = yes }
+		create_ambient_object = {
+			type = "star_explosion"
+			play_animation_once = yes
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+		change_pc = pc_black_hole
+	}
+	# Handle Contingency Machine Worlds
+	every_system_planet = {
+		limit = {
+			is_planet_class = pc_ai
+			NOT = { has_planet_flag = machine_lair }
+		}
+		destroy_machine_world = yes
+	}
+	random_system_planet = {
+		limit = {
+			is_planet_class = pc_ai
+			has_planet_flag = machine_lair
+		}
+		from.owner = { save_event_target_as = final_machine_world_destroyer }
+		planet_event = { id = crisis.2046 }
+	}
+	every_system_planet = {
+		limit = {
+			is_star = no
+			is_asteroid = no
+			NOR = {
+				is_planet_class = pc_shattered
+				is_planet_class = pc_shattered_2
+				is_planet_class = pc_ringworld_habitable_damaged
+				is_planet_class = pc_ringworld_tech_damaged
+				is_planet_class = pc_ringworld_seam_damaged
+			}
+		}
+		if = {
+			limit = {
+				exists = owner
+				is_planet_class = pc_habitat
+			}
+			destroy_colony = yes
+		}
+		if = {
+			limit = { is_colony = yes }
+			if = {
+				limit = {
+					exists = orbital_defence
+				}
+				destroy_fleet = orbital_defence
+			}
+			remove_all_buildings = yes
+			destroy_colony = yes
+			if = {
+				limit = { is_ringworld = yes }
+				spawn_ringworld_cracker_effect = yes
+				change_pc = pc_ringworld_habitable_damaged
+			}
+			else = {
+				change_pc = pc_lust_shrouded
+			}
+		}
+		else_if = {
+			limit = { is_ringworld = yes }
+			spawn_ringworld_cracker_effect = yes
+			change_pc = pc_ringworld_habitable_damaged
+		}
+		else_if = {
+			limit = { is_planet_class = pc_ringworld_tech }
+			spawn_ringworld_cracker_effect = yes
+			change_pc = pc_ringworld_tech_damaged
+		}
+		else_if = {
+			limit = { is_planet_class = pc_ringworld_seam }
+			spawn_ringworld_cracker_effect = yes
+			change_pc = pc_ringworld_seam_damaged
+		}
+		else_if = {
+			limit = {
+				is_colonizable = yes
+				planet_size > 8
+			}
+			change_pc = pc_lust_shrouded
+		}
+		else = {
+			add_planet_devastation = -100
+			change_pc = pc_shrouded
+		}
+	}
+	every_system_planet = {
+		limit = {
+			exists = orbital_station
+		}
+		orbital_station = { dismantle = yes }
+	}
+	every_system_planet = {
+		clear_deposits = yes
+		clear_planet_modifiers = yes
+		prevent_anomaly = yes
+	}
+	every_system_planet = {
+		limit = { is_asteroid = yes }
+		clear_deposits = yes
+	}
+	every_fleet_in_system = {
+		limit = {
+			NOR = {
+				is_same_value = from
+				# except Extradimensionals
+				AND = {
+					exists = owner
+					owner = {
+						OR = {
+							is_country_type = portal_holder
+							is_country_type = extradimensional
+							is_country_type = extradimensional_2
+							is_country_type = extradimensional_3
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:crisis_country #i.e. not final destruction of all matter
+				is_mobile = yes
+			}
+			set_mia = mia_return_home
+		}
+		else = {
+			destroy_fleet = this
+		}
+	}
+	every_system_megastructure = {
+		set_ruined_megastructure = yes
+	}
+	star = {
+		create_ambient_object = {
+			type = "destroyed_system"
+			location = this
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = destroyed_system_effect
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+		create_ambient_object = {
+			type = "shroud_storm"
+			location = this
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = bigbang_shroud_storm_object
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+	}
+	set_star_flag = formless_system
+	add_modifier = {
+		modifier = lust_shroud_storm
+	}
+}
+
+MGHG_crisis_ini_effect = {
+	save_global_event_target_as = $KEY$_World_system
+	add_extra_hyperlane_to_spawned_system_effect = yes
+	event_target:$KEY$_home_World = {
+		last_created_species = {
+			save_global_event_target_as = lust_demon_$KEY$_species
+		}
+		create_country = {
+			name = NAME_$KEY$_country
+			type = lust_shroud
+			species = event_target:lust_demon_$KEY$_species
+			name_list = $TOP_SPECIES$
+			inline_script = {
+				script = flags/flag
+				KEY = $KEY$
+				COLOR1 = $COLOR$
+				COLOR2 = $COLOR$
+			}
+			effect = {
+				create_species = {
+					name = god_$KEY$
+					namelist = $TOP_SPECIES$
+					class = $TOP_SPECIES$
+					portrait = $KEY$_god
+					immortal = yes
+					traits = {}
+				}
+				ruler = {
+					change_species = last_created_species
+					change_leader_portrait = species
+					set_skill = 10
+					set_name = god_$KEY$
+					set_age = -1
+					freeze_leader_age = yes
+					change_background_ethic = ethic_fanatic_$ETHOS$
+					change_background_job = lust_god
+					remove_all_traits = yes
+					set_leader_flag = god_$KEY$_ruler
+					save_global_event_target_as = god_$KEY$_ruler
+				}
+				set_country_flag = $KEY$_country
+				save_global_event_target_as = $KEY$_country
+				create_ship_design = { design = NAME_$KEY$_Transport }
+				add_ship_design = last_created_design
+				create_ship_design = { design = NAME_$KEY$_Colonizer }
+				add_ship_design = last_created_design
+				create_ship_design = { design = NAME_$KEY$_Constructor }
+				add_ship_design = last_created_design
+				create_ship_design = { design = NAME_$KEY$_Starbase }
+				add_ship_design = last_created_design
+				create_ship_design = { design = NAME_$KEY$_small_lust_demon }
+				add_ship_design = last_created_design
+				create_ship_design = { design = NAME_$KEY$_medium_lust_demon }
+				add_ship_design = last_created_design
+				create_ship_design = { design = NAME_$KEY$_large_lust_demon }
+				add_ship_design = last_created_design
+				set_policy = {
+					policy = robot_pop_policy
+					option = robot_pops_outlawed
+					cooldown = yes
+				}
+				set_policy = {
+					policy = purge
+					option = purge_allowed
+					cooldown = yes
+				}
+				if = {
+					limit = {
+						check_galaxy_setup_value = {
+							setting = crisis_strength_scale
+							value < 5
+						}
+					}
+					add_modifier = {
+						modifier = $KEY$_mult_nerf
+						mult = value:MGHG_crisis_nerf_value
+					}
+				}
+				country_event = {
+					id = MGHG_crisis.104
+					days = 1800
+				}
+				country_event = {
+					id = MGHG_crisis.114
+					days = 90
+				}
+			}
+		}
+
+		create_lust_shroud_conoly = {
+			KEY = $KEY$
+			ETHOS = $ETHOS$
+		}
+
+	}
+
+	star = {
+		create_starbase = {
+			size = starbase_lust_shroud
+			owner = event_target:$KEY$_country
+			effect = {
+				while = {
+					count = 256
+					create_ship = {
+						name = random
+						design = NAME_$KEY$_medium_lust_demon
+					}
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				any_system_ambient_object = {
+					has_ambient_object_flag = bigbang_shroud_storm_object
+				}
+			}
+		}
+		create_ambient_object = {
+			type = "shroud_storm"
+			location = this
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = invasive_shroud_storm_object
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+	}
+	create_ambient_object = {
+		type = $STORM$
+		location = this
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = $KEY$_shroud_storm_object
+		set_location = {
+			target = prev
+			distance = 0
+			angle = random
+		}
+	}
+	set_star_flag = formless_system
+	remove_modifier = lust_shroud_storm
+	add_modifier = {
+		modifier = $KEY$_storm
+	}
+
+	switch = {
+		trigger = galaxy_size
+		huge = {
+			create_MGMG_ini_storm = {
+				STORM_RANGE = 4
+				KEY = $KEY$
+			}
+		}
+		large = {
+			create_MGMG_ini_storm = {
+				STORM_RANGE = 3
+				KEY = $KEY$
+			}
+		}
+		medium = {
+			create_MGMG_ini_storm = {
+				STORM_RANGE = 2
+				KEY = $KEY$
+			}
+		}
+		small = {
+			create_MGMG_ini_storm = {
+				STORM_RANGE = 1
+				KEY = $KEY$
+			}
+		}
+	}
+
+
+	event_target:$KEY$_home_World = {
+		while = {
+			count = 4
+			create_lust_shroud_ships = {
+				KEY = $KEY$
+				ETHOS = $ETHOS$
+				SHIP_LEADER_TRAIT = $SHIP_LEADER_TRAIT$
+				SHIP_LEADER_EXP = $SHIP_LEADER_EXP$
+			}
+		}
+	}
+
+	every_country = {
+		limit = {
+			OR = {
+				is_country_type = default
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+		establish_communications_no_message = event_target:$KEY$_country
+		join_war = event_target:$KEY$_country
+		add_opinion_modifier = {
+			who = event_target:$KEY$_country
+			modifier = opinion_lust_shroud
+		}
+		event_target:$KEY$_country = {
+			add_opinion_modifier = {
+				who = PREV
+				modifier = opinion_sacrifice
+			}
+		}
+	}
+
+	every_country = {
+		limit = {
+			is_country_type = lust_shroud
+			NOT = {
+				is_same_empire = event_target:$KEY$_country
+			}
+		}
+		establish_communications_no_message = event_target:$KEY$_country
+		add_opinion_modifier = {
+			who = event_target:$KEY$_country
+			modifier = opinion_competitor
+		}
+		event_target:$KEY$_country = {
+			add_opinion_modifier = {
+				who = PREV
+				modifier = opinion_competitor
+			}
+		}
+	}
+}
+
+create_MGMG_ini_storm = {
+	every_system = {
+		limit = {
+			distance = {
+				source = prev
+				max_jumps = $STORM_RANGE$
+				use_bypasses = no
+			}
+			OR = {
+				NOT = { exists = starbase }
+				starbase = {
+					has_starbase_size < starbase_citadel
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = space_owner
+			}
+			random_fleet_in_system = {
+				limit = {
+					is_ship_size = starbase_outpost
+				}
+				delete_fleet = this
+			}
+		}
+		star = {
+			create_starbase = {
+				size = starbase_lust_shroud
+				owner = event_target:$KEY$_country
+				effect = {
+					while = {
+						count = 32
+						create_ship = {
+							name = random
+							design = NAME_$KEY$_medium_lust_demon
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_system_ambient_object = {
+						has_ambient_object_flag = bigbang_shroud_storm_object
+					}
+				}
+			}
+			create_ambient_object = {
+				type = "shroud_storm"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = invasive_shroud_storm_object
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+			}
+		}
+		create_ambient_object = {
+			type = $STORM$
+			location = this
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = $KEY$_shroud_storm_object
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+		set_star_flag = formless_system
+		remove_modifier = lust_shroud_storm
+		add_modifier = {
+			modifier = $KEY$_storm
+		}
+	}
+}
+
+create_S_homesystem = {
+	spawn_system = {
+		min_distance = 6
+		max_distance <= 12
+		max_jumps = 0
+		initializer = S_World_system
+		hyperlane = yes
+		is_discovered = yes
+		effect = {
+			create_species = {
+				name = NAME_S_species
+				class = LUST_DEMON_S
+				namelist = SUCCUBUS
+				portrait = LUST_DEMON_S
+				traits = {
+					trait = trait_pc_lust_shrouded_preference
+					trait = trait_exd
+					trait = trait_lust_demon_S
+					trait = trait_psionic
+					trait = trait_easy_to_climax
+					trait = trait_masochistic_constitution
+					trait = trait_promiscuous
+					trait = trait_flexible_sex_body
+					trait = trait_lust_humor
+					trait = trait_snake_tongue_common
+					trait = trait_charismatic
+					trait = trait_sex_addicts
+					trait = trait_spermophilia
+				}
+				immortal = yes
+			}
+			MGHG_crisis_ini_effect = {
+				KEY = S
+				COLOR = "purple"
+				ETHOS = pacifist
+				TOP_SPECIES = SUCCUBUS
+				STORM = "particle_storm"
+				SHIP_LEADER_TRAIT = leader_trait_guerilla_tactics
+				SHIP_LEADER_EXP = leader_trait_rocketry_specialization_3
+			}
+		}
+	}
+}
+
+create_N_homesystem = {
+	spawn_system = {
+		min_distance = 7
+		max_distance <= 14
+		max_jumps = 0
+		initializer = N_World_system
+		hyperlane = yes
+		is_discovered = yes
+		effect = {
+			create_species = {
+				name = NAME_N_species
+				class = LUST_DEMON_N
+				namelist = SLIME
+				portrait = LUST_DEMON_N
+				traits = {
+					trait = trait_pc_lust_shrouded_preference
+					trait = trait_exd
+					trait = trait_lust_demon_N
+					trait = trait_psionic
+					trait = trait_promiscuous
+					trait = trait_abundant_milk
+					trait = trait_sex_servant
+					trait = trait_sex_energy_synthesis
+					trait = trait_strong
+					trait = trait_natural_sociologists
+					trait = trait_resilient
+					trait = trait_noxious
+					trait = trait_much_love_liquid
+					trait = trait_sedentary
+				}
+				immortal = yes
+			}
+			MGHG_crisis_ini_effect = {
+				KEY = N
+				COLOR = "green"
+				ETHOS = xenophile
+				TOP_SPECIES = SLIME
+				STORM = "gravity_storm"
+				SHIP_LEADER_TRAIT = leader_trait_destiny_engineer
+				SHIP_LEADER_EXP = leader_trait_carrier_specialization_3
+			}
+		}
+	}
+}
+
+create_K_homesystem = {
+	spawn_system = {
+		min_distance = 8
+		max_distance <= 16
+		max_jumps = 0
+		initializer = K_World_system
+		hyperlane = yes
+		is_discovered = yes
+		effect = {
+			create_species = {
+				name = NAME_K_species
+				class = LUST_DEMON_K
+				namelist = VAMPIRE
+				portrait = LUST_DEMON_K
+				traits = {
+					trait = trait_pc_lust_shrouded_preference
+					trait = trait_exd
+					trait = trait_lust_demon_K
+					trait = trait_psionic
+					trait = trait_sadism_constitution
+					trait = trait_whorer
+					trait = trait_lust_humor
+					trait = trait_very_strong
+					trait = trait_resilient
+					trait = trait_industrious
+					trait = trait_conformists
+					trait = trait_psycho_girl
+					trait = trait_quarrelsome
+				}
+				immortal = yes
+			}
+			MGHG_crisis_ini_effect = {
+				KEY = K
+				COLOR = "red"
+				ETHOS = militarist
+				TOP_SPECIES = VAMPIRE
+				STORM = "solar_storm"
+				SHIP_LEADER_TRAIT = leader_trait_master_gunner
+				SHIP_LEADER_EXP = leader_trait_gunship_specialization_3
+			}
+		}
+	}
+}
+
+create_T_homesystem = {
+	spawn_system = {
+		min_distance = 9
+		max_distance <= 18
+		max_jumps = 0
+		initializer = T_World_system
+		hyperlane = yes
+		is_discovered = yes
+		effect = {
+			create_species = {
+				name = NAME_T_species
+				class = LUST_DEMON_T
+				namelist = ANGEL_F
+				portrait = LUST_DEMON_T
+				traits = {
+					trait = trait_pc_lust_shrouded_preference
+					trait = trait_exd
+					trait = trait_lust_demon_T
+					trait = trait_psionic
+					trait = trait_promiscuous
+					trait = trait_erotic_genius
+					trait = trait_intelligent
+					trait = trait_natural_physicists
+					trait = trait_quick_learners
+					trait = trait_talented
+					trait = trait_ingenious
+					trait = trait_inorganic_breath
+					trait = trait_female_imps
+					trait = trait_unruly
+				}
+				immortal = yes
+			}
+			MGHG_crisis_ini_effect = {
+				KEY = T
+				COLOR = "blue"
+				ETHOS = xenophobe
+				TOP_SPECIES = ANGEL_F
+				STORM = "electric_storm"
+				SHIP_LEADER_TRAIT = leader_trait_fortress_cracker
+				SHIP_LEADER_EXP = leader_trait_artillery_specialization_3
+			}
+		}
+	}
+}
+
+create_lust_shroud_conoly = {
+	remove_all_buildings = yes
+	remove_all_districts = yes
+	clear_deposits = yes
+	clear_planet_modifiers = yes
+
+	if = {
+		limit = {
+			is_planet_class = pc_habitat
+		}
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		remove_planet = yes
+	}
+	else_if = {
+		limit = {
+			is_planet_class = pc_ringworld_habitable
+		}
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		change_pc = pc_ringworld_habitable_damaged
+	}
+	else = {
+		if = {
+			limit = {
+				NOT = {
+					is_planet_class = pc_lust_shrouded
+				}
+			}
+			change_pc = pc_lust_shrouded
+			every_country = {
+				limit = {
+					has_event_chain = $KEY$_crisis_chain
+				}
+				add_event_chain_counter = {
+					event_chain = $KEY$_crisis_chain
+					counter = $KEY$_corrupted_worlds
+					amount = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_planet_flag = $KEY$_home_World
+			}
+			set_colony_type = col_lust_shroud_capital
+		}
+		else = {
+			set_colony_type = col_lust_shroud
+		}
+		while = {
+			count = trigger:planet_size
+			create_pop = {
+				species = event_target:lust_demon_$KEY$_species
+			}
+		}
+		owner = {
+			create_leader = {
+				class = commander
+				species = event_target:lust_demon_$KEY$_species
+				name = random
+				skill = 10
+				immortal = yes
+				hide_age = yes
+				randomize_traits = no
+				background_ethic = ethic_fanatic_$ETHOS$
+				traits = {
+					0 = subclass_commander_governor
+					1 = leader_trait_warden_3
+					2 = leader_trait_reinforcer_3
+					3 = leader_trait_conscripter_3
+					4 = leader_trait_toilet_commander_3
+					5 = leader_trait_taskmaster
+					6 = leader_trait_sex_addict_2
+					7 = leader_trait_victory_or_death
+				}
+			}
+		}
+		assign_leader = last_created_leader
+		add_building = building_lust_shroud_capital
+		add_building = building_planetary_shield_generator
+		# while = {
+		# 	count = modifier:defense_armies_add
+		# 	create_army = {
+		# 		owner = event_target:$KEY$_country
+		# 		species = event_target:lust_demon_$KEY$_species
+		# 		type = defense_army_lust_demon_$KEY$
+		# 	}
+		# }
+
+		every_owned_pop = {
+			limit = {
+				has_job = lust_demon
+			}
+			while = {
+				count = modifier:pop_defense_armies_add
+				prev = {
+					create_army = {
+						owner = event_target:$KEY$_country
+						species = event_target:lust_demon_$KEY$_species
+						type = defense_army_lust_demon_$KEY$
+					}
+				}
+			}
+		}
+
+		owner = {
+			create_leader = {
+				class = commander
+				species = event_target:lust_demon_$KEY$_species
+				name = random
+				skill = 10
+				immortal = yes
+				hide_age = yes
+				randomize_traits = no
+				background_ethic = ethic_fanatic_$ETHOS$
+				traits = {
+					0 = subclass_commander_general
+					1 = leader_trait_heavy_hitter_3
+					2 = leader_trait_dreaded_3
+					3 = leader_trait_sex_slave_predator_3
+					4 = leader_trait_hardy_3
+					5 = leader_trait_supreme_warrior
+					6 = leader_trait_sex_addict_2
+					7 = leader_trait_victory_or_death
+				}
+			}
+			random_owned_army = {
+				limit = {
+					NOT = { exists = leader }
+					is_defensive_army = yes
+				}
+				assign_leader = last_created_leader
+			}
+		}
+	}
+}
+
+create_lust_shroud_starbase = {
+	if = {
+		limit = {
+			NOT = {
+				exists = space_owner
+			}
+		}
+		star = {
+			create_starbase = {
+				size = starbase_lust_shroud
+				owner = event_target:$KEY$_country
+				effect = {
+					while = {
+						count = 4
+						create_ship = {
+							name = random
+							design = NAME_$KEY$_medium_lust_demon
+						}
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:$KEY$_country = {
+				NOT = {
+					is_same_empire = prev.space_owner
+				}
+			}
+		}
+		random_fleet_in_system = {
+			limit = {
+				is_ship_size = starbase_outpost
+			}
+			delete_fleet = this
+		}
+		star = {
+			create_starbase = {
+				size = starbase_lust_shroud
+				owner = event_target:$KEY$_country
+				effect = {
+					while = {
+						count = 4
+						create_ship = {
+							name = random
+							design = NAME_$KEY$_medium_lust_demon
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_star_flag = $KEY$_World_system
+		}
+		event_target:$KEY$_home_World = {
+			if = {
+				limit = {
+					exists = owner
+					owner = {
+						NOT = {
+							is_same_empire = event_target:$KEY$_country
+						}
+					}
+				}
+				event_target:$KEY$_country = {
+					create_leader = {
+						class = commander
+						species = event_target:lust_demon_$KEY$_species
+						name = random
+						skill = 10
+						immortal = yes
+						hide_age = yes
+						randomize_traits = no
+						background_ethic = ethic_fanatic_$ETHOS$
+						traits = {
+							0 = subclass_commander_general
+							1 = leader_trait_heavy_hitter_3
+							2 = leader_trait_dreaded_3
+							3 = leader_trait_sex_slave_predator_3
+							4 = leader_trait_hardy_3
+							5 = leader_trait_supreme_warrior
+							6 = leader_trait_sex_addict_2
+							7 = leader_trait_victory_or_death
+						}
+					}
+				}
+				while = {
+					count = 20
+					create_army = {
+						owner = event_target:$KEY$_country
+						type = lust_demon_$KEY$_assault_army
+						species = event_target:lust_demon_$KEY$_species
+					}
+				}
+				last_created_army = {
+					assign_leader = last_created_leader
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				any_system_planet = {
+					is_colonizable = yes
+					NOT = { is_planet_class = pc_cosmogenesis_world }
+					exists = owner
+					owner = {
+						NOT = { is_same_empire = solar_system.owner }
+					}
+				}
+			}
+			any_system_planet = {
+				is_planet_class = pc_cosmogenesis_world
+				exists = owner
+			}
+		}
+		random_system_planet = {
+			limit = {
+				exists = owner
+				is_planet_class = pc_cosmogenesis_world
+			}
+			every_owned_pop = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+create_lust_shroud_ships = {
+	if = {
+		limit= {
+			event_target:$KEY$_country = {
+				used_naval_capacity_integer < 4000
+			}
+		}
+
+		event_target:$KEY$_country = {
+			create_leader = {
+				class = commander
+				species = event_target:lust_demon_$KEY$_species
+				name = random
+				skill = 10
+				immortal = yes
+				hide_age = yes
+				randomize_traits = no
+				background_ethic = ethic_fanatic_$ETHOS$
+				traits = {
+					0 = subclass_commander_admiral
+					1 = leader_trait_ship_shock_3
+					2 = leader_trait_wrecker_3
+					3 = leader_trait_artillerist_3
+					4 = $SHIP_LEADER_EXP$
+					5 = $SHIP_LEADER_TRAIT$
+					6 = leader_trait_sex_addict_2
+					7 = leader_trait_victory_or_death
+				}
+			}
+		}
+		create_fleet = {
+			name = LUST_DEMON_$KEY$_ship
+			effect = {
+				set_owner = event_target:$KEY$_country
+				while = {
+					count = 5
+					create_ship = {
+						name = NAME_$KEY$_large_lust_demon
+						design = NAME_$KEY$_large_lust_demon
+					}
+				}
+				while = {
+					count = 10
+					create_ship = {
+						name = NAME_$KEY$_small_lust_demon
+						design = NAME_$KEY$_small_lust_demon
+					}
+				}
+				set_location = {
+					target = event_target:$KEY$_home_World.solar_system.star
+					distance = 80
+					angle = random
+				}
+				assign_leader = last_created_leader
+				set_fleet_stance = aggressive
+				if = {
+					limit = {
+						owner = {
+							is_same_empire = event_target:T_country
+						}
+					}
+					set_cloaking_active = yes
+				}
+			}
+		}
+
+		event_target:$KEY$_country = {
+			create_leader = {
+				class = commander
+				species = event_target:lust_demon_$KEY$_species
+				name = random
+				skill = 10
+				immortal = yes
+				hide_age = yes
+				randomize_traits = no
+				background_ethic = ethic_fanatic_$ETHOS$
+				traits = {
+					0 = subclass_commander_general
+					1 = leader_trait_heavy_hitter_3
+					2 = leader_trait_dreaded_3
+					3 = leader_trait_sex_slave_predator_3
+					4 = leader_trait_hardy_3
+					5 = leader_trait_supreme_warrior
+					6 = leader_trait_sex_addict_2
+					7 = leader_trait_victory_or_death
+				}
+			}
+		}
+		create_fleet = {
+			name = NAME_$KEY$_Transport
+			effect = {
+				set_owner = event_target:$KEY$_country
+				if = {
+					limit = {
+						check_galaxy_setup_value = {
+							setting = crisis_strength_scale
+							value >= 5
+						}
+					}
+					while = {
+						count = 25
+						create_army_transport = {
+							ship_name = NAME_$KEY$_Transport
+							army_type = lust_demon_$KEY$_assault_army
+							species = event_target:lust_demon_$KEY$_species
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_galaxy_setup_value = {
+							setting = crisis_strength_scale
+							value >= 1
+						}
+					}
+					while = {
+						count = 5
+						create_army_transport = {
+							ship_name = NAME_$KEY$_Transport
+							army_type = lust_demon_$KEY$_assault_army
+							species = event_target:lust_demon_$KEY$_species
+						}
+					}
+				}
+				else = {
+					while = {
+						count = 2
+						create_army_transport = {
+							ship_name = NAME_$KEY$_Transport
+							army_type = lust_demon_$KEY$_assault_army
+							species = event_target:lust_demon_$KEY$_species
+						}
+					}
+				}
+				set_location = {
+					target = event_target:$KEY$_home_World
+					distance = 45
+					angle = random
+				}
+				assign_leader = last_created_leader
+			}
+		}
+
+	}
+
+	if = {
+		limit = {
+			event_target:$KEY$_country = {
+				count_owned_ship = {
+					limit = {
+						is_ship_class = shipclass_colonizer
+					}
+					count < 10
+				}
+			}
+		}
+		event_target:$KEY$_country = {
+			random_system_within_border = {
+				limit = {
+					any_system_planet = {
+						is_colonizable = yes
+						OR = {
+							is_artificial = no
+							is_planet_class = pc_lust_shrouded
+						}
+						is_colony = no
+					}
+				}
+				random_system_planet = {
+					limit = {
+						is_colonizable = yes
+						OR = {
+							is_artificial = no
+							is_planet_class = pc_lust_shrouded
+						}
+						is_colony = no
+					}
+					save_event_target_as = $KEY$_will_colonize
+				}
+			}
+		}
+		create_fleet = {
+			name = NAME_$KEY$_Colonizer
+			effect = {
+				set_owner = event_target:$KEY$_country
+				create_ship = {
+					design = NAME_$KEY$_Colonizer
+				}
+				set_location = {
+					target = event_target:$KEY$_home_World.solar_system.star
+					distance = 10
+					angle = random
+				}
+				set_fleet_stance = passive
+				if = {
+					limit = {
+						exists = event_target:$KEY$_will_colonize
+					}
+					auto_move_to_planet = {
+						target = event_target:$KEY$_will_colonize
+						clear_auto_move_on_arrival = yes
+					}
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			event_target:$KEY$_country = {
+				count_owned_ship = {
+					limit = {
+						is_ship_class = shipclass_constructor
+					}
+					count < 20
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				NOT = { exists = starbase }
+				NOT = {
+					any_fleet_in_system = {
+						exists = owner
+						owner = { is_same_empire = event_target:$KEY$_country }
+						is_ship_class = shipclass_constructor
+						has_auto_move_target = yes
+					}
+				}
+				distance = {
+					source = event_target:$KEY$_home_World.solar_system
+					max_jumps = 5
+				}
+			}
+			star = {
+				save_event_target_as = $KEY$_will_own
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { exists = event_target:$KEY$_will_own }
+			}
+			solar_system = {
+				closest_system = {
+					limit = {
+						NOT = { exists = starbase }
+						NOT = {
+							any_fleet_in_system = {
+								exists = owner
+								owner = { is_same_empire = event_target:$KEY$_country }
+								is_ship_class = shipclass_constructor
+								has_auto_move_target = yes
+							}
+						}
+					}
+					star = {
+						save_event_target_as = $KEY$_will_own
+					}
+				}
+			}
+		}
+
+		create_fleet = {
+			name = NAME_$KEY$_Constructor
+			effect = {
+				set_owner = event_target:$KEY$_country
+				create_ship = {
+					design = NAME_$KEY$_Constructor
+				}
+				set_location = {
+					target = event_target:$KEY$_home_World.solar_system.star
+					distance = 20
+					angle = random
+				}
+				set_fleet_stance = passive
+				if = {
+					limit = {
+						exists = event_target:$KEY$_will_own
+					}
+					auto_move_to_planet = {
+						target = event_target:$KEY$_will_own
+						clear_auto_move_on_arrival = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+lust_shroud_colonizer_find_target = {
+	owner = {
+		random_system_within_border = {
+			limit = {
+				any_system_planet = {
+					colonizable_planet = yes
+					OR = {
+						is_artificial = no
+						is_planet_class = pc_lust_shrouded
+					}
+					is_colony = no
+				}
+			}
+			random_system_planet = {
+				limit = {
+					colonizable_planet = yes
+					OR = {
+						is_artificial = no
+						is_planet_class = pc_lust_shrouded
+					}
+					is_colony = no
+				}
+				save_event_target_as = will_colonize
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = event_target:will_colonize
+		}
+		auto_move_to_planet = {
+			target = event_target:will_colonize
+			clear_auto_move_on_arrival = yes
+		}
+	}
+}
+
+lust_shroud_constructor_find_target = {
+	closest_system = {
+		limit = {
+			NOT = { exists = space_owner }
+			NOT = {
+				any_fleet_in_system = {
+					exists = owner
+					owner = { is_same_empire = root }
+					is_ship_class = shipclass_constructor
+					has_auto_move_target = no
+				}
+			}
+		}
+		star = {
+			save_event_target_as = will_own_system
+		}
+	}
+	if = {
+		limit = {
+			exists = event_target:will_own_system
+		}
+		auto_move_to_planet = {
+			target = event_target:will_own_system
+			clear_auto_move_on_arrival = yes
+		}
+	}
+}
+
+lust_shroud_auto_move = {
+	every_owned_fleet = {
+		limit = {
+			OR = {
+				is_ship_class = shipclass_constructor
+				is_ship_class = shipclass_colonizer
+			}
+			has_auto_move_target = no
+		}
+		if = {
+			limit = {
+				is_ship_class = shipclass_constructor
+			}
+			lust_shroud_constructor_find_target = yes
+		}
+		if = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+			}
+			lust_shroud_colonizer_find_target = yes
+		}
+	}
+}
+
+set_MGHG_crisis_stage_1 = {
+	set_global_flag = MGHG_crisis_stage_1
+	remove_global_flag = MGHG_crisis_stage_2
+	remove_global_flag = MGHG_crisis_stage_3
+	remove_global_flag = MGHG_crisis_stage_4
+}
+
+set_MGHG_crisis_stage_2 = {
+	remove_global_flag = MGHG_crisis_stage_1
+	set_global_flag = MGHG_crisis_stage_2
+	remove_global_flag = MGHG_crisis_stage_3
+	remove_global_flag = MGHG_crisis_stage_4
+}
+
+set_MGHG_crisis_stage_3 = {
+	remove_global_flag = MGHG_crisis_stage_1
+	remove_global_flag = MGHG_crisis_stage_2
+	set_global_flag = MGHG_crisis_stage_3
+	remove_global_flag = MGHG_crisis_stage_4
+}
+
+set_MGHG_crisis_stage_4 = {
+	remove_global_flag = MGHG_crisis_stage_1
+	remove_global_flag = MGHG_crisis_stage_2
+	remove_global_flag = MGHG_crisis_stage_3
+	set_global_flag = MGHG_crisis_stage_4
+}
+
+end_MGHG_crisis = {
+	remove_global_flag = MGHG_crisis_stage_1
+	remove_global_flag = MGHG_crisis_stage_2
+	remove_global_flag = MGHG_crisis_stage_3
+	remove_global_flag = MGHG_crisis_stage_4
+	multiply_crisis_strength = 2
+}
+
+change_MGHG_crisis_stage = {
+	stop_crisis_sound = yes
+	switch = {
+		trigger = has_global_flag
+		MGHG_crisis_stage_1 = {
+			set_crisis_sound = MGHG_crisis_2
+			set_MGHG_crisis_stage_2 = yes
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_S_gate
+					}
+				}
+				while = {
+					count = 2
+					event_target:S_home_World = {
+						create_lust_shroud_ships = {
+							KEY = S
+							ETHOS = pacifist
+							SHIP_LEADER_TRAIT = leader_trait_guerilla_tactics
+							SHIP_LEADER_EXP = leader_trait_rocketry_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_N_gate
+					}
+				}
+				while = {
+					count = 2
+					event_target:N_home_World = {
+						create_lust_shroud_ships = {
+							KEY = N
+							ETHOS = xenophile
+							SHIP_LEADER_TRAIT = leader_trait_destiny_engineer
+							SHIP_LEADER_EXP = leader_trait_carrier_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_K_gate
+					}
+				}
+				while = {
+					count = 2
+					event_target:K_home_World = {
+						create_lust_shroud_ships = {
+							KEY = K
+							ETHOS = militarist
+							SHIP_LEADER_TRAIT = leader_trait_master_gunner
+							SHIP_LEADER_EXP = leader_trait_gunship_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_T_gate
+					}
+				}
+				while = {
+					count = 2
+					event_target:T_home_World = {
+						create_lust_shroud_ships = {
+							KEY = T
+							ETHOS = xenophobe
+							SHIP_LEADER_TRAIT = leader_trait_fortress_cracker
+							SHIP_LEADER_EXP = leader_trait_artillery_specialization_3
+						}
+					}
+				}
+			}
+		}
+		MGHG_crisis_stage_2 = {
+			set_crisis_sound = MGHG_crisis_3
+			set_MGHG_crisis_stage_3 = yes
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_S_gate
+					}
+				}
+				while = {
+					count = 4
+					event_target:S_home_World = {
+						create_lust_shroud_ships = {
+							KEY = S
+							ETHOS = pacifist
+							SHIP_LEADER_TRAIT = leader_trait_guerilla_tactics
+							SHIP_LEADER_EXP = leader_trait_rocketry_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_N_gate
+					}
+				}
+				while = {
+					count = 4
+					event_target:N_home_World = {
+						create_lust_shroud_ships = {
+							KEY = N
+							ETHOS = xenophile
+							SHIP_LEADER_TRAIT = leader_trait_destiny_engineer
+							SHIP_LEADER_EXP = leader_trait_carrier_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_K_gate
+					}
+				}
+				while = {
+					count = 4
+					event_target:K_home_World = {
+						create_lust_shroud_ships = {
+							KEY = K
+							ETHOS = militarist
+							SHIP_LEADER_TRAIT = leader_trait_master_gunner
+							SHIP_LEADER_EXP = leader_trait_gunship_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_T_gate
+					}
+				}
+				while = {
+					count = 4
+					event_target:T_home_World = {
+						create_lust_shroud_ships = {
+							KEY = T
+							ETHOS = xenophobe
+							SHIP_LEADER_TRAIT = leader_trait_fortress_cracker
+							SHIP_LEADER_EXP = leader_trait_artillery_specialization_3
+						}
+					}
+				}
+			}
+		}
+		MGHG_crisis_stage_3 = {
+			set_crisis_sound = MGHG_crisis_4
+			set_MGHG_crisis_stage_4 = yes
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_S_gate
+					}
+				}
+				while = {
+					count = 10
+					event_target:S_home_World = {
+						create_lust_shroud_ships = {
+							KEY = S
+							ETHOS = pacifist
+							SHIP_LEADER_TRAIT = leader_trait_guerilla_tactics
+							SHIP_LEADER_EXP = leader_trait_rocketry_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_N_gate
+					}
+				}
+				while = {
+					count = 10
+					event_target:N_home_World = {
+						create_lust_shroud_ships = {
+							KEY = N
+							ETHOS = xenophile
+							SHIP_LEADER_TRAIT = leader_trait_destiny_engineer
+							SHIP_LEADER_EXP = leader_trait_carrier_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_K_gate
+					}
+				}
+				while = {
+					count = 10
+					event_target:K_home_World = {
+						create_lust_shroud_ships = {
+							KEY = K
+							ETHOS = militarist
+							SHIP_LEADER_TRAIT = leader_trait_master_gunner
+							SHIP_LEADER_EXP = leader_trait_gunship_specialization_3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = close_T_gate
+					}
+				}
+				while = {
+					count = 10
+					event_target:T_home_World = {
+						create_lust_shroud_ships = {
+							KEY = T
+							ETHOS = xenophobe
+							SHIP_LEADER_TRAIT = leader_trait_fortress_cracker
+							SHIP_LEADER_EXP = leader_trait_artillery_specialization_3
+						}
+					}
+				}
+			}
+		}
+		MGHG_crisis_stage_4 = {
+			stop_crisis_sound = yes
+			end_MGHG_crisis = yes
+			save_event_target_as = last_lust_demon_planet
+			switch = {
+				trigger = has_planet_flag
+				S_home_World = {
+					set_planet_flag = last_lust_demon_planet_S
+				}
+				N_home_World = {
+					set_planet_flag = last_lust_demon_planet_N
+				}
+				K_home_World = {
+					set_planet_flag = last_lust_demon_planet_K
+				}
+				T_home_World = {
+					set_planet_flag = last_lust_demon_planet_T
+				}
+			}
+			multiply_crisis_strength = 2
+		}
+	}
+}
+
+Give_S_Grace = {
+	hidden_effect = {
+		remove_modifier = S_god_grace_consumer_goods
+		remove_modifier = S_god_grace_lust_crystal
+		remove_modifier = S_god_grace_energy
+		remove_modifier = S_god_grace_monster_girl
+	}
+	if = {
+		limit = {
+			is_monster_girl = yes
+		}
+		if = {
+			limit = {
+				country_uses_consumer_goods = yes
+			}
+			add_modifier = {
+				modifier = S_god_grace_monster_girl
+				mult = value:MGHG_crisis_multipy
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = S_god_grace_lust_crystal
+				mult = value:MGHG_crisis_multipy
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			country_uses_consumer_goods = yes
+		}
+		add_modifier = {
+			modifier = S_god_grace_consumer_goods
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+	else = {
+		add_modifier = {
+			modifier = S_god_grace_energy
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+}
+
+Give_N_Grace = {
+	hidden_effect = {
+		remove_modifier = N_god_grace_energy
+		remove_modifier = N_god_grace_minerals
+		remove_modifier = N_god_grace_food
+	}
+	if = {
+		limit = {
+			owner_main_species = {
+				is_robotic = yes
+			}
+		}
+		add_modifier = {
+			modifier = N_god_grace_energy
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+	else_if = {
+		limit = {
+			owner_main_species = {
+				is_lithoid = yes
+			}
+		}
+		add_modifier = {
+			modifier = N_god_grace_minerals
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+	else = {
+		add_modifier = {
+			modifier = N_god_grace_food
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+}
+
+Give_K_Grace = {
+	hidden_effect = {
+		remove_modifier = K_god_grace_monster_girl
+		remove_modifier = K_god_grace_regular
+	}
+	if = {
+		limit = {
+			is_monster_girl = yes
+		}
+		add_modifier = {
+			modifier = K_god_grace_monster_girl
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+	else = {
+		add_modifier = {
+			modifier = K_god_grace_regular
+			mult = value:MGHG_crisis_multipy
+		}
+	}
+}
+
+Give_T_Grace = {
+	hidden_effect = {
+		remove_modifier = T_god_grace
+	}
+	add_modifier = {
+		modifier = T_god_grace
+		mult = value:MGHG_crisis_multipy
+	}
+}
+
+create_sex_god = {
+	create_species = {
+		name = god$GOD$
+		class = ANGEL
+		portrait = god$GOD$
+		traits = {
+			trait = trait_angel
+		}
+	}
+	create_leader = {
+		class = $CLASS$
+		species = last_created_species
+		name = god$GOD$
+		event_leader = yes
+		skill = 10
+		skip_background_generation = yes
+		background_ethic = $ETHIC$
+		gender = female
+		hide_age = yes
+		immortal = yes
+		randomize_traits = no
+		effect = {
+			save_global_event_target_as = god_$GOD$
+		}
+	}
+}

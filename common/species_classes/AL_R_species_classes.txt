@@ -1,0 +1,70 @@
+Azur_Lane_R = {
+	archetype = KANSEN
+	randomized = no
+	possible = {
+		OR = {
+			AND = {
+				host_has_dlc = "The Machine Age"
+				authority = {
+					NOT = {
+						value = auth_hive_mind
+					}
+				}
+			}
+			authority = {
+				OR = {
+					value = auth_machine_intelligence
+					text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE
+				}
+			}
+		}
+	}
+	possible_secondary = {
+		OR = {
+			AND = {
+				host_has_dlc = "The Machine Age"
+				civics = {
+					NOT = {
+						value = civic_machine_servitor
+					}
+				}
+			}
+			OR = {
+				always = no
+				text = SECONDARY_SPECIES_CLASS_INVALID
+			}
+		}
+	}
+
+	playable = {
+		OR = {
+			host_has_dlc = "Synthetic Dawn Story Pack"
+			has_machine_age_dlc = yes
+		}
+	}
+
+	gender = no
+
+	portrait_modding = yes		#人像是否可以通过基因修饰/修饰来修饰？？？
+
+	use_climate_preference = no		#使用气候偏好
+
+	graphical_culture = AL_R_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+	resources = {
+		category = planet_pops
+		produces = {
+		}
+		upkeep = {
+		}
+	} #不消耗资源
+
+	trait = trait_machine_unit
+
+	leader_age_min = 14
+	leader_age_max = 30
+	ethics_to_prefer = {
+		ethic_gestalt_consciousness
+	}
+}

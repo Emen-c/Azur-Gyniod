@@ -1,0 +1,49 @@
+
+####新增####
+#港区
+gov_azur_gangqu = {
+	ruler_title = RT_MISHU
+	ruler_title_female = RT_MISHU
+	
+	should_force_rename = yes
+
+	possible = {
+		has_authority = auth_azur_dictatorial
+	}
+
+	weight = {
+		base = 114514
+	}
+}
+
+#堕落
+gov_azur_fallen = {
+	ruler_title = RT_MISHU
+	ruler_title_female = RT_MISHU
+	
+	should_force_rename = yes
+
+	possible = {
+		has_authority = auth_azur_fallen_dictatorial
+	}
+
+	weight = {
+		base = 114514
+	}
+}
+
+#帝制
+gov_azur_R_rin = {
+	ruler_title = RT_WANGNV			#?
+	ruler_title_female = RT_WANGNV
+	
+	should_force_rename = yes
+
+	possible = {
+		has_authority = auth_azur_R_rin_dictatorial
+	}
+
+	weight = {
+		base = 114514
+	}
+}

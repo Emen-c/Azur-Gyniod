@@ -1,0 +1,585 @@
+greetings = {
+	### HOSTILE GREETINGS
+	01_LAMIA_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl_species = {
+				SPECIES = LAMIA
+			}
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	02_LAMIA_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			NOT = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl = yes
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	03_LAMIA_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl = no
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	### NEUTRAL GREETINGS
+	01_LAMIA_NEUTRAL_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl_species = {
+				SPECIES = LAMIA
+			}
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+	02_LAMIA_NEUTRAL_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			NOT = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl = yes
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+	03_LAMIA_NEUTRAL_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl = no
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+	### NEUTRAL GREETINGS
+	01_LAMIA_FRIENDLY_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl_species = {
+				SPECIES = LAMIA
+			}
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	02_LAMIA_FRIENDLY_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			NOT = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl = yes
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	03_LAMIA_FRIENDLY_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+			}
+			is_monster_girl = no
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+
+	OVERLORD_GREETING_SEX_SLAVE_LAMIA = {
+		trigger = {
+			is_overlord_to = FROM
+			from= {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+				is_specialist_subject_type = { TYPE = sex_slave }
+			}
+		}
+	}
+
+	OVERLORD_GREETING_TEMPTRESS_LAMIA = {
+		trigger = {
+			is_overlord_to = FROM
+			from= {
+				is_monster_girl_species = {
+					SPECIES = LAMIA
+				}
+				is_specialist_subject_type = { TYPE = temptress }
+			}
+		}
+	}
+
+	SUBJECT_GREETING_SEX_SLAVE_LAMIA = {
+		trigger = {
+			is_monster_girl_species = {
+				SPECIES = LAMIA
+			}
+			is_specialist_subject_type = { TYPE = sex_slave }
+			from= {
+				is_overlord_to = root
+			}
+		}
+	}
+
+	SUBJECT_GREETING_TEMPTRESS_LAMIA = {
+		trigger = {
+			is_monster_girl_species = {
+				SPECIES = LAMIA
+			}
+			is_specialist_subject_type = { TYPE = temptress }
+			from= {
+				is_overlord_to = ROOT
+			}
+		}
+	}
+
+	### HOSTILE GREETINGS
+	01_ANGEL_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl_species = {
+				SPECIES = ANGEL
+			}
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	02_ANGEL_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			NOT = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl = yes
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	03_ANGEL_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl = no
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	### NEUTRAL GREETINGS
+	01_ANGEL_NEUTRAL_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl_species = {
+				SPECIES = ANGEL
+			}
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+	02_ANGEL_NEUTRAL_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			NOT = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl = yes
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+	03_ANGEL_NEUTRAL_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl = no
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+	### NEUTRAL GREETINGS
+	01_ANGEL_FRIENDLY_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl_species = {
+				SPECIES = ANGEL
+			}
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	02_ANGEL_FRIENDLY_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			NOT = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl = yes
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	03_ANGEL_FRIENDLY_GREETING = {
+		trigger = {
+			from = {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+			}
+			is_monster_girl = no
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+
+	OVERLORD_GREETING_SEX_SLAVE_ANGEL = {
+		trigger = {
+			is_overlord_to = FROM
+			from= {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+				is_specialist_subject_type = { TYPE = sex_slave }
+			}
+		}
+	}
+
+	OVERLORD_GREETING_TEMPTRESS_ANGEL = {
+		trigger = {
+			is_overlord_to = FROM
+			from= {
+				is_monster_girl_species = {
+					SPECIES = ANGEL
+				}
+				is_specialist_subject_type = { TYPE = temptress }
+			}
+		}
+	}
+
+	SUBJECT_GREETING_SEX_SLAVE_ANGEL = {
+		trigger = {
+			is_monster_girl_species = {
+				SPECIES = ANGEL
+			}
+			is_specialist_subject_type = { TYPE = sex_slave }
+			from= {
+				is_overlord_to = root
+			}
+		}
+	}
+
+	SUBJECT_GREETING_TEMPTRESS_ANGEL = {
+		trigger = {
+			is_monster_girl_species = {
+				SPECIES = ANGEL
+			}
+			is_specialist_subject_type = { TYPE = temptress }
+			from= {
+				is_overlord_to = ROOT
+			}
+		}
+	}
+
+	### HOSTILE GREETINGS
+	01_GYNOID_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				OR = {
+					is_species_class = GYNOID
+					is_species_class = GYNOID_ROBOT
+					is_species_class = Azur_Lane_R
+				}
+			}
+			OR = {
+				is_species_class = GYNOID
+				is_species_class = GYNOID_ROBOT
+				is_species_class = Azur_Lane_R
+			}
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	02_GYNOID_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				OR = {
+					is_species_class = GYNOID
+					is_species_class = GYNOID_ROBOT
+					is_species_class = Azur_Lane_R
+				}
+			}
+			NOR = {
+				is_species_class = GYNOID
+				is_species_class = GYNOID_ROBOT
+				is_species_class = Azur_Lane_R
+			}
+			is_monster_girl = yes
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+	03_GYNOID_HOSTILE_GREETING = {
+		trigger = {
+			from = {
+				OR = {
+					is_species_class = GYNOID
+					is_species_class = GYNOID_ROBOT
+					is_species_class = Azur_Lane_R
+				}
+			}
+			is_monster_girl = no
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_HOSTILE_GREETING_OATH_KINGHTS_1 = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				is_disloyal_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_HOSTILE_GREETING_OATH_KINGHTS_2 = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				is_disloyal_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_HOSTILE_GREETING_OATH_KINGHTS_3 = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			OR = {
+				is_hostile_to = FROM
+				is_domineering_to = FROM
+				is_unfriendly_to = FROM
+				is_disloyal_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_NEUTRAL_GREETING_OATH_KINGHTS = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			OR = {
+				is_neutral_to = FROM
+				is_threatened_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_FRIENDLY_GREETING_OATH_KINGHTS_1 = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				is_loyal_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_FRIENDLY_GREETING_OATH_KINGHTS_2 = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				is_loyal_to = FROM
+			}
+		}
+	}
+
+	SUBJECT_FRIENDLY_GREETING_OATH_KINGHTS_3 = {
+		trigger = {
+			has_country_flag = oath_kinghts
+			from = {
+				has_country_flag = monster_girl_queen
+			}
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+				is_loyal_to = FROM
+			}
+		}
+	}
+}

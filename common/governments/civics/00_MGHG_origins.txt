@@ -1,0 +1,192 @@
+# origin_example = {
+# 	is_origin = yes
+# 	icon = "gfx/interface/icons/origins/origins_XXX.dds"
+# 	picture = GFX_origin_XXX
+
+# 	starting_colony = pc_XXX
+# 	habitability_preference = pc_XXX
+# 	initializers = { XXX_start }
+# 	max_once_global = yes
+# 	non_colonizable_planet_class_neighbor = yes
+
+# 	playable = {
+# 		host_has_dlc = Federations
+# 	}
+
+# 	possible = {}
+
+# 	description = "origin_tooltip_XXX_effects"
+
+# 	flags = { custom_start_screen }
+
+# 	traits = {}
+
+# 	advanced_start = yes
+
+# 	random_weight = {
+# 		base = 2
+# 	}
+# }
+
+origin_sexual_energy_history = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_sexual_energy_history.dds"
+	picture = GFX_origin_sexual_energy_history
+
+	possible = {
+		species_class = {
+			OR = {
+				value = LAMIA
+				value = ANGEL
+				value = GYNOID
+				value = SLIME
+				value = SUCCUBUS
+				value = VAMPIRE
+				value = ANGEL_F
+				value = DRAGON
+				value = Azur_Lane_R
+			}
+		}
+	}
+
+	random_weight = {
+		base = 20
+	}
+	description = "origin_tooltip_sexual_energy_history_effects"
+
+	advanced_start = yes
+}
+
+origin_knight_oath = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_knight_oath.dds"
+	picture = GFX_origin_knight_oath
+	max_once_global = yes
+	starting_colony = pc_nuked
+
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_fanatic_xenophobe
+				value = ethic_gestalt_consciousness
+			}
+		}
+		species_class = {
+			OR = {
+				value = LAMIA
+				value = ANGEL
+				value = SLIME
+				value = SUCCUBUS
+				value = VAMPIRE
+				value = ANGEL_F
+				value = DRAGON
+			}
+		}
+	}
+
+	modifier = {
+		pc_nuked_habitability = 0.2
+	}
+
+	description = "origin_tooltip_knight_oath_effects"
+	negative_description = "origin_tooltip_knight_oath_negative_effects"
+	flags = { custom_start_screen monster_girl_queen }
+
+	traits = {
+	}
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_mysterious_classics = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_mysterious_classics.dds"
+	picture = GFX_origin_mysterious_classics
+	max_once_global = yes
+
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		species_class = {
+			OR = {
+				value = LAMIA
+				value = ANGEL
+				value = SLIME
+				value = GYNOID
+				value = SUCCUBUS
+				value = VAMPIRE
+				value = ANGEL_F
+				value = DRAGON
+				value = Azur_Lane_R
+			}
+		}
+	}
+
+	modifier = {
+		all_technology_research_speed = 0.05
+		planet_researchers_upkeep_mult = 0.05
+		category_psionics_research_speed_mult = 0.35
+		category_psionics_draw_chance_mult = 2
+	}
+
+	description = "origin_mysterious_classics_effects"
+	flags = { custom_start_screen }
+
+	traits = {
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_awaked_gynoid = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_awaked_gynoid.dds"
+	picture = GFX_origin_awaked_gynoid
+
+	possible = {
+		authority = {
+			value = auth_machine_intelligence
+		}
+		species_class = {
+			OR = {
+				value = Azur_Lane_R
+				value = GYNOID
+			}
+		}
+	}
+
+	modifier = {
+		planet_harlots_produces_mult = 0.2
+		country_society_tech_research_speed = 0.15
+	}
+
+	has_secondary_species = {
+		title = awaked_gynoid_secondary_species
+		traits = {
+			trait = trait_decadent
+		}
+	}
+
+	description = "origin_awaked_gynoid_effects"
+	negative_description = "origin_awaked_gynoid_negative_effects"
+	flags = { custom_start_screen }
+
+	traits = {
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}

@@ -1,0 +1,727 @@
+pre_country_Lamia = {
+	name = "EMPIRE_DESIGN_lamia"
+	adjective = "PRESCRIPTED_adjective_lamia"
+	spawn_as_fallen = yes
+	spawn_enabled = no
+	ignore_portrait_duplication = yes
+
+	ship_prefix = "PRESCRIPTED_ship_prefix_lamia"
+	species = {
+		class="LAMIA"
+		portrait="LAMIA05"
+		name = "EMPIRE_DESIGN_SPECIES_lamia"
+		plural = "EMPIRE_DESIGN_SPECIES_lamia_pl"
+		adjective = "EMPIRE_DESIGN_SPECIES_lamia_adj"
+		name_list = "LAMIA"
+		gender=female
+		trait="trait_lamia"
+		trait="trait_hibernation_sex"
+		trait="trait_snake_tongue"
+		trait="trait_promiscuous"
+		trait="trait_haughty_harlots"
+		trait="trait_spermophilia"
+	}
+
+	room="personality_fanatic_befrienders_room"
+
+	authority="auth_dictatorial"
+	civics = {
+		"civic_temptress"
+		"civic_lamia_diplomacy"
+	}
+	government = gov_temptress
+
+	ethic="ethic_fanatic_xenophile"
+	ethic="ethic_pacifist"
+
+	origin="origin_imperial_vassal"
+
+	planet_name = "EMPIRE_DESIGN_lamia_planet"
+	planet_class = "pc_tropical"
+	initializer=""
+	system_name = "EMPIRE_DESIGN_lamia_system"
+
+	graphical_culture="reptilian_01"
+	city_graphical_culture="reptilian_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_8.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"shadow_blue"
+			"shadow_purple"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "PRESCRIPTED_ruler_name_lamia"
+		gender = female
+		portrait = "LAMIA05_07"
+		texture = 0
+		attachment = 0
+		clothes = 0
+		leader_class = official
+		trait = trait_ruler_charismatic
+	}
+}
+
+pre_country_Angel ={
+	name = "EMPIRE_DESIGN_angel"
+	adjective = "PRESCRIPTED_adjective_angel"
+	spawn_as_fallen = yes
+	spawn_enabled = yes
+	ignore_portrait_duplication = yes
+
+	ship_prefix = "PRESCRIPTED_ship_prefix_angel"
+	species = {
+		class="ANGEL"
+		portrait="ANGEL01"
+		name = "EMPIRE_DESIGN_SPECIES_angel"
+		plural = "EMPIRE_DESIGN_SPECIES_angel_pl"
+		adjective = "EMPIRE_DESIGN_SPECIES_angel_adj"
+		name_list = "ANGEL"
+		gender=female
+		trait="trait_angel"
+		trait="trait_holy_sexual_energy"
+		trait="trait_gratification_delay"
+		trait="trait_hidden_futa"
+		trait="trait_erotic_perception"
+		trait="trait_difficult_to_climax"
+	}
+
+	room="runic_room"
+
+	authority="auth_oligarchic"
+	civics = {
+		"civic_sex_saint"
+		"civic_divine_ethnic_group"
+	}
+	government = gov_sex_saint
+
+	ethic="ethic_egalitarian"
+	ethic="ethic_fanatic_spiritualist"
+
+	origin="origin_mysterious_classics"
+
+	planet_name = "EMPIRE_DESIGN_angel_planet"
+	planet_class = "pc_arctic"
+	initializer=""
+	system_name = "EMPIRE_DESIGN_angel_system"
+
+	graphical_culture="humanoid_01"
+	city_graphical_culture="humanoid_01"
+
+	empire_flag={
+		icon={
+			category="ornate"
+			file="flag_ornate_23.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_13.dds"
+		}
+		colors={
+			"white"
+			"grey"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "PRESCRIPTED_ruler_name_angel"
+		gender = female
+		portrait = "ANGEL01_02"
+		texture = 0
+		attachment = 0
+		clothes = 0
+		leader_class = official
+		trait = trait_ruler_eye_for_talent
+	}
+}
+
+pre_country_Gynoid ={
+	name = "EMPIRE_DESIGN_gynoid"
+	adjective = "PRESCRIPTED_adjective_gynoid"
+	spawn_as_fallen = yes
+	spawn_enabled = yes
+	ignore_portrait_duplication = yes
+
+	ship_prefix = "PRESCRIPTED_ship_prefix_gynoid"
+	species = {
+		class="GYNOID"
+		portrait="GYNOID03"
+		name = "EMPIRE_DESIGN_SPECIES_gynoid"
+		plural = "EMPIRE_DESIGN_SPECIES_gynoid_pl"
+		adjective = "EMPIRE_DESIGN_SPECIES_gynoid_adj"
+		name_list = "GYNOID"
+		gender=female
+		trait="trait_Gynoid"
+		trait="trait_machine_unit"
+		trait="trait_robot_history_warbot"
+		trait="trait_robot_integrated_weaponry"
+		trait="trait_robot_mass_produced"
+		trait="trait_MGHG_fast_template"
+		trait="trait_difficult_to_climax"
+	}
+	secondary_species = {
+		class="HUM"
+		portrait="cyb12"
+		name = "EMPIRE_DESIGN_SECONDARY_SPECIES_gynoid"
+		plural = "EMPIRE_DESIGN_SECONDARY_SPECIES_gynoid_pl"
+		adjective = "EMPIRE_DESIGN_SECONDARY_SPECIES_gynoid_adj"
+		name_list = "HUM1"
+		gender=male
+		trait="trait_natural_engineers"
+		trait="trait_strong"
+		trait="trait_rapid_breeders"
+		trait="trait_decadent"
+		trait="trait_wasteful"
+	}
+
+	room="machine_room"
+
+	authority="auth_machine_intelligence"
+	civics = {
+		"civic_machine_terminator"
+		"civic_mechromancy_aritist"
+	}
+	government = gov_MGHG_machine_terminator
+
+	ethic="ethic_gestalt_consciousness"
+
+	origin="origin_awaked_gynoid"
+
+	planet_name = "EMPIRE_DESIGN_gynoid_planet"
+	planet_class = "pc_arid"
+	initializer=""
+	system_name = "EMPIRE_DESIGN_gynoid_system"
+
+	graphical_culture="synthetics_01"
+	city_graphical_culture="synthetics_01"
+
+	empire_flag={
+		icon={
+			category="MG"
+			file="MG_022.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_43.dds"
+		}
+		colors={
+			"black"
+			"red"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "PRESCRIPTED_ruler_name_gynoid"
+		gender = female
+		portrait = "GYNOID03_15"
+		texture = 0
+		attachment = 0
+		clothes = 0
+		leader_class = commander
+		trait = trait_ruler_warlike
+	}
+}
+
+pre_country_Slime ={
+	name = "EMPIRE_DESIGN_slime"
+	adjective = "PRESCRIPTED_adjective_slime"
+
+	ship_prefix={
+		key="ISS"
+	}
+	species={
+		class="SLIME"
+		portrait="SLIME01"
+		species_name={
+			key="SPEC_Slime0"
+		}
+		species_plural={
+			key="SPEC_Slime0_pl"
+		}
+		species_adjective={
+			key="%ADJECTIVE%"
+			variables={
+				{
+					key="adjective"
+					value={
+						key="SPEC_Slime0"
+					}
+				}
+
+			}
+		}
+		name_list="SLIME"
+		gender=female
+		trait="trait_slime"
+		trait="trait_hive_mind"
+		trait="trait_easy_to_climax"
+		trait="trait_promiscuous"
+		trait="trait_aquatic"
+		trait="trait_spermophilia"
+	}
+	authority="auth_hive_mind"
+	government="gov_hive_mind"
+	planet_name={
+		key="SPEC_Slime1_planet"
+	}
+	planet_class="pc_ocean"
+	system_name={
+		key="SPEC_Slime1_system"
+	}
+	initializer="ocean_paradise_start"
+	graphical_culture="fungoid_01"
+	city_graphical_culture="fungoid_01"
+	empire_flag={
+		icon={
+			category="plantoid"
+			file="plantoid_08.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_19.dds"
+		}
+		colors={
+			"intense_blue"
+			"turquoise"
+			"black"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name={
+			full_names={
+				key="%LEADER_2%"
+				variables={
+					{
+						key="1"
+						value={
+							key="SLIME_CHR01"
+						}
+					}
+ 					{
+						key="2"
+						value={
+							key="SLIME_SCHR14"
+						}
+					}
+
+				}
+			}
+			use_full_regnal_name=yes
+		}
+		portrait="SLIME01_22"
+		texture=0
+		attachment=0
+		clothes=0
+		trait="leader_trait_pregnancy_enthusiasts"
+		leader_class="official"
+	}
+	spawn_as_fallen=no
+	ignore_portrait_duplication=yes
+	room="default_room"
+	spawn_enabled=yes
+	ethic="ethic_gestalt_consciousness"
+	civics={
+		"civic_sex_center_computer_hive"
+		"civic_love_juice_refiner_hive"
+	}
+	origin="origin_ocean_paradise"
+}
+
+pre_country_Succubus ={
+	name = "EMPIRE_DESIGN_succubus"
+	adjective = "PRESCRIPTED_adjective_succubus"
+
+	ship_prefix={
+		key="ISS"
+	}
+	species={
+		class="SUCCUBUS"
+		portrait="SUCCUBUS01"
+		species_name={
+			key="SPEC_Succubus0"
+		}
+		species_plural={
+			key="SPEC_Succubus0_pl"
+		}
+		species_adjective={
+			key="%ADJECTIVE%"
+			variables={
+				{
+					key="adjective"
+					value={
+						key="SPEC_Succubus0"
+					}
+				}
+
+			}
+		}
+		name_list="SUCCUBUS"
+		gender=female
+		trait="trait_succubus"
+		trait="trait_sadism_constitution"
+		trait="trait_promiscuous"
+		trait="trait_erotic_genius"
+		trait="trait_haughty_harlots"
+		trait="trait_unruly"
+	}
+	authority="auth_imperial"
+	government="gov_despotic_hegemony"
+	planet_name={
+		key="SPEC_Succubus2_planet"
+	}
+	planet_class="pc_tropical"
+	system_name={
+		key="SPEC_Succubus2_system"
+	}
+	initializer=""
+	graphical_culture="humanoid_01"
+	city_graphical_culture="humanoid_01"
+	empire_flag={
+		icon={
+			category="imperial"
+			file="imperial_12.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_37.dds"
+		}
+		colors={
+			"cloud_purple"
+			"shadow_purple"
+			"black"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name={
+			full_names={
+				key="%LEADER_1%"
+				variables={
+					{
+						key="1"
+						value={
+							key="MONGIRL_CHR27"
+						}
+					}
+					{
+						key="2"
+						value={
+							key="MONGIRL_SCHR19"
+						}
+					}
+
+				}
+			}
+		}
+		portrait="SUCCUBUS01_10"
+		texture=0
+		attachment=0
+		clothes=0
+		trait="leader_trait_emphasize_semen"
+		leader_class="official"
+	}
+	spawn_as_fallen=yes
+	ignore_portrait_duplication=yes
+	room="default_room"
+	spawn_enabled=yes
+	ethic="ethic_fanatic_authoritarian"
+	ethic= ethic_xenophile
+	civics={
+		"civic_lust_psionic_fire"
+		"civic_oppressive_pervert"
+	}
+	origin="origin_sexual_energy_history"
+}
+
+pre_country_Vampire ={
+	name = "EMPIRE_DESIGN_vampire"
+	adjective = "PRESCRIPTED_adjective_vampire"
+
+	ship_prefix={
+		key="ISS"
+	}
+	species={
+		class="VAMPIRE"
+		portrait="VAMPIRE01"
+		species_name={
+			key="SPEC_Vampire0"
+		}
+		species_plural={
+			key="SPEC_Vampire0_pl"
+		}
+		species_adjective={
+			key="%ADJECTIVE%"
+			variables={
+				{
+					key="adjective"
+					value={
+						key="SPEC_Vampire0"
+					}
+				}
+
+			}
+		}
+		name_list= VAMPIRE
+		gender=female
+		trait="trait_vampire"
+		trait="trait_necrophage"
+		trait="trait_extremely_adaptive"
+		trait="trait_intelligent"
+		trait="trait_psycho_girl"
+		trait="trait_mental_fragility"
+	}
+	secondary_species={
+		class = "HUM"
+		portrait = "human"
+		name = "PRESCRIPTED_species_name_humans1"
+		plural = "PRESCRIPTED_species_plural_humans1"
+		adjective = "PRESCRIPTED_species_adjective_humans1"
+		name_list = "HUMAN1"
+		gender=female
+		trait="trait_rapid_breeders"
+	}
+	authority="auth_dictatorial"
+	government="gov_military_dictatorship"
+	planet_name={
+		key="SPEC_Vampire1_planet"
+	}
+	planet_class="pc_tropical"
+	system_name={
+		key="SPEC_Vampire1_system"
+	}
+	initializer=""
+	graphical_culture="humanoid_01"
+	city_graphical_culture="humanoid_01"
+	empire_flag={
+		icon={
+			category="necroid"
+			file="necroid_05.dds"
+		}
+		background={
+			category="backgrounds"
+			file="v.dds"
+		}
+		colors={
+			"intense_red"
+			"intense_red"
+			"black"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name=PRESCRIPTED_ruler_name_vampire
+		portrait="VAMPIRE01_17"
+		texture=0
+		attachment=0
+		clothes=0
+		trait= trait_ruler_charismatic
+		leader_class= official
+	}
+	spawn_as_fallen=yes
+	ignore_portrait_duplication=yes
+	room="default_room"
+	spawn_enabled=yes
+	ethic="ethic_authoritarian"
+	ethic="ethic_xenophobe"
+	ethic="ethic_militarist"
+	civics={
+		"civic_reanimated_armies"
+		"civic_pleasure_seekers"
+	}
+	origin="origin_necrophage"
+}
+
+pre_country_Angel_fallen ={
+	name = "EMPIRE_DESIGN_angel_fallen"
+	adjective = "PRESCRIPTED_adjective_angel_fallen"
+
+	ship_prefix={
+		key="ISS"
+	}
+	species={
+		class="ANGEL_F"
+		portrait="ANGEL_F01"
+		species_name={
+			key="SPEC_Angel_fallen0"
+		}
+		species_plural={
+			key="SPEC_Angel_fallen0_pl"
+		}
+		species_adjective={
+			key="%ADJECTIVE%"
+			variables={
+				{
+					key="adjective"
+					value={
+						key="SPEC_Angel_fallen0"
+					}
+				}
+
+			}
+		}
+		name_list="ANGEL_F"
+		gender=female
+		trait="trait_angel_fallen"
+		trait="trait_promiscuous"
+		trait="trait_futanari"
+		trait="trait_lust_humor"
+		trait="trait_difficult_to_climax"
+		trait="trait_much_love_liquid"
+	}
+	authority="auth_imperial"
+	government="gov_despotic_hegemony"
+	planet_name={
+		key="SPEC_Angel_fallen0_planet"
+	}
+	planet_class="pc_continental"
+	system_name={
+		key="SPEC_Angel_fallen0_system"
+	}
+	initializer=""
+	graphical_culture="humanoid_01"
+	city_graphical_culture="humanoid_01"
+	empire_flag={
+		icon={
+			category="ornate"
+			file="flag_ornate_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_39.dds"
+		}
+		colors={
+			"hard_steel"
+			"black"
+			"black"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name=PRESCRIPTED_ruler_name_angel_fallen
+		portrait="ANGEL_F01_16"
+		texture=0
+		attachment=0
+		clothes=0
+		trait="leader_trait_masochism"
+		leader_class="scientist"
+	}
+	spawn_as_fallen=yes
+	ignore_portrait_duplication=yes
+	room="default_room"
+	spawn_enabled=yes
+	ethic="ethic_authoritarian"
+	ethic="ethic_fanatic_materialist"
+	civics={
+		"civic_sex_brain_can"
+		"civic_whore_intern"
+	}
+	origin="origin_mechanists"
+}
+
+pre_country_Dragon ={
+	name = "EMPIRE_DESIGN_dragon"
+	adjective = "PRESCRIPTED_adjective_dragon"
+
+	ship_prefix={
+		key="ISS"
+	}
+	species={
+		class="DRAGON"
+		portrait="DRAGON01"
+		species_name={
+			key="SPEC_Dragon0"
+		}
+		species_plural={
+			key="SPEC_Dragon0_pl"
+		}
+		species_adjective={
+			key="%ADJECTIVE%"
+			variables={
+				{
+					key="adjective"
+					value={
+						key="SPEC_Dragon0"
+					}
+				}
+
+			}
+		}
+		name_list="DRAGON"
+		gender=female
+		trait="trait_dragon"
+		trait="trait_very_strong"
+		trait="trait_whorer"
+		trait="trait_lust_humor"
+		trait="trait_slow_breeders"
+		trait="trait_ovulation_difficulty"
+	}
+	authority="auth_oligarchic"
+	government="gov_military_junta"
+	planet_name={
+		key="SPEC_Dragon0_planet"
+	}
+	planet_class="pc_tropical"
+	system_name={
+		key="SPEC_Dragon0_system"
+	}
+	initializer=""
+	graphical_culture="reptilian_01"
+	city_graphical_culture="reptilian_01"
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_32.dds"
+		}
+		colors={
+			"black"
+			"brown"
+			"black"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name=PRESCRIPTED_ruler_name_dragon
+		portrait="DRAGON01_22"
+		texture=0
+		attachment=0
+		clothes=0
+		trait="trait_ruler_warlike"
+		leader_class="commander"
+	}
+	spawn_as_fallen=yes
+	ignore_portrait_duplication=yes
+	room="runic_room"
+	spawn_enabled=yes
+	ethic="ethic_authoritarian"
+	ethic="ethic_fanatic_militarist"
+	civics={
+		"civic_self_eat"
+		"civic_sexual_energy_diffusion"
+	}
+	origin="origin_here_be_dragons"
+}
