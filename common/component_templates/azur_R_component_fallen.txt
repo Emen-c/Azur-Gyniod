@@ -1,0 +1,428 @@
+#T槽
+#狡猾能量发射器
+weapon_component_template = {
+	key = "AZUR_R_FALLEN_T"
+	size = titanic
+	type = instant
+	prio_projectile = yes
+	
+	icon = "GFX_azur_ship_part_fallen_T"
+	icon_frame = 1
+	entity = "invisible_turret_entity"
+	
+	prerequisites = { tech_azur_R_fallen_T }		#前置
+	
+	firing_arc = 30.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = no  #禁止炮台旋转
+	use_ship_kill_target = no
+	
+	power = 0
+	damage = { min = 2147483647 max = 2147483647 }
+	windup = { min = 800 max = 800 }
+	total_fire_time = 200
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 1.0                    #护盾伤害
+	armor_damage = 1.0                     #装甲伤害
+	shield_penetration = 1.0               #护盾穿透
+	armor_penetration = 1.0                #装甲穿透                  
+	tracking = 1.00                        #追踪
+	range = 400.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	component_set = "AZUR_R_FALLEN_T"
+	projectile_gfx = "gfx_azur_r_shenhua_t"			#记得改
+	tags = { weapon_type_azur_r_component }
+	ai_tags = { weapon_role_artillery }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 114514
+			sr_wuyan = 114514
+		}		
+		upkeep = {
+			
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#X槽
+#终章
+weapon_component_template = {
+	key = "AZUR_R_FALLEN_X"
+	size = extra_large
+	
+	type = instant
+	
+	entity = "invisible_turret_entity"
+	
+	icon = "GFX_azur_ship_part_fallen_X"
+	icon_frame = 1
+	
+	firing_arc = 30.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = no
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2400
+			sr_hongjianjian = 240
+		}		
+		upkeep = {
+			sr_hongjianjian = 24
+		}
+	}
+	
+	power = 0
+	damage = { min = 5000.00 max = 20000.00 }
+	windup = { min = 8 max = 8 }
+	
+	total_fire_time = 12 				   #开火时间
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 2.0                    #护盾伤害
+	armor_damage = 2.0                     #装甲伤害
+	shield_penetration = 0                 #护盾穿透
+	armor_penetration = 0                  #装甲穿透                  
+	tracking = 0.10                        #追踪
+	range = 300.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	prerequisites = { 										#前置科技
+		tech_azur_R_fallen_X
+	}
+	size_restriction = {									#舰船类型
+		
+	}
+	component_set = "AZUR_R_FALLEN_X"
+	projectile_gfx = "nemesis_01_ion_cannon"				#特效
+	tags = { weapon_type_azur_r_component }
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#L槽
+#追光
+weapon_component_template = {
+	key = "AZUR_R_FALLEN_L"
+	size = large
+	
+	type = instant
+	
+	entity = "large_laser_gun_entity"
+	
+	icon = "GFX_azur_ship_part_fallen_L"
+	icon_frame = 1
+	
+	firing_arc = 90.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = no
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1800
+			sr_hongjianjian = 180
+		}		
+		upkeep = {
+			sr_hongjianjian = 18
+		}
+	}
+	
+	power = 0
+	damage = { min = 1000.00 max = 10000.00 }
+	windup = { min = 25 max = 25 }
+	
+	total_fire_time = 25				   #开火时间
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 2.0                    #护盾伤害
+	armor_damage = 2.0                     #装甲伤害
+	shield_penetration = 0                 #护盾穿透
+	armor_penetration = 0                  #装甲穿透                  
+	tracking = 0.50                        #追踪
+	range = 150.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	prerequisites = { 										#前置科技
+		tech_azur_R_fallen_L
+	}
+	size_restriction = {									#舰船类型
+		
+	}
+	component_set = "AZUR_R_FALLEN_L"
+	projectile_gfx = "azur_R_L_3"				#特效
+	tags = { weapon_type_azur_r_component }
+	ai_tags = {
+		weapon_role_anti_armor
+		weapon_role_anti_shield
+	}
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#M槽
+#殉葬之华
+weapon_component_template = {
+	key = "AZUR_R_FALLEN_M"
+	size = medium
+	
+	type = instant
+	
+	entity = "medium_laser_gun_entity"
+	
+	icon = "GFX_azur_ship_part_fallen_M"
+	icon_frame = 1
+	
+	firing_arc = 90.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = no
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1200
+			sr_hongjianjian = 120
+		}		
+		upkeep = {
+			sr_hongjianjian = 12
+		}
+	}
+	
+	power = 0
+	damage = { min = 300.00 max = 5000.00 }
+	windup = { min = 15 max = 15 }
+	
+	total_fire_time = 15			  	   #开火时间
+	hull_damage = 1.00                     #船体伤害
+	shield_damage = 2.0                    #护盾伤害
+	armor_damage = 2.0                     #装甲伤害
+	shield_penetration = 0                 #护盾穿透
+	armor_penetration = 0                  #装甲穿透                  
+	tracking = 0.80                        #追踪
+	range = 80.00                          #范围
+	accuracy = 1.00                        #命中
+	
+	prerequisites = { 										#前置科技
+		tech_azur_R_fallen_M
+	}
+	size_restriction = {									#舰船类型
+		
+	}
+	component_set = "AZUR_R_FALLEN_M"
+	projectile_gfx = "azur_R_M_1"				#特效
+	tags = { weapon_type_azur_r_component }
+	ai_tags = {
+		weapon_role_anti_armor
+		weapon_role_anti_shield
+	}
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#S槽
+#殉葬之华
+weapon_component_template = {
+	key = "AZUR_R_FALLEN_S"
+	size = small
+	
+	type = instant
+	
+	entity = "small_laser_gun_entity"
+	
+	icon = "GFX_azur_ship_part_fallen_S"
+	icon_frame = 1
+	
+	firing_arc = 90.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = no
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 800
+			sr_hongjianjian = 80
+		}		
+		upkeep = {
+			sr_hongjianjian = 8
+		}
+	}
+	
+	power = 0
+	damage = { min = 200.00 max = 2000.00 }
+	windup = { min = 10 max = 10 }
+	
+	total_fire_time = 10					#开火时间
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 2.0                    #护盾伤害
+	armor_damage = 2.0                     #装甲伤害
+	shield_penetration = 0                 #护盾穿透
+	armor_penetration = 0                  #装甲穿透                  
+	tracking = 0.80                        #追踪
+	range = 60.00                          #范围
+	accuracy = 1.00                        #命中
+	
+	prerequisites = { 										#前置科技
+		tech_azur_R_fallen_S
+	}
+	size_restriction = {									#舰船类型
+		
+	}
+	component_set = "AZUR_R_FALLEN_S"
+	projectile_gfx = "azur_R_S_2"				#特效
+	tags = { weapon_type_azur_r_component }
+	ai_tags = {
+		weapon_role_anti_armor
+		weapon_role_anti_shield
+	}
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#装甲
+#久远第四加护
+utility_component_template = {
+	key = "AZUR_R_FALLEN_UTILITY"
+	size = large
+	icon = "GFX_azur_ship_part_fallen_UTILITY"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = 90000
+		ship_shield_add = 90000
+		ship_hull_add = 90000
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2000
+			sr_hongjianjian = 200
+		}	
+		upkeep = {
+			sr_hongjianjian = 10
+		}
+	}
+	
+	prerequisites = { tech_azur_R_fallen_UTILITY }
+	component_set = "AZUR_R_FALLEN_UTILITY"
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "AZUR_R_FALLEN_UTILITY_M"
+	size = medium
+	icon = "GFX_azur_ship_part_fallen_UTILITY"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = 60000
+		ship_shield_add = 60000
+		ship_hull_add = 60000
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1500
+			sr_hongjianjian = 150
+		}	
+		upkeep = {
+			sr_hongjianjian = 8
+		}
+	}
+	
+	prerequisites = { tech_azur_R_fallen_UTILITY }
+	component_set = "AZUR_R_FALLEN_UTILITY"
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "AZUR_R_FALLEN_UTILITY_S"
+	size = small
+	icon = "GFX_azur_ship_part_fallen_UTILITY"
+	icon_frame = 1
+	power = 0
+	modifier = {
+		ship_armor_add = 40000
+		ship_shield_add = 40000
+		ship_hull_add = 40000
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1000
+			sr_hongjianjian = 100
+		}	
+		upkeep = {
+			sr_hongjianjian = 5
+		}
+	}
+	
+	prerequisites = { tech_azur_R_fallen_UTILITY }
+	component_set = "AZUR_R_FALLEN_UTILITY"
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#跃迁引擎
+#伪典-天移
+utility_component_template = {
+	key = "AZUR_R_FALLEN_JUMP_DRIVE"
+	size = small
+	icon = "GFX_azur_ship_part_fallen_JUMP_DRIVE"
+	icon_frame = 1
+	power = -800
+	ftl = yes
+	jumpdrive = yes
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 4000
+			sr_hongjianjian = 400
+		}
+	}
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = 10.00
+		ship_windup_mult = -0.90
+		ship_cloaking_strength_add = 10
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+	
+	prerequisites = { tech_azur_R_fallen_JUMP_DRIVE }				#前置
+	component_set = "ftl_components"
+}

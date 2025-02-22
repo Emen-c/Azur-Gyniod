@@ -1,0 +1,176 @@
+#秘书舰
+councilor_ruler_AL_R = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	is_leader_possible = { always = yes }
+	modifier = {
+		country_base_sr_hongjianjian_produces_add = 0.25
+		country_base_unity_produces_add = 0.25
+		
+	}
+	icon = "GFX_icon_councilor_AL_R"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_ruler_AL_R_FALLEN = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	is_leader_possible = { always = yes }
+	modifier = {
+		
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+
+#内阁
+#新
+councilor_civic_AL_R_01 = {
+	leader_class = { official scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_01
+	modifier = {
+		country_edict_fund_add = 10								#法令经费
+		all_technology_research_speed = 0.01					#科研速度
+		science_ship_survey_speed = 0.01						#调查速度
+		ship_anomaly_generation_chance_mult = 0.01				#异常发现概率
+		ship_archaeological_site_excavation_speed_mult = 0.01	#考古速度
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_02 = {
+	leader_class = { official commander scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_02
+	modifier = {
+		
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_03 = {
+	leader_class = { official }
+	is_leader_possible = {
+		OR = {
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_03
+	modifier = {
+		pop_job_trade_mult = 0.02
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_04 = {
+	leader_class = { official commander scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_04
+	modifier = {
+		
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_05 = {
+	leader_class = { official scientist }
+	is_leader_possible = {
+		OR = {
+			#leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_05
+	modifier = {
+		megastructure_build_speed_mult = 0.02
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_06 = {
+	leader_class = { official scientist }
+	is_leader_possible = {
+		OR = {
+			#leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_06
+	modifier = {
+		planet_technician_energy_produces_add = 0.2
+		planet_miners_minerals_produces_add = 0.2
+		planet_farmers_food_produces_add = 0.2
+		planet_metallurgists_alloys_produces_add = 0.1
+		planet_artisans_consumer_goods_produces_add = 0.1
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_07 = {
+	leader_class = { official scientist commander }
+	is_leader_possible = {
+		OR = {
+			leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_07
+	modifier = {
+		country_starbase_influence_cost_mult = -0.01
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_08 = {
+	leader_class = { official scientist commander }
+	is_leader_possible = {
+		OR = {
+			leader_class = commander
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_08
+	modifier = {
+		country_base_sr_hongjianjian_produces_add = 1
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}
+
+councilor_civic_AL_R_09 = {
+	leader_class = { official scientist }
+	is_leader_possible = {
+		OR = {
+			leader_class = scientist
+			leader_class = official
+		}
+	}
+	civic = civic_AL_R_09
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.02
+	}
+	icon = "GFX_icon_councilor_AL_R"
+}

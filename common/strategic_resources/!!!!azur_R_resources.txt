@@ -1,0 +1,36 @@
+###红尖尖
+sr_hongjianjian = {
+	tradable = no
+	max = 100000
+	
+	visibility_prerequisite = { always = yes }
+	deficit_modifier = situation_energy_deficit
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#魔方
+sr_mofang = {
+	tradable = no
+	max = 100000
+	
+	visibility_prerequisite = { always = yes }
+	deficit_modifier = situation_food_deficit
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#狡猾能量
+sr_wuyan = {
+	tradable = no
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+

@@ -1,0 +1,26 @@
+#模板
+#tech_nutrient_replication = {
+#	cost = 2000
+#	area = physics, society, engineering
+#	tier = 3
+#	category = { materials }
+#	prerequisites = { "tech_nano_vitality_crops" }
+#	weight = @tier3weight3
+#		
+#	modifier = {
+#	}
+#	
+#	weight_modifier = {
+#		modifier = {
+#			factor = 1.25
+#			research_leader = {
+#				area = society
+#				has_trait = "leader_trait_expertise_biology"
+#			}
+#		}
+##	}
+#	
+#	ai_weight = {
+#		weight = 0
+#	}
+#}

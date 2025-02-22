@@ -1,0 +1,206 @@
+#等级1
+ALelizabeth_1_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		country_energy_produces_mult = 0.2
+		country_minerals_produces_mult = 0.2
+		country_food_produces_mult = 0.2
+		country_alloys_produces_mult = 0.1
+		country_exotic_gases_produces_mult = 0.1
+		country_rare_crystals_produces_mult = 0.1
+		country_volatile_motes_produces_mult = 0.1
+		country_society_research_produces_mult = 0.1
+		country_physics_research_produces_mult = 0.1
+		country_engineering_research_produces_mult = 0.1
+		num_tech_alternatives_add = 1
+	}
+    overlord_modifier = {
+		country_naval_cap_mult = 0.2
+		country_base_influence_produces_add = 1
+	}
+	activate_effect = {
+		target = {
+			store_country_backup_data = {
+				flag = no
+				room = yes
+				name = no
+				ethics = no
+				government = no
+			}
+			room_name_override = ""
+		}
+	}
+	deactivate_effect = {
+		target = {
+			restore_country_backup_data = yes
+		}
+	}
+}
+
+ALelizabeth_1_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		country_naval_cap_mult = -0.2
+		country_starbase_influence_cost_mult = 0.1
+		pop_happiness = -0.1
+	}
+}
+
+#鼓励殖民地精英
+ALelizabeth_1_modifier_1 = {
+    icon = "GFX_specialist_perk_scholarium_1_overlord_modifier"
+	overlord_modifier = {
+		all_technology_research_speed = 0.2
+		monthly_loyalty_from_subjects = 1
+	}
+	subject_modifier = {
+		country_leader_pool_size = 2
+		species_leader_exp_gain = 0.5
+		diplo_weight_technology_mult = 0.25
+		country_subject_technology_sharing_mult = 0.25
+	}
+
+}
+
+#
+ALelizabeth_1_modifier_2 = {
+    icon = "GFX_specialist_perk_prospectorium_3_strip_mining"
+	overlord_modifier = {
+		diplo_weight_mult = 0.2
+		trade_value_mult = 0.2
+	}
+	subject_modifier = {
+		country_base_energy_produces_add = 300
+		country_base_minerals_produces_add = 300
+		country_base_food_produces_add = 300
+		country_trade_attractiveness = 0.25
+		trade_value_mult = 0.5
+		planet_stability_add = -5
+		planet_building_build_speed_mult = -0.2
+	}
+
+}
+
+
+#等级2
+ALelizabeth_2_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		country_energy_produces_mult = 0.4
+		country_minerals_produces_mult = 0.4
+		country_food_produces_mult = 0.4
+		country_alloys_produces_mult = 0.2
+		country_exotic_gases_produces_mult = 0.2
+		country_rare_crystals_produces_mult = 0.2
+		country_volatile_motes_produces_mult = 0.2
+		country_society_research_produces_mult = 0.2
+		country_physics_research_produces_mult = 0.2
+		country_engineering_research_produces_mult = 0.2
+		num_tech_alternatives_add = 2
+	}
+	overlord_modifier = {
+		country_naval_cap_mult = 0.3
+		country_base_influence_produces_add = 1.5
+	}
+}
+
+ALelizabeth_2_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		country_naval_cap_mult = -0.3
+		country_starbase_influence_cost_mult = 0.15
+		pop_happiness = -0.15
+	}
+}
+
+#人尽其责
+ALelizabeth_2_modifier_1 = {
+    icon = "GFX_specialist_perk_scholarium_2_leaders"
+	overlord_modifier = {
+		planet_jobs_produces_mult = 0.25
+	}
+	subject_modifier = {
+		planet_jobs_produces_mult = 0.25
+		pop_citizen_happiness = -0.1
+	}
+
+}
+
+#巩固不列颠帝国
+ALelizabeth_2_modifier_2 = {
+    icon = "GFX_specialist_perk_scholarium_3_arctrellis"
+	overlord_modifier = {
+		country_government_civic_points_add = 1
+		monthly_loyalty_from_subjects = 2
+	}
+	subject_modifier = {
+		colony_start_num_pops_add = 1
+		country_edict_fund_mult = 0.2
+		country_naval_capacity_contribution_to_overlord_mult = 0.2
+	}
+
+}
+
+#等级3
+ALelizabeth_3_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		country_energy_produces_mult = 0.8
+		country_minerals_produces_mult = 0.8
+		country_food_produces_mult = 0.8
+		country_alloys_produces_mult = 0.4
+		country_exotic_gases_produces_mult = 0.4
+		country_rare_crystals_produces_mult = 0.4
+		country_volatile_motes_produces_mult = 0.4
+		country_society_research_produces_mult = 0.4
+		country_physics_research_produces_mult = 0.4
+		country_engineering_research_produces_mult = 0.4
+		num_tech_alternatives_add = 2
+	}
+	overlord_modifier = {
+		country_naval_cap_mult = 0.4
+		country_base_influence_produces_add = 2
+	}
+}
+
+ALelizabeth_3_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		country_naval_cap_mult = -0.4
+		country_starbase_influence_cost_mult = 0.2
+		pop_happiness = -0.2
+	}
+}
+
+#MAUD委员会
+ALelizabeth_3_modifier_1 = {
+    icon = "GFX_specialist_perk_bulwark_1_overlord_modifier"
+	overlord_modifier = {
+		
+	}
+	subject_modifier = {
+		
+	}
+	desc = {
+		description = ALelizabeth_3_modifier_1_desc
+	}
+}
+
+#皇家兵工厂
+ALelizabeth_3_modifier_2 = {
+    icon = "GFX_specialist_perk_bulwark_3_battlewright"
+	overlord_modifier = {
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+		starbase_shipyard_build_speed_mult = 0.2
+		starbase_shipyard_build_cost_mult = -0.2
+	}
+	subject_modifier = {
+		country_base_alloys_produces_add = 200
+		country_base_volatile_motes_produces_add = 100
+		country_base_exotic_gases_produces_add = 100
+		country_base_rare_crystals_produces_add = 100
+		planet_stability_add = -5
+	}
+
+}

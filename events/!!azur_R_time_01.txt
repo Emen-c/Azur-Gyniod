@@ -1,0 +1,101 @@
+namespace = azur_R_time
+####固定on_action####
+#每月触发事件
+country_event = {
+	id = azur_R_time.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	immediate = {
+		#小天城科学家修正
+		country_event = { id = AL_R_tc.7 days = 1 random = 9 }
+	}
+}
+
+#每年触发事件
+country_event = {
+	id = azur_R_time.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	immediate = {
+		#LUKA领袖技能
+		country_event = { id = azur_R_vocaloid.03 days = 1 random = 29 }
+		#司马懿特质加成
+		country_event = { id = azur_leader_lysm.11 days = 1 random = 29 }
+		#希-修正（年检）
+		country_event = { id = azur_leader_lysm.101 days = 1 random = 29 }
+		#明石buff年数记录
+		country_event = { id = azur_mingshi.26 days = 1 random = 29 }
+		#明石特质
+		random_list = {
+			1 = {
+				country_event = { id = azur_mingshi.14 days = 1 random = 29 }
+			}
+			2 = {  }
+		}
+		#埃爾梅羅的奢侈
+		random_list = {
+			1 = {
+				country_event = { id = azur_leader_lysm.12 days = 1 random = 29 }
+			}
+			9 = {  }
+		}
+		#绑定长门
+		country_event = { id = azur_R_nagato.1 days = 1 random = 29 }
+		#御神木信仰每年更新
+		country_event = { id = azur_R_nagato.10 days = 1 random = 29 }
+		#绿毛月检以及塞特质
+		country_event = { id = azur_R_vocaloid.06 days = 1 random = 29 }
+	}
+}
+
+#每五年触发事件
+country_event = {
+	id = azur_R_time.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	immediate = {
+		#明石礼物
+		random_list = {
+			1 = {
+				country_event = { id = azur_mingshi.4 days = 1 random = 29 }
+			}
+			1 = {  }
+		}
+	}
+}
+
+#每十年触发事件
+country_event = {
+	id = azur_R_time.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	immediate = {
+		#零事件
+		random_list = {
+			1 = {
+				country_event = { id = azur_siren_zero.3 days = 1 random = 29 }
+			}
+			1 = {  }
+		}
+	}
+}

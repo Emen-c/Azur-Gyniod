@@ -1,0 +1,364 @@
+namespace = azur_siren_zero
+#主菜单
+country_event = {
+	id = azur_siren_zero.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	immediate = {
+		#创建
+		create_leader = {
+			name = 零
+			species = event_target:azur_lane_siren	
+			class = scientist  				#official/scientist/random_ruler/commander
+			skill = 1
+			traits = {
+				trait = leader_azur_trait_siren_zero_01
+				trait = leader_azur_trait_siren_zero_02
+			}
+			
+			gender = indeterminable
+			event_leader = no
+			hide_age = yes
+			skip_background_generation = yes						#跳过背景生成
+			custom_catch_phrase = AL_R_siren_zero_phrase			#自定义
+			custom_description = AL_R_siren_zero_backstory			#背景词
+			background_ethic = ethic_gestalt_consciousness	#思潮
+		}
+		last_created_leader = {
+			change_leader_portrait = AL_leader_织梦者
+			set_leader_flag = azur_leader_zero  #领袖标记
+			save_global_event_target_as = siren_zero_leader #保存事件
+			#新flag
+			set_leader_flag = legendary_leader
+			set_leader_flag = immune_to_negative_traits
+			set_skill = 20
+			add_trait_no_notify = random_common
+			remove_all_traits = yes
+			add_trait_no_notify = leader_azur_trait_siren_zero_01
+			add_trait_no_notify = leader_azur_trait_siren_zero_02
+			set_leader_flag = should_not_have_upkeep
+		}
+		#任命秘书
+		assign_leader = last_created_leader
+	}
+}
+
+#创建种族
+country_event = {
+	id = azur_siren_zero.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	immediate = {
+		create_species = {
+			name = SIREN
+			plural = SIREN
+			class = Azur_Lane_R
+			portrait = AL_leader_织梦者
+			namelist = HUMAN1
+			immortal = yes
+			effect = {
+				save_global_event_target_as = azur_lane_siren
+			}
+		}
+	}
+}
+
+#零事件
+country_event = {
+	id = azur_siren_zero.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		#存在零
+		exists = event_target:siren_zero_leader
+		has_country_flag = azur_lane_leader_zero
+		#检测
+		has_country_flag = azur_lane_gangqu_country
+		event_target:siren_zero_leader = {
+			is_councilor = yes
+			is_ruler = yes
+		}
+	}
+	
+	immediate = {
+		random_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_country = root }
+				OR = {
+					any_owned_leader = { leader_class = official }
+					any_owned_leader = { leader_class = scientist }
+					any_owned_fleet = { is_ship_class = shipclass_military }
+				}
+			}
+			save_global_event_target_as = azur_R_siren_标记国家
+		}
+		ROOT = { save_global_event_target_as = azur_R_siren_国家 }
+		event_target:azur_R_siren_标记国家 = {
+			random_list = {
+				#总督
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { any_owned_leader = { leader_class = official } }
+					}
+					random_owned_leader = {
+						limit = {
+							leader_class = official
+						}
+						save_global_event_target_as = azur_R_siren_governor
+					}
+					event_target:azur_R_siren_国家 = { 
+						country_event = { id = azur_siren_zero.4 }
+					}
+				}
+				#科学家
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { any_owned_leader = { leader_class = scientist } }
+					}
+					random_owned_leader = {
+						limit = {
+							leader_class = scientist
+						}
+						save_global_event_target_as = azur_R_siren_scientist
+					}
+					event_target:azur_R_siren_国家 = { 
+						country_event = { id = azur_siren_zero.5 }
+					}
+				}
+				#司令
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = { any_owned_fleet = { is_ship_class = shipclass_military } }
+					}
+					random_owned_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						leader = { save_global_event_target_as = azur_R_siren_admiral }
+						save_global_event_target_as = azur_R_siren_fleet
+					}
+					event_target:azur_R_siren_国家 = { 
+						country_event = { id = azur_siren_zero.6 }
+					}
+				}
+			}
+		}
+	}
+}
+
+#总督
+country_event = {
+	id = azur_siren_zero.4
+	title = azur_siren_zero.4.title
+	desc = azur_siren_zero.4.desc
+	#show_sound = event_default
+	picture = GFX_azur_R_siren_event
+	
+	is_triggered_only = yes
+	
+	#留下
+	option = {
+		name = azur_siren_zero.4.a
+		hidden_effect = {
+			event_target:azur_R_siren_governor = {
+				set_owner = event_target:azur_R_siren_国家
+			}
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = consumer_goods
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = 12
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 12
+			}
+		}
+	}
+	
+	#弄死
+	option = {
+		name = azur_siren_zero.4.b
+		hidden_effect = {
+			event_target:azur_R_siren_governor = {
+				kill_leader = { show_notification = no }
+			}
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = consumer_goods
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = 12
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 12
+			}
+		}
+	}
+	
+	#送回去
+	option = {
+		name = azur_siren_zero.4.c
+		hidden_effect = {
+			#哈哈
+		}
+		default_hide_option = yes
+	}
+}
+
+#科学家
+country_event = {
+	id = azur_siren_zero.5
+	title = azur_siren_zero.5.title
+	desc = azur_siren_zero.5.desc
+	#show_sound = event_default
+	picture = GFX_azur_R_siren_event
+	
+	is_triggered_only = yes
+	
+	#留下
+	option = {
+		name = azur_siren_zero.5.a
+		hidden_effect = {
+			event_target:azur_R_siren_scientist = {
+				set_owner = event_target:azur_R_siren_国家
+			}
+			event_target:azur_R_siren_国家 = {
+				copy_techs_from = { target = event_target:azur_R_siren_标记国家 }
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 6
+			}
+		}
+	}
+	
+	#弄死
+	option = {
+		name = azur_siren_zero.5.b
+		hidden_effect = {
+			event_target:azur_R_siren_scientist = {
+				kill_leader = { show_notification = no }
+			}
+			event_target:azur_R_siren_国家 = {
+				copy_techs_from = { target = event_target:azur_R_siren_标记国家 }
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 6
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 6
+			}
+		}
+	}
+	
+	#送回去
+	option = {
+		name = azur_siren_zero.5.c
+		hidden_effect = {
+			
+		}
+		default_hide_option = yes
+	}
+}
+
+#司令
+country_event = {
+	id = azur_siren_zero.6
+	title = azur_siren_zero.6.title
+	desc = azur_siren_zero.6.desc
+	#show_sound = event_default
+	picture = GFX_azur_R_siren_event
+	
+	is_triggered_only = yes
+	
+	#留下
+	option = {
+		name = azur_siren_zero.6.a
+		hidden_effect = {
+			event_target:azur_R_siren_admiral = {
+				set_owner = event_target:azur_R_siren_国家
+			}
+			event_target:azur_R_siren_fleet = {
+				set_owner = event_target:azur_R_siren_国家
+				set_leader = event_target:azur_R_siren_admiral
+				set_location = event_target:azur_R_siren_国家.capital_scope
+				add_modifier = {
+					modifier = azur_R_siren_fleet_other_country
+					days = -1
+				}
+			}
+		}
+	}
+	
+	#拆了
+	option = {
+		name = azur_siren_zero.6.b
+		hidden_effect = {
+			event_target:azur_R_siren_admiral = {
+				kill_leader = { show_notification = no }
+			}
+			event_target:azur_R_siren_fleet = {
+				delete_fleet = THIS
+			}
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 12
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 24
+			}
+		}
+	}
+	
+	#送回去
+	option = {
+		name = azur_siren_zero.6.c
+		hidden_effect = {
+			
+		}
+		default_hide_option = yes
+	}
+}

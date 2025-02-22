@@ -1,0 +1,43 @@
+"Azur_Lane" = {
+	"Azur Lane" = {
+		language = "l_simp_chinese"
+		name = "舰娘"
+		plural = "舰娘"
+		home_planet = "港区"
+		home_system = "碧蓝航线港区"
+		name_list = "AZURLANE"
+	}
+}
+
+"Azur_Factions" = {
+	"Azur Lane" = {
+		language = "l_simp_chinese"
+		name = "舰娘"
+		plural = "舰娘"
+		home_planet = "港区"
+		home_system = "碧蓝航线港区"
+		name_list = "AZURLANE"
+	}
+}
+
+"舰娘" = {
+	"Azur Lane" = {
+		language = "l_simp_chinese"
+		name = "舰娘"
+		plural = "舰娘"
+		home_planet = "港区"
+		home_system = "碧蓝航线港区"
+		name_list = "AZURLANE"
+	}
+}
+
+"Azur_Lane_R" = {
+	"Azur Lane" = {
+		language = "l_simp_chinese"
+		name = "舰娘"
+		plural = "舰娘"
+		home_planet = "港区"
+		home_system = "碧蓝航线港区"
+		name_list = "AZURLANE"
+	}
+}

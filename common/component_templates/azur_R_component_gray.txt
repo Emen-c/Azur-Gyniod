@@ -1,0 +1,497 @@
+#低语
+weapon_component_template = {
+	key = "AZUR_NEW_GRAYGOO_T1"
+	size = titanic
+	type = instant
+	hidden = yes
+	prio_projectile = yes
+	
+	icon = "GFX_azur_ship_part_graygoo_t1"
+	icon_frame = 1
+	
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	
+	firing_arc = 180.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = yes  #禁止炮台旋转
+	use_ship_kill_target = no
+	
+	power = -180
+	damage = { min = 444444 max = 444444 }
+	windup = { min = 22 max = 22 }
+	total_fire_time = 22.4
+	hull_damage = 5.44                     #船体伤害
+	shield_damage = 1.44                   #护盾伤害
+	armor_damage = 1.44                    #装甲伤害
+	shield_penetration = 0.0               #护盾穿透
+	armor_penetration = 0.0                #装甲穿透                  
+	tracking = 0.44                        #追踪
+	range = 444.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	size_restriction = { azur_graygoo }
+	component_set = "AZUR_NEW_GRAYGOO_T1"
+	projectile_gfx = "tachyon_lance"
+	tags = { weapon_type_phy }
+	ai_tags = { weapon_role_artillery }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 600
+			sr_hongjianjian = 10
+		}		
+		upkeep = {
+			energy = 15
+			alloys = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+#亚空之矛
+weapon_component_template = {
+	key = "AZUR_NEW_GRAYGOO_X1"
+	size = extra_large
+	hidden = yes
+	type = instant
+	
+	icon = "GFX_azur_ship_part_graygoo_x1"
+	icon_frame = 1
+	
+	firing_arc = 180.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = yes  #禁止炮台旋转
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 180
+			sr_hongjianjian = 6
+		}		
+		upkeep = {
+			energy = 10
+			alloys = 2
+		}
+	}
+	
+	power = -180
+	damage = { min = 25500 max = 255000 }
+	windup = { min = 20 max = 20 }
+	total_fire_time = 60
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 1.5                    #护盾伤害
+	armor_damage = 1.5                     #装甲伤害
+	shield_penetration = 0.0               #护盾穿透
+	armor_penetration = 0.0                #装甲穿透                  
+	tracking = 1.00                        #追踪
+	range = 360.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }                 #前置
+	component_set = "AZUR_NEW_GRAYGOO_X1"
+	projectile_gfx = "tachyon_lance"
+	tags = { weapon_type_phy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+#爆裂魔法
+weapon_component_template = {
+	key = "AZUR_NEW_GRAYGOO_M1"
+	size = medium
+	hidden = yes
+	type = instant
+	
+	icon = "GFX_azur_ship_part_graygoo_ml2"
+	icon_frame = 1
+	
+	firing_arc = 180.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = yes  #禁止炮台旋转
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 40
+			sr_hongjianjian = 1.5
+		}		
+		upkeep = {
+			energy = 4
+			alloys = 1
+		}
+	}
+	
+	power = -45
+	damage = { min = 1.00 max = 20000.00 }
+	windup = { min = 10 max = 10 }
+	total_fire_time = 25
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 1.0                    #护盾伤害
+	armor_damage = 1.0                     #装甲伤害
+	shield_penetration = 2.0               #护盾穿透
+	armor_penetration = 2.0                #装甲穿透                  
+	tracking = 0.80                        #追踪
+	range = 150.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }                #前置
+	component_set = "AZUR_NEW_GRAYGOO_ML1"
+	projectile_gfx = "tachyon_lance"
+	tags = { weapon_type_mana }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+#震荡电磁波
+weapon_component_template = {
+	key = "AZUR_NEW_GRAYGOO_L1"
+	size = large
+	hidden = yes
+	type = instant
+	
+	icon = "GFX_azur_ship_part_graygoo_ml1"
+	icon_frame = 1
+	
+	firing_arc = 180.0     #开火角度
+	min_range = 1.0       #开火最小范围
+	static_rotation = yes  #禁止炮台旋转
+	use_ship_kill_target = no
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 70
+			sr_hongjianjian = 3
+		}		
+		upkeep = {
+			energy = 6
+			alloys = 1
+		}
+	}
+	
+	power = -90
+	damage = { min = 1.00 max = 40000.00 }
+	windup = { min = 10 max = 10 }
+	total_fire_time = 25
+	hull_damage = 1.0                      #船体伤害
+	shield_damage = 1.0                    #护盾伤害
+	armor_damage = 1.0                     #装甲伤害
+	shield_penetration = 2.0               #护盾穿透
+	armor_penetration = 2.0                #装甲穿透                  
+	tracking = 0.80                        #追踪
+	range = 150.00                         #范围
+	accuracy = 1.00                        #命中
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }              #前置
+	component_set = "AZUR_NEW_GRAYGOO_ML1"
+	projectile_gfx = "tachyon_lance"
+	tags = { weapon_type_phy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+#砧板
+utility_component_template = {
+	key = "AZUR_NEW_GRAYGOO_L2"
+	size = large
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_l2"
+	icon_frame = 1
+	power = -80
+	modifier = {
+		ship_hull_add = 1000000
+		ship_armor_add = 1000000
+		ship_shield_add = 1000000
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_hongjianjian = 1.2
+		}	
+		upkeep = {
+			energy = 10
+			alloys = 10
+		}
+	}
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_L2"
+	
+	ai_weight = {
+		weight = 1024
+	}
+}
+
+#律者核心
+utility_component_template = {
+	key = "AZUR_NEW_GRAYGOO_AA1"
+	size = large
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_a1"
+	icon_frame = 1
+	power = 50000
+	modifier = {
+		ship_weapon_damage = 2.00
+		ship_fire_rate_mult = 0.5
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_hongjianjian = 1.2
+		}	
+		upkeep = {
+			energy = 20
+		}
+	}
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_AA1"
+	
+	ai_weight = {
+		weight = 1024
+	}
+}
+
+#合金外骨骼
+utility_component_template = {
+	key = "AZUR_NEW_GRAYGOO_A2"
+	size = large
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_a2"
+	icon_frame = 1
+	power = -80
+	modifier = {
+		ship_hull_add = 2000000
+		ship_hull_mult = 1.00
+		ship_armor_add = 2000000
+		ship_armor_mult = 1.00
+		ship_shield_add = 2000000
+		ship_shield_mult = 1.00
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_hongjianjian = 1.2
+		}	
+		upkeep = {
+			alloys = 20
+		}
+	}
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_A2"
+	
+	ai_weight = {
+		weight = 1024
+	}
+}
+
+#活体金属修复器
+utility_component_template = {
+	key = "AZUR_NEW_GRAYGOO_A3"
+	size = large
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_a3"
+	icon_frame = 1
+	power = -80
+	modifier = {
+		ship_hull_regen_add_perc = 12
+		ship_armor_regen_add_perc = 12
+		ship_shield_regen_add_perc = 12
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_hongjianjian = 1.2
+		}	
+		upkeep = {
+			energy = 10
+			alloys = 10
+		}
+	}
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_A3"
+	
+	ai_weight = {
+		weight = 1024
+	}
+}
+
+#灰蛊风暴
+utility_component_template = {
+	key = "AZUR_NEW_GRAYGOO_A4"
+	size = large
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_a4"
+	icon_frame = 1
+	power = -80
+	modifier = {
+		
+	}
+	
+	hostile_aura = {
+		name = "azur_aura"
+		radius = 114514
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_inhibitor_aura_2
+			priority = 1919
+		}
+		
+		damage_per_day = {
+			accuracy = 1.0
+			damage = { min = 198 max = 648 }
+			shield_penetration = 2.0
+			armor_penetration = 2.0
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_hongjianjian = 1.2
+		}	
+		upkeep = {
+			alloys = 20
+		}
+	}
+	
+	size_restriction = { azur_graygoo military_station_small_fallen_empire }
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_A4"
+	
+	ai_weight = {
+		weight = 1024
+	}
+}
+
+#TP
+utility_component_template = {
+	key = "AZUR_NEW_GRAYGOO_A5"
+	size = large
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_a5"
+	icon_frame = 1
+	power = -80
+	modifier = {
+		ship_ftl_jumpdrive_range_mult = 1.00
+		ship_base_speed_mult = 0.50
+		
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+			sr_hongjianjian = 1.2
+		}	
+		upkeep = {
+			energy = 20
+		}
+	}
+	
+	size_restriction = { azur_graygoo }
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_A5"
+	
+	ai_weight = {
+		weight = 1024
+	}
+}
+
+#迫害玩家
+utility_component_template = {
+	key = "AZUR_FALLEN_PART_1"
+	size = aux
+	hidden = yes
+	icon = "GFX_azur_ship_part_graygoo_a4"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+	}
+	
+	prerequisites = { "tech_azur_graygoo_components_al" }
+	component_set = "AZUR_NEW_GRAYGOO_A4"
+	
+	hostile_aura = {
+		name = "azur_aura"
+		radius = 114514
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_inhibitor_aura_2
+			priority = 1919
+		}
+		
+		damage_per_day = {
+			accuracy = 1.0
+			damage = { min = 648 max = 648 }
+			shield_penetration = 2.0
+			armor_penetration = 2.0
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -1,0 +1,469 @@
+namespace = AL_R_tc
+#主联络界面
+country_event = {
+	id = AL_R_tc.1
+	title = "AL_R_tc.1.title"
+	desc = "AL_R_tc.1.a.desc"
+	desc = "AL_R_tc.1.b.desc"
+	desc = "AL_R_tc.1.c.desc"
+	desc = "AL_R_tc.1.d.desc"
+	
+	picture_event_data = {
+		portrait = AL_R_leader_天城
+		room = azurl_06_room
+	}
+
+	diplomatic = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = AL_R_TC_diplomacy_engaged }
+	}
+
+	immediate = {
+		set_country_flag = AL_R_TC_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = AL_R_TC_diplomacy_engaged }
+	}
+
+	trigger = {
+		from = { is_country_type = azurl_tiancheng }
+		NOT = { has_country_flag = AL_R_tc_reforming }
+	}
+	
+	option = {
+		name = AL_R_tc.1.d
+		is_dialog_only = yes
+		response_text = "AL_R_tc.1.d.response"
+	}
+	option = { # 科学家
+		name = AL_R_tc.1.a
+		response_text = AL_R_tc.1.a.response
+		trigger = {
+			NOT = { has_country_flag = al_tc_scientist_active }
+		}
+		hidden_effect = {
+			create_AL_R_tc_scientist = yes
+		}
+	}
+	option = { # 战舰
+		name = AL_R_tc.1.b
+		response_text = AL_R_tc.1.b.response
+		trigger = {
+			NOT = { has_country_flag = al_tc_warship_active }
+		}
+		hidden_effect = {
+			create_AL_R_tc_warship = yes
+		}
+	}
+	option = {
+		name = AL_R_tc.1.c
+		default_hide_option = yes
+	}
+}
+
+#创建国家
+country_event = {
+	id = AL_R_tc.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		create_country = {
+			name = "天城"
+			type = azurl_tiancheng
+			flag = {
+				icon= {
+					category = "azur_lane_yujin"
+					file = "azur_yujin_flags_03.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			establish_communications_no_message = root
+		}
+		save_global_event_target_as = AL_R_leader_天城_owner
+	}
+}
+
+#主菜单（不存在时）
+country_event = {
+	id = AL_R_tc.3
+	title = "AL_R_tc.3.title"
+	desc = "AL_R_tc.3.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = azurl_tiancheng }
+		has_country_flag = AL_R_tc_reforming
+	}
+
+	option = {
+		name = AL_R_tc.3.a
+	}
+}
+
+#检测
+event = {
+	id = AL_R_tc.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = { is_country_type = azurl_tiancheng }
+		exists = event_target:AL_R_leader_天城_owner
+		event_target:AL_R_leader_天城_owner = {
+			OR = {
+				AND = {
+					has_country_flag = al_tc_warship_active
+					NOT = { exists = event_target:AL_R_tc_warship }
+				}
+				AND = {
+					has_country_flag = al_tc_scientist_active
+					NOT = { exists = event_target:tiancheng }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		event_target:AL_R_leader_天城_owner = {
+			remove_country_flag = al_tc_warship_active
+			remove_country_flag = al_tc_scientist_active
+			set_country_flag = AL_R_tc_reforming
+			add_modifier = {
+				modifier = "AL_R_tc_scattered"
+				days = 720
+			}
+			if = {
+				limit = { exists = event_target:tiancheng }
+				event_target:tiancheng = {
+					kill_leader = { show_notification = no } 
+				}
+			}
+			country_event = { id = AL_R_tc.5 }
+			country_event = { id = AL_R_tc.6 days = 720 }
+		}
+	}
+}
+
+#通知
+country_event = {
+	id = AL_R_tc.5
+	title = "AL_R_tc.5.name"
+	desc = "AL_R_tc.5.desc"
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = AL_R_tc.5.a
+	}
+}
+
+#恢复
+country_event = {
+	id = AL_R_tc.6
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_flag = AL_R_tc_reforming
+	}
+}
+
+#科学家事件
+country_event = {
+	id = AL_R_tc.7
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = al_tc_scientist_active
+		exists = event_target:tiancheng
+		event_target:tiancheng = {
+			is_councilor = yes
+		}
+	}
+	
+	immediate = {
+		country_event = { id = AL_R_tc.8 }
+	}
+}
+
+country_event = {
+	id = AL_R_tc.8
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = al_tc_scientist_active
+		exists = event_target:tiancheng
+		event_target:tiancheng = {
+			is_councilor = yes
+		}
+	}
+	
+	immediate = {
+		remove_modifier = AL_R_tc_scientist
+		#重新计算
+		add_modifier = {
+			modifier = "AL_R_tc_scientist"
+			multiplier = trigger:num_researched_techs
+		}
+	}
+}
+
+#剧情
+#联络
+country_event = {
+	id = AL_R_tc.100
+	title = AL_R_tc.100.name
+	desc = AL_R_tc.100.desc
+	picture = GFX_azurlane_mingshi_1
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		NOT = { has_global_flag = AL_R_leader_天城_come }
+	}
+	
+	immediate = {
+		set_global_flag = AL_R_leader_天城_come
+	}
+	
+	option = {
+		name = AL_R_tc.100.a
+		hidden_effect = {
+			owner = {
+				country_event = { id = AL_R_tc.101 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AL_R_tc.101
+	title = "AL_R_tc.101.title"
+	desc = "AL_R_tc.101.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = AL_leader_明石_04
+		room = azur_lane_shops2_room
+	}
+
+	option = {
+		name = AL_R_tc.101.a
+		allow = { resource_stockpile_compare = { resource = energy value >= 1000 } }
+		add_resource = { energy = -1000 }
+		response_text = AL_R_tc.101.a.response
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = AL_R_tc.102 days = 60 }
+		}
+	}
+	
+	option = { 
+		name = AL_R_tc.101.b
+		response_text = AL_R_tc.101.b.response
+	}
+}
+
+country_event = {
+	id = AL_R_tc.102
+	title = AL_R_tc.102.name
+	desc = AL_R_tc.102.desc
+	picture = GFX_azurlane_mingshi_4
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	option = {
+		name = AL_R_tc.102.a
+		hidden_effect = {
+			owner = {
+				country_event = { id = AL_R_tc.103 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AL_R_tc.103
+	title = "AL_R_tc.103.title"
+	desc = "AL_R_tc.103.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = AL_leader_明石_04
+		room = azur_lane_shops2_room
+	}
+
+	option = {
+		name = AL_R_tc.103.a
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = AL_R_tc.104 }
+		}
+	}
+	
+	#SKIP
+	option = { 
+		name = AL_R_tc.103.b
+		response_text = AL_R_tc.103.b.response
+		hidden_effect = {
+			custom_tooltip = AL_R_tc.103.b.tooltip
+			country_event = { id = AL_R_tc.2 }
+		}
+	}
+}
+
+country_event = {
+	id = AL_R_tc.104
+	title = "AL_R_tc.104.title"
+	desc = "AL_R_tc.104.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = AL_R_leader_天城
+		room = azurl_06_room
+	}
+
+	option = {
+		name = AL_R_tc.104.a
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = AL_R_tc.105 }
+		}
+	}
+	
+	option = { 
+		name = AL_R_tc.104.b
+		hidden_effect = {
+			country_event = { id = AL_R_tc.105 }
+		}
+	}
+}
+
+country_event = {
+	id = AL_R_tc.105
+	title = "AL_R_tc.105.title"
+	desc = "AL_R_tc.105.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = AL_leader_明石_04
+		room = azurl_06_room
+	}
+
+	option = {
+		name = AL_R_tc.105.a
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = AL_R_tc.106 }
+		}
+	}
+	
+	option = { 
+		name = AL_R_tc.105.b
+		hidden_effect = {
+			country_event = { id = AL_R_tc.106 }
+		}
+	}
+}
+
+country_event = {
+	id = AL_R_tc.106
+	title = "AL_R_tc.106.title"
+	desc = "AL_R_tc.106.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = AL_R_leader_天城
+		room = azurl_06_room
+	}
+
+	option = {
+		name = AL_R_tc.106.a
+		default_hide_option = yes
+		response_text = AL_R_tc.106.a.response
+		hidden_effect = {
+			country_event = { id = AL_R_tc.2 }
+		}
+	}
+	
+	option = { 
+		name = AL_R_tc.106.b
+		response_text = AL_R_tc.106.b.response
+		hidden_effect = {
+			country_event = { id = AL_R_tc.2 }
+		}
+	}
+}
+

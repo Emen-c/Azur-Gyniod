@@ -1,0 +1,259 @@
+#新飞升
+#望穿无垠-璀璨繁星高挂天上，替辽阔夜空缀满点点星光。与广大无边的天空比起来，你是那么的渺小。你会首先望向哪处哪？
+#开局探索加成
+ap_AL_R_stellaris = {
+	#效果
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_stellaris_enabled"
+	}
+	
+	possible = {
+		#custom_tooltip = {
+		#	fail_text = "requires_tech_arcane_deciphering"
+		#	has_technology = tech_arcane_deciphering
+		#}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_stellaris
+		}
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	modifier = {
+		country_trade_fee = -0.1
+		ship_anomaly_generation_chance_mult = 0.2
+		ship_anomaly_research_speed_mult = 0.2
+		country_starbase_influence_cost_mult = -0.25
+		intel_gain_speed = 0.25
+		
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+#心智觉醒（搭建更完整的心智和逻辑/整合各种攻击模块）
+#物种加强
+ap_AL_R_kansen_species = {
+	#效果
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_kansen_species_enabled"
+		hidden_effect = {
+			country_event = { id = azur_R_trait.1 }
+			country_event = { id = azur_R_trait.8 }
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		#custom_tooltip = {
+		#	fail_text = "requires_ap_AL_R_renzhi"
+		#	has_ascension_perk = ap_AL_R_renzhi
+		#}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_kansen_species
+		}
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	modifier = {
+		description = ap_evolutionary_mastery_modifier_desc
+		description_parameters = {
+			POINTS = 20
+			COST_MULT = -0.25
+		}
+		KANSEN_species_trait_points_add = 20
+		modify_species_cost_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#魔方军用化
+#武器科技
+ap_AL_R_kansen_equipment = {
+	#效果
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_kansen_equipment_enabled"
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ap_AL_R_kansen_species"
+			has_ascension_perk = ap_AL_R_kansen_species
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_kansen_equipment
+		}
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	modifier = {
+		
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#军备竞赛
+#舰船加成
+ap_AL_R_kansen_ship = {
+	#效果
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_kansen_ship_enabled"
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ap_AL_R_kansen_equipment"
+			has_ascension_perk = ap_AL_R_kansen_equipment
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_kansen_ship
+		}
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	modifier = {
+		country_naval_cap_add = 5000
+		command_limit_add = 500
+		ship_shield_mult = 0.5
+		ship_armor_mult = 0.5
+		ship_hull_mult = 0.5
+		starbase_shipyard_build_speed_mult = 0.5
+		ship_cloaking_strength_add = 10
+		ship_cloaking_detection_add = 10
+		ship_experience_gain_mult = 1
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#技术革新
+#VR世界，构建仪，港区理想城
+ap_AL_R_kansen_tech_01 = {
+	#效果
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_kansen_tech_01_enabled"
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ap_AL_R_kansen_species"
+			has_ascension_perk = ap_AL_R_kansen_species
+		}
+		custom_tooltip = {
+			fail_text = "requires_mega_engineering"
+			has_technology = tech_mega_engineering
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_kansen_tech_01
+		}
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	modifier = {
+		country_megastructure_build_cap_add = 1
+		megastructure_build_speed_mult = 0.50
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+#界外科学
+#3*巨构、亚顿之矛、杰作武器、奇点
+ap_AL_R_kansen_tech_02 = {
+	#效果
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_kansen_tech_02_enabled"
+		add_research_option = tech_azur_wenwu_1
+		add_research_option = tech_azur_R_adun
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ap_AL_R_kansen_equipment"
+			has_ascension_perk = ap_AL_R_kansen_equipment
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_AL_R_kansen_tech_01"
+			has_ascension_perk = ap_AL_R_kansen_tech_01
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_galactic_wonders_utopia"
+			OR = {
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_kansen_tech_02
+		}
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	modifier = {
+		country_megastructure_build_cap_add = 1
+		megastructure_build_speed_mult = 0.5
+		megastructures_produces_mult = 0.5
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+#希
+#朴实无华的修正
+ap_AL_R_XI = {
+	on_enabled = {
+		custom_tooltip = "ap_AL_R_XI_tooltip"
+	}
+
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_AL_R_XI
+		}
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_ap_01
+	}
+	
+	modifier = {
+		country_produces_mult = 1.00
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}

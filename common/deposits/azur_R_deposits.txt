@@ -1,0 +1,673 @@
+#扩建
+d_azur_quhua = {
+	is_for_colonizeable = yes
+
+	category = deposit_cat_rare	
+	
+	planet_modifier = { 
+		planet_max_districts_add = 10
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+#舰船原型
+d_azur_decrepit_dwellings = {
+	icon = d_city_ruins
+	time = 11
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_2 = {
+	icon = d_city_ruins
+	time = 12
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_3 = {
+	icon = d_city_ruins
+	time = 19
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_4 = {
+	icon = d_city_ruins
+	time = 20
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_5 = {
+	icon = d_city_ruins
+	time = 21
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_6 = {
+	icon = d_city_ruins
+	time = 23
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_7 = {
+	icon = d_city_ruins
+	time = 24
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_8 = {
+	icon = d_city_ruins
+	time = 27
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_9 = {
+	icon = d_city_ruins
+	time = 32
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_azur_decrepit_dwellings_10 = {
+	icon = d_city_ruins
+	time = 39
+
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	on_cleared = {
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_gestalt = no
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#碧蓝相关
+#圣域
+d_azur_R_deposits_01 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_01
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	country_modifier = {
+		planet_jobs_unity_produces_mult = 0.1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#米德加尔特之塔
+d_azur_R_deposits_02 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_02
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#星海
+d_azur_R_deposits_03 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_03
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	planet_modifier = {
+		planetary_ascension_effect_mult = 0.1
+	}
+	country_modifier = {
+		country_base_physics_research_produces_add = 10
+		country_base_society_research_produces_add = 10
+		country_base_engineering_research_produces_add = 10
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#天守阁
+d_azur_R_deposits_04 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_04
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	planet_modifier = {
+		planet_immigration_pull_mult = 0.15
+		pop_ethics_shift_speed_mult = 0.15
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#卡美洛之庭
+d_azur_R_deposits_05 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_05
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	planet_modifier = {
+		planet_amenities_mult = 0.1
+	}
+	country_modifier = {
+		country_base_food_produces_add = 10
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#龙宫城
+d_azur_R_deposits_06 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_06
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	country_modifier = {
+		country_base_minerals_produces_add = 10
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#密室
+d_azur_R_deposits_07 = {
+	is_for_colonizable = yes
+	icon = d_azur_R_deposits_07
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -4
+		planet_pop_assembly_organic_add = 0.1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#雕像
+d_azur_R_champion = {
+	is_for_colonizable = yes
+	icon = d_crashed_slaver_ship_memorial
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	country_modifier = {
+		ship_weapon_damage = 0.15
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

@@ -1,0 +1,235 @@
+namespace = AL_R_civics
+
+#自动化协议
+country_event = {
+	id = AL_R_civics.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FROMFROM = {
+			OR = {
+				is_ship_size = science
+				is_ship_size = azur_R_science
+			}
+		}
+		#有国策
+		Root = {
+			has_country_flag = azur_lane_gangqu_country
+			has_civic = civic_AL_R_07
+		}
+		#任意相邻星系为自己的
+		From = {
+			NOT = { exists = owner }
+			any_system = {
+				distance = { 
+					source = From
+					min_jumps = 1
+					max_jumps = 1
+					type = hyperlane 
+					use_bypasses = no
+				}
+				exists = owner
+				owner = {
+					is_same_empire = Root
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_country_resource = {
+					type = alloys 
+					amount >= 30
+				} 
+				has_country_resource = {
+					type = influence 
+					amount >= 30
+				} 
+				has_country_resource = {
+					type = minerals 
+					amount >= 120
+				} 
+				NOT = {
+					From = {
+						any_system = {
+								distance = { 
+									source = From
+									min_jumps = 1
+									max_jumps = 1
+									type = hyperlane 
+									use_bypasses = no
+								}
+							exists = owner
+							owner = {
+								OR = {
+									is_country_type = fallen_empire
+									is_country_type = awakened_fallen_empire
+								}
+								OR = {
+									has_ethic = ethic_fanatic_xenophobe
+									has_ethic = ethic_xenophobe
+								}
+							}
+						}
+					}
+				}
+			}
+			add_resource = { alloys = -30 }
+			add_resource = { influence = -30 }
+			add_resource = { minerals = -120 }
+			From = {
+				create_starbase = {
+					size = starbase_outpost
+					owner = Root
+				}
+				every_system_planet = {
+					if = {
+						limit = {
+							has_deposit_for = shipclass_mining_station
+							has_mining_station = no
+						}
+						create_mining_station = {
+							owner = Root
+						}
+					}
+					if = {
+						limit = { 
+							has_deposit_for = shipclass_research_station
+							has_research_station = no
+						}
+						create_research_station = {
+							owner = Root
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+####国策事件####
+#雪风的护航编队
+country_event = {
+	id = AL_R_civics.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_civic = civic_AL_R_02
+	}
+
+	immediate = {
+		capital_scope = {
+			create_fleet = {
+				name = "NAME_Yukikaze"
+				effect = {
+					set_owner = root
+					while = {
+						count = 6
+						create_ship = {
+							name = random
+							design = "NAME_Beta"
+							graphical_culture = fallen_empire_01
+							upgradable = no
+						}
+					}
+					while = {
+						count = 18
+						create_ship = {
+							name = random
+							design = "NAME_Gamma"
+							graphical_culture = fallen_empire_01
+							upgradable = no
+						}
+					}
+					set_location = root.owner.capital_scope
+				}
+				settings = {
+					can_upgrade = no
+					can_disband = yes
+					can_change_composition = no
+					can_change_leader = yes
+					uses_naval_capacity = no
+					spawn_debris = no
+				}
+			}
+			last_created_fleet = {
+				add_modifier = {
+					modifier = azur_R_siren_fleet_other_country
+					days = -1
+				}
+			}
+		}
+	}
+}
+
+
+#滨江机械设计工作室
+country_event = {
+	id = AL_R_civics.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_civic = civic_AL_R_05
+	}
+
+	immediate = {
+		capital_scope.solar_system = {
+			spawn_megastructure = {
+				type = gateway_final
+				random_pos = yes
+				orbit_angle = 180
+				orbit_distance = 50
+				owner = root
+			}
+		}
+		give_technology = {
+			tech = tech_gateway_activation
+			message = no
+		}
+		give_technology = {
+			tech = tech_gateway_construction
+			message = no
+		}
+	}
+}
+
+#游戏业界
+country_event = {
+	id = AL_R_civics.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_civic = civic_AL_R_09
+	}
+
+	immediate = {
+		capital_scope.solar_system = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "AL_R_civics_system_initializer"
+			}
+			if = {
+				limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+				add_hyperlane = {
+					from = this
+					to = last_created_system
+				}
+			}
+			else = {
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+		}
+	}
+}

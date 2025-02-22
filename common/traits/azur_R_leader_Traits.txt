@@ -1,0 +1,2308 @@
+#誓约
+leader_azur_trait_shiyue = {
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_shiyue.dds"
+	modifier = {
+		
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#雪风
+leader_azur_trait_xuefeng = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no			#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_chongying_leader.dds"
+	#星球
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		planet_building_build_speed_mult = 0.30
+		planet_orbital_bombardment_damage = -10.00
+		planet_stability_add = 25
+	}
+	#星域
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		planet_building_build_speed_mult = 0.15
+		planet_orbital_bombardment_damage = -10.00
+		planet_stability_add = 10
+	}
+	#内阁
+	councilor_modifier = {
+		#council_agenda_progress_speed = 0.10
+		#council_agenda_finishing_effect_duration_mult = 0.10
+		intel_decryption_add = 4
+		intel_encryption_add = 4
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+	custom_tooltip_with_modifiers = leader_trait_spacebender_effect
+}
+
+#明石
+leader_azur_trait_mingshi = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no			#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_mingshi_leader.dds"
+	custom_tooltip = "leader_azur_trait_mingshi_trait"
+	planet_modifier = {
+		trade_value_mult = 1.00
+		planet_jobs_produces_mult = 0.25
+		planet_stability_add = 25
+		planet_pops_upkeep_mult = 0.25
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+	
+#长门
+
+#墨染的钢铁之花
+leader_azur_R_changmen_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/leader_azur_R_changmen_01.dds"
+	custom_tooltip = "leader_azur_R_changmen_01_trait"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		country_starbase_capacity_add = 4
+		country_starbase_influence_cost_mult = -0.2
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#神子
+leader_azur_R_changmen_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/leader_azur_R_changmen_02.dds"
+	councilor_modifier = {
+		country_naval_cap_mult = 0.50
+		country_starbase_capacity_mult = 0.50
+		country_base_influence_produces_mult = 0.50
+		ship_weapon_damage = 0.50
+		ship_jumpdrive_cooldown_mult = -0.50
+		ship_starting_experience_add = 1000
+		ship_cloaking_strength_add = 10
+		ship_cloaking_detection_add = 10
+		ship_disengage_chance_reduction = 0.50
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#樱之守护
+leader_azur_R_changmen_03 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/leader_azur_R_changmen_03.dds"
+	councilor_modifier = {
+		country_megastructure_build_cap_add = 4
+		country_starbase_influence_cost_mult = -0.5
+		pop_happiness = 0.25
+		planetary_ascension_cost_mult = -0.25
+		planet_structures_upkeep_mult = -0.25
+		ship_home_territory_fire_rate_mult = 0.5
+		planet_orbital_bombardment_damage = -10.00
+		council_agenda_finishing_effect_duration_mult = 0.10
+		ship_cloaking_strength_add = 10
+		ship_cloaking_detection_add = 10
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#恶毒
+leader_azur_trait_edu = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_weixi_leader.dds"
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_pops_upkeep_mult = 0.20
+		planet_building_build_speed_mult = -0.10
+		planet_jobs_engineering_research_produces_mult = 0.25
+		planet_jobs_physics_research_produces_mult = 0.25
+		planet_jobs_society_research_produces_mult = 0.25
+		planet_stability_add = 25
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_pops_upkeep_mult = 0.10
+		planet_building_build_speed_mult = -0.05
+		planet_jobs_engineering_research_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = 0.10
+		planet_jobs_society_research_produces_mult = 0.10
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.10
+		country_astral_rift_speed_mult = 0.25
+		scientist_exp_gain = 0.25
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	opposites = {
+	}
+}
+	
+#绫波
+leader_azur_trait_lingbo = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_chongying_leader.dds"
+	planet_modifier = {
+		planet_army_build_speed_mult = 0.3
+		army_starting_experience_add = 100
+		army_defense_damage_mult = 0.3
+		defense_armies_add = 1
+	}
+	sector_modifier = {
+		planet_army_build_speed_mult = 0.15
+		army_starting_experience_add = 50
+		army_defense_damage_mult = 0.15
+		defense_armies_add = 1
+	}
+	army_modifier = {
+		army_health = -0.25
+		army_damage_mult = 1.00
+		army_morale = 0.50
+	}
+	fleet_modifier = {
+		ship_weapon_range_mult = 0.15
+		ship_disengage_chance_mult = 0.15
+	}
+	councilor_modifier = {
+		starbase_shipyard_build_speed_mult = 0.20
+		starbase_shipyard_build_cost_mult = -0.10
+		country_naval_cap_add = 60
+		ship_starting_experience_add = 200
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+	
+###乱入###
+#润羽露西娅
+leader_azur_trait_rushia_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	#custom_tooltip = azur_R_rushia_1
+	icon = "interface/icons/leader_traits/azur_rushia_leader_01.dds"
+	system_modifier = {
+		ships_upkeep_mult = -10.00
+		ship_weapon_damage = 1.00
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_rushia_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	custom_tooltip = azur_R_rushia_2
+	icon = "interface/icons/leader_traits/azur_rushia_leader_02.dds"
+	system_modifier = {
+		
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_rushia_03 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	custom_tooltip = azur_R_rushia_3
+	icon = "interface/icons/leader_traits/azur_rushia_leader_03.dds"
+	system_modifier = {
+		
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+####塞壬####
+leader_azur_trait_siren_zero_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_siren_leader.dds"
+	councilor_modifier = {
+		country_government_civic_points_add = 1
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_siren_zero_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	custom_tooltip = azur_R_siren_02
+	icon = "interface/icons/leader_traits/azur_siren_leader_zero.dds"
+	councilor_modifier = {
+		
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+	
+###秘书###
+#克莱蒙梭
+leader_azur_trait_clemenceau = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_weixi_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		pop_government_ethic_attraction = 0.25
+		country_base_unity_produces_add = 20
+		country_starbase_influence_cost_mult = -0.25
+		country_starbase_capacity_add = 4
+		force_disparity_fire_rate_mult = 1.00
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#腓特烈大帝
+leader_azur_trait_feitelie = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_tiexue_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		divided_patrongage_max_subjects = 2
+		country_megastructure_build_cap_add = 2
+		starbase_shipyard_build_time_mult = -0.20
+		starbase_upgrade_time_mult = -0.20
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#君主
+leader_azur_trait_junzhu = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_huangjia_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		starbase_shipyard_build_cost_mult = -0.20
+		starbase_upgrade_cost_mult = -0.20
+		starbase_trade_protection_add = 20
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#维内托
+leader_azur_trait_weineituo = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_sading_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		trade_value_mult = 0.50
+		country_consumer_goods_produces_mult = 0.25
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#黎塞留
+leader_azur_trait_lisailiu = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_yuanwei_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		pop_government_ethic_attraction = 0.25
+		country_unity_produces_mult = 0.15
+		country_starbase_influence_cost_mult = -0.25
+		country_starbase_capacity_add = 4
+		force_disparity_fire_rate_mult = 1.00
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#企业
+leader_azur_trait_qiye = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_baiying_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		ship_weapon_damage = 1.00
+		all_technology_research_speed = 0.10
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#苏维埃同盟
+leader_azur_trait_suweiaitongmeng = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_beilian_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		planet_jobs_produces_mult = 0.30
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#逸仙
+leader_azur_trait_yixian = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_donghuang_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		planet_pops_upkeep_mult = -0.20
+		planet_structures_upkeep_mult = -0.25
+		country_base_influence_produces_add = 1
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#傻白
+leader_azur_trait_elizabeth = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	custom_tooltip = azur_R_elizabeth_01
+	icon = "interface/icons/leader_traits/azur_elizabeth_leader.dds"
+	councilor_modifier = {
+		country_admin_cap_add = 1000
+		country_naval_cap_add = 100
+		country_subject_acceptance_add = 1000
+		monthly_loyalty_from_subjects = 5
+		add_base_country_intel = 10
+		spy_network_levels_add = 10
+		intel_decryption_add = 10
+		spy_network_daily_value_mult = 0.50
+		
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+
+###余烬###
+leader_trait_azur_yujin_1 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	custom_tooltip = azur_R_yujin_trait_01
+	icon = "interface/icons/leader_traits/azur_chongying_leader.dds"
+	councilor_modifier = {
+		country_naval_cap_add = 9999
+		country_starbase_capacity_add = 999
+		country_admin_cap_add = 9999
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#初音未来
+leader_azur_trait_miku = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_miku_leader.dds"
+	councilor_modifier = {
+		planet_jobs_produces_mult = 0.39
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	immortal_leaders = yes				#不朽领袖
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_miku_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_miku_leader_02.dds"
+	councilor_modifier = {
+	
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_miku_03 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_miku_leader_03.dds"
+	councilor_modifier = {
+	
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_miku_04 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_miku_leader_04.dds"
+	councilor_modifier = {
+	
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+#寰宇..属于我
+leader_azur_trait_miku_world_is_mine = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_miku_leader.dds"
+	custom_tooltip = "leader_azur_trait_miku_world_trait"
+	councilor_modifier = {
+		pop_political_power = 0.39
+		pop_happiness = 0.39
+		pop_housing_usage_mult = -0.39
+		pop_amenities_usage_mult = -0.39
+		pop_growth_speed_reduction = -0.39
+		pop_ethics_shift_speed_mult = -0.39
+		pop_citizen_happiness = 0.39
+		pop_purge_mult = 0.39
+		force_disparity_fire_rate_mult = 0.39
+		ship_hull_mult = 0.39
+		ship_hull_damage_mult = 0.39
+		ship_armor_mult = 0.39
+		ship_armor_damage_mult = 0.39
+		ship_armor_penetration_mult = 0.39
+		ship_shield_mult = 0.39
+		ship_shield_damage_mult = 0.39
+		ship_shield_penetration_mult = 0.39
+		ship_hull_regen_add_static = 39
+		ship_armor_regen_add_static = 39
+		ship_shield_regen_add_static = 39
+		ship_weapon_damage = 0.39
+		ship_weapon_range_mult = 0.39
+		ship_engagement_range_mult = 0.39
+		ship_orbital_bombardment_mult = 0.39
+		ship_fire_rate_mult = 0.39
+		ship_piracy_suppression_mult = 0.39
+		ship_ftl_jumpdrive_range_mult = 0.39
+		ship_emergency_ftl_min_days_mult = -0.39
+		ship_disengage_chance_reduction = -0.39
+		ship_evasion_mult = 0.39
+		ship_accuracy_mult = 0.39
+		ship_tracking_mult = 0.39
+		ship_base_speed_mult = 0.39
+		ship_speed_reduction = -0.39
+		ship_landing_time_mult = -0.39
+		ship_orbit_upkeep_mult = -0.39
+		ship_orbit_upkeep_mult = -0.39
+		ship_windup_mult = -0.39
+		ship_winddown_mult = -0.39
+		ship_interstellar_speed_mult = 0.39
+		ship_anomaly_research_speed_mult = 0.39
+		ship_anomaly_generation_chance_mult = 0.39
+		science_ship_survey_speed = 0.39
+		ship_experience_gain_mult = 0.39
+		ship_jumpdrive_cooldown_mult = -0.39
+		army_disengage_chance_mult = 0.39
+		army_health = 0.39
+		army_morale = 0.39
+		army_damage_mult = 0.39
+		army_collateral_damage_mult = 0.39
+		army_collateral_damage_mult = 0.39
+		planet_jobs_produces_mult = 0.39
+		planet_max_districts_mult = 0.39
+		planet_pop_assembly_organic_reduction = -0.39
+		planet_amenities_mult = 0.39
+		planet_crime_mult = -0.39
+		planet_housing_mult = 0.39
+		planet_colony_development_speed_mult = 0.39
+		planet_building_build_speed_mult = 0.39
+		planet_decision_enact_speed_mult = 0.39
+		planet_clear_blocker_speed_mult = 0.39
+		planet_clear_blocker_speed_mult = 0.39
+		planet_army_build_speed_mult = 0.39
+		planet_army_build_time_mult = -0.39
+		planet_orbital_bombardment_damage = -0.39
+		country_border_friction_mult = -0.39
+		all_technology_research_speed = 0.39
+		edict_length_mult = 0.39
+		country_ship_upgrade_cost_mult = -0.39
+		terraform_speed_mult = 0.39
+		modify_species_cost_mult = -0.39
+		country_subject_technology_sharing_mult = 0.39
+		country_starbase_capacity_mult = 0.39
+		country_naval_cap_mult = 0.39
+		country_edict_fund_mult = 0.39
+		country_command_limit_mult = 0.39
+		country_resettlement_cost_mult = -0.39
+		pop_demotion_time_mult = -0.39
+		country_starbase_influence_cost_mult = -0.39
+		country_claim_influence_cost_mult = -0.39
+		country_claim_influence_cost_mult = -0.39
+		empire_size_penalty_mult = -0.39
+		tradition_cost_empire_size_mult = -0.39
+		tech_cost_empire_size_mult = -0.39
+		leader_cost_empire_size_mult = -0.39
+		leader_upkeep_empire_size_mult = -0.39
+		megastructure_build_speed_mult = 0.39
+		megastructure_production_mult = 0.39
+		megastructures_cost_mult = -0.39
+		starbase_shipyard_build_cost_mult = -0.39
+		starbase_shipyard_build_time_mult = -0.39
+		starbase_shipyard_build_speed_mult = 0.39
+		starbase_upgrade_cost_mult = -0.39
+		starbase_upgrade_time_mult = -0.39
+		starbase_upgrade_speed_mult = 0.39
+		starbase_building_build_time_mult = -0.39
+		starbase_building_build_speed_mult = 0.39
+		starbase_module_build_time_mult = -0.39
+		starbase_module_build_speed_mult = 0.39
+		starbases_upkeep_mult = -0.39
+		trade_value_mult = 0.39
+		piracy_growth_mult = -0.39
+		piracy_suppression_mult = 0.39
+		max_trade_piracy_mult = -0.39
+		country_admin_cap_add = 3939
+		ship_archaeological_site_excavation_speed_mult = 0.39
+		empire_size_districts_mult = -0.39
+		empire_size_systems_mult = -0.39
+		empire_size_colonies_mult = -0.39
+		empire_size_pops_mult = -0.39
+		empire_size_mult = -0.39
+		intel_encryption_add = 3939
+		intel_decryption_add = 3939
+		country_counter_espionage_mult = 0.39
+		ship_damage_against_starbases_mult = 0.39
+		country_produces_mult = 0.39
+		planet_buildings_cost_mult = -0.39
+		planet_buildings_upkeep_mult = -0.39
+		planet_pops_upkeep_mult = -0.39
+		country_base_produces_mult = 0.39
+		leaders_upkeep_mult = -0.39
+		country_leader_cap_add = 39
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+
+#LUKA
+leader_azur_trait_luka = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = scientist				#种类
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_luka_leader.dds"
+	custom_tooltip = "leader_azur_trait_luka_trait"
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_researchers_physics_research_produces_add = 1
+		planet_researchers_society_research_produces_add = 1
+		planet_researchers_engineering_research_produces_add = 1
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_researchers_physics_research_produces_add = 0.5
+		planet_researchers_society_research_produces_add = 0.5
+		planet_researchers_engineering_research_produces_add = 0.5
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.25
+		science_ship_survey_speed = 0.25
+	}
+	modifier = {
+		science_ship_survey_speed = -10
+		ship_speed_mult = -10
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_luka_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_luka_leader_02.dds"
+	modifier = {
+	
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+#天城
+leader_azur_trait_tiancheng_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_chongying_leader.dds"
+	custom_tooltip = "leader_azur_trait_tiancheng_01_trait"
+	councilor_modifier = {
+		
+	}
+	leader_class = { scientist }
+	leader_trait = { scientist }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+	
+	}
+}
+
+leader_azur_trait_tiancheng_02 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_chongying_leader.dds"
+	custom_tooltip = "leader_azur_trait_tiancheng_02_trait"
+	fleet_modifier = {
+		ship_disengage_chance_mult = 10.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+#提款姬
+leader_azur_trait_miku_alien = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_miku_leader_提款姬.dds"
+	self_modifier = {
+		leaders_upkeep_mult = 39.39
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+
+#萊妮絲
+#「神星微光」
+#戰鬥buff
+#什么时候改改？
+leader_azur_trait_Reines_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_01.dds"
+	custom_tooltip = "leader_azur_trait_Reines_01_text"
+	self_modifier = {
+		
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#「聖樹輝光」
+#生產建設
+leader_azur_trait_Reines_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_02.dds"
+	custom_tooltip = "leader_azur_trait_Reines_02_text"
+	self_modifier = {
+		
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#「始源御體」
+#科研加速經驗帝國
+leader_azur_trait_Reines_03 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_03.dds"
+	custom_tooltip = "leader_azur_trait_Reines_03_text"
+	self_modifier = {
+	
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+	
+	}
+}
+
+#「不允之慈」
+leader_azur_trait_Reines_04 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_04.dds"
+	councilor_modifier = {
+		country_government_civic_points_add = 2
+		country_edict_fund_add = 100
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#「煩思之寂」
+leader_azur_trait_Reines_05 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_05.dds"
+	councilor_modifier = {
+		num_tech_alternatives_add = 2
+		all_technology_research_speed = 0.15
+		ship_anomaly_research_speed_mult = 0.15
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#「食夢之灼」
+leader_azur_trait_Reines_06 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_06.dds"
+	councilor_modifier = {
+		pop_growth_speed = 0.25
+		planet_pop_assembly_organic_mult = 0.25
+		planet_crime_mult = -0.25
+		pop_happiness = 0.25
+		planet_stability_add = 25
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#「裁源之磔」
+leader_azur_trait_Reines_07 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_07.dds"
+	councilor_modifier = {
+		planet_army_build_speed_mult = 0.25
+		starbase_shipyard_build_speed_mult = 0.25
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#「鳴宙之刻」
+leader_azur_trait_Reines_08 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_萊妮絲_08.dds"
+	councilor_modifier = {
+		country_ship_upgrade_cost_mult = -0.25
+		ships_upkeep_mult = -0.25
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+
+#莉莉安娜
+leader_azur_trait_rin_01 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_rin_leader.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+	
+	}
+}
+
+leader_azur_trait_rin_02 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_rin_leader_02.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#希
+#常暗
+#解析遗珍
+leader_azur_trait_xi_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_xi_01.dds"
+	custom_tooltip = "leader_azur_trait_xi_01_text"
+	triggered_self_modifier = {
+		
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#巡风
+leader_azur_trait_xi_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_xi_02.dds"
+	custom_tooltip = "leader_azur_trait_xi_02_text"
+	modifier = {
+		science_ship_survey_speed = 0.25
+		ship_anomaly_research_speed_mult = 0.25
+		ship_anomaly_generation_chance_mult = 0.5
+		ship_speed_mult = 0.15
+		ship_cloaking_strength_add = 114514
+		ship_cloaking_detection_add = 114514
+		ship_disengage_chance_mult = 10.00
+		ship_sensor_range_add = 2
+  		ship_hyperlane_range_add = 4
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#獵雷
+leader_azur_trait_xi_03 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_R_xi_03.dds"
+	custom_tooltip = "leader_azur_trait_xi_03_text"
+	councilor_modifier = {
+		num_tech_alternatives_add = -100
+		all_technology_research_speed = -1000
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#星乃一歌
+#Ichika
+leader_azur_trait_ichika_01 = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_Ichika_leader.dds"
+	custom_tooltip = "leader_azur_trait_ichika_01_trait"
+	sector_modifier = {
+		planet_stability_add = 40
+		planet_crime_add = -100
+	}
+	
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+	
+	}
+}
+
+leader_azur_trait_ichika_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = yes				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_Ichika_leader_02.dds"
+	custom_tooltip = "leader_azur_trait_ichika_02_trait"
+	councilor_modifier = {
+	
+	}
+	leader_class = { official scientist commander }
+	leader_trait = { official scientist commander }
+	initial = no
+	randomized = no
+	#immortal_leaders = yes
+	opposites = {
+		
+	}
+}
+
+leader_azur_trait_ichika_03 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_Ichika_leader_03.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+leader_azur_trait_ichika_04 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_Ichika_leader_04.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+leader_azur_trait_ichika_05 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_Ichika_leader_05.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#桐谷遥
+#haruka
+leader_azur_trait_haruka_01 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_haruka_leader.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	opposites = {
+	
+	}
+}
+
+leader_azur_trait_haruka_02 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_haruka_leader_02.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+leader_azur_trait_haruka_03 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_haruka_leader_03.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+leader_azur_trait_haruka_04 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_haruka_leader_04.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+leader_azur_trait_haruka_05 = {
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_haruka_leader_05.dds"
+	modifier = {
+		
+	}
+	
+	leader_class = { official }
+	leader_trait = { official }
+	initial = no
+	randomized = no
+	opposites = {
+	
+	}
+}
+
+#声望
+leader_trait_azur_R_shengwang_meta = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_meta_leader_01.dds"
+	custom_tooltip = "leader_trait_azur_R_shengwang_meta_trait"
+	fleet_modifier = {
+		ship_weapon_damage = 1.00
+		ship_engagement_range_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+#反击
+leader_trait_azur_R_fanji_meta = {
+	leader_trait_type = subclass		#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = yes				#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template				#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = paragon				#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/azur_meta_leader_01.dds"
+	custom_tooltip = "leader_trait_azur_R_fanji_meta_trait"
+	fleet_modifier = {
+		ship_weapon_damage = 1.00
+		ship_engagement_range_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		
+	}
+}
+
+#心智觉醒
+leader_trait_tongyong_01 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	destiny_trait = yes						#命定特质
+	#force_councilor_trait = no					#内阁特质
+	inline_script = {
+		script = trait/AL_R_common_trait_template		#脚本
+		CLASS = leader					#种类
+		#ICON = "GFX_leader_azur_trait_miku"
+		RARITY = common					#稀有度（common/veteran/free_or_veteran/paragon）
+		COUNCIL = no					#内阁
+		TIER = none						#等级
+	}
+	icon = "interface/icons/leader_traits/leader_trait_tongyong_01.dds"
+	triggered_fleet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.2
+		ship_weapon_range_mult = 0.10
+		ship_fire_rate_mult = 0.10
+	}
+	triggered_army_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		army_damage_mult = 0.2
+		army_collateral_damage_mult = 0.10
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		leader_scientists_physics_research_produces_add = 2
+		leader_scientists_society_research_produces_add = 2
+		leader_scientists_engineering_research_produces_add = 2
+		mult = trigger:has_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		planet_pops_upkeep_mult = -0.10
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		planet_pops_upkeep_mult = -0.05
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		planet_structures_upkeep_mult = -0.25
+		empire_size_districts_mult = -0.10
+	}
+	leader_class = { commander scientist official }
+	leader_trait = { commander scientist official }
+	opposites = {
+		leader_trait_psionic
+		leader_trait_chosen
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+###指挥猫###
+#被期待的新星
+leader_trait_azur_mao_01 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/被期待的新星.dds"
+	fleet_modifier = {
+		ships_upkeep_mult = -0.4
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+
+#其疾如风
+leader_trait_azur_mao_02 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/彩技能.dds"
+	fleet_modifier = {
+		ship_speed_mult = 0.4
+		ship_evasion_add = 20
+		ship_disengage_chance_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#其徐如林
+leader_trait_azur_mao_03 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/彩技能.dds"
+	fleet_modifier = {
+		ship_sensor_range_add = 2
+		ship_cloaking_detection_add = 5
+		ship_ftl_jumpdrive_range_mult = 1.00
+		ship_jumpdrive_cooldown_mult = -0.5
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#侵略如火
+leader_trait_azur_mao_04 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/彩技能.dds"
+	fleet_modifier = {
+		ship_weapon_damage = 0.40
+		ship_weapon_range_mult = 0.20
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#不动如山
+leader_trait_azur_mao_05 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/彩技能.dds"
+	fleet_modifier = {
+		ship_hull_mult = 0.40
+		ship_armor_mult = 0.40
+		ship_shield_mult = 0.40
+		ship_shield_hardening_add = 0.25
+		ship_armor_hardening_add = 0.25
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#小小的奇迹
+leader_trait_azur_mao_06 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/彩技能.dds"
+	fleet_modifier = {
+		ship_hull_regen_add_perc = 0.05
+		ship_armor_regen_add_perc = 0.05
+		ship_shield_regen_add_perc = 0.05
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#既定的命运
+leader_trait_azur_mao_07 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/彩技能.dds"
+	fleet_modifier = {
+		ship_hull_damage_mult = 0.25
+		ship_armor_damage_mult = 0.25
+		ship_shield_damage_mult = 0.25
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#水雷魂
+leader_trait_azur_mao_08 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/水雷魂.dds"
+	fleet_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 1.00
+		weapon_type_explosive_weapon_fire_rate_mult = 1.00
+		weapon_type_kinetic_weapon_damage_mult = 1.00
+		weapon_type_kinetic_weapon_fire_rate_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#见敌必战
+leader_trait_azur_mao_09 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/见敌必战.dds"
+	fleet_modifier = {
+		ship_shield_penetration_mult = 1.00
+		ship_armor_penetration_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#狼群之首
+leader_trait_azur_mao_010 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/狼群之首.dds"
+	fleet_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_engagement_range_mult = 0.25
+		ship_cloaking_strength_add = 5
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#王牌机师
+leader_trait_azur_mao_011 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/王牌机师.dds"
+	fleet_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 1.00
+		weapon_type_strike_craft_weapon_fire_rate_mult = 1.00
+		weapon_type_strike_craft_speed_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+#一发入魂
+leader_trait_azur_mao_012 = {
+	leader_trait_type = destiny			#veteran\subclass\destiny
+	notify_on_gained = no
+	subclass_trait = no					#子类特质（在左上角显示）
+	destiny_trait = yes					#命定特质
+	force_councilor_trait = no				#内阁特质
+	cost = 0
+	modification = no
+	icon = "interface/icons/leader_traits/一发入魂.dds"
+	fleet_modifier = {
+		ship_accuracy_add = 50
+		ship_tracking_add = 50
+		x_slot_weapon_damage_mult = 1.00
+	}
+	leader_class = { commander }
+	leader_trait = { commander }
+	initial = no
+	randomized = no
+	opposites = {
+		 
+	}
+}
+

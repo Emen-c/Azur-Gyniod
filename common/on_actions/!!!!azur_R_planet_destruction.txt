@@ -1,0 +1,18 @@
+#巨像触发器
+on_destroy_planet_with_PLANET_KILLER_AZUR_R_01 = {
+	events = {
+		AL_R_planet_kill.1
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_AZUR_R_02 = {
+	events = {
+		AL_R_planet_kill.2
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_AZUR_R_03 = {
+	events = {
+		AL_R_planet_kill.3
+	}
+}

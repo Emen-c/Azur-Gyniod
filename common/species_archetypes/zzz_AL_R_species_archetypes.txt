@@ -1,0 +1,5 @@
+KANSEN = { 
+	species_trait_points = 4
+	species_max_traits = 12
+	inherit_traits_from = { BIOLOGICAL } 
+}

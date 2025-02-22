@@ -1,0 +1,104 @@
+namespace = azur_R_nanoda
+#隐藏菜单
+country_event = {
+	id = azur_R_nanoda.1
+	title = "azur_R_nanoda.1.title"
+	desc = "azur_R_nanoda.1.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_开启隐藏菜单
+	}
+	
+	picture_event_data = {
+		room = azur_R_隐藏菜单_room
+	}
+	#粽子
+	option = {
+		name = azur_R_nanoda.1.a
+		trigger = {
+			NOT = { has_country_flag = azur_R_rushia }
+		}
+		hidden_effect = {
+			country_event = { id = azur_R_nanoda.2 }
+		}
+	}
+	#亚顿之矛
+	option = {
+		name = azur_R_nanoda.1.b
+		trigger = {
+			NOT = { has_country_flag = azur_R_adun_ship }
+		}
+		hidden_effect = {
+			country_event = { id = azur_R_nanoda.3 }
+		}
+	}
+	
+	#离开
+	option = {
+		name = azur_R_nanoda.1.esc
+		default_hide_option = yes
+	}
+}
+
+#润羽露西娅
+country_event = {
+	id = azur_R_nanoda.2
+	title = "azur_R_nanoda.1.title"
+	desc = "azur_R_nanoda.2.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_开启隐藏菜单
+	}
+	
+	picture_event_data = {
+		room = azur_R_隐藏菜单_room
+	}
+
+	option = {
+		name = azur_R_nanoda.2.a
+		default_hide_option = yes
+	}
+	
+	option = {
+		name = azur_R_nanoda.2.b
+		hidden_effect = {
+			country_event = { id = azur_leader.1000 }
+		}
+	}
+}
+
+#亚顿之矛
+country_event = {
+	id = azur_R_nanoda.3
+	title = "azur_R_nanoda.1.title"
+	desc = "azur_R_nanoda.3.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_开启隐藏菜单
+	}
+	
+	picture_event_data = {
+		room = azur_R_隐藏菜单_room
+	}
+
+	option = {
+		name = azur_R_nanoda.3.a
+		default_hide_option = yes
+		hidden_effect = {
+			set_country_flag = azur_R_adun_ship
+			give_technology = { tech = tech_azur_R_adun message = no }
+		}
+	}
+}

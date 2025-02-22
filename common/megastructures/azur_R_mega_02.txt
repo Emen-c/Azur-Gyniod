@@ -1,0 +1,139 @@
+mega_azur_VR_0 = {
+	entity = ""
+	construction_entity = "hologram_effect_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 1800
+	
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10000
+			alloys = 10000
+			sr_hongjianjian = 10000
+		}
+
+		upkeep = {
+		}
+	}
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	prerequisites = { "tech_azur_VR_world" }
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+        custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			NOR = { has_star_flag = azur_r_miku_built has_star_flag = ring_world_built }
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {										#建造要求
+			custom_tooltip = {
+				fail_text = "requires_surveyed_planet"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				NOR = { 
+					colonizeable_planet = yes
+                    azur_R_colonizable_planet = yes
+					has_planet_flag = has_megastructure
+				}
+			}
+		}
+	}
+
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 0
+	}
+
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		spawn_planet = {
+			class = "pc_azur_VR"
+			location = fromfrom.planet
+			orbit_location = yes
+			orbit_angle_offset = 45
+			orbit_distance_offset = 0
+			size = 39
+			has_ring = no
+
+			init_effect = {
+				set_name = "虚拟现实世界"
+				set_planet_entity = {
+					entity = "pc_azur_VR_R_entity"		
+					graphical_culture = no
+				}
+				surveyed = {
+					set_surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				clear_blockers = yes
+
+				set_planet_flag = megastructure
+			}
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+			change_pc = pc_shattered
+			set_name = "NAME_azur_R_fallen_ring_1"
+			set_planet_flag = has_megastructure
+		}
+		remove_megastructure = fromfrom
+		from = { country_event =  { id = azur_R_megastructures.2 } }
+	}
+}

@@ -1,0 +1,1633 @@
+#母星
+#住宅区
+district_azur_arcology_city = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
+
+	show_on_uncolonized = {
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 20
+		planet_max_buildings_add = 4
+		job_enforcer_add = 1
+		job_clerk_add = 4
+	}
+	
+	#修正
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_public_works }
+		}
+		modifier = {
+			planet_housing_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1
+			}
+		}
+		modifier = {
+			planet_housing_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = {
+			planet_housing_add = 3
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+##简单一产二产
+district_azur_arcology_housing = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 600
+			minerals = 1200
+		}
+		upkeep = {
+		
+		}
+		produces = { 
+			energy = 10
+			minerals = 10
+			food = 10
+		}
+	}
+
+	planet_modifier = {
+		job_technician_add = 2
+		job_miner_add = 3
+		job_farmer_add = 3
+		###################
+		#前期凑合用吧（）
+		job_foundry_add = 1
+		job_artisan_add = 1
+		###################
+		planet_technician_energy_produces_mult = 0.025
+		planet_miners_minerals_produces_mult = 0.025
+		planet_farmers_food_produces_mult = 0.025
+	}
+	
+	#一产建筑修正
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_energy
+			}
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_minerals
+			}
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_food
+			}
+		}
+		modifier = {
+			job_farmer_add = 1
+		}
+	}
+	
+	#二产
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOT = { has_district = district_azur_arcology_arms_industry }
+				has_building = azur_R_building_manufacturing_2_1
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+			job_artisan_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOT = { has_district = district_azur_arcology_arms_industry }
+				has_building = azur_R_building_manufacturing_2_2
+			}
+		}
+		modifier = {
+			job_foundry_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				NOT = { has_district = district_azur_arcology_arms_industry }
+				has_building = azur_R_building_manufacturing_2_3
+			}
+		}
+		modifier = {
+			job_artisan_add = 2
+		}
+	}
+	
+	#移除二产
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_district = district_azur_arcology_arms_industry
+			}
+		}
+		modifier = {
+			job_foundry_add = -1
+			job_artisan_add = -1
+		}
+	}
+	
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#行政（凝聚力
+district_azur_arcology_administrative = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 600
+			minerals = 1200
+		}
+		upkeep = {
+			energy = 10
+		}
+		produces = { 
+			unity = 20
+		}
+	}
+
+	planet_modifier = {
+		job_executive_add = 1
+		job_bureaucrat_add = 1
+		job_priest_add = 1
+		job_azur_R_bureaucrat_add = 2
+		
+	}
+
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+#二产
+district_azur_arcology_arms_industry = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_district_1
+		}
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_district_1
+		}
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2400
+			volatile_motes = 200
+			rare_crystals = 200
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_building = azur_R_building_alloys
+				}
+			}
+			energy = 10
+			volatile_motes = 5
+			rare_crystals = 5
+			sr_hongjianjian = 5
+		}
+		upkeep = {
+			energy = 20
+			volatile_motes = 5
+			rare_crystals = 5
+			sr_hongjianjian = 10
+		}
+		produces = { 
+			alloys = 10
+			consumer_goods = 10
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_foundry_add = 3
+		planet_metallurgists_produces_mult = 0.025
+		job_azur_R_artisan_add = 3
+		planet_artisans_produces_mult = 0.025
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_alloys
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = 2
+			job_azur_R_artisan_add = 2
+		}
+	}
+
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#精炼
+district_azur_arcology_sr = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_district_2
+		}
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_district_2
+		}
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2400
+			rare_crystals = 200
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_building = azur_R_building_refinery
+				}
+			}
+			energy = 10
+			rare_crystals = 5
+			sr_hongjianjian = 5
+		}
+		upkeep = {
+			energy = 20
+			rare_crystals = 5
+			sr_hongjianjian = 10
+		}
+		produces = { 
+			volatile_motes = 4
+			exotic_gases = 4
+			rare_crystals = 4
+		}
+	}
+
+	planet_modifier = {
+		job_chemist_add = 3
+		planet_jobs_volatile_motes_produces_mult = 0.05
+		job_translucer_add = 3
+		planet_jobs_rare_crystals_produces_mult = 0.05
+		job_gas_refiner_add = 3
+		planet_jobs_exotic_gases_produces_mult = 0.05
+	}
+	
+	#修正
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_refinery
+			}
+		}
+		modifier = {
+			job_azur_R_refinery_add = 1
+		}
+	}
+
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#科研区划
+district_azur_arcology_tech = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_district_3
+		}
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_district_3
+		}
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2400
+			exotic_gases = 300
+			sr_hongjianjian = 328
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_building = azur_R_building_tech_01
+				}
+			}
+			energy = 10
+			exotic_gases = 5
+			sr_hongjianjian = 5
+		}
+		upkeep = {
+			energy = 20
+			exotic_gases = 5
+			sr_hongjianjian = 10
+		}
+		produces = { 
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_head_researcher_03_add = 5
+	}
+	
+	#修正
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_tech_01
+			}
+		}
+		modifier = {
+			job_azur_R_head_researcher_03_add = 2
+			planet_researchers_produces_mult = 0.025
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#钻石
+district_azur_zuanshi_sr = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_building_energy
+		}
+		uses_district_set = azur_city_R
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_azur_R_building_energy
+		}
+		uses_district_set = azur_city_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 800
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_clerk_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_energy
+			}
+		}
+		modifier = {
+			job_azur_R_clerk_add = 2
+		}
+	}
+
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+#VR星球
+#居住区
+district_azur_VR_city = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_VR_R
+	}
+
+	potential = {
+		uses_district_set = azur_VR_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 3280
+			sr_hongjianjian = 328
+		}
+		upkeep = {
+			energy = 39
+			sr_hongjianjian = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 50
+		job_enforcer_add = 2
+		job_clerk_add = 8
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#Live舞台
+district_azur_VR_art = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_VR_R
+	}
+
+	potential = {
+		uses_district_set = azur_VR_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 6480
+			rare_crystals = 200
+			sr_hongjianjian = 328
+		}
+		upkeep = {
+			energy = 39
+			rare_crystals = 2
+			sr_hongjianjian = 5
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_preacher_add = 5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#周边区
+district_azur_VR_zhoubian = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_VR_R
+	}
+
+	potential = {
+		uses_district_set = azur_VR_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 6480
+			exotic_gases = 200
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			energy = 39
+			exotic_gases = 2
+			sr_hongjianjian = 5
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_Akashi_add = 2
+		job_azur_R_clerk_add = 3
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#秩序区
+district_azur_VR_zhixu = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_VR_R
+	}
+
+	potential = {
+		uses_district_set = azur_VR_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 6480
+			volatile_motes = 200
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			energy = 39
+			volatile_motes = 2
+			sr_hongjianjian = 5
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_duelist_02_add = 1
+		job_azur_R_bureaucrat_add = 4
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#环世界区划
+district_azur_r_district_rw_city = {
+	base_buildtime = 1500
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		uses_district_set = azur_ring_world
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		uses_district_set = azur_ring_world
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_rw_nexus
+		district_rw_hive
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 10000
+            alloys = 5000
+			sr_hongjianjian = 5000
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 20
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 200
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
+		}
+		modifier = {
+			job_clerk_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_public_works }
+		}
+		modifier = {
+			planet_housing_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1
+			}
+		}
+		modifier = {
+			planet_housing_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = {
+			planet_housing_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 10
+		}
+	}
+}
+
+#发电区
+district_azur_r_district_rw_energy = {
+	base_buildtime = 1800
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_ring_world
+	}
+
+	potential = {
+		uses_district_set = azur_ring_world
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 10000
+			sr_hongjianjian = 5000
+            alloys = 5000
+			exotic_gases = 2000
+		}
+		upkeep = {
+			energy = 50
+			sr_hongjianjian = 50
+			exotic_gases = 30
+		}
+	}
+    #岗位
+	planet_modifier = {
+		job_AL_r_ring_energy_add = 10
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#铸造区
+district_azur_r_district_rw_alloys = {
+	base_buildtime = 1800
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_ring_world
+	}
+
+	potential = {
+		uses_district_set = azur_ring_world
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 10000
+			sr_hongjianjian = 5000
+            alloys = 5000
+			volatile_motes = 2000
+		}
+		upkeep = {
+			energy = 50
+			sr_hongjianjian = 50
+			volatile_motes = 30
+		}
+	}
+    #岗位
+	planet_modifier = {
+		job_AL_r_ring_alloys_add = 10
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#科研区
+district_azur_r_district_rw_science = {
+	base_buildtime = 1800
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_ring_world
+	}
+
+	potential = {
+		uses_district_set = azur_ring_world
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 10000
+			sr_hongjianjian = 5000
+            alloys = 5000
+			exotic_gases = 2000
+		}
+		upkeep = {
+			energy = 50
+			sr_hongjianjian = 50
+			exotic_gases = 30
+		}
+	}
+    #岗位
+	planet_modifier = {
+		job_AL_r_ring_science_add = 10
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+####破败星球####
+#维生舱
+district_azur_R_pobai_city_01 = {
+	base_buildtime = 100
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = from
+		from = { 
+			is_regular_empire = yes
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+		}
+		uses_district_set = azur_pobai_R
+	}
+
+	potential = {
+		exists = owner
+		owner = { 
+			is_regular_empire = yes
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+		}
+		uses_district_set = azur_pobai_R
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 2500
+			minerals = 2500
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+		job_azur_pobai_guanlizhe_add = 1
+	}
+}
+
+#资源
+district_azur_R_pobai_city_02 = {
+	base_buildtime = 900
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = from
+		from = { 
+			is_regular_empire = yes
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+		}
+		uses_district_set = azur_pobai_R
+	}
+
+	potential = {
+		exists = owner
+		owner = { 
+			is_regular_empire = yes
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+		}
+		uses_district_set = azur_pobai_R
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 10000
+			minerals = 10000
+		}
+		upkeep = {
+		
+		}
+		produces = { 
+			energy = 100
+			minerals = 100
+			volatile_motes = 6
+			exotic_gases = 6
+			rare_crystals = 6
+		}
+	}
+
+	planet_modifier = {
+		
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_pobai_city_01
+				exists = event_target:rushia_leader
+			}
+		}
+		modifier = {
+			planet_districts_produces_mult = 0.25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_pobai_city_02
+				exists = event_target:rushia_leader
+			}
+		}
+		modifier = {
+			planet_districts_produces_mult = 0.25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_pobai_city_03
+				exists = event_target:rushia_leader
+			}
+		}
+		modifier = {
+			planet_districts_produces_mult = 0.25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_pobai_city_04
+				exists = event_target:rushia_leader
+			}
+		}
+		modifier = {
+			planet_districts_produces_mult = 0.25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { exists = event_target:rushia_leader }
+			}
+		}
+		modifier = {
+			planet_districts_produces_mult = -10
+		}
+	}
+}
+
+#黑雾
+district_azur_R_pobai_city_03 = {
+	base_buildtime = 114514
+	is_capped_by_modifier = no
+	can_demolish = yes   #拆除
+
+	show_on_uncolonized = {
+		exists = from
+		from = { 
+			is_regular_empire = yes
+			NOT = { has_country_flag = azur_R_rushia }
+		}
+		uses_district_set = azur_pobai_R
+	}
+
+	potential = {
+		exists = owner
+		owner = { 
+			is_regular_empire = yes
+			NOT = { has_country_flag = azur_R_rushia }
+		}
+		uses_district_set = azur_pobai_R
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 114514
+			minerals = 1919810
+		}
+		upkeep = {
+			
+		}
+	}
+
+	planet_modifier = {
+		job_azur_pobai_beiyiwangzhe_per_pop = 1
+	}
+}
+
+#堕落
+#住宅区
+district_azur_R_fallen_rw_city = {
+	base_buildtime = @rw_district_buildtime
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = { uses_district_set = azur_R_fallen_ring_world }
+
+	potential = { uses_district_set = azur_R_fallen_ring_world }
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_rw_nexus
+		district_rw_hive
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @rw_cost
+		}
+		upkeep = {
+			energy = @rw_maintenance
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 50
+		job_enforcer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = -5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
+		}
+		modifier = {
+			job_clerk_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_public_works }
+		}
+		modifier = {
+			planet_housing_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1
+			}
+		}
+		modifier = {
+			planet_housing_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = {
+			planet_housing_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 3
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			planet = {
+				has_deposit = d_arcane_generator
+				NOT = { has_district = district_rw_city }
+			}
+		}
+		text = arcane_generator_upkeep_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_clerk_effect_desc
+	}
+
+
+}
+
+#古代资源储藏
+district_azur_R_fallen_rw_resources = {
+	base_buildtime = rw_district_buildtime
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = { uses_district_set = azur_R_fallen_ring_world }
+
+	potential = { uses_district_set = azur_R_fallen_ring_world }
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @rw_cost
+		}
+		upkeep = {
+			energy = @rw_maintenance
+		}
+		produces = { 
+			energy = 2000
+			minerals = 2000
+			food = 2000
+			alloys = 2000
+			consumer_goods = 2000
+			volatile_motes = 200
+			exotic_gases = 200
+			rare_crystals = 200
+		}
+	}
+}
+
+#古代科技储藏
+district_azur_R_fallen_rw_research = {
+	base_buildtime = rw_district_buildtime
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = { uses_district_set = azur_R_fallen_ring_world }
+
+	potential = { uses_district_set = azur_R_fallen_ring_world }
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @rw_cost
+		}
+		upkeep = {
+			energy = @rw_maintenance
+		}
+		produces = { 
+			physics_research = 2000
+			society_research = 2000
+			engineering_research = 2000
+		}
+	}
+}
+
+#港区理想城
+#居住区
+district_AL_R_cityplanet_01 = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
+
+	show_on_uncolonized = {
+		uses_district_set = azur_cityplanet_R
+	}
+
+	potential = {
+		uses_district_set = azur_cityplanet_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 20
+		planet_max_buildings_add = 4
+		job_enforcer_add = 2
+		job_clerk_add = 8
+	}
+	
+	#修正
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_public_works }
+		}
+		modifier = {
+			planet_housing_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1
+			}
+		}
+		modifier = {
+			planet_housing_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		modifier = {
+			planet_housing_add = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#工业
+district_AL_R_cityplanet_02 = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = owner
+		uses_district_set = azur_cityplanet_R
+	}
+
+	potential = {
+		exists = owner
+		uses_district_set = azur_cityplanet_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 5000
+			volatile_motes = 200
+			rare_crystals = 200
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_building = azur_R_building_alloys
+				}
+			}
+			energy = 10
+			volatile_motes = 5
+			rare_crystals = 5
+			sr_hongjianjian = 5
+		}
+		upkeep = {
+			energy = 30
+			volatile_motes = 10
+			rare_crystals = 10
+			sr_hongjianjian = 10
+		}
+		produces = { 
+			alloys = 10
+			consumer_goods = 10
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_foundry_add = 10
+		job_azur_R_artisan_add = 10
+	}
+	
+	#星球类型
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				colony_type = col_foundry
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = 10
+			job_azur_R_artisan_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				colony_type = col_factory
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = -10
+			job_azur_R_artisan_add = 10
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_alloys
+				NOR = {
+					colony_type = col_foundry
+					colony_type = col_factory
+				}
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = 2
+			job_azur_R_artisan_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_alloys
+				colony_type = col_foundry
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = 4
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_alloys
+				colony_type = col_factory
+			}
+		}
+		modifier = {
+			job_azur_R_artisan_add = 4
+		}
+	}
+
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#科研区
+district_AL_R_cityplanet_03 = {
+	base_buildtime = 1200
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		exists = owner
+		uses_district_set = azur_cityplanet_R
+	}
+
+	potential = {
+		exists = owner
+		uses_district_set = azur_cityplanet_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 5000
+			exotic_gases = 200
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_building = azur_R_building_tech_01
+				}
+			}
+			energy = 10
+			exotic_gases = 5
+			sr_hongjianjian = 5
+		}
+		upkeep = {
+			energy = 30
+			exotic_gases = 10
+			sr_hongjianjian = 10
+		}
+		produces = { 
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
+		}
+	}
+
+	planet_modifier = {
+		job_azur_R_head_researcher_03_add = 10
+	}
+	
+	#修正
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				has_building = azur_R_building_tech_01
+			}
+		}
+		modifier = {
+			job_azur_R_head_researcher_03_add = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#行政
+district_AL_R_cityplanet_04 = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = azur_cityplanet_R
+	}
+
+	potential = {
+		uses_district_set = azur_cityplanet_R
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 1500
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 20
+		}
+		produces = { 
+			unity = 20
+		}
+	}
+
+	planet_modifier = {
+		job_executive_add = 1
+		job_bureaucrat_add = 2
+		job_priest_add = 2
+		job_azur_R_bureaucrat_add = 5
+		
+	}
+
+
+	ai_weight = {
+		weight = 0
+	}
+}
+

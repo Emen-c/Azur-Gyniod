@@ -1,0 +1,1627 @@
+namespace = azur_leader_gallery
+
+#总览
+country_event = {
+	id = azur_leader_gallery.1000
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.1000.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		owner = { has_country_flag = azur_lane_gangqu_country }
+	}
+	
+	picture_event_data = {
+		room = azurl_07_room
+	}
+	
+	#雪风
+	option = {
+		name = azur_leader_gallery.1000.a
+		trigger = {
+			exists = event_target:xuefeng_leader
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.2 }
+		}
+	}
+	
+	#恶毒
+	option = {
+		name = azur_leader_gallery.1000.b
+		trigger = {
+			exists = event_target:edu_leader
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.4 }
+		}
+	}
+	
+	#绫波
+	option = {
+		name = azur_leader_gallery.1000.c
+		trigger = {
+			exists = event_target:lingbo_leader
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.3 }
+		}
+	}
+	
+	#长门
+	option = {
+		name = azur_leader_gallery.1000.d
+		trigger = {
+			exists = event_target:changmen_leader
+			has_country_flag = azur_lane_leader_changmen
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.1 }
+		}
+	}
+	
+	#克莱蒙梭
+	option = {
+		name = azur_leader_gallery.1000.e
+		trigger = {
+			exists = event_target:clemenceau_leader
+			has_country_flag = azur_lane_leader_clemenceau
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.5 }
+		}
+	}
+	
+	#腓特烈大帝
+	option = {
+		name = azur_leader_gallery.1000.f
+		trigger = {
+			exists = event_target:feitelie_leader
+			has_country_flag = azur_lane_leader_feitelie
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.6 }
+		}
+	}
+	
+	#君主
+	option = {
+		name = azur_leader_gallery.1000.g
+		trigger = {
+			exists = event_target:junzhu_leader
+			has_country_flag = azur_lane_leader_junzhu
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.7 }
+		}
+	}
+	
+	#维内托
+	option = {
+		name = azur_leader_gallery.1000.h
+		trigger = {
+			exists = event_target:weineituo_leader
+			has_country_flag = azur_lane_leader_weineituo 
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.8 }
+		}
+	}
+	
+	#黎塞留
+	option = {
+		name = azur_leader_gallery.1000.i
+		trigger = {
+			exists = event_target:lisailiu_leader
+			has_country_flag = azur_lane_leader_lisailiu
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.9 }
+		}
+	}
+	
+	#企业
+	option = {
+		name = azur_leader_gallery.1000.j
+		trigger = {
+			exists = event_target:qiye_leader
+			has_country_flag = azur_lane_leader_qiye
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.10 }
+		}
+	}
+	
+	#苏维埃同盟
+	option = {
+		name = azur_leader_gallery.1000.k
+		trigger = {
+			exists = event_target:suweiaitongmeng_leader
+			has_country_flag = azur_lane_leader_suweiaitongmeng
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.11 }
+		}
+	}
+	
+	#逸仙
+	option = {
+		name = azur_leader_gallery.1000.l
+		trigger = {
+			exists = event_target:yixian_leader
+			has_country_flag = azur_lane_leader_yixian
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.12 }
+		}
+	}
+	
+	#miku
+	option = {
+		name = azur_leader_gallery.1000.m
+		trigger = {
+			exists = event_target:miku_leader
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.13 }
+		}
+	}
+	
+	#LUKA
+	option = {
+		name = azur_leader_gallery.1000.n
+		trigger = {
+			exists = event_target:luka_leader
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.14 }
+		}
+	}
+	
+	#明石
+	option = {
+		name = azur_leader_gallery.1000.o
+		trigger = {
+			exists = event_target:mingshi_leader
+			has_country_flag = azur_R_mingshi_has
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.15 }
+		}
+	}
+	
+	#傻白
+	option = {
+		name = azur_leader_gallery.1000.p
+		trigger = {
+			exists = event_target:elizabeth_leader
+			has_country_flag = azur_lane_leader_elizabeth
+		}
+		hidden_effect = {
+			country_event = { id = azur_leader_gallery.16 }
+		}
+	}
+	
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+
+#长门
+country_event = {
+	id = azur_leader_gallery.1
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.1.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:changmen_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:changmen_leader
+		room = azurl_06_room
+	}
+
+	option = {
+		name = azur_leader_gallery.1.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.1.desc"
+		hidden_effect = {
+			event_target:changmen_leader = {
+				change_leader_portrait = AL_leader_长门
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.1.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.1.desc"
+		hidden_effect = {
+			event_target:changmen_leader = {
+				change_leader_portrait = AL_leader_长门_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.1.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.1.desc"
+		hidden_effect = {
+			event_target:changmen_leader = {
+				change_leader_portrait = AL_leader_长门_02
+			}
+		}
+	}
+	
+	#婚纱
+	option = {
+		name = azur_leader_gallery.1.d
+		allow = { 
+			event_target:changmen_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.1.desc"
+		hidden_effect = {
+			event_target:changmen_leader = {
+				change_leader_portrait = AL_leader_长门_oath
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.1.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.1.desc"
+		hidden_effect = {
+			event_target:changmen_leader = {
+				change_leader_portrait = AL_leader_长门_03
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.1.f
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.1.desc"
+		hidden_effect = {
+			event_target:changmen_leader = {
+				change_leader_portrait = AL_leader_长门_04
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#雪风
+country_event = {
+	id = azur_leader_gallery.2
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.2.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:xuefeng_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:xuefeng_leader
+		room = azurl_06_room
+	}
+
+	option = {
+		name = azur_leader_gallery.2.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.2.desc"
+		hidden_effect = {
+			event_target:xuefeng_leader = {
+				change_leader_portrait = AL_leader_雪风
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.2.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.2.desc"
+		hidden_effect = {
+			event_target:xuefeng_leader = {
+				change_leader_portrait = AL_leader_雪风_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.2.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.2.desc"
+		hidden_effect = {
+			event_target:xuefeng_leader = {
+				change_leader_portrait = AL_leader_雪风_02
+			}
+		}
+	}
+	
+	#婚纱
+	option = {
+		name = azur_leader_gallery.2.d
+		allow = { 
+			event_target:xuefeng_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.2.desc"
+		hidden_effect = {
+			event_target:xuefeng_leader = {
+				change_leader_portrait = AL_leader_雪风_oath
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#绫波
+country_event = {
+	id = azur_leader_gallery.3
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.3.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:lingbo_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:lingbo_leader
+		room = azurl_06_room
+	}
+
+	option = {
+		name = azur_leader_gallery.3.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_g
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_02
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.f
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_03
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.g
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_04
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.h
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_05
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.i
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_06
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.j
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_07
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.k
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_08
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.l
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_09
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.m
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_10
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.n
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_11
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.o
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_12
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.p
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_13
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.3.q
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_14
+			}
+		}
+	}
+	
+	#婚纱
+	option = {
+		name = azur_leader_gallery.3.c
+		allow = { 
+			event_target:lingbo_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.3.desc"
+		hidden_effect = {
+			event_target:lingbo_leader = {
+				change_leader_portrait = AL_leader_绫波_oath
+			}
+		}
+	}
+	
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#恶毒
+country_event = {
+	id = azur_leader_gallery.4
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.4.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:edu_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:edu_leader
+		room = azurl_04_room
+	}
+
+	option = {
+		name = azur_leader_gallery.4.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.4.desc"
+		hidden_effect = {
+			event_target:edu_leader = {
+				change_leader_portrait = AL_leader_恶毒
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.4.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.4.desc"
+		hidden_effect = {
+			event_target:edu_leader = {
+				change_leader_portrait = AL_leader_恶毒_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.4.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.4.desc"
+		hidden_effect = {
+			event_target:edu_leader = {
+				change_leader_portrait = AL_leader_恶毒_02
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.4.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.4.desc"
+		hidden_effect = {
+			event_target:edu_leader = {
+				change_leader_portrait = AL_leader_恶毒_03
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#克莱蒙梭
+country_event = {
+	id = azur_leader_gallery.5
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.5.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:clemenceau_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:clemenceau_leader
+		room = azurl_04_room
+	}
+
+	option = {
+		name = azur_leader_gallery.5.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.5.desc"
+		hidden_effect = {
+			event_target:clemenceau_leader = {
+				change_leader_portrait = AL_leader_克莱蒙梭
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#腓特烈大帝
+country_event = {
+	id = azur_leader_gallery.6
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.6.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:feitelie_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:feitelie_leader
+		room = azurl_02_room
+	}
+
+	option = {
+		name = azur_leader_gallery.6.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.6.desc"
+		hidden_effect = {
+			event_target:feitelie_leader = {
+				change_leader_portrait = AL_leader_腓特烈大帝
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.6.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.6.desc"
+		hidden_effect = {
+			event_target:feitelie_leader = {
+				change_leader_portrait = AL_leader_腓特烈大帝_01
+			}
+		}
+	}
+	
+	#婚纱
+	option = {
+		name = azur_leader_gallery.6.c
+		allow = { 
+			event_target:feitelie_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.6.desc"
+		hidden_effect = {
+			event_target:feitelie_leader = {
+				change_leader_portrait = AL_leader_腓特烈大帝_oath
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#君主
+country_event = {
+	id = azur_leader_gallery.7
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.7.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:junzhu_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:junzhu_leader
+		room = azurl_03_room
+	}
+
+	option = {
+		name = azur_leader_gallery.7.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.7.desc"
+		hidden_effect = {
+			event_target:junzhu_leader = {
+				change_leader_portrait = AL_leader_君主
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.7.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.7.desc"
+		hidden_effect = {
+			event_target:junzhu_leader = {
+				change_leader_portrait = AL_leader_君主_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.7.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.7.desc"
+		hidden_effect = {
+			event_target:junzhu_leader = {
+				change_leader_portrait = AL_leader_君主_02
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#维内托
+country_event = {
+	id = azur_leader_gallery.8
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.8.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:weineituo_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:weineituo_leader
+		room = azurl_03_room
+	}
+
+	option = {
+		name = azur_leader_gallery.8.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.8.desc"
+		hidden_effect = {
+			event_target:weineituo_leader = {
+				change_leader_portrait = AL_leader_维内托
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.8.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.8.desc"
+		hidden_effect = {
+			event_target:weineituo_leader = {
+				change_leader_portrait = AL_leader_维内托_02
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#黎塞留
+country_event = {
+	id = azur_leader_gallery.9
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.9.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:lisailiu_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:lisailiu_leader
+		room = azurl_04_room
+	}
+
+	option = {
+		name = azur_leader_gallery.9.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.9.desc"
+		hidden_effect = {
+			event_target:lisailiu_leader = {
+				change_leader_portrait = AL_leader_黎塞留
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.9.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.9.desc"
+		hidden_effect = {
+			event_target:lisailiu_leader = {
+				change_leader_portrait = AL_leader_黎塞留_01
+			}
+		}
+	}
+    
+    option = {
+		name = azur_leader_gallery.9.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.9.desc"
+		hidden_effect = {
+			event_target:lisailiu_leader = {
+				change_leader_portrait = AL_leader_黎塞留_02
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#企业
+country_event = {
+	id = azur_leader_gallery.10
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.10.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:qiye_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:qiye_leader
+		room = azur_lane_shops2_room
+	}
+
+	option = {
+		name = azur_leader_gallery.10.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_02
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_03
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_04
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.f
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_05
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.h
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_06
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.i
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_07
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.10.j
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_08
+			}
+		}
+	}
+	
+	#婚纱
+	option = {
+		name = azur_leader_gallery.10.g
+		allow = { 
+			event_target:qiye_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.10.desc"
+		hidden_effect = {
+			event_target:qiye_leader = {
+				change_leader_portrait = AL_leader_企业_oath
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#苏维埃同盟
+country_event = {
+	id = azur_leader_gallery.11
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.11.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:suweiaitongmeng_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:suweiaitongmeng_leader
+		room = azur_lane_shops2_room
+	}
+
+	option = {
+		name = azur_leader_gallery.11.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.11.desc"
+		hidden_effect = {
+			event_target:suweiaitongmeng_leader = {
+				change_leader_portrait = AL_leader_苏维埃同盟
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+#逸仙
+country_event = {
+	id = azur_leader_gallery.12
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.12.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:yixian_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:yixian_leader
+		room = azurl_05_room
+	}
+
+	option = {
+		name = azur_leader_gallery.12.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.12.desc"
+		hidden_effect = {
+			event_target:yixian_leader = {
+				change_leader_portrait = AL_leader_逸仙
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.12.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.12.desc"
+		hidden_effect = {
+			event_target:yixian_leader = {
+				change_leader_portrait = AL_leader_逸仙_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.12.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.12.desc"
+		hidden_effect = {
+			event_target:yixian_leader = {
+				change_leader_portrait = AL_leader_逸仙_g
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.12.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.12.desc"
+		hidden_effect = {
+			event_target:yixian_leader = {
+				change_leader_portrait = AL_leader_逸仙_02
+			}
+		}
+	}
+	
+	#婚纱
+	option = {
+		name = azur_leader_gallery.12.b
+		allow = { 
+			event_target:yixian_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.12.desc"
+		hidden_effect = {
+			event_target:yixian_leader = {
+				change_leader_portrait = AL_leader_逸仙_oath
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#miku
+country_event = {
+	id = azur_leader_gallery.13
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.13.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:miku_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:miku_leader
+		room = azur_lane_xuni_room
+	}
+
+	option = {
+		name = azur_leader_gallery.13.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.13.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_V
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.13.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_ln
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.13.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_mmj
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.13.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_vbs
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.13.f
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_ws
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.13.g
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.13.desc"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_25
+			}
+		}
+	}
+	
+	#生日卡
+	option = {
+		name = azur_leader_gallery.13.h
+		is_dialog_only = yes
+		response_text = "MIKU_15"
+		hidden_effect = {
+			event_target:miku_leader = {
+				change_leader_portrait = AL_leader_初音未来_B
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+
+#LUKA
+country_event = {
+	id = azur_leader_gallery.14
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.14.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:luka_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:luka_leader
+		room = azur_lane_xuni_room
+	}
+
+	option = {
+		name = azur_leader_gallery.14.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.14.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_V
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.14.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_ln
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.14.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_mmj
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.14.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_vbs
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.14.f
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_ws
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.14.g
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_25
+			}
+		}
+	}
+	
+	#生日卡
+	option = {
+		name = azur_leader_gallery.14.h
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.14.desc"
+		hidden_effect = {
+			event_target:luka_leader = {
+				change_leader_portrait = AL_R_leader_巡音流歌_B
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#明石
+country_event = {
+	id = azur_leader_gallery.15
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.15.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:mingshi_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:mingshi_leader
+		room = azurl_06_room
+	}
+
+	option = {
+		name = azur_leader_gallery.15.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.15.desc"
+		hidden_effect = {
+			event_target:mingshi_leader = {
+				change_leader_portrait = AL_leader_明石
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.15.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.15.desc"
+		hidden_effect = {
+			event_target:mingshi_leader = {
+				change_leader_portrait = AL_leader_明石_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.15.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.15.desc"
+		hidden_effect = {
+			event_target:mingshi_leader = {
+				change_leader_portrait = AL_leader_明石_02
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.15.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.15.desc"
+		hidden_effect = {
+			event_target:mingshi_leader = {
+				change_leader_portrait = AL_leader_明石_03
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.15.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.15.desc"
+		hidden_effect = {
+			event_target:mingshi_leader = {
+				change_leader_portrait = AL_leader_明石_04
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.15.f
+		allow = { 
+			event_target:mingshi_leader = {
+				has_trait = leader_azur_trait_shiyue
+			}
+		}
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.15.desc"
+		hidden_effect = {
+			event_target:mingshi_leader = {
+				change_leader_portrait = AL_leader_明石_oath
+			}
+		}
+	}
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+
+#傻白
+country_event = {
+	id = azur_leader_gallery.16
+	title = "azur_leader_gallery.title"
+	desc = "azur_leader_gallery.16.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	trigger = {
+		exists = event_target:elizabeth_leader
+		has_country_flag = azur_lane_gangqu_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:elizabeth_leader
+		room = azurl_03_room
+	}
+
+	option = {
+		name = azur_leader_gallery.16.a
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.16.b
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白_01
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.16.c
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白_02
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.16.d
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白_03
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.16.e
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白_04
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.16.f
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白_05
+			}
+		}
+	}
+	
+	option = {
+		name = azur_leader_gallery.16.g
+		is_dialog_only = yes
+		response_text = "azur_leader_gallery.16.desc"
+		hidden_effect = {
+			event_target:elizabeth_leader = {
+				change_leader_portrait = AL_leader_伊丽莎白_06
+			}
+		}
+	}
+	
+	
+	option = { #关闭
+		name = azur_leader_gallery.close
+		default_hide_option = yes
+	}
+}
+

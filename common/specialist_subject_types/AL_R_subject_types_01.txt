@@ -1,0 +1,42 @@
+specialist_ALelizabeth = {
+	icon = "GFX_diplomacy_specialist_AL_R_elizabeth"
+	icon_large = "GFX_diplomacy_specialist_AL_R_elizabeth_large"
+	preferred_ethic = ethic_militarist
+	base_conversion_time = 20
+
+	on_progress_complete = {
+	
+	}
+
+	levels = {
+		# Level 1
+		{
+			experience_needed_for_next_level = 1200
+			perks = {
+				ALelizabeth_1_modifier
+				ALelizabeth_1_penalties
+				ALelizabeth_1_modifier_1
+				ALelizabeth_1_modifier_2
+				ALelizabeth_3_modifier_1
+			}
+		}
+		# Level 2
+		{
+			experience_needed_for_next_level = 3600
+			perks = {
+				ALelizabeth_2_modifier
+				ALelizabeth_2_penalties
+				ALelizabeth_2_modifier_1
+			}
+		}
+		# Level 3
+		{
+			perks = {
+				ALelizabeth_3_modifier
+				ALelizabeth_3_penalties
+				ALelizabeth_2_modifier_2
+				ALelizabeth_3_modifier_2
+			}
+		}
+	}
+}

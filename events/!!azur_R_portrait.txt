@@ -1,0 +1,127 @@
+namespace = azur_R_portrait
+#立绘恢复
+country_event = {
+	id = azur_R_portrait.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	immediate = {
+		#雪风立绘恢复
+		event_target:xuefeng_leader = {
+			change_leader_portrait = AL_leader_雪风
+		}
+		#长门立绘恢复
+		event_target:changmen_leader = {
+			change_leader_portrait = AL_leader_长门
+		}
+		#恶毒
+		event_target:edu_leader = {
+			change_leader_portrait = AL_leader_恶毒
+		}
+		#绫波
+		event_target:lingbo_leader = {
+			change_leader_portrait = AL_leader_绫波
+		}
+		#露西娅
+		event_target:rushia_leader = {
+			change_leader_portrait = AL_leader_粽子
+		}
+		###领袖###
+		#克莱蒙梭
+		event_target:clemenceau_leader = {
+			change_leader_portrait = AL_leader_克莱蒙梭
+		}
+		#腓特烈大帝
+		event_target:feitelie_leader = {
+			change_leader_portrait = AL_leader_腓特烈大帝
+		}
+		#君主
+		event_target:junzhu_leader = {
+			change_leader_portrait = AL_leader_君主
+		}
+		#维内托
+		event_target:weineituo_leader = {
+			change_leader_portrait = AL_leader_维内托
+		}
+		#黎塞留
+		event_target:lisailiu_leader = {
+			change_leader_portrait = AL_leader_黎塞留
+		}
+		#企业
+		event_target:qiye_leader = {
+			change_leader_portrait = AL_leader_企业
+		}
+		#苏维埃同盟
+		event_target:suweiaitongmeng_leader = {
+			change_leader_portrait = AL_leader_苏维埃同盟
+		}
+		#逸仙
+		event_target:yixian_leader = {
+			change_leader_portrait = AL_leader_逸仙
+		}
+		#
+		#MIKU
+		event_target:miku_leader = {
+			change_leader_portrait = AL_leader_初音未来
+		}
+		#LUKA
+		event_target:luka_leader = {
+			change_leader_portrait = AL_R_leader_巡音流歌
+		}
+		#RIN
+		event_target:rin_leader = {
+			change_leader_portrait = AL_R_leader_镜音铃_莉莉安娜
+		}
+		#明石
+		event_target:mingshi_leader = {
+			change_leader_portrait = AL_leader_明石
+		}
+		#伊丽莎白
+		event_target:elizabeth_leader = {
+			change_leader_portrait = AL_leader_伊丽莎白
+		}
+		#零
+		event_target:siren_zero_leader = {
+			change_leader_portrait = AL_leader_织梦者
+		}
+		
+		#飞龙
+		event_target:azur_R_fallen_leader = {
+			change_leader_portrait = AL_leader_飞龙
+		}
+		
+		#天城
+		event_target:tiancheng = {
+			change_leader_portrait = AL_R_leader_天城
+		}
+		
+		#萊妮絲
+		event_target:萊妮絲_leader = {
+			change_leader_portrait = AL_R_leader_萊妮絲_01
+		}
+		
+		#希
+		event_target:希_leader = {
+			change_leader_portrait = AL_R_leader_希_01
+		}
+		
+		#一歌
+		event_target:ichika_leader = {
+			change_leader_portrait = AL_R_leader_一歌_02
+		}
+		
+		#反击
+		event_target:fanji_meta_leader = {
+			change_leader_portrait = AL_leader_反击meta
+		}
+		
+		#声望
+		event_target:shengwang_meta_leader = {
+			change_leader_portrait = AL_leader_声望meta
+		}
+	}
+}		

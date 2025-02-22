@@ -1,0 +1,51 @@
+azurl_mingshi = {
+	show_in_contacts_list = yes						#是否显示在联系人列表中
+	minimalist_contacts_list_profile = yes			#极简联系人列表配置
+	share_communications = no						#共享信息
+	default_ships = no								#默认船
+	government = no									#政府?
+	uses_origins = no								#起源?
+	ai = {
+		enabled = no								#AI能够启用?
+	}
+	faction = {										#派系
+		hostile = no
+		needs_border_access = no					#需要边境通道
+		generate_borders = no						#生成边疆
+		needs_colony = no							#需要殖民地
+		auto_delete = no							#自动删除
+	}
+	custom_diplomacy = yes
+	modules = {
+		all_technology_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+	}
+}
+
+azurl_tiancheng = {
+	show_in_contacts_list = yes						#是否显示在联系人列表中
+	minimalist_contacts_list_profile = yes			#极简联系人列表配置
+	share_communications = no						#共享信息
+	default_ships = no								#默认船
+	government = no									#政府?
+	uses_origins = no								#起源?
+	ai = {
+		enabled = no								#AI能够启用?
+	}
+	faction = {										#派系
+		hostile = no
+		needs_border_access = no					#需要边境通道
+		generate_borders = no						#生成边疆
+		needs_colony = no							#需要殖民地
+		auto_delete = no							#自动删除
+	}
+	custom_diplomacy = yes
+	modules = {
+		all_technology_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+	}
+}

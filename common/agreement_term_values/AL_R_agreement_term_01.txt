@@ -1,0 +1,29 @@
+specialist_ALelizabeth = {
+	term = specialist_type								#
+	
+	ai_acceptance = {									#接受度
+		overlord = 500
+		subject = 500
+	}
+	
+	loyalty_change = 100								#忠诚度变化
+
+	triggered_loyalty_change = {
+		trigger = {
+			target = { is_ai = yes }
+		}
+		loyalty_change = 0
+		ai_acceptance = {
+			overlord = 500
+			subject = 500
+		}
+	}
+
+	
+	activate_effect = {
+		convert_to_specialist = specialist_ALelizabeth
+	}
+	potential = {
+		agreement_preset = preset_AL_R_elizabeth
+	}
+}

@@ -1,0 +1,205 @@
+#增加区划
+decision_quhua_project_AL_R = {
+	owned_planets_only = yes
+	
+	enactment_time = 720
+	resources = {
+		category = decisions
+		cost = {
+			influence = 98
+			energy = 5000
+			minerals = 5000
+			alloys = 5000
+		}
+	}
+	
+	potential = {
+		has_planet_flag = azur_world
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+	}
+	
+	effect = {
+		add_deposit = d_azur_quhua
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#建造
+decision_jianzao_project_AL_R = {
+	owned_planets_only = yes
+	
+	#enactment_time = 1
+	resources = {
+		category = decisions
+		cost = {
+			sr_mofang = 2
+			energy = 1500
+		}
+	}
+	
+	potential = {
+		has_planet_flag = azur_world
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_jianzao_project_AL_R_effect
+		hidden_effect = {
+			locked_random_list = {
+				1 = { add_deposit = d_azur_decrepit_dwellings }
+				1 = { add_deposit = d_azur_decrepit_dwellings_2 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_3 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_4 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_5 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_6 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_7 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_8 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_9 }
+				1 = { add_deposit = d_azur_decrepit_dwellings_10 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#重建
+decision_city_planet_project_AL_R = {
+	
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			energy = 10000
+			minerals = 10000
+			alloys = 10000
+		}
+	}
+	
+	potential = {
+		exists = space_owner
+		exists = from
+		space_owner = { is_same_value = from }
+		from = {
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOT = {
+			is_planet_class = pc_azur_city_R
+		}
+		has_planet_flag = azur_world
+	}
+	
+	effect = {
+		custom_tooltip = decision_city_planet_project_AL_R_effect
+		hidden_effect = {
+			change_pc = pc_azur_city_R
+			set_planet_entity = {
+				entity = "azur_R_planet"
+				graphical_culture = owner
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#港区理想城改造
+decision_arcology_project_AL_R_cityplanet = {
+	owned_planets_only = yes
+	icon = decision_arcology_project
+
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			minerals = 40000
+			alloys = 40000
+		}
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			#mod星球类型
+			is_planet_class = pc_azur_miku_desert
+			is_planet_class = pc_azur_miku_ocean
+			is_planet_class = pc_azur_city_R
+			is_planet_class = pc_azur_VR
+			is_planet_class = pc_azur_r_ringworld_habitable
+			is_planet_class = pc_azur_pobai_R
+			is_planet_class = pc_azur_R_fallen_ringworld_habitable
+			is_planet_class = pc_azur_cityplanet_R
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+		}
+		is_artificial = no
+		exists = owner
+		owner = { has_ascension_perk = ap_AL_R_kansen_tech_01 }
+	}
+
+	allow = {
+		if = {
+			limit = { owner = { is_ai = no } }
+			custom_tooltip = {
+				fail_text = decision_arcology_project_AL_R_cityplanet_requirements
+				free_district_slots < 1
+				num_districts = { type = district_farming value < 1 }
+				num_districts = { type = district_mining value < 1 }
+				num_districts = { type = district_generator value < 1 }
+				num_districts = { type = district_farming_uncapped value < 1 }
+				num_districts = { type = district_mining_uncapped value < 1 }
+				num_districts = { type = district_generator_uncapped value < 1 }
+			}
+			custom_tooltip = {
+				fail_text = legendary_leader_decision_arcology_project
+				NOT = { has_planet_flag = legendary_leader_planet }
+			}
+		}
+		num_uncleared_blockers < 1
+	}
+
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_arcology_project_AL_R_cityplanet_effects
+		hidden_effect = {
+			save_deposits = yes
+			clear_deposits = yes
+			restore_saved_deposits = yes
+			change_pc = pc_azur_cityplanet_R
+			set_planet_entity = {
+				entity = "azur_R_planet"
+				graphical_culture = owner
+			}
+			change_planet_size = 10
+			add_district = district_AL_R_cityplanet_01
+			add_district = district_AL_R_cityplanet_01
+			add_district = district_AL_R_cityplanet_01
+			add_district = district_AL_R_cityplanet_01
+			add_district = district_AL_R_cityplanet_01
+			add_district = district_AL_R_cityplanet_01
+			add_district = district_AL_R_cityplanet_01
+			planet_event = { id = azur_R_megastructures.11 }
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+

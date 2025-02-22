@@ -1,0 +1,220 @@
+#基址
+mega_azur_miku_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	entity_offset = { x = -12 y = -12 }
+	build_time = 7200
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 6480
+			sr_hongjianjian = 6480
+			influence = 300
+		}
+
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	prerequisites = { "tech_azur_miku_1" }
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_mega_art_installation"
+			from = { NOT = { has_country_flag = built_mega_azur_0 } }
+		}
+        custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			NOR = { has_star_flag = ring_world_built }
+		}
+	}
+	
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+				colonizable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				NOR = { 
+					is_planet_class = pc_gas_giant
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+				}
+			}
+		}
+	}
+	
+	# root = system
+	# from = country	
+	ai_weight = {
+		factor = 0
+		
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+        set_star_flag = azur_r_miku_built
+		from = { set_country_flag = built_mega_azur_0 }
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+			set_planet_flag = has_megastructure
+		}
+	}
+}
+
+#阶段1
+mega_azur_miku_1 = {
+	entity = "azur_r_extra_dimensional_01_starbase_exd_0_entity"
+	construction_entity = "azur_r_extra_dimensional_01_starbase_exd_0_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -10 y = -10 }
+	build_time = 10800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 64800
+			sr_hongjianjian = 64800
+		}
+		
+		produces = {
+		}
+
+		upkeep = {
+			energy = 30
+		}
+	}
+
+	upgrade_from = {
+		mega_azur_miku_0
+	}
+
+	prerequisites = { "tech_azur_miku_1" }
+
+	country_modifier = {
+	}
+
+	on_build_complete = {
+		from = { country_event = { id = azur_R_megastructures.831 } }
+	}
+}
+
+mega_azur_miku_2 = {
+	entity = "azur_r_extra_dimensional_01_starbase_exd_entity"
+	construction_entity = "azur_r_extra_dimensional_01_starbase_exd_entity"
+	portrait = "GFX_azur_mega_miku_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = 0 y = 0 }
+	build_time = 10800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 129600
+			sr_hongjianjian = 129600
+		}
+		
+		produces = {
+			unity = 3939
+		}
+
+		upkeep = {
+			energy = 100
+		}
+	}
+	
+	upgrade_from = {
+		mega_azur_miku_1
+	}
+
+	prerequisites = { "tech_azur_miku_1" }
+	show_prereqs = no
+
+	country_modifier = {
+		planet_amenities_mult = 0.39
+	}
+
+	on_build_complete = {
+		set_star_flag = mega_azur_miku_installation_built
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = azur_R_megastructures.39 } 
+		}
+		solar_system = {
+			if = {
+				limit = {
+					NOT = {
+						any_system_ambient_object = { has_ambient_object_flag = extradimensional_system_effect }
+					}
+				}
+				fromfrom.planet = {
+					create_ambient_object = {
+						type = "azur_R_miku_mega_01"
+						location = this
+					}
+					last_created_ambient_object = {
+						set_ambient_object_flag = extradimensional_system_effect
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+			}
+		}
+	}
+}

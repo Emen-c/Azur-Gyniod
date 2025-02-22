@@ -1,0 +1,11 @@
+#堕落
+is_azur_fallen_empire = {
+	is_country_type = fallen_empire
+	has_authority = auth_azur_fallen_dictatorial
+}
+
+#觉醒堕落
+is_azur_awakened_fallen_empire = {
+	is_country_type = awakened_fallen_empire
+	has_authority = auth_azur_fallen_dictatorial
+}

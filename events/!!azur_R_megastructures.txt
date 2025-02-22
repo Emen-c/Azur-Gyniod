@@ -1,0 +1,179 @@
+namespace = azur_R_megastructures
+
+####巨构:世界计划 多彩舞台 弹出
+country_event = {
+	id = "azur_R_megastructures.831"
+	title = "azur_d.831.name"
+	desc = azur_d.831.desc
+	show_sound = event_mystic_reveal
+	picture = GFX_azur_mega_event_miku_1
+	is_triggered_only = yes
+	fire_only_once = yes
+	location = FROM
+
+	option = {
+		name = azur_d.831.a
+	}
+}
+
+country_event = {
+	id = "azur_R_megastructures.39"
+	title = "azur_d.39.name"
+	desc = azur_d.39.desc
+	show_sound = event_mystic_reveal
+	picture = GFX_azur_mega_event_miku_2
+	is_triggered_only = yes
+	fire_only_once = yes
+	location = FROM
+
+	option = {
+		name = azur_d.39.a
+	}
+	
+	option = {
+		name = azur_d.39.b
+	}
+}
+
+####巨构：虚拟现实世界 弹出
+country_event = {
+	id = "azur_R_megastructures.2"
+	title = "azur_d.2.name"
+	desc = azur_d.2.desc
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	location = FROM
+
+	option = {
+		name = azur_d.2.a.option
+	}
+	
+	option = {
+		name = azur_d.2.b.option
+	}
+}
+
+####巨构：环世界 弹出
+country_event = {
+	id = "azur_R_megastructures.3"
+	title = "azur_d.3.name"
+	desc = azur_d.3.desc
+	show_sound = event_ringworld_build_start
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes
+	location = FROM
+
+	option = {
+		name = azur_d.3.a
+	}
+}
+
+country_event = {
+	id = "azur_R_megastructures.4"
+	title = "azur_d.4.name"
+	desc = {
+		text = azur_d.4.desc.a
+		trigger = {
+			NOT = { has_country_flag = azur_r_built_ringworld }
+		}
+	}
+	desc = {
+		text = azur_d.4.desc.b
+		trigger = {
+			has_country_flag = azur_r_built_ringworld
+		}
+	}
+	show_sound = event_ringworld_build_complete
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes
+	location = FROM
+    
+    after = {
+        if = {
+            limit = { NOT = { has_country_flag = azur_r_built_ringworld } }
+            set_country_flag = azur_r_built_ringworld
+        }
+	}
+
+	option = {
+		name = azur_d.4.a
+	}
+	
+	option = {
+		name = azur_d.4.b
+		trigger = {
+			NOT = {
+				has_country_flag = azur_r_built_ringworld
+			}
+		}
+		hidden_effect = {
+			custom_tooltip = azur_d.4.b.tooltip
+		}
+	}
+	
+	option = {
+		name = azur_d.4.c
+	}
+}
+
+#纳米构建仪巨构
+country_event = {
+	id = "azur_R_megastructures.5"
+	title = "azur_d.5.name"
+	desc = azur_d.5.desc
+	#show_sound = tut_msg_ORBITAL_RING
+	picture = GFX_evt_orbital_ring
+	is_triggered_only = yes
+	location = FROM
+    fire_only_once = yes
+	
+    option = {
+		name = azur_d.5.option
+	}
+}
+
+#文物建筑
+planet_event = {
+	id = "azur_R_megastructures.10"
+	title = "azur_d.10.name"
+	desc = azur_d.10.desc
+	picture = GFX_azur_wenwu_01
+	is_triggered_only = yes
+	location = root
+	trackable = yes
+	
+	trigger = {
+		has_building = azur_R_building_azur_wenwu
+		owner = {
+			NOT = { has_country_flag = azur_wanmei_wenwu }
+		}
+	}
+	
+	immediate = {
+		owner = {
+			set_country_flag = azur_wanmei_wenwu
+		}
+	}
+
+	option = {
+		name = azur_d.10.a
+	}
+}
+
+#港区理想城改造
+planet_event = {
+	id = "azur_R_megastructures.11"
+	title = "azur_d.11.name"
+	desc = azur_d.11.desc
+	picture = GFX_decision_arcology_project_AL_R_cityplanet
+	show_sound = event_cityscape
+	is_triggered_only = yes
+	location = FROM
+    fire_only_once = yes
+	
+    option = {
+		name = azur_d.11.option
+	}
+}

@@ -1,0 +1,971 @@
+#社会学科技
+#明石
+tech_azur_R_building_mingshi = {
+	cost = 5000
+	area = society
+	tier = 2
+	category = { azur_R_building }
+	prerequisites = {  }
+	weight = 90
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_building_mingshi_02 = {
+	cost = 7000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_mingshi }
+	weight = 70
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_building_mingshi_03 = {
+	cost = 9000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_mingshi_02 }
+	weight = 70
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#葱田
+tech_azur_R_building_food = {
+	cost = 8000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_mingshi tech_food_processing_2 }
+	weight = 70
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#极光之壁
+tech_azur_R_building_housing = {
+	cost = 8000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_mingshi tech_paradise_dome }
+	weight = 70
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#异世界冒险终端
+tech_azur_R_building_amenity_01 = {
+	cost = 8000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_mingshi tech_hyper_entertainment_forum }
+	weight = 70
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#战术学院
+tech_azur_R_building_army_01 = {
+	cost = 8000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_global_defense_grid  }
+	weight = 70
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#星海基地-「猎户座」
+tech_azur_R_building_army_02 = {
+	cost = 12000
+	area = society
+	tier = 4
+	category = { azur_R_building }
+	prerequisites = { tech_centralized_command  }
+	weight = 50
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#舰娘军团
+tech_azur_army_jianniang = {
+	cost = 12000
+	area = society
+	tier = 3
+	category = { military_theory }
+	prerequisites = { tech_azur_R_building_army_01 }
+	weight = 65
+	
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#凝聚力
+tech_azur_R_building_unity_01 = {
+	cost = 16000
+	area = society
+	tier = 4
+	category = { azur_R_building }
+	prerequisites = { tech_galactic_administration  }
+	weight = 50
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_building_unity_02 = {
+	cost = 16000
+	area = society
+	tier = 3
+	category = { azur_R_building }
+	prerequisites = { tech_galactic_administration  }
+	weight = 50
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#炼金术士产出
+tech_azur_R_building_refinery_produces = {
+	cost = 24000
+	area = physics
+	tier = 4
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_refinery tech_arcane_deciphering }
+	weight = 50
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_building_refinery_produces_title"
+			desc = "tech_azur_R_building_refinery_produces_diplo"
+		}
+	}
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_building_refinery_produces_02 = {
+	cost = 24000
+	area = physics
+	tier = 5
+	category = { azur_R_building }
+	prerequisites = { tech_azur_R_building_refinery tech_rift_sphere }
+	weight = 50
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_building_refinery_produces_02_title"
+			desc = "tech_azur_R_building_refinery_produces_diplo"
+		}
+	}
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#旧
+#塞拉艾诺图书馆
+tech_azur_sailaainuo_tushuguan = {
+	cost = 24000
+	area = society
+	tier = 4
+	category = { psionics }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#神社-事业
+tech_azur_qifu1 = {
+	cost = @tier1cost2
+	area = society
+	tier = 1
+	category = { statecraft }
+	weight = @tier1weight2
+
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+	}
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#神社-姻缘
+tech_azur_qifu2 = {
+	cost = @tier1cost2
+	area = society
+	tier = 1
+	category = { statecraft }
+	weight = @tier1weight2
+
+	modifier = {
+		pop_happiness = 0.10
+	}
+
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#巨构
+tech_azur_miku_1 = {
+	cost = 320000
+	area = society
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier5weight3
+	is_rare = yes
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "azur_mega_1"
+			desc = "azur_mega_1_desc"
+		}
+	}
+
+	potential = {
+		has_ascension_perk = ap_AL_R_kansen_tech_02
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+##文物##
+tech_azur_wenwu_1 = {
+	cost = 480000
+	area = society
+	tier = 5
+	category = { biology }
+	prerequisites = { "tech_arcane_deciphering" }
+	weight = 30
+	
+	potential = {
+		has_ascension_perk = ap_AL_R_kansen_tech_02
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_azur_wenwu_2 = {
+	cost = 720000
+	area = society
+	tier = 5
+	category = { biology }
+	prerequisites = { "tech_azur_wenwu_1" }
+	weight = 30
+	
+	potential = {
+		has_ascension_perk = ap_AL_R_kansen_tech_02
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+tech_azur_wenwu_3 = {
+	cost = 960000
+	area = society
+	tier = 5
+	category = { biology }
+	prerequisites = { "tech_azur_wenwu_2" }
+	weight = 30
+	
+	potential = {
+		has_ascension_perk = ap_AL_R_kansen_tech_02
+		has_country_flag = azur_lane_gangqu_country
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+####破败星球####
+tech_pobai_city_01 = {
+	cost = 8000
+	area = society
+	tier = 3
+	category = { biology }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = {  }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "azur_R_pobai_city_01"
+			desc = "azur_R_pobai_city_01_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_rushia
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_pobai_city_02 = {
+	cost = 10000
+	area = society
+	tier = 3
+	category = { biology }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_pobai_city_01 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "azur_R_pobai_city_02"
+			desc = "azur_R_pobai_city_02_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_rushia
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+tech_pobai_city_03 = {
+	cost = 12000
+	area = society
+	tier = 4
+	category = { biology }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_pobai_city_02 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "azur_R_pobai_city_03"
+			desc = "azur_R_pobai_city_03_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_rushia
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_pobai_city_04 = {
+	cost = 16000
+	area = society
+	tier = 5
+	category = { biology }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_pobai_city_03 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "azur_R_pobai_city_04"
+			desc = "azur_R_pobai_city_04_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_rushia
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#星乃一歌加成
+#食物
+tech_azur_R_ichika_01 = {
+	cost = 12000
+	area = society
+	tier = 3
+	category = { biology }
+	weight = 60
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_01_title"
+			desc = "tech_azur_R_ichika_01_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_02 = {
+	cost = 16000
+	area = society
+	tier = 3
+	category = { biology }
+	weight = 55
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_azur_R_ichika_01 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_02_title"
+			desc = "tech_azur_R_ichika_02_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_03 = {
+	cost = 20000
+	area = society
+	tier = 4
+	category = { biology }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_azur_R_ichika_02 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_03_title"
+			desc = "tech_azur_R_ichika_03_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#科研点
+tech_azur_R_ichika_10 = {
+	cost = 16000
+	area = society
+	tier = 4
+	category = { statecraft }
+	weight = 55
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_10_title"
+			desc = "tech_azur_R_ichika_10_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_11 = {
+	cost = 20000
+	area = society
+	tier = 4
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_azur_R_ichika_10 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_11_title"
+			desc = "tech_azur_R_ichika_11_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_12 = {
+	cost = 24000
+	area = society
+	tier = 4
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_azur_R_ichika_11 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_12_title"
+			desc = "tech_azur_R_ichika_12_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#消费品
+tech_azur_R_ichika_21 = {
+	cost = 16000
+	area = society
+	tier = 4
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_21_title"
+			desc = "tech_azur_R_ichika_21_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_22 = {
+	cost = 20000
+	area = society
+	tier = 4
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { tech_azur_R_ichika_21 }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_ichika_22_title"
+			desc = "tech_azur_R_ichika_22_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#食物
+tech_azur_R_ichika_all_05 = {
+	cost = 25000
+	area = society
+	tier = 5
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	modifier = {
+		pop_category_workers_food_produces_add = 10
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_all_06 = {
+	cost = 30000
+	area = society
+	tier = 5
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { "tech_azur_R_ichika_all_05" }
+	
+	modifier = {
+		pop_category_workers_food_produces_add = 10
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#凝聚力
+tech_azur_R_ichika_all_07 = {
+	cost = 25000
+	area = society
+	tier = 5
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	modifier = {
+		pop_category_specialists_unity_produces_add = 10
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_all_08 = {
+	cost = 30000
+	area = society
+	tier = 5
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { "tech_azur_R_ichika_all_07" }
+	
+	modifier = {
+		pop_category_specialists_unity_produces_add = 20
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_all_09 = {
+	cost = 25000
+	area = society
+	tier = 5
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	modifier = {
+		pop_category_rulers_unity_produces_add = 10
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+tech_azur_R_ichika_all_10 = {
+	cost = 30000
+	area = society
+	tier = 5
+	category = { statecraft }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	prerequisites = { "tech_azur_R_ichika_all_09" }
+	
+	modifier = {
+		pop_category_rulers_unity_produces_add = 20
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		has_country_flag = azur_R_XI_leader_ichika
+		owner = { 
+			exists = event_target:ichika_leader
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#特质
+tech_azur_R_trait_mofang = {
+	cost = 20000
+	area = society
+	tier = 3
+	category = { statecraft }
+	weight = 30
+	is_rare = yes
+	is_reverse_engineerable = no                 #逆向
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_azur_R_trait_mofang_title"
+			desc = "tech_azur_R_trait_mofang_desc"
+		}
+	}
+	
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+		owner = { 
+			has_relic = relic_azur_R_mofang_01
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+
+
+
+
+

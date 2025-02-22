@@ -1,0 +1,224 @@
+#新国策
+#领航员-TB
+civic_AL_R_01 = {
+	icon = "interface/icons/governments/civic_AL_R_01.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_01
+	modification = yes
+	modifier = {
+		country_edict_fund_add = 150							#法令经费
+		all_technology_research_speed = 0.15					#科研速度
+		science_ship_survey_speed = 0.15						#调查速度
+		ship_anomaly_generation_chance_mult = 0.15				#异常发现概率
+		ship_archaeological_site_excavation_speed_mult = 0.15	#考古速度
+	}
+}
+
+#雪亲王的护航编队
+civic_AL_R_02 = {
+	icon = "interface/icons/governments/civic_AL_R_02.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_02
+	modification = yes
+	modifier = {
+		country_naval_cap_add = 100
+		command_limit_add = 40
+	}
+}
+
+#唯一的商店看板娘
+civic_AL_R_03 = {
+	icon = "interface/icons/governments/civic_AL_R_03.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_03
+	modification = yes
+	modifier = {
+		pop_job_trade_mult = 0.25
+	}
+}
+
+#关岛啾啾特效工作室
+civic_AL_R_04 = {
+	icon = "interface/icons/governments/civic_AL_R_04.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	#description = AL_R_CIVIC_04
+	modification = yes
+	modifier = {
+		pop_category_specialists_unity_produces_add = 1
+		pop_category_rulers_unity_produces_add = 2
+		planetary_ascension_effect_mult = 0.25
+		planetary_ascension_cost_mult = -0.25
+		diplo_weight_mult = 0.20
+	}
+}
+
+#滨江机械设计工作室
+civic_AL_R_05 = {
+	icon = "interface/icons/governments/civic_AL_R_05.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_05
+	modification = yes
+	modifier = {
+		country_megastructure_build_cap_add = 1
+		megastructure_build_speed_mult = 0.20
+	}
+}
+
+#铁血港区科学顾问团
+civic_AL_R_06 = {
+	icon = "interface/icons/governments/civic_AL_R_06.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_06
+	modification = yes
+	modifier = {
+		planet_technician_energy_produces_add = 3
+		planet_miners_minerals_produces_add = 3
+		planet_farmers_food_produces_add = 3
+		planet_metallurgists_alloys_produces_add = 1.5
+		planet_artisans_consumer_goods_produces_add = 1.5
+	}
+}
+
+#协议
+civic_AL_R_07 = {
+	icon = "interface/icons/governments/civic_AL_R_07.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_07
+	modification = yes
+	modifier = {
+		country_base_influence_produces_add = -1
+	}
+}
+
+#起始与终焉之神
+civic_AL_R_08 = {
+	icon = "interface/icons/governments/civic_AL_R_08.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_08
+	modification = yes
+	modifier = {
+		ship_shield_hardening_add = 10.00
+		ship_armor_hardening_add = 10.00
+		ship_shield_reduction = -1.00
+		ship_armor_reduction = -1.00
+	}
+}
+
+#游戏业界
+civic_AL_R_09 = {
+	icon = "interface/icons/governments/civic_AL_R_09.dds"
+	potential = {
+		authority = {
+			OR = { 
+				value = auth_azur_lane_0
+                value = auth_azur_lane_1
+				value = auth_azur_lane_2
+				value = auth_azur_dictatorial
+			}
+		}
+	}
+	random_weight = { 
+		base = 0 
+	}
+	description = AL_R_CIVIC_09
+	modification = yes
+	modifier = {
+		
+	}
+}

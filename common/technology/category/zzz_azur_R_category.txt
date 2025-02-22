@@ -1,0 +1,24 @@
+####
+#	Technology categories
+#
+#	weight_modifier = {
+#		factor = 1
+#		modifier = {
+#			add = 10
+#			OR = {
+#				has_government = "military_dictatorship"
+#				has_government = "martial_empire"
+#			}
+#		}
+#	}
+####
+
+
+azur_R_ship_part = {
+	icon = "gfx/interface/icons/technologies/AZUR_R_Ordnance_Testing_Report.dds"
+}
+
+azur_R_building = {
+	icon = "gfx/interface/icons/technologies/AZUR_R_Ordnance_Testing_Report_2.dds"
+}
+

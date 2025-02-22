@@ -1,0 +1,425 @@
+#强关分部
+decision_close_branch_office_AL_R = {
+	owned_planets_only = yes
+	
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+        has_branch_office = yes
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+	}
+	
+	effect = {
+        branch_office_owner = { 
+            save_event_target_as = office_owner
+            set_timed_country_flag = { flag = criminal_branch_closed_cooldown days = 72000 }
+        }
+		close_branch_office = yes
+        set_timed_planet_flag = { flag = criminal_branch_closed_cooldown_planet@event_target:office_owner days = 72000 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#破败化星球
+decision_change_pc_pobai_AL_R = {
+	owned_planets_only = yes
+	
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+		}
+	}
+	
+	potential = {
+		NOT = { is_planet_class = pc_azur_pobai_R }
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+			exists = event_target:rushia_leader
+		}
+	}
+	
+	effect = {
+		#改变星球类型
+		custom_tooltip = 整个星球将破败化
+		hidden_effect = {
+			clear_deposits = yes
+			change_pc = pc_azur_pobai_R
+			set_planet_entity = {
+				entity = "azur_R_pobai_planet_01_entity"		
+				graphical_culture = no
+			}
+			remove_all_buildings = yes
+			add_building = azur_R_building_colony_pobai
+			clear_planet_modifiers = yes
+			if = {
+				limit = {
+					root.owner = { has_country_flag = azur_R_rushia }
+				}
+				add_district = district_azur_R_pobai_city_01
+			}
+			if = {
+				limit = {
+					root.owner = { NOT = { has_country_flag = azur_R_rushia } }
+				}
+				reset_planet = yes
+				add_district = district_azur_R_pobai_city_03
+			}
+			#锁定星球
+			set_planet_flag = 破败星球
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#开启
+decision_change_pc_pobai_AL_R_1 = {
+	owned_planets_only = yes
+	
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+		
+		}
+	}
+	
+	potential = {
+		is_planet_class = pc_azur_pobai_R
+		NOT = { has_global_flag = 破败化开启 }
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+			exists = event_target:rushia_leader
+		}
+	}
+	
+	effect = {
+		#改变星球类型
+		custom_tooltip = 开启随机破败化星球
+		hidden_effect = {
+			set_global_flag = 破败化开启
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#关闭
+decision_change_pc_pobai_AL_R_2 = {
+	owned_planets_only = yes
+	
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+		
+		}
+	}
+	
+	potential = {
+		is_planet_class = pc_azur_pobai_R
+		has_global_flag = 破败化开启
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_rushia
+			exists = event_target:rushia_leader
+		}
+	}
+	
+	effect = {
+		#改变星球类型
+		custom_tooltip = 关闭随机破败化星球
+		hidden_effect = {
+			remove_global_flag = 破败化开启
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#改为深海城
+decision_change_pc_azur_miku_ocean_AL_R = {
+	owned_planets_only = yes
+	
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			energy = 5000
+			minerals = 5000
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_country_flag = has_tr_hatsune_miku
+			has_tradition = tr_hatsune_miku_02
+		}
+		NOT = {
+			has_planet_flag = 深海城
+		}
+	}
+	
+	effect = {
+		#改变星球类型
+		custom_tooltip = 将星球改造为深海城
+		hidden_effect = {
+			clear_blockers = yes
+			clear_deposits = yes
+			change_pc = pc_azur_miku_ocean
+			set_planet_entity = {
+				entity = "azur_miku_ocean_planet"		
+				graphical_culture = no
+			}
+			add_district = district_azur_miku_ocean_1
+			set_name = "pc_azur_miku_ocean_01"
+			set_planet_flag = 深海城
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#希
+decision_XI_UI_AL_R = {
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 10
+		}
+	}
+	
+	potential = {
+		planet = {
+				has_building = azur_R_building_sailaainuo_01
+			}
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_R_XI_has
+			NOT = { has_country_flag = azur_R_XI_UI }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_XI_UI_AL_R_tooltip
+		hidden_effect = {
+			owner = {
+				country_event = { id = azur_leader_lysm.104 }
+				set_timed_country_flag = { flag = azur_R_XI_UI days = 10 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#祝圣世界
+decision_consecrated_worlds_AL_R = {
+	resources = {
+		category = decisions
+		cost = {
+			unity = 3939
+		}
+	}
+
+	potential = {
+		exists = space_owner
+		exists = from
+		space_owner = { is_same_value = from }
+		from = {
+			has_ascension_perk = ap_consecrated_worlds
+			has_country_flag = has_tr_hatsune_miku
+		}
+		is_planet_class = pc_azur_miku_desert
+		NOR = {
+			has_planet_flag = consecrated@from
+			has_modifier = consecrated_quality_1
+			has_modifier = consecrated_quality_2
+			has_modifier = consecrated_quality_3
+			has_modifier = consecrated_quality_4
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			from = {
+				check_variable = {
+					which = num_consecrated_worlds
+					value < 3
+				}
+			}
+			fail_text = consecrated_worlds_too_many
+		}
+		custom_tooltip = {
+			NOT = { exists = owner }
+			fail_text = consecrated_worlds_planet_owned
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_consecrated_worlds_effects_custom
+		# determine quality tier, set variable
+		hidden_effect = {
+			set_planet_flag = consecrated@from
+			from = {
+				if = {
+					limit = { check_variable = { which = num_consecrated_worlds value < 1 }	}
+					set_variable = {
+						which = num_consecrated_worlds
+						value = 0
+					}
+				}
+				change_variable = {
+					which = num_consecrated_worlds
+					value = 1
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = consecrated_variable
+							value < 1
+						}
+					}
+					set_variable = {
+						which = consecrated_variable
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = { is_planet_class = pc_azur_miku_desert }
+				custom_tooltip = consecrated_worlds_perfect
+				random_list = {
+					0 = {
+						add_modifier = {
+							modifier = consecrated_quality_1
+							days = -1
+						}
+						from = {
+							change_variable = {
+								which = consecrated_variable
+								value = 1
+							}
+						}
+					}
+					0 = {
+						add_modifier = {
+							modifier = consecrated_quality_2
+							days = -1
+						}
+						from = {
+							change_variable = {
+								which = consecrated_variable
+								value = 2
+							}
+						}
+					}
+					0 = {
+						add_modifier = {
+							modifier = consecrated_quality_3
+							days = -1
+						}
+						from = {
+							change_variable = {
+								which = consecrated_variable
+								value = 3
+							}
+						}
+					}
+					100 = {
+						add_modifier = {
+							modifier = consecrated_quality_4
+							days = -1
+						}
+						from = {
+							change_variable = {
+								which = consecrated_variable
+								value = 4
+							}
+						}
+					}
+				}
+			}
+			# recalculate modifier
+			from = {
+				recalculate_consecrated_world_modifier = yes
+				#砂之惑星
+				add_modifier = {
+					modifier = azur_R_consecrated_worlds
+					days = -1
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#收集灵魂
+decision_La_Ruina_AL_R = {
+	#owned_planets_only = yes
+	
+	enactment_time = 9
+	resources = {
+		category = decisions
+		cost = {
+			influence = 648
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+			has_country_flag = azur_lane_leader_changmen
+			has_country_flag = azur_R_building_colony_nagato_03_r_built
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			is_capital = no
+			fail_text = has_building_azur_R_building_colony_nagato_01
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_La_Ruina_AL_R_tooltip
+		hidden_effect = {
+			planet_event = { id = azur_R_nagato.9 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

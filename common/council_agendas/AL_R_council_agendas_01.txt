@@ -1,0 +1,13 @@
+agenda_AL_R_MOYU_opportunities = {
+	agenda_cost = 12000
+	agenda_cooldown = 0
+	potential = {
+		has_country_flag = azur_lane_gangqu_country
+	}
+	allow = {
+		always = yes
+	}
+	modifier = {
+		pop_citizen_happiness = 0.2
+	}
+}

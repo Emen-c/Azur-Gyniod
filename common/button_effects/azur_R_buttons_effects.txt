@@ -1,0 +1,1271 @@
+#超天酱
+AL_R_超天酱_01 = {
+	effect = {
+	}
+	potential = {
+		FROM = { 
+			check_variable = { which = azur_R_XI_UI value = 0 }
+		}
+	}
+	allow = {
+	}
+}
+
+AL_R_希_01 = {
+	effect = {
+	}
+	potential = {
+		FROM = { 
+			check_variable = { which = azur_R_XI_UI value = 1 }
+		}
+	}
+	allow = {
+	}
+}
+
+#彩蛋
+AL_R_anniu_nanoda = {
+	effect = {
+		custom_tooltip = azur_r_set_nanoda
+		hidden_effect = {
+			change_variable = {
+				which = azur_R_nanoda
+				value = 1
+			}
+		}
+	}
+	potential = {
+		
+	}
+	allow = {
+		
+	}
+}
+
+#切换界面
+AL_R_anniu_模式切换 = {
+	effect = {
+		custom_tooltip = azur_r_moshiqiehuan
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = azur_lane_R_leader_界面_1
+				}
+				remove_country_flag = azur_lane_R_leader_界面_1
+				set_country_flag = azur_lane_R_leader_界面_2
+				break = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = azur_lane_R_leader_界面_2
+				}
+				remove_country_flag = azur_lane_R_leader_界面_2
+				set_country_flag = azur_lane_R_leader_界面_1
+				break = yes
+			}
+		}
+	}
+	potential = {
+		
+	}
+	allow = {
+		
+	}
+}
+
+AL_R_anniu_长门 = {
+	effect = {
+		custom_tooltip = azur_r_set_changmen
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_长门
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_长门
+			}
+		}
+	}
+}
+
+AL_R_anniu_敦刻尔克 = {
+	effect = {
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_敦刻尔克
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_敦刻尔克
+			}
+		}
+	}
+}
+
+AL_R_anniu_克莱蒙梭 = {
+	effect = {
+		custom_tooltip = azur_r_set_clemenceau
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_克莱蒙梭
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_克莱蒙梭
+			}
+		}
+	}
+}
+
+AL_R_anniu_腓特烈大帝 = {
+	effect = {
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_腓特烈大帝
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_腓特烈大帝
+			}
+		}
+	}
+}
+
+AL_R_anniu_君主 = {
+	effect = {
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_君主
+	}
+	potential = {
+		has_country_flag = azur_lane_R_leader_界面_1
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_君主
+			}
+		}
+	}
+}
+
+AL_R_anniu_维内托 = {
+	effect = {
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_维内托
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_维内托
+			}
+		}
+	}
+}
+
+AL_R_anniu_黎塞留 = {
+	effect = {
+		custom_tooltip = azur_r_set_lisailiu
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_黎塞留
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_黎塞留
+			}
+		}
+	}
+}
+
+AL_R_anniu_企业 = {
+	effect = {
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_企业
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_企业
+			}
+		}
+	}
+}
+
+AL_R_anniu_苏维埃同盟 = {
+	effect = {
+		custom_tooltip = azur_r_set_suweiaitongmeng
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_苏维埃同盟
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_苏维埃同盟
+			}
+		}
+	}
+}
+
+AL_R_anniu_逸仙 = {
+	effect = {
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_逸仙
+	}
+	potential = {
+		
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_逸仙
+			}
+		}
+	}
+}
+
+AL_R_anniu_伊丽莎白 = {
+	effect = {
+		custom_tooltip = azur_r_set_shabai
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_伊丽莎白
+	}
+	potential = {
+		has_country_flag = azur_lane_R_leader_界面_2
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_伊丽莎白
+			}
+		}
+	}
+}
+
+AL_R_anniu_零 = {
+	effect = {
+		custom_tooltip = azur_r_set_zero
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_零
+	}
+	potential = {
+		has_country_flag = azur_lane_R_leader_界面_2
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_零
+			}
+		}
+	}
+}
+
+AL_R_anniu_初音未来 = {
+	effect = {
+		custom_tooltip = azur_r_set_miku
+		set_country_flag = AL_R_leader_has_set
+		set_country_flag = AL_R_leader_set_初音未来
+	}
+	potential = {
+		has_country_flag = azur_lane_R_leader_界面_1
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "只能选择一个哦"
+			OR = { 
+				NOT = { has_country_flag = AL_R_leader_has_set }
+				has_country_flag = AL_R_leader_set_初音未来
+			}
+		}
+	}
+}
+
+AL_R_anniu_取消_1 = {
+	effect = {
+		custom_tooltip = azur_r_set_esc_1
+		remove_country_flag = AL_R_leader_has_set
+		remove_country_flag = AL_R_leader_set_长门
+		remove_country_flag = AL_R_leader_set_敦刻尔克
+		remove_country_flag = AL_R_leader_set_克莱蒙梭
+		remove_country_flag = AL_R_leader_set_腓特烈大帝
+		remove_country_flag = AL_R_leader_set_君主
+		remove_country_flag = AL_R_leader_set_企业
+		remove_country_flag = AL_R_leader_set_维内托
+		remove_country_flag = AL_R_leader_set_苏维埃同盟
+		remove_country_flag = AL_R_leader_set_逸仙
+		remove_country_flag = AL_R_leader_set_初音未来
+		remove_country_flag = AL_R_leader_set_黎塞留
+		remove_country_flag = AL_R_leader_set_伊丽莎白
+		remove_country_flag = AL_R_leader_set_零
+	}
+	potential = {
+		
+	}
+	allow = {
+		
+	}
+}
+
+
+AZUR_R_商店_钻石商店 = {
+	effect = {
+		custom_tooltip = AZUR_R_SHOP_1_effect
+		hidden_effect = {
+			owner = { country_event = { id = azur_mingshi.22 } }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_主界面
+		NOR = {
+			has_country_flag = AL_R_商店_钻石商店
+			has_country_flag = AL_R_商店_资源商店
+			has_country_flag = AL_R_商店_特殊科技
+			has_country_flag = AL_R_商店_专属BUFF
+			has_country_flag = AL_R_商店_戒指
+			has_country_flag = AL_R_商店_指挥猫
+		}
+	}
+	allow = {
+		NOT = {
+			
+		}
+	}
+}
+
+AZUR_R_商店_资源商店 = {
+	effect = {
+		custom_tooltip = AZUR_R_SHOP_2_effect
+		hidden_effect = {
+			owner = { country_event = { id = azur_mingshi.23 } }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_主界面
+		NOR = {
+			has_country_flag = AL_R_商店_钻石商店
+			has_country_flag = AL_R_商店_资源商店
+			has_country_flag = AL_R_商店_特殊科技
+			has_country_flag = AL_R_商店_专属BUFF
+			has_country_flag = AL_R_商店_戒指
+			has_country_flag = AL_R_商店_指挥猫
+		}
+	}
+	allow = {
+		NOT = {
+			
+		}
+	}
+}
+
+AZUR_R_商店_特殊科技 = {
+	effect = {
+		custom_tooltip = AZUR_R_SHOP_3_effect
+		hidden_effect = {
+			owner = { country_event = { id = azur_mingshi.24 } }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_主界面
+		NOR = {
+			has_country_flag = AL_R_商店_钻石商店
+			has_country_flag = AL_R_商店_资源商店
+			has_country_flag = AL_R_商店_特殊科技
+			has_country_flag = AL_R_商店_专属BUFF
+			has_country_flag = AL_R_商店_戒指
+			has_country_flag = AL_R_商店_指挥猫
+		}
+	}
+	allow = {
+		NOT = {
+			
+		}
+	}
+}
+
+AZUR_R_商店_专属BUFF = {
+	effect = {
+		custom_tooltip = AZUR_R_SHOP_4_effect
+		hidden_effect = {
+			owner = { country_event = { id = azur_mingshi.25 } }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_主界面
+		NOR = {
+			has_country_flag = AL_R_商店_钻石商店
+			has_country_flag = AL_R_商店_资源商店
+			has_country_flag = AL_R_商店_特殊科技
+			has_country_flag = AL_R_商店_专属BUFF
+			has_country_flag = AL_R_商店_戒指
+			has_country_flag = AL_R_商店_指挥猫
+		}
+	}
+	allow = {
+		NOT = {
+			
+		}
+	}
+}
+
+AZUR_R_商店_戒指 = {
+	effect = {
+		custom_tooltip = AZUR_R_SHOP_5_effect
+		hidden_effect = {
+			owner = { country_event = { id = azur_mingshi.28 } }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_主界面
+		NOR = {
+			has_country_flag = AL_R_商店_钻石商店
+			has_country_flag = AL_R_商店_资源商店
+			has_country_flag = AL_R_商店_特殊科技
+			has_country_flag = AL_R_商店_专属BUFF
+			has_country_flag = AL_R_商店_戒指
+			has_country_flag = AL_R_商店_指挥猫
+		}
+	}
+	allow = {
+		NOT = {
+			
+		}
+	}
+}
+
+AZUR_R_商店_指挥猫 = {
+	effect = {
+		custom_tooltip = AZUR_R_SHOP_6_effect
+		hidden_effect = {
+			owner = { country_event = { id = azur_mingshi.29 } }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_主界面
+		NOR = {
+			has_country_flag = AL_R_商店_钻石商店
+			has_country_flag = AL_R_商店_资源商店
+			has_country_flag = AL_R_商店_特殊科技
+			has_country_flag = AL_R_商店_专属BUFF
+			has_country_flag = AL_R_商店_戒指
+			has_country_flag = AL_R_商店_指挥猫
+		}
+	}
+	allow = {
+		NOT = {
+			
+		}
+	}
+}
+
+AZUR_R_商店_钻石_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.22.a
+		add_resource = { sr_hongjianjian = 600 }
+		add_resource = { energy = -1000 }
+	}
+	potential = {
+		has_country_flag = AL_R_商店_钻石商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 1000 }
+	}
+}
+
+AZUR_R_商店_钻石_2 = {
+	effect = {
+		custom_tooltip = azur_mingshi.22.b
+		add_resource = { sr_hongjianjian = 3000 }
+		add_resource = { energy = -5000 }
+	}
+	potential = {
+		has_country_flag = AL_R_商店_钻石商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 5000 }
+	}
+}
+
+AZUR_R_商店_钻石_3 = {
+	effect = {
+		custom_tooltip = azur_mingshi.22.c
+		add_resource = { sr_hongjianjian = 9800 }
+		add_resource = { energy = -12000 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_钻石商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 12000 }
+	}
+}
+
+AZUR_R_商店_钻石_4 = {
+	effect = {
+		custom_tooltip = azur_mingshi.22.d
+		add_resource = { sr_hongjianjian = 19800 }
+		add_resource = { energy = -25000 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_钻石商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 25000 }
+	}
+}
+
+AZUR_R_商店_钻石_5 = {
+	effect = {
+		custom_tooltip = azur_mingshi.22.e
+		add_resource = { sr_hongjianjian = 32800 }
+		add_resource = { energy = -40000 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_钻石商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 40000 }
+	}
+}
+
+AZUR_R_商店_钻石_6 = {
+	effect = {
+		custom_tooltip = azur_mingshi.22.f
+		add_resource = { sr_hongjianjian = 64800 }
+		add_resource = { energy = -80000 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_钻石商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 80000 }
+	}
+}
+
+AZUR_R_商店_资源_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.a
+		add_resource = { sr_hongjianjian = -10000 }
+		add_resource = { consumer_goods = 6500 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 10000 }
+	}
+}
+
+AZUR_R_商店_资源_2 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.b
+		add_resource = { sr_hongjianjian = -10000 }
+		add_resource = { alloys = 3500 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 10000 }
+	}
+}
+
+AZUR_R_商店_资源_3 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.c
+		add_resource = { sr_hongjianjian = -20000 }
+		add_resource = { volatile_motes = 2500 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 20000 }
+	}
+}
+
+AZUR_R_商店_资源_4 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.d
+		add_resource = { sr_hongjianjian = -20000 }
+		add_resource = { exotic_gases = 2500 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 20000 }
+	}
+}
+
+AZUR_R_商店_资源_5 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.e
+		add_resource = { sr_hongjianjian = -20000 }
+		add_resource = { rare_crystals = 2500 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 20000 }
+	}
+}
+
+AZUR_R_商店_资源_6 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.f
+		add_resource = { sr_hongjianjian = -20000 }
+		add_resource = { sr_living_metal = 1250 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 20000 }
+	}
+}
+
+AZUR_R_商店_资源_7 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.g
+		add_resource = { sr_hongjianjian = -20000 }
+		add_resource = { sr_zro = 1250 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 20000 }
+	}
+}
+
+AZUR_R_商店_资源_8 = {
+	effect = {
+		custom_tooltip = azur_mingshi.23.h
+		add_resource = { sr_hongjianjian = -20000 }
+		add_resource = { sr_dark_matter = 1250 }
+		#response_text = "azur_mingshi.210.a.desc"
+	}
+	potential = {
+		has_country_flag = AL_R_商店_资源商店
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 20000 }
+	}
+}
+
+AZUR_R_商店_科技_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.a
+		add_resource = { sr_hongjianjian = -11800 }
+		add_research_option = tech_dark_matter_power_core
+		add_research_option = tech_dark_matter_propulsion
+		add_research_option = tech_dark_matter_deflector
+		add_research_option = tech_cloaking_dark_matter
+		add_research_option = tech_dark_matter_detection
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 11800 }
+		OR = { 
+			NOT = { has_technology = tech_dark_matter_power_core }
+			NOT = { has_technology = tech_dark_matter_propulsion }
+			NOT = { has_technology = tech_dark_matter_deflector }
+			NOT = { has_technology = tech_cloaking_dark_matter }
+			NOT = { has_technology = tech_dark_matter_detection }
+		}
+	}
+}
+
+AZUR_R_商店_科技_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.a
+		add_resource = { sr_hongjianjian = -11800 }
+		add_research_option = tech_dark_matter_power_core
+		add_research_option = tech_dark_matter_propulsion
+		add_research_option = tech_dark_matter_deflector
+		add_research_option = tech_cloaking_dark_matter
+		add_research_option = tech_dark_matter_detection
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 11800 }
+		OR = { 
+			NOT = { has_technology = tech_dark_matter_power_core }
+			NOT = { has_technology = tech_dark_matter_propulsion }
+			NOT = { has_technology = tech_dark_matter_deflector }
+			NOT = { has_technology = tech_cloaking_dark_matter }
+			NOT = { has_technology = tech_dark_matter_detection }
+		}
+	}
+}
+
+AZUR_R_商店_科技_2 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.b
+		add_resource = { sr_hongjianjian = -10800 }
+		add_research_option = tech_psionic_shield
+		add_research_option = tech_psi_jump_drive_1
+		add_research_option = tech_mine_zro
+		add_research_option = tech_cloaking_psi
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 10800 }
+		OR = { 
+			NOT = { has_technology = tech_psionic_shield }
+			NOT = { has_technology = tech_psi_jump_drive_1 }
+			NOT = { has_technology = tech_mine_zro }
+			NOT = { has_technology = tech_cloaking_psi }
+		}
+	}
+}
+
+AZUR_R_商店_科技_3 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.c
+		add_resource = { sr_hongjianjian = -3280 }
+		add_research_option = tech_lgate_activation
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 3280 }
+		NOT = { has_technology = tech_lgate_activation }
+	}
+}
+
+AZUR_R_商店_科技_4 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.d
+		add_resource = { sr_hongjianjian = -3280 }
+		add_research_option = tech_mine_living_metal
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 11800 }
+		NOT = { has_technology = tech_mine_living_metal }
+	}
+}
+
+AZUR_R_商店_科技_5 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.e
+		add_resource = { sr_hongjianjian = -3280 }
+		add_research_option = tech_azur_gangban_zi
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 3280 }
+		NOT = { has_technology = tech_azur_gangban_zi }
+	}
+}
+
+AZUR_R_商店_科技_6 = {
+	effect = {
+		custom_tooltip = azur_mingshi.24.f
+		add_resource = { sr_hongjianjian = -32800 }
+		add_relic = relic_azur_R_mofang_01
+	}
+	potential = {
+		has_country_flag = AL_R_商店_特殊科技
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 32800 }
+		NOT = { has_relic = relic_azur_R_mofang_01 }
+	}
+}
+
+AZUR_R_商店_BUFF_1_Y = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.a.on
+		add_modifier = { 
+			modifier = azur_R_mingshi_buff_01
+			multiplier = azur_R_mingshi_buff_01
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		NOT = { has_modifier = azur_R_mingshi_buff_01 }
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_1_N = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.a.off
+		remove_modifier = azur_R_mingshi_buff_01
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		has_modifier = azur_R_mingshi_buff_01
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_2_Y = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.b.on
+		add_modifier = { 
+			modifier = azur_R_mingshi_buff_02
+			multiplier = azur_R_mingshi_buff_02
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		NOT = { has_modifier = azur_R_mingshi_buff_02 }
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_2_N = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.b.off
+		remove_modifier = azur_R_mingshi_buff_02
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		has_modifier = azur_R_mingshi_buff_02
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_3_Y = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.c.on
+		add_modifier = { 
+			modifier = azur_R_mingshi_buff_03
+			multiplier = azur_R_mingshi_buff_03
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		NOT = { has_modifier = azur_R_mingshi_buff_03 }
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_3_N = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.c.off
+		remove_modifier = azur_R_mingshi_buff_03
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		has_modifier = azur_R_mingshi_buff_03
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_4_Y = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.d.on
+		add_modifier = { 
+			modifier = azur_R_mingshi_buff_04
+			multiplier = azur_R_mingshi_buff_04
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		NOT = { has_modifier = azur_R_mingshi_buff_04 }
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_4_N = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.d.off
+		remove_modifier = azur_R_mingshi_buff_04
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		has_modifier = azur_R_mingshi_buff_04
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_5_Y = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.e.on
+		add_modifier = { 
+			modifier = azur_R_mingshi_buff_05
+			multiplier = azur_R_mingshi_buff_05
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		NOT = { has_modifier = azur_R_mingshi_buff_05 }
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_BUFF_5_N = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.e.off
+		remove_modifier = azur_R_mingshi_buff_05
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+		has_modifier = azur_R_mingshi_buff_05
+	}
+	allow = {
+		
+	}
+}
+
+AZUR_R_商店_契约_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.f
+		add_modifier = { modifier = AL_R_covenant_whisperers_in_the_void days = 3600 }
+		add_resource = { sr_hongjianjian = -6480 }
+		hidden_effect = {
+			country_event = { id = azur_mingshi.253 days = 3600 }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 6480 }
+		NOT = { has_modifier = AL_R_covenant_whisperers_in_the_void }
+	}
+}
+
+AZUR_R_商店_契约_2 = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.g
+		add_modifier = { modifier = AL_R_covenant_composer_of_strands days = 3600 }
+		add_resource = { sr_hongjianjian = -6480 }
+		hidden_effect = {
+			country_event = { id = azur_mingshi.253 days = 3600 }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 6480 }
+		NOT = { has_modifier = AL_R_covenant_composer_of_strands }
+	}
+}
+
+AZUR_R_商店_契约_3 = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.h
+		add_modifier = { modifier = AL_R_covenant_instrument_of_desire days = 3600 }
+		add_resource = { sr_hongjianjian = -6480 }
+		hidden_effect = {
+			country_event = { id = azur_mingshi.253 days = 3600 }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 6480 }
+		NOT = { has_modifier = AL_R_covenant_instrument_of_desire }
+	}
+}
+
+AZUR_R_商店_契约_4 = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.i
+		add_modifier = { modifier = AL_R_covenant_eater_of_worlds days = 3600 }
+		add_resource = { sr_hongjianjian = -6480 }
+		hidden_effect = {
+			country_event = { id = azur_mingshi.253 days = 3600 }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 6480 }
+		NOT = { has_modifier = AL_R_covenant_eater_of_worlds }
+	}
+}
+
+AZUR_R_商店_契约_5 = {
+	effect = {
+		custom_tooltip = azur_mingshi.25.j
+		add_modifier = { modifier = AL_R_covenant_end_of_the_cycle days = 3600 }
+		add_resource = { sr_hongjianjian = -114514 }
+		hidden_effect = {
+			country_event = { id = azur_mingshi.253 days = 3600 }
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_专属BUFF
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 114514 }
+		NOT = { has_modifier = AL_R_covenant_end_of_the_cycle }
+	}
+}
+
+AZUR_R_商店_指挥猫_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.29.a
+		hidden_effect = {
+			add_resource = { energy = -15000 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = azur_zhihuimao_come }
+				}
+				country_event = {
+					id = azur_mao.1
+				}
+			}
+			add_modifier = {
+				modifier = azur_lane_zhihuimao_xunlian days = 180
+			}
+			country_event = {
+				id = azur_mao.2 days = 180
+			}
+			country_event = {
+				id = azur_mao.10 days = 180
+			}
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_指挥猫
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 15000 }
+		NOT = { has_modifier = azur_lane_zhihuimao_xunlian }
+	}
+}
+
+AZUR_R_商店_指挥猫_2 = {
+	effect = {
+		custom_tooltip = azur_mingshi.29.b
+		hidden_effect = {
+			add_resource = { energy = -75000 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = azur_zhihuimao_come }
+				}
+				country_event = {
+					id = azur_mao.1
+				}
+			}
+			add_modifier = {
+				modifier = azur_lane_zhihuimao_xunlian days = 180
+			}
+			while = {
+				count = 2
+				country_event = {
+					id = azur_mao.2 days = 180
+				}
+			}
+			while = {
+				count = 3
+				country_event = {
+					id = azur_mao.2 days = 181
+				}
+			}
+			country_event = {
+				id = azur_mao.10 days = 180
+			}
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_指挥猫
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 75000 }
+		NOT = { has_modifier = azur_lane_zhihuimao_xunlian }
+	}
+}
+
+AZUR_R_商店_指挥猫_3 = {
+	effect = {
+		custom_tooltip = azur_mingshi.29.c
+		hidden_effect = {
+			add_resource = { energy = -120000 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = azur_zhihuimao_come }
+				}
+				country_event = {
+					id = azur_mao.1
+				}
+			}
+			add_modifier = {
+				modifier = azur_lane_zhihuimao_xunlian days = 180
+			}
+			while = {
+				count = 3
+				country_event = {
+					id = azur_mao.2 days = 179
+				}
+			}
+			while = {
+				count = 3
+				country_event = {
+					id = azur_mao.2 days = 180
+				}
+			}
+			while = {
+				count = 4
+				country_event = {
+					id = azur_mao.2 days = 181
+				}
+			}
+			country_event = {
+				id = azur_mao.10 days = 180
+			}
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_指挥猫
+	}
+	allow = {
+		resource_stockpile_compare = { resource = energy value >= 120000 }
+		NOT = { has_modifier = azur_lane_zhihuimao_xunlian }
+	}
+}
+
+AZUR_R_商店_戒指_1 = {
+	effect = {
+		custom_tooltip = azur_mingshi.28.a
+		hidden_effect = {
+			add_resource = { sr_hongjianjian = -600 }
+			change_variable = {
+				which = azur_jiezhi
+				value = 1
+			}
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_戒指
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 600 }
+	}
+}
+
+AZUR_R_商店_戒指_2 = {
+	effect = {
+		custom_tooltip = azur_mingshi.28.b
+		hidden_effect = {
+			add_resource = { sr_hongjianjian = -5000 }
+			change_variable = {
+				which = azur_jiezhi
+				value = 10
+			}
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_戒指
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 5000 }
+	}
+}
+
+AZUR_R_商店_戒指_3 = {
+	effect = {
+		custom_tooltip = azur_mingshi.28.c
+		hidden_effect = {
+			add_resource = { sr_hongjianjian = -10000 }
+			change_variable = {
+				which = azur_jiezhi
+				value = 20
+			}
+		}
+	}
+	potential = {
+		has_country_flag = AL_R_商店_戒指
+	}
+	allow = {
+		resource_stockpile_compare = { resource = sr_hongjianjian value >= 10000 }
+	}
+}

@@ -1,0 +1,100 @@
+#政体
+auth_azur_dictatorial = {
+	has_heir = no
+	election_type = none
+	can_have_emergency_elections = no
+	re_election_allowed = no
+	emergency_election_cost = 1145141919810
+	has_factions = no
+	can_reform = no
+	
+	ruler_council_position = councilor_ruler_AL_R
+
+	possible = {
+	}
+	
+	random_weight = {
+		base = 0
+	}
+	
+	traits = {
+		trait = trait_azur_a1
+	}
+	tags = {
+		AZUR_LANE_GANGQU
+	}
+	country_modifier = {
+		envoys_add = 2												#特使
+		empire_size_penalty_mult = -1.00							#帝国规模
+		council_agenda_progress_speed = -0.25						#议程
+		council_agenda_finishing_effect_duration_mult = 0.25		#
+	}
+}
+
+auth_azur_fallen_dictatorial = {
+	has_heir = no
+	election_type = none
+	can_have_emergency_elections = no
+	re_election_allowed = no
+	emergency_election_cost = 1145141919810
+	has_factions = no
+	can_reform = no
+	
+	ruler_council_position = councilor_ruler_AL_R_FALLEN
+
+	possible = {
+	}
+	
+	playable = {
+		always = no
+	}
+	
+	random_weight = {
+		base = 0
+	}
+	
+	traits = {
+		trait = trait_azur_a1
+	}
+	tags = {
+		AZUR_LANE_FALLEN
+	}
+	country_modifier = {
+	}
+}
+
+#帝制
+auth_azur_R_rin_dictatorial = {
+	has_heir = no
+	election_type = oligarchic
+	can_have_emergency_elections = no
+	emergency_election_cost = 1145141919810
+	max_election_candidates = 0
+	has_factions = no
+	can_reform = no
+	
+	ruler_council_position = councilor_ruler_AL_R
+
+	possible = {
+		
+	}
+	
+	playable = {
+		always = no
+	}
+	
+	random_weight = {
+		base = 0
+	}
+	
+	traits = {
+		trait = trait_azur_a1
+	}
+	
+	tags = {
+		AZUR_LANE_R_RIN
+	}
+	
+	country_modifier = {
+	}
+}

@@ -1,0 +1,57 @@
+#First is set to default
+#红尖尖
+AL_R_conversion_01 =
+{
+	potential = {
+		has_policy_flag = trade_policy_AL_R_01
+	}
+
+	weight = {
+		weight = 10
+	}
+
+	conversion_rate = {
+		sr_hongjianjian = 0.5
+	}
+
+	economic_category = trade_routes
+}
+
+#科研
+AL_R_conversion_02 =
+{
+	potential = {
+		has_policy_flag = trade_policy_AL_R_02
+	}
+
+	weight = {
+		weight = 10
+	}
+
+	conversion_rate = {
+		physics_research = 0.5
+		society_research = 0.5
+		engineering_research = 0.5
+	}
+
+	economic_category = trade_routes
+}
+
+#凝聚力
+AL_R_conversion_03 =
+{
+	potential = {
+		has_policy_flag = trade_policy_AL_R_03
+	}
+
+	weight = {
+		weight = 10
+	}
+
+	conversion_rate = {
+		unity = 0.5
+		influence = 0.01
+	}
+
+	economic_category = trade_routes
+}

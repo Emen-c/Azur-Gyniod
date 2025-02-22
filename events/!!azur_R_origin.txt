@@ -1,0 +1,116 @@
+namespace = azur_R_origin
+##母星区划
+####开局起源####
+country_event = {
+	id = azur_R_origin.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_azurlane_city_1
+	}
+	
+	immediate = {
+		while = { 
+			count = 1
+			capital_scope = {
+				#limit = { has_planet_flag = azur_world }	
+				set_owner = root
+				clear_deposits = yes
+				remove_district = district_city
+				remove_district = district_city
+				remove_district = district_city
+				remove_district = district_generator
+				remove_district = district_generator
+				remove_district = district_generator
+				remove_district = district_mining
+				remove_district = district_mining
+				remove_district = district_farming
+				remove_district = district_farming
+				remove_district = district_industrial
+				remove_district = district_industrial
+				add_district = district_azur_arcology_city
+				add_district = district_azur_arcology_city
+				add_district = district_azur_arcology_housing
+				add_district = district_azur_arcology_housing
+				remove_building = building_bureaucratic_1
+				remove_building = building_commercial_zone
+				add_building = building_communal_housing
+				add_building = azur_R_building_manufacturing_1
+				add_deposit = d_azur_R_deposits_01
+				add_deposit = d_azur_R_deposits_02
+				add_deposit = d_azur_R_deposits_03
+				add_deposit = d_azur_R_deposits_04
+				add_deposit = d_azur_R_deposits_05
+				add_deposit = d_azur_R_deposits_06
+				add_deposit = d_azur_R_deposits_07
+			}		
+		}
+	}
+}
+
+#母星重建
+planet_event = {
+	id = azur_R_origin.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = azur_lane_gangqu_country
+		}
+		is_planet_class = pc_azur_city_R
+		has_planet_flag = azur_world
+	}
+	
+	immediate = {
+		while = {
+			count = 19
+			create_pop = {
+				species = owner_main_species
+			}
+		}
+		set_capital = yes
+		owner = {
+			country_event = { id = azur_R_origin.3	days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = azur_R_origin.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = azur_lane_gangqu_country
+		}
+	}
+	
+	immediate = {
+		capital_scope = {
+			add_building = building_capital
+			add_district = district_azur_arcology_city
+			add_district = district_azur_arcology_city
+			add_district = district_azur_arcology_housing
+			add_district = district_azur_arcology_housing
+			add_building = azur_R_building_manufacturing_1
+			if = {
+				limit = {
+					owner = { has_country_flag = azur_lane_leader_changmen }
+				}
+				remove_building = building_capital
+				add_building = azur_R_building_colony_nagato_01
+			}
+			if = {
+				limit = {
+					owner = { has_country_flag = azur_R_XI_leader_ichika }
+				}
+				remove_building = building_capital
+				add_building = azur_R_building_ichika_capital
+				set_planetary_ascension_tier = 10
+			}	
+		}
+	}
+}

@@ -1,0 +1,1373 @@
+####明斯克魔法船坞####
+azur_R_building_pop_assembly_01 = {
+	base_buildtime = 500
+	can_build = yes      #建立
+	can_demolish = yes   #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = pop_assembly    #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		#岗位/修正
+		planet_pop_assembly_organic_add = 6
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600
+			alloys = 600
+		}
+		upkeep = {
+			energy = 12
+			alloys = 6
+			sr_mofang = 6
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_pop_assembly_pop_desc
+	}
+	
+	upgrades = {
+		azur_R_building_pop_assembly_02
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_pop_assembly_01
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+azur_R_building_pop_assembly_02 = {
+	base_buildtime = 800
+	can_build = no      	#建立
+	can_demolish = yes   	#拆除
+	can_be_ruined = yes   	#摧毁
+	can_be_disabled = yes  	#禁用
+	
+	category = pop_assembly    #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		#岗位/修正
+		planet_pop_assembly_organic_add = 12
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			alloys = 900
+		}
+		upkeep = {
+			energy = 18
+			alloys = 12
+			sr_mofang = 12
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_pop_assembly_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_pop_assembly_02
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####明石####
+#明石Ⅰ
+azur_R_building_mingshi = {
+	base_buildtime = 360
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			energy = 1000
+		}
+		upkeep = {
+			energy = 100
+			unity = 10
+		}
+		produces = { 
+			 sr_hongjianjian = 60
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_mingshi_pop_desc
+	}
+	
+	upgrades = {
+		azur_R_building_mingshi_02
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_mingshi
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#明石Ⅱ
+azur_R_building_mingshi_02 = {
+	base_buildtime = 480
+	can_build = no     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			energy = 2000
+		}
+		upkeep = {
+			energy = 200
+			unity = 20
+		}
+		produces = { 
+			 sr_hongjianjian = 120
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_mingshi_pop_desc
+	}
+	
+	upgrades = {
+		azur_R_building_mingshi_03
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_mingshi_02
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+#明石Ⅲ
+azur_R_building_mingshi_03 = {
+	base_buildtime = 600
+	can_build = no     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			energy = 3000
+		}
+		upkeep = {
+			energy = 300
+			unity = 30
+		}
+		produces = { 
+			 sr_hongjianjian = 200
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_mingshi_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_mingshi_03
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####魔方构建终端####
+#魔方厂Ⅰ
+azur_R_building_mofang = {
+	base_buildtime = 360
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+			is_planet_class = pc_azur_VR
+		}
+	}
+	
+	allow = {
+	
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			influence = 25
+		}
+		upkeep = {
+			energy = 11
+			minerals = 22
+		}
+		produces = { 
+			sr_mofang = 11
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_mofang_pop_desc
+	}
+	
+	upgrades = {
+		azur_R_building_mofang_02
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_mofang_01
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#魔方厂Ⅱ
+azur_R_building_mofang_02 = {
+	base_buildtime = 600
+	can_build = no     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+			is_planet_class = pc_azur_VR
+		}
+	}
+	
+	allow = {
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1500
+			influence = 25
+		}
+		upkeep = {
+			energy = 20
+			minerals = 40
+		}
+		produces = { 
+			sr_mofang = 22
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_mofang_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_mofang_02
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####明石的小卖部####
+azur_R_building_energy = {
+	base_buildtime = 480
+	base_cap_amount = 1  #上限
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		planet_technician_energy_produces_mult = 1.00
+		job_azur_R_trader_add = 1
+		job_clerk_add = 2
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_hongjianjian = 328
+			exotic_gases = 100
+		}
+		upkeep = {
+			energy = 5
+			sr_hongjianjian = 5
+			exotic_gases = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_energy_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_energy
+	}
+	
+	on_built = {
+		planet_event = { id = azur_mingshi.1 days = 1 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####安塔迪卡·融雪区####
+azur_R_building_minerals = {
+	base_buildtime = 480
+	base_cap_amount = 1  #上限
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+			is_planet_class = pc_azur_VR
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		planet_miners_minerals_produces_mult = 1.00
+		job_azur_R_manager_add = 1
+		job_miner_add = 2
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_hongjianjian = 328
+			rare_crystals = 100
+		}
+		upkeep = {
+			energy = 5
+			sr_hongjianjian = 5
+			rare_crystals = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_minerals_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_minerals
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####镜像海域-葱田####
+azur_R_building_food = {
+	base_buildtime = 480
+	base_cap_amount = 1  #上限
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = resource     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+			is_planet_class = pc_azur_VR
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		planet_farmers_food_produces_mult = 1.00
+		job_azur_R_ranger_add = 1
+		job_farmer_add = 2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_hongjianjian = 328
+			volatile_motes = 100
+		}
+		upkeep = {
+			energy = 5
+			sr_hongjianjian = 5
+			volatile_motes = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_food_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_food
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####炉心融解####
+azur_R_building_alloys = {
+	base_buildtime = 960
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = manufacturing     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		planet_metallurgists_produces_mult = 0.25
+		planet_artisans_produces_mult = 0.25
+		job_azur_R_foundry_add = 3
+		job_azur_R_artisan_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				colony_type = col_foundry
+				NOT = {
+					is_planet_class = pc_azur_VR
+				}
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = 3
+			job_azur_R_artisan_add = -3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				colony_type = col_factory
+				NOT = {
+					is_planet_class = pc_azur_VR
+				}
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = -3
+			job_azur_R_artisan_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			planet = {
+				is_planet_class = pc_azur_VR
+			}
+		}
+		modifier = {
+			job_azur_R_foundry_add = -3
+			job_azur_R_artisan_add = 3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 3000
+			sr_hongjianjian = 648
+			volatile_motes = 200
+			rare_crystals = 200
+		}
+		upkeep = {
+			energy = 10
+			sr_hongjianjian = 10
+			volatile_motes = 5
+			rare_crystals = 5
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_alloys_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_alloys
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####重樱本岛·大图书馆####
+azur_R_building_tech_02 = {
+	base_buildtime = 1200
+	empire_limit = {
+		base = 1
+	}
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = research     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	country_modifier = {
+		planet_researchers_physics_research_produces_add = 3
+		planet_researchers_society_research_produces_add = 3
+		planet_researchers_engineering_research_produces_add = 3
+	}
+	
+	planet_modifier = {
+		job_azur_R_head_researcher_01_add = 1
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 5000
+			sr_hongjianjian = 648
+			exotic_gases = 500
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 20
+			exotic_gases = 6
+		}
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_tech_02
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_tech_02_pop_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####星海基地-「银河之心」####
+azur_R_building_tech_03 = {
+	base_buildtime = 1200
+	empire_limit = {
+		base = 1
+	}
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = research     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	country_modifier = {
+		planet_researchers_produces_mult = 0.50
+		all_technology_research_speed = 0.25
+	}
+	
+	planet_modifier = {
+		job_azur_R_head_researcher_02_add = 1
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 5000
+			sr_hongjianjian = 648
+			exotic_gases = 500
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 20
+			exotic_gases = 6
+		}
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_tech_03
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_tech_03_pop_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####能源魔方研究所####
+azur_R_building_tech_01 = {
+	base_buildtime = 960
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = research     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		job_azur_R_head_researcher_03_add = 6
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 3000
+			sr_hongjianjian = 648
+			exotic_gases = 100
+		}
+		upkeep = {
+			energy = 10
+			sr_hongjianjian = 5
+			exotic_gases = 5
+		}
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_tech_01
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_tech_01_pop_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####极光之壁####
+azur_R_building_housing = {
+	base_buildtime = 720
+	base_cap_amount = 1  #上限
+	can_build = yes      #建立
+	can_demolish = yes   #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = amenity    #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2000
+			sr_hongjianjian = 648
+			rare_crystals = 100
+		}
+		upkeep = {
+			energy = 10
+			sr_hongjianjian = 5
+			rare_crystals = 2
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 80
+		planet_amenities_add = 80
+		planet_orbital_bombardment_damage = -0.5
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_housing_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_housing
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+####异世界冒险终端####
+azur_R_building_amenity_01 = {
+	base_buildtime = 720
+	base_cap_amount = 1
+	can_build = yes      #建立
+	can_demolish = yes   #拆除
+	can_be_ruined = no   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = amenity     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		job_azur_R_entertainer_add = 1
+		job_clerk_add = 4
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2000
+			sr_hongjianjian = 648
+			exotic_gases = 100
+		}
+		upkeep = {
+			energy = 10
+			sr_hongjianjian = 5
+			exotic_gases = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_amenity_01_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_amenity_01
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+####鸢尾教国·兰斯大教堂####
+azur_R_building_unity_01 = {
+	base_buildtime = 1200
+	empire_limit = {
+		base = 1
+	}
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = unity     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		job_azur_R_high_priest_02_add = 1
+		job_azur_R_priest_add = 1
+		job_azur_R_duelist_add = 1
+		pop_ethic_spiritualist_attraction_mult = 0.10
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 5000
+			sr_hongjianjian = 648
+			rare_crystals = 500
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 20
+			rare_crystals = 6
+		}
+	}
+
+	prerequisites = {
+		tech_azur_R_building_unity_01
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_unity_01_pop_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####重樱群岛·大圣域####
+azur_R_building_unity_02 = {
+	base_buildtime = 1200
+	empire_limit = {
+		base = 1
+	}
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = unity     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		job_azur_R_high_priest_03_add = 1
+		job_azur_R_politician_add = 2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 5000
+			sr_hongjianjian = 648
+			rare_crystals = 500
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 20
+			rare_crystals = 6
+		}
+	}
+
+	prerequisites = {
+		tech_azur_R_building_unity_02
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_unity_02_pop_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####战术学院####
+azur_R_building_army_01 = {
+	base_buildtime = 720
+	can_build = yes      #建立
+	can_demolish = yes   #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = army    #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		job_soldier_add = 8
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_hongjianjian = 328
+			volatile_motes = 100
+		}
+		upkeep = {
+			energy = 5
+			sr_hongjianjian = 5
+			volatile_motes = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_army_01_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_army_01
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+####星海基地-「猎户座」####
+azur_R_building_army_02 = {
+	base_buildtime = 1200
+	empire_limit = {
+		base = 1
+	}
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = army     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	army_modifier = {
+		army_starting_experience_add = 1000
+	}
+	
+	planet_modifier = {
+		job_azur_R_duelist_02_add = 1
+		job_soldier_add = 2
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 5000
+			sr_hongjianjian = 648
+			volatile_motes = 500
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 20
+			volatile_motes = 6
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_army_02_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_army_02
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#镜像海域·遗迹群岛
+azur_R_building_refinery = {
+	base_buildtime = 960
+	base_cap_amount = 1
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = manufacturing     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+			is_planet_class = pc_azur_VR
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	planet_modifier = {
+		job_azur_R_refinery_add = 1
+		planet_jobs_exotic_gases_produces_mult = 0.50
+		planet_jobs_rare_crystals_produces_mult = 0.50
+		planet_jobs_volatile_motes_produces_mult = 0.50
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 5000
+			sr_hongjianjian = 648
+		}
+		upkeep = {
+			energy = 20
+			sr_hongjianjian = 10
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_refinery_pop_desc
+	}
+	
+	prerequisites = {
+		tech_azur_R_building_refinery
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+####待修改####
+#微型黑洞
+azur_R_building_dark_matter = {
+	base_buildtime = 1200
+	can_build = yes     #建立
+	can_demolish = yes  #拆除
+	can_be_ruined = yes   #摧毁
+	can_be_disabled = yes  #禁用
+	
+	category = manufacturing     #种类
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_country_flag = azur_lane_gangqu_country
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony	
+			is_planet_class = pc_azur_VR
+		}
+	}
+	
+	allow = {
+		
+	}
+	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			energy = 5000
+			minerals = 5000
+			alloys = 5000
+			sr_dark_matter = 328
+		}
+		upkeep = {
+			energy = 600
+		}
+		produces = { 
+			sr_dark_matter = 30
+		}
+	}
+	
+	triggered_desc = {
+		text = azur_R_building_dark_matter_pop_desc
+	}
+	
+	prerequisites = {
+		tech_mine_dark_matter
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+

@@ -1,0 +1,25 @@
+inline_script = {
+	script = trait/subtitle/council_$COUNCIL$
+	RARITY = $RARITY$
+	CLASS = $CLASS$
+}
+icon = {
+	#命定
+	layer = {
+		icon = "GFX_trait_bg_AL_R"
+		color = "trait_bg_default"
+	}
+	inline_script = trait/icon_element/AL_R_rarity_paragon
+	#内阁
+	#layer = {
+	#	color = "trait_icon_default"
+	#}
+	inline_script = {
+		script = trait/icon_element/AL_R_council_yes
+		CLASS = $CLASS$
+	#}
+	#等级
+	inline_script = trait/icon_element/tier_$TIER$
+}
+leader_trait_rarity = $RARITY$
+sorting_priority = @trait_sorting_priority_$RARITY$_$COUNCIL$_$TIER$

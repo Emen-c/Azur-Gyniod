@@ -1,0 +1,23 @@
+	NGameplay = {
+		MAX_PLANET_POPS							= 1000		# Used for building calculations
+		MAX_PLANET_BUILDING_SLOTS				= 36        #建筑数？
+		
+		JUMP_DRIVE_COOLDOWN 					= 60		#跃迁引擎冷却
+		
+		#LEADER_BASE_SKILL_CAP					= 39
+		LEADER_MAX_SKILL_CAP					= 39		#领袖等级
+		
+		STATION_SELF_REPAIR_TIMER_DAYS          = 10         #Instant regen-start for ships in combat (but applies to stations too)战斗中恢复
+		
+		STARBASE_AUTO_CONTROL_DISTANCE			= 10		#恒星寄地叛变距离
+		
+		#内阁席位
+		COUNCIL_RESEARCH_POSITIONS = { "councilor_gestalt_cognitive" "councilor_research" "councilor_civic_AL_R_01" }	#首席科学官#领航员
+		COUNCIL_NAVAL_POSITIONS = { "councilor_gestalt_legion" "councilor_defense" "councilor_civic_AL_R_06" }			#国防部长#科学顾问团
+		COUNCIL_DIPLOMACY_POSITIONS = { "councilor_gestalt_regulatory" "councilor_state" "councilor_civic_AL_R_03" }	#国务卿#商店看板娘
+	}
+	
+	NCombat = {
+		COMBAT_SHIP_STARBASE_TARGETING_WEIGHT 	= 0.001		#恒星寄地受攻击概率
+	}
+	
