@@ -1,0 +1,889 @@
+#1-14
+#种族
+trait_azur_a1 = {
+	cost = 0
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = no
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/azur_traits_1.dds"
+	immortal_leaders = yes
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+
+	modifier = {
+		pop_environment_tolerance=1.00				#宜居度
+	}
+	opposites = {  }
+}
+
+#认知觉醒
+trait_azur_feisheng_1 = {
+	cost = 0
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = no
+	randomized = no
+	initial = no
+	icon = "interface/icons/traits/trait_azur_feisheng_1.dds"
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	modifier = {
+		pop_political_power = 1.00
+		pop_happiness = 0.2
+		planet_jobs_produces_mult = 0.5					#人口产出
+		planet_pops_upkeep_mult = 0.25					#人口维护费
+	}
+}
+
+#💊				总之就是药丸
+trait_AL_R_01 = {
+	cost = 99
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_01.dds"
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	modifier = {
+		pop_growth_speed = -10.00
+		planet_jobs_produces_mult = -10.00
+	}
+}
+
+trait_AL_R_LOVE = {
+	cost = 0
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_LOVE.dds"
+	custom_tooltip = "trait_AL_R_LOVE_tooltip"
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	modifier = {
+
+	}
+}
+
+trait_AL_R_rarity_R = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_rarity_R.dds"
+
+	modifier = {
+		planet_jobs_produces_mult = 0.20				#人口产出
+		planet_pop_assembly_organic_add = 0.40			#人口组装
+		planet_pops_upkeep_mult = 0.05					#人口维护费
+		pop_housing_usage_add = 0.05					#住房使用
+	}
+	opposites = {
+		#trait_AL_R_rarity_R
+		trait_AL_R_rarity_SR
+		trait_AL_R_rarity_SSR
+		trait_AL_R_rarity_UR
+		trait_AL_R_rarity_PRY
+		trait_AL_R_rarity_DR
+	}
+}
+
+trait_AL_R_rarity_SR = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_rarity_SR.dds"
+
+	modifier = {
+		planet_jobs_produces_mult = 0.30				#人口产出
+		planet_pop_assembly_organic_add = 0.60			#人口组装
+		pop_demotion_time_mult = 0.10					#降级时间
+		planet_pops_upkeep_mult = 0.10					#人口维护费
+		pop_housing_usage_add = 0.10					#住房使用
+	}
+	opposites = {
+		trait_AL_R_rarity_R
+		#trait_AL_R_rarity_SR
+		trait_AL_R_rarity_SSR
+		trait_AL_R_rarity_UR
+		trait_AL_R_rarity_PRY
+		trait_AL_R_rarity_DR
+	}
+}
+
+trait_AL_R_rarity_SSR = {
+	cost = 3
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_rarity_SSR.dds"
+
+	modifier = {
+		planet_jobs_produces_mult = 0.50				#人口产出
+		planet_pop_assembly_organic_add = 1.00			#人口组装
+		pop_demotion_time_mult = 0.20					#降级时间
+		planet_pops_upkeep_mult = 0.20					#人口维护费
+		pop_housing_usage_add = 0.20					#住房使用
+	}
+	opposites = {
+		trait_AL_R_rarity_R
+		trait_AL_R_rarity_SR
+		#trait_AL_R_rarity_SSR
+		trait_AL_R_rarity_UR
+		trait_AL_R_rarity_PRY
+		trait_AL_R_rarity_DR
+	}
+}
+
+trait_AL_R_rarity_PRY = {
+	cost = 3
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_rarity_PRY.dds"
+
+	modifier = {
+		planet_researchers_engineering_research_produces_add = 1.5		#科研产出
+		planet_researchers_physics_research_produces_add = 1.5
+		planet_researchers_society_research_produces_add = 1.5
+		army_damage_mult = 0.5							#陆军伤害
+		army_collateral_damage_mult = 0.5				#陆军连带伤害
+		army_morale_damage_mult = 0.5					#陆军士气伤害
+		planet_pops_upkeep_mult = 0.20					#人口维护费
+		pop_housing_usage_add = 0.20					#住房使用
+	}
+	opposites = {
+		trait_AL_R_rarity_R
+		trait_AL_R_rarity_SR
+		trait_AL_R_rarity_SSR
+		trait_AL_R_rarity_UR
+		#trait_AL_R_rarity_PRY
+		trait_AL_R_rarity_DR
+	}
+}
+
+trait_AL_R_rarity_UR = {
+	cost = 5
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_rarity_UR.dds"
+
+	modifier = {
+		planet_jobs_produces_mult = 1					#人口产出
+		planet_pop_assembly_organic_add = 2				#人口组装
+		pop_demotion_time_mult = 0.5					#降级时间
+		planet_pops_upkeep_mult = 0.4					#人口维护费
+		pop_housing_usage_add = 0.4						#住房使用
+	}
+
+	opposites = {
+		trait_AL_R_rarity_R
+		trait_AL_R_rarity_SR
+		trait_AL_R_rarity_SSR
+		#trait_AL_R_rarity_UR
+		trait_AL_R_rarity_PRY
+		trait_AL_R_rarity_DR
+	}
+}
+
+trait_AL_R_rarity_DR = {
+	cost = 5
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_rarity_DR.dds"
+
+	modifier = {
+		planet_researchers_engineering_research_produces_add = 3		#科研产出
+		planet_researchers_physics_research_produces_add = 3
+		planet_researchers_society_research_produces_add = 3
+		army_damage_mult = 0.75							#陆军伤害
+		army_collateral_damage_mult = 0.75				#陆军连带伤害
+		army_morale_damage_mult = 0.75					#陆军士气伤害
+		planet_pops_upkeep_mult = 0.4					#人口维护费
+		pop_housing_usage_add = 0.4						#住房使用
+	}
+
+	opposites = {
+		trait_AL_R_rarity_R
+		trait_AL_R_rarity_SR
+		trait_AL_R_rarity_SSR
+		trait_AL_R_rarity_UR
+		trait_AL_R_rarity_PRY
+		#trait_AL_R_rarity_DR
+	}
+}
+
+#奔袭的逐星者
+trait_AL_R_02 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_02.dds"
+	modifier = {
+		science_ship_survey_speed = 0.10
+		ship_anomaly_generation_chance_mult = 0.10
+		ship_anomaly_research_speed = 0.10
+	}
+	opposites = {  }
+}
+
+#自适应作战模块
+trait_AL_R_03 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_03.dds"
+	modifier = {
+		ship_engagement_range_mult = 0.10
+		ship_disengage_chance_mult = 0.20
+	}
+	opposites = {  }
+}
+
+#情报调查
+trait_AL_R_04 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_04.dds"
+	modifier = {
+		spy_network_daily_value_add = 1
+		intel_decryption_add = 4
+		add_base_country_intel = 4
+	}
+	opposites = {  }
+}
+
+#绽盛之威光
+trait_AL_R_05 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_05.dds"
+	modifier = {
+		first_contact_speed_mult = 0.1
+		first_contact_clues_add = 2
+		country_starbase_influence_cost_distance_mult = -0.2
+	}
+	opposites = {  }
+}
+
+#广域舰船维护
+trait_AL_R_06 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_06.dds"
+	modifier = {
+		ship_hull_regen_add_perc = 0.05
+		ship_armor_regen_add_perc = 0.05
+		ship_shield_regen_add_perc = 0.05
+	}
+	opposites = {  }
+}
+
+#海神之佑
+trait_AL_R_07 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_07.dds"
+	modifier = {
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+	}
+	opposites = {  }
+}
+
+#幽蝶之梦
+trait_AL_R_08 = {
+	cost = -2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_08.dds"
+	modifier = {
+		pop_amenities_usage_add = 0.1			#舒适度
+		planet_pops_consumer_goods_upkeep_mult = 0.2		#消费品使用
+	}
+	opposites = {  }
+}
+
+#守护之樱
+trait_AL_R_09 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_09.dds"
+	modifier = {
+		intel_encryption_add = 4
+		ship_home_territory_fire_rate_mult = 0.2
+		ship_disengage_chance_mult = 0.2
+	}
+	opposites = {  }
+}
+
+#定期维护
+trait_AL_R_10 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_10.dds"
+	modifier = {
+		planet_pops_upkeep_mult = -0.2					#人口维护费
+		planet_jobs_unity_produces_mult = 0.2			#凝聚力产出
+	}
+	opposites = {  }
+}
+
+#不沉的幸运舰
+trait_AL_R_11 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_11.dds"
+	custom_tooltip = "trait_AL_R_11_tooltip"
+	modifier = {
+		#幸运值+999
+	}
+	opposites = {  }
+}
+
+#桂冠诗人的韵律论
+trait_AL_R_12 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_12.dds"
+	modifier = {
+		all_technology_research_speed = 0.2
+		num_tech_alternatives_add = 1
+	}
+	opposites = {  }
+}
+
+#求知之贤眼
+trait_AL_R_13 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_13.dds"
+	modifier = {
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
+	}
+	opposites = {  }
+}
+
+#洞察技术-思想掌握
+trait_AL_R_14 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_14.dds"
+	modifier = {
+		pop_government_ethic_attraction = 0.2
+	}
+	opposites = {  }
+}
+
+#星辰之光
+trait_AL_R_15 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_15.dds"
+	modifier = {
+		station_gatherers_produces_mult = 0.30
+		station_researchers_produces_mult = 0.30
+	}
+	opposites = {  }
+}
+
+#安闲与愉悦
+trait_AL_R_16 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_16.dds"
+	modifier = {
+		planet_stability_add = 15
+		planet_crime_add = -15
+	}
+	opposites = {  }
+}
+
+#共济不弃
+trait_AL_R_17 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_17.dds"
+	#custom_tooltip = "trait_AL_R_17_tooltip"
+	modifier = {
+		pop_demotion_time_mult = -0.20
+	}
+	opposites = {  }
+}
+
+#诫训法典
+trait_AL_R_18 = {
+	cost = -2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_18.dds"
+	modifier = {
+		piracy_growth_mult = 1
+		max_trade_piracy_mult = 0.1
+	}
+	opposites = {  }
+}
+
+#圣女的祷告
+trait_AL_R_19 = {
+	cost = 1
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_19.dds"
+	modifier = {
+		country_unity_produces_mult = 0.20
+		edicts_upkeep_mult = -0.10
+	}
+	opposites = {  }
+}
+
+#感知抑制模块
+trait_AL_R_20 = {
+	cost = -2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_20.dds"
+	modifier = {
+		pop_growth_speed = -0.2
+		planet_jobs_produces_mult = -0.1
+	}
+	opposites = {  }
+}
+
+
+
+#梦幻秘仪
+trait_AL_R_21 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_21.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.20
+		planet_stability_add = 10
+	}
+	opposites = {  }
+}
+
+#快速完成工具
+trait_AL_R_28 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_28.dds"
+
+
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.25		#造舰速度
+	}
+}
+
+#自律战斗
+trait_AL_R_29 = {
+	cost = -2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_29.dds"
+	modifier = {
+		army_damage_mult = -0.20							#陆军伤害
+		army_collateral_damage_mult = -0.20				#陆军连带伤害
+		army_morale_damage_mult = -0.20					#陆军士气伤害
+	}
+}
+
+#后宅
+trait_AL_R_30 = {
+	cost = -2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	#modification = yes
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_30.dds"
+	modifier = {
+		planet_pops_upkeep_mult = 0.2
+		army_defense_health_mult = -0.20				#防御部队
+		army_defense_damage_mult = -0.20
+	}
+}
+
+#沉睡公主的赠礼
+trait_AL_R_31 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	initial = no
+	#modification = yes
+	advanced_trait = yes						#高级特质
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_31.dds"
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.50
+		planet_pops_consumer_goods_upkeep_mult = -0.2
+		pop_happiness = 0.2
+	}
+}
+
+#精密操作协议
+trait_AL_R_32 = {
+	cost = 3
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	initial = no
+	#modification = yes
+	advanced_trait = yes						#高级特质
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_32.dds"
+	modifier = {
+		planet_jobs_alloys_produces_mult = 1					#二产资源产出
+		planet_jobs_consumer_goods_produces_mult = 1
+		planet_jobs_engineering_research_produces_mult = 1		#科研产出
+		planet_jobs_physics_research_produces_mult = 1
+		planet_jobs_society_research_produces_mult = 1
+	}
+}
+
+#从容指顾
+trait_AL_R_33 = {
+	cost = 3
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	initial = no
+	#modification = yes
+	advanced_trait = yes						#高级特质
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_33.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.75
+	}
+}
+
+#彩虹计划
+trait_AL_R_34 = {
+	cost = 3
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	initial = no
+	#modification = yes
+	advanced_trait = yes						#高级特质
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_34.dds"
+	modifier = {
+		country_energy_produces_mult = 0.75
+	}
+}
+
+
+#迅光雷袭
+trait_AL_R_35 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	initial = no
+	#modification = yes
+	#advanced_trait = no						#高级特质
+	randomized = no
+	prerequisites = { tech_azur_R_trait_mofang }
+	icon = "interface/icons/traits/trait_AL_R_35.dds"
+	modifier = {
+		country_ship_upgrade_cost_mult = -0.20
+		ship_jumpdrive_cooldown_mult = -0.25
+		ship_ftl_jumpdrive_range_mult = 0.25
+	}
+}
+
+#风斩雷逸
+trait_AL_R_36 = {
+	cost = 2
+	allowed_archetypes = { MACHINE }
+	species_class = { Azur_Lane_R }
+
+	initial = no
+	#modification = yes
+	#advanced_trait = no						#高级特质
+	randomized = no
+	prerequisites = { tech_azur_R_trait_mofang }
+	icon = "interface/icons/traits/trait_AL_R_36.dds"
+	modifier = {
+		ship_weapon_damage = 0.50
+		ship_fire_rate_mult = 0.25
+	}
+}
+
+#海王星
+trait_AL_R_22 = {
+	cost = 1
+	allowed_archetypes = {  }
+	#modification = yes
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_22.dds"
+	modifier = {
+
+	}
+	opposites = {
+		trait_AL_R_23
+		trait_AL_R_24
+		trait_AL_R_25
+		trait_AL_R_26
+		trait_AL_R_27
+	}
+}
+
+#KizunaAI
+trait_AL_R_23 = {
+	cost = 1
+	allowed_archetypes = {  }
+	#modification = yes
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_23.dds"
+	modifier = {
+
+	}
+	opposites = {
+		trait_AL_R_22
+		trait_AL_R_24
+		trait_AL_R_25
+		trait_AL_R_26
+		trait_AL_R_27
+	}
+}
+
+#????-SSSS
+trait_AL_R_24 = {
+	cost = 1
+	allowed_archetypes = {  }
+	#modification = yes
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_24.dds"
+	modifier = {
+
+	}
+	opposites = {
+		trait_AL_R_22
+		trait_AL_R_23
+		trait_AL_R_25
+		trait_AL_R_26
+		trait_AL_R_27
+	}
+}
+
+#Atelier Ryza
+trait_AL_R_25 = {
+	cost = 1
+	allowed_archetypes = {  }
+	#modification = yes
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_25.dds"
+	modifier = {
+
+	}
+	opposites = {
+		trait_AL_R_22
+		trait_AL_R_23
+		trait_AL_R_24
+		trait_AL_R_26
+		trait_AL_R_27
+	}
+}
+
+#维纳斯假期
+trait_AL_R_26 = {
+	cost = 1
+	allowed_archetypes = {  }
+	#modification = yes
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_26.dds"
+	modifier = {
+
+	}
+	opposites = {
+		trait_AL_R_22
+		trait_AL_R_23
+		trait_AL_R_24
+		trait_AL_R_25
+		trait_AL_R_27
+	}
+}
+
+#闪乱神乐
+trait_AL_R_27 = {
+	cost = 1
+	allowed_archetypes = {  }
+	#modification = yes
+	#initial = no
+	randomized = no
+	icon = "interface/icons/traits/trait_AL_R_27.dds"
+	modifier = {
+
+	}
+	opposites = {
+		trait_AL_R_22
+		trait_AL_R_23
+		trait_AL_R_24
+		trait_AL_R_25
+		trait_AL_R_26
+	}
+}
+
+
+
+#环世界宜居？
+trait_pc_ringworld_habitable_preference = {
+	icon = "interface/icons/traits/trait_pc_ring_preference.dds"
+	#modification = no
+	initial = no
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	modifier = {
+		pc_ringworld_habitable_habitability = 1.0
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
